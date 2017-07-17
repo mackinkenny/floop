@@ -15,6 +15,7 @@ class CreateBouticsTable extends Migration
     {
         Schema::create('boutics', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
             $table->timestamps();
         });
     }
