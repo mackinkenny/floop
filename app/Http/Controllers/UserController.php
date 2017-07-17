@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
-use Intervention\Image\Image;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
@@ -31,9 +31,10 @@ class UserController extends Controller
 
                 $avatar = $request->file('img_path');
                 $filename = time() . '.' . $avatar->getClientOriginalExtension();
-                Image::make($avatar)->resize(300,300)->save( public_path('/uploads/avatars/' . $filename));
+                Image::make($avatar)->resize(300, 300)->save( public_path('uploads/avatars/' . $filename) );
 
                 $user->img_path = $filename;
+                $user->save();
             }
 
             $user->save();
