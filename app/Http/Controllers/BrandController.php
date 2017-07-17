@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Center;
+use App\Brand;
 use Illuminate\Http\Request;
 
-class CenterController extends Controller
+class BrandController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class CenterController extends Controller
     public function index()
     {
         //
-        $centers = Center::all();
-        return view('all.center', ['centers' => $centers]);
+        $brands = Brand::all();
+        return view('all.brand', ['brands' => $brands]);
     }
 
     /**
@@ -27,7 +27,7 @@ class CenterController extends Controller
     public function create()
     {
         //
-        return view('create.center');
+        return view('create.brand');
     }
 
     /**
@@ -39,50 +39,53 @@ class CenterController extends Controller
     public function store(Request $request)
     {
         //
-        $center = new Center();
-        $center->name = $request->name;
-        $center->save();
+        $brand = new Brand();
+        $brand->name = $request->name;
+        $brand->save();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Center  $center
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function show(Center $center)
+    public function show(Brand $brand)
     {
         //
-        $centerShow = Center::find($center->id);
-        return view('show.center', ['center' => $centerShow]);
+        $brandShow = Brand::find($brand->id);
+        return view('show.brand', ['brand' => $brandShow]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Center  $center
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit(Center $center)
+    public function edit(Brand $brand)
     {
         //
-        $centerEdit = Center::find($center->id);
-        return view('edit.center', ['center' => $centerEdit]);
+        $brandEdit = Brand::find($brand->id);
+
+        return view('edit.brand', ['brand' => $brandEdit]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Center  $center
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Center $center)
+    public function update(Request $request, Brand $brand)
     {
         //
-        $centerUp = Center::find($center->id);
-        $centerUp->name = $request->name;
-        $centerUp->save();
+        if ($request) {
+            $brandUp = Brand::find($brand->id);
+            $brandUp->name = $request->name;
+            $brandUp->save();
+        }
 
         return back();
     }
@@ -90,14 +93,14 @@ class CenterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Center  $center
+     * @param  \App\Brand  $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Center $center)
+    public function destroy(Brand $brand)
     {
         //
-        $centerDel = Center::find($center->id);
-        $centerDel->delete();
+        $brandDel = Brand::find($brand->id);
+        $brandDel->delete();
 
         return back();
     }

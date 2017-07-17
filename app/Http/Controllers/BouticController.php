@@ -16,7 +16,7 @@ class BouticController extends Controller
     {
         //
         $boutics = Boutic::all();
-        return view('boutics', ['boutics' => $boutics]);
+        return view('all.boutics', ['boutics' => $boutics]);
     }
 
     /**
@@ -53,8 +53,8 @@ class BouticController extends Controller
     public function show(Boutic $boutic)
     {
         //
-        $boutic_show = Boutic::findOrFail($boutic->id);
-        return view('show.boutic', ['boutic' => $boutic_show]);
+        $bouticShow = Boutic::findOrFail($boutic->id);
+        return view('show.boutic', ['boutic' => $bouticShow]);
     }
 
     /**
@@ -66,8 +66,8 @@ class BouticController extends Controller
     public function edit(Boutic $boutic)
     {
         //
-        $boutic_edit = Boutic::findOrFail($boutic->id);
-        return view('edit.boutic', ['boutic' => $boutic_edit]);
+        $bouticEdit = Boutic::findOrFail($boutic->id);
+        return view('edit.boutic', ['boutic' => $bouticEdit]);
     }
 
     /**
@@ -81,9 +81,9 @@ class BouticController extends Controller
     {
         //
         if ($request) {
-            $boutic_up = Boutic::find($boutic->id);
-            $boutic_up->name = $request->name;
-            $boutic_up->save();
+            $bouticUp = Boutic::find($boutic->id);
+            $bouticUp->name = $request->name;
+            $bouticUp->save();
         }
 
         return back();
@@ -99,8 +99,8 @@ class BouticController extends Controller
     public function destroy(Boutic $boutic)
     {
         //
-        $boutic_del = Boutic::find($boutic->id);
-        $boutic_del->delete();
+        $bouticDel = Boutic::find($boutic->id);
+        $bouticDel->delete();
 
         return back();
     }
