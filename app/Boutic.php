@@ -10,4 +10,8 @@ class Boutic extends Model
     protected $fillable = [
         'name', 'img_path',
     ];
+
+    public function center() {
+        return $this->belongsTo('Center');
+    }
 }
