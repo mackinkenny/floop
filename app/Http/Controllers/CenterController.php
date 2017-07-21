@@ -42,6 +42,8 @@ class CenterController extends Controller
         $center = new Center();
         $center->name = $request->name;
         $center->save();
+
+        return back();
     }
 
     /**

@@ -42,6 +42,8 @@ class BrandController extends Controller
         $brand = new Brand();
         $brand->name = $request->name;
         $brand->save();
+
+        return back();
     }
 
     /**

@@ -14,8 +14,8 @@ class CatController extends Controller
      */
     public function index()
     {
-        $cats = cat::all();
-        return view( 'all.cat', ['cat' => $cats]);
+        $cats = Cat::all();
+        return view( 'all.cat', ['cats' => $cats]);
     }
 
     /**
@@ -41,6 +41,8 @@ class CatController extends Controller
         $cat = new Cat();
         $cat->name = $request->name;
         $cat->save();
+
+        return back();
     }
 
     /**
