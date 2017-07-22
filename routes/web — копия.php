@@ -37,3 +37,6 @@ Route::post('/storecat', 'CatController@store')->name('storeCat');
 
 Route::get('/createcenter', 'CenterController@create')->name('createCenter');
 Route::post('/storecenter', 'CenterController@store')->name('storeCenter');
+
+
+Route::get('/products', 'ProductController@index')->name('products');

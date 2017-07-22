@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
+use App\Cat;
 use App\Product;
 use Illuminate\Http\Request;
 
@@ -28,7 +30,9 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return view('create.product');
+        $brands = Brand::all();
+        $cats = Cat::all();
+        return view('create.product', ['brands' => $brands, 'cats' => $cats]);
     }
 
     /**
@@ -42,6 +46,8 @@ class ProductController extends Controller
         //
         $product = new Product();
         $product->name = $request->name;
+        $product->brand_id = $request->brand_id;
+        $product->cat_id = $request->cat_id;
         $product->save();
 
         return back();

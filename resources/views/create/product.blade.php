@@ -8,6 +8,22 @@
 
             <input type="text" name="name">
 
+            <select name="brand_id">
+                @foreach($brands as $brand)
+
+                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+
+                @endforeach
+            </select>
+
+            <select name="cat_id">
+                @foreach($cats as $cat)
+
+                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+
+                @endforeach
+            </select>
+
             <button type="submit">Create</button>
         </form>
     </div>
