@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Center;
+use App\Cat;
 use Illuminate\Http\Request;
 
-class CenterController extends Controller
+class CatController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,8 @@ class CenterController extends Controller
      */
     public function index()
     {
-        //
-        $centers = Center::all();
-        return view('all.center', ['centers' => $centers]);
+        $cats = Cat::all();
+        return view( 'all.cat', ['cats' => $cats]);
     }
 
     /**
@@ -27,7 +26,7 @@ class CenterController extends Controller
     public function create()
     {
         //
-        return view('create.center');
+        return view('create.cat');
     }
 
     /**
@@ -39,9 +38,9 @@ class CenterController extends Controller
     public function store(Request $request)
     {
         //
-        $center = new Center();
-        $center->name = $request->name;
-        $center->save();
+        $cat = new Cat();
+        $cat->name = $request->name;
+        $cat->save();
 
         return back();
     }
@@ -49,42 +48,46 @@ class CenterController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Center  $center
+     * @param  \App\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    public function show(Center $center)
+    public function show(Cat $cat)
     {
         //
-        $centerShow = Center::find($center->id);
-        return view('show.center', ['center' => $centerShow]);
+        $catShow = Cat::find($cat->id);
+        return view('show.cat', ['cat' => $catShow]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Center  $center
+     * @param  \App\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    public function edit(Center $center)
+    public function edit(Cat $cat)
     {
         //
-        $centerEdit = Center::find($center->id);
-        return view('edit.center', ['center' => $centerEdit]);
+        $catEdit = Cat::find($cat->id);
+
+        return view('edit.cat', ['cat' => $catEdit]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Center  $center
+     * @param  \App\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Center $center)
+    public function update(Request $request, Cat $cat)
     {
         //
-        $centerUp = Center::find($center->id);
-        $centerUp->name = $request->name;
-        $centerUp->save();
+        if($request)
+        {
+            $catUp = Cat::find($cat->id);
+            $catUp->name = $request->name;
+            $catUp->save();
+        }
 
         return back();
     }
@@ -92,15 +95,15 @@ class CenterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Center  $center
+     * @param  \App\Cat  $cat
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Center $center)
+    public function destroy(Cat $cat)
     {
         //
-        $centerDel = Center::find($center->id);
-        $centerDel->delete();
+        $catDel = Cat::find($cat->id);
+        $catDel->delete();
 
-        return back();
+
     }
 }

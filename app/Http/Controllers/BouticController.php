@@ -42,6 +42,8 @@ class BouticController extends Controller
         $boutic = new Boutic();
         $boutic->name = $request->name;
         $boutic->save();
+
+        return back();
     }
 
     /**
