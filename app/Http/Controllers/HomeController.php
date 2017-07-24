@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Cat;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,11 @@ class HomeController extends Controller
     public function settings()
     {
         return view('auth.settings');
+    }
+
+    public function all() {
+        $cats = Cat::all();
+        return view('index2', ['cats' => $cats]);
     }
 
 }
