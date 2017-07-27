@@ -18,11 +18,6 @@ class CatController extends Controller
         return view( 'all.cat', ['cats' => $cats]);
     }
 
-    public function sort(Cat $cat) {
-        $products = $cat->products;
-        return $products;
-    }
-
     /**
      * Show the form for creating a new resource.
      *

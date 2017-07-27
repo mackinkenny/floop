@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brand;
 use Illuminate\Http\Request;
 use App\Cat;
 
@@ -31,9 +32,11 @@ class HomeController extends Controller
         return view('auth.settings');
     }
 
-    public function all() {
+    public function all(Request $request) {
+        $products = app('App\Http\Controllers\FilterController')->index($request);
         $cats = Cat::all();
-        return view('index2', ['cats' => $cats]);
+        $brands = Brand::all();
+        return view('index2', ['cats' => $cats, 'brands' => $brands, 'products' => $products]);
     }
 
 }

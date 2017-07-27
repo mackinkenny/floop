@@ -2,23 +2,50 @@
 
 @section('content')
 
+    <div class="container">
+        <div class="row"><form action="{{ route('filter') }}" method="POST">
+                {{ csrf_field() }}
 
-    @foreach($cats as $cat)
+                <button>RESET</button>
+            </form>
 
-        <a href="{{ route('sort', $cat->id) }}">{{ $cat->name }}</a>
-
-    @endforeach
-
-
+            <form action="{{ route('filter') }}" method="POST">
+                {{ csrf_field() }}
 
 
-    @foreach($cats as $cat)
-    @foreach($cat->products as $product)
+
+                <select name="cat_id">
+                    @foreach($cats as $cat)
+
+                        <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+
+                    @endforeach
+                </select>
+
+                <select name="brand_id">
+                    @foreach($brands as $brand)
+
+                        <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+
+                    @endforeach
+                </select>
+
+                <button type="submit" class="btn btn-danger">FILTER</button>
+
+            </form></div>
+    </div>
+
+    <br>
+
+    @foreach($products as $product)
 
         {{ $product->name }}
         <br>
 
     @endforeach
-    @endforeach
+
+    @yield('all')
+
+
 
 @endsection
