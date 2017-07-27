@@ -3,49 +3,75 @@
 @section('content')
 
     <div class="container">
-        <div class="row"><form action="{{ route('filter') }}" method="POST">
+        <div class="row">
+
+
+            <form action="{{ route('filter') }}" method="POST" class="col-lg-6">
                 {{ csrf_field() }}
 
-                <button>RESET</button>
-            </form>
+                <div class="row">
+                    <div class="col-lg-2">
+                        @foreach($cats as $cat)
 
-            <form action="{{ route('filter') }}" method="POST">
-                {{ csrf_field() }}
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="cat_id" id="optionsRadios2" value="{{ $cat->id }}">
+                                    {{ $cat->name }}
+                                </label>
+                            </div>
+
+                        @endforeach
+                    </div>
+                    <div class="col-lg-2">
+                        @foreach($brands as $brand)
+
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="brand_id" id="optionsRadios2" value="{{ $brand->id }}">
+                                    {{ $brand->name }}
+                                </label>
+                            </div>
+
+                        @endforeach
+                    </div>
+                    <div class="col-lg-2"><button type="submit" class="btn btn-danger">FILTER</button></div>
 
 
 
-                <select name="cat_id">
-                    @foreach($cats as $cat)
 
-                        <option value="{{ $cat->id }}">{{ $cat->name }}</option>
 
-                    @endforeach
-                </select>
 
-                <select name="brand_id">
-                    @foreach($brands as $brand)
 
-                        <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                </div>
 
-                    @endforeach
-                </select>
 
-                <button type="submit" class="btn btn-danger">FILTER</button>
+
 
             </form></div>
-    </div>
+
 
     <br>
-
+    <div class="row">
     @foreach($products as $product)
 
-        {{ $product->name }}
-        <br>
+        <div class="col-lg-3">
+            {{ $product->name }}
+            <br>
+            {{ $product->brand->name }}
+            <br>
+            {{ $product->cat->name }}
+            <br>
+            <br>
+            <br>
+        </div>
+
 
     @endforeach
+    </div>
 
     @yield('all')
 
-
+    </div>
 
 @endsection
