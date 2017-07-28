@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="col-md-10 col-md-offset-1">
-        <form action="{{ route('storeProduct') }}" method="POST">
+        <form action="{{ route('storeProduct') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
 
             <input type="text" name="name">
@@ -23,6 +23,8 @@
 
                 @endforeach
             </select>
+
+            <input type="file" name="img_path">
 
             <button type="submit">Create</button>
         </form>

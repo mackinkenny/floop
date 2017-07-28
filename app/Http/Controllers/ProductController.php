@@ -6,6 +6,7 @@ use App\Brand;
 use App\Cat;
 use App\Product;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class ProductController extends Controller
 {
@@ -48,8 +49,16 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->brand_id = $request->brand_id;
         $product->cat_id = $request->cat_id;
-        $product->save();
+        if ($request->hasFile('img_path'))
+        {
 
+            $image = $request->file('img_path');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            Image::make($image)->resize(200, 200)->save( public_path('uploads/images/products/' . $filename) );
+
+            $product->img_path = $filename;
+        }
+        $product->save();
         return back();
     }
 

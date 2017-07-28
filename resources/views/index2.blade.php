@@ -56,6 +56,8 @@
     @foreach($products as $product)
 
         <div class="col-lg-3">
+            <img src="/uploads/images/products/{{ $product->img_path }}" alt="">
+            <br>
             {{ $product->name }}
             <br>
             {{ $product->brand->name }}

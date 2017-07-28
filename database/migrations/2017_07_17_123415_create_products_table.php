@@ -18,7 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->integer('brand_id');
             $table->integer('cat_id');
+            $table->string('img_path');
             $table->timestamps();
+
         });
     }
 
