@@ -25,6 +25,7 @@ Route::get('/profile', 'UserController@profile')->name('profile');
 
 Route::get('/createproduct', 'ProductController@create')->name('createProduct');
 Route::post('/storeproduct', 'ProductController@store')->name('storeProduct');
+Route::get('/products/{id}', 'ProductController@show')->name('showProduct');
 
 Route::get('/createboutic', 'BouticController@create')->name('createBoutic');
 Route::post('/storeboutic', 'BouticController@store')->name('storeBoutic');

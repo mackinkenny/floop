@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Brand;
 use App\Cat;
 use App\Product;
+use App\Color;
+use App\Size;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+
 
 class ProductController extends Controller
 {
@@ -33,7 +36,9 @@ class ProductController extends Controller
         //
         $brands = Brand::all();
         $cats = Cat::all();
-        return view('create.product', ['brands' => $brands, 'cats' => $cats]);
+        $colors = Color::all();
+        $sizes = Size::all();
+        return view('create.product', ['brands' => $brands, 'cats' => $cats, 'colors' => $colors, 'sizes' => $sizes]);
     }
 
     /**
@@ -49,6 +54,8 @@ class ProductController extends Controller
         $product->name = $request->name;
         $product->brand_id = $request->brand_id;
         $product->cat_id = $request->cat_id;
+        $product->color_id = $request->color_id;
+        $product->size_id = $request->size_id;
         if ($request->hasFile('img_path'))
         {
 
@@ -68,12 +75,12 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
         //
-        $productShow = Product::find($product->id);
+        $productShow = Product::find($id);
 
-        return view('show.product', ['product' => $productShow]);
+        return $productShow;
     }
 
     /**

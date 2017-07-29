@@ -24,6 +24,22 @@
                 @endforeach
             </select>
 
+            <select name="color_id">
+                @foreach($colors as $color)
+
+                    <option value="{{ $color->id }}">{{ $color->name }}</option>
+
+                @endforeach
+            </select>
+
+            <select name="size_id">
+                @foreach($sizes as $size)
+
+                    <option value="{{ $size->id }}">{{ $size->name }}</option>
+
+                @endforeach
+            </select>
+
             <input type="file" name="img_path">
 
             <button type="submit">Create</button>
