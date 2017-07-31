@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
 
     $('#link').click(function (e) {
         e.preventDefault(e);
@@ -20,4 +20,4 @@ $(document).ready(function () {
         $('.modal-form').fadeIn(100);
     });
 
-});
+});*/

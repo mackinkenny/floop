@@ -8,7 +8,17 @@
                <h2>{{ $user->name }}'s Profile</h2>
                 <h5>Email: {{ $user->email }}</h5>
                 <h5>Phone:    {{ $user->phone_number }}</h5>
+
+                <br>
+
+
             </div>
         </div>
+        @foreach($products as $product)
+
+            {{ $product->name }}
+            <br>
+
+        @endforeach
     </div>
 @endsection

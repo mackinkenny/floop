@@ -21,5 +21,10 @@ class Product extends Model
     {
         return $this->belongsTo('App\Size');
     }
+    public function likes()
+    {
+        return $this->hasMany('Like');
+    }
+
 
 }

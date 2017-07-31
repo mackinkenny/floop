@@ -80,7 +80,7 @@ class ProductController extends Controller
         //
         $productShow = Product::find($id);
 
-        return $productShow;
+        return view ('show.product', ['product' => $productShow]);
     }
 
     /**

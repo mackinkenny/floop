@@ -43,3 +43,5 @@ Route::get('/products', 'ProductController@index')->name('products');
 
 Route::post('/all', 'HomeController@all')->name('filter');
 Route::get('/all', 'HomeController@all');
+
+Route::post('/products/{id}/{u_id}', 'LikeController@index')->name('Like');

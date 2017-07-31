@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use App\User;
 use Illuminate\Http\Request;
 use Auth;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
@@ -44,8 +46,13 @@ class UserController extends Controller
     }
 
     public function profile()
-    {
-        return view('profile', ['user' => Auth::user()]);
+        {
+            $products = DB::table('products')
+                ->crossJoin('likes', 'likes.product_id', '=', 'products.id')
+                ->where('likes.user_id' ,'=', Auth::user()->id)
+                ->get();
+
+        return view('profile', ['user' => Auth::user(), 'products' => $products]);
 
 
     }

@@ -52,32 +52,7 @@
 
 
     <br>
-    <div class="row">
-    @foreach($products as $product)
-
-        <div class="col-lg-3">
-            <input type="hidden" value="{{ $product->id }}" id="id">
-            <a href="#" id="link"><img src="/uploads/images/products/{{ $product->img_path }}" alt=""></a>
-            <br>
-            {{ $product->name }}
-            <br>
-            {{ $product->brand->name }}
-            <br>
-            {{ $product->cat->name }}
-            <br>
-            {{ $product->color->name }}
-            <br>
-            {{ $product->size->name }}
-            <br>
-            <br>
-            <br>
-        </div>
-
-        <div class="col-md-6 modal-form">
-            
-        </div>
-    @endforeach
-    </div>
+    @include('index3')
 
     @yield('all')
 

@@ -21,6 +21,7 @@ class CreateProductsTable extends Migration
             $table->integer('cat_id');
             $table->integer('size_id')->nullable();
             $table->integer('color_id')->nullable();
+            $table->integer('count_likes')->nullable();
 
             $table->timestamps();
 
