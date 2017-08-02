@@ -14,7 +14,7 @@
                 </form>
                         <form action="/{{ $product->id }}/{{ Auth::user()->id }}" method="POST">
                                 {{ csrf_field() }}
-                        <p><textarea name="comment" id="comment" cols="24" rows="4"> </textarea></p>
+                        <p><input name="comment" id="comment" cols="24" rows="4"></p>
                                 <div class="col-lg-2"><button type="submit" class="btn btn-danger">COMMENT</button></div>
                         </form>
                 <br>
