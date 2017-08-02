@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
+use function Sodium\add;
 
 class UserController extends Controller
 {
@@ -54,7 +55,12 @@ class UserController extends Controller
 //                ->get();
 
             $likes = Like::all();
-            $products_2 = $likes->products_id;
+            $products_2 = [];
+            $i = 0;
+            foreach ($likes as $like) {
+                $products_2[i] = $like->product_id;
+            }
+            $products_2 = $likes->product_id;
         dd($products_2);
         return view('profile', ['user' => Auth::user(), 'products' => $products]);
 

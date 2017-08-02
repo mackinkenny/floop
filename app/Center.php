@@ -8,6 +8,6 @@ class Center extends Model
 {
     //
     public function boutics() {
-        return $this->hasMany('Boutic');
+        return $this->hasMany('App\Boutic');
     }
 }

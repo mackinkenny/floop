@@ -23,7 +23,7 @@ class Product extends Model
     }
     public function likes()
     {
-        return $this->hasMany('Like');
+        return $this->hasMany('App\Like');
     }
 
 

@@ -5,7 +5,7 @@
 
             <div class="col-lg-3">
                 <input type="hidden" value="{{ $product->id }}" id="id">
-                <a href="{{ route('showProduct', $product->id) }}" id="link"><img src="/uploads/images/products/{{ $product->img_path }}" alt=""></a>
+                <a href="{{ route('showProduct', $product->id) }}" id="link"><img class="img-responsive" src="/uploads/images/products/{{ $product->img_path }}" alt=""></a>
                 <br>
                 {{ $product->name }}
                 <br>

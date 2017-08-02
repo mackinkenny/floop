@@ -12,6 +12,6 @@ class Boutic extends Model
     ];
 
     public function center() {
-        return $this->belongsTo('Center');
+        return $this->belongsTo('App\Center');
     }
 }

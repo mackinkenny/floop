@@ -11,7 +11,7 @@ class Size extends Model
         return $this->belongsTo('App\TypeSize');
     }
     public function products(){
-        return $this->hasMany('Product');
+        return $this->hasMany('App\Product');
     }
 
 }

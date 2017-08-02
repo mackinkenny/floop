@@ -9,7 +9,7 @@ class TypeSize extends Model
     //
     public function sizes()
     {
-        return $this->hasMany('Size');
+        return $this->hasMany('App\Size');
     }
 
 }
