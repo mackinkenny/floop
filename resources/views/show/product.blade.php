@@ -4,7 +4,7 @@
 
 
         <h2>{{ $product->name }}</h2>
-        <img src="/uploads/images/products/{{ $product->img_path }}" alt="">
+        <div class="col-lg-4"><img class="img-responsive" src="/uploads/images/products/{{ $product->img_path }}" alt=""></div>
         <br>
         {{ $product->brand->name }}
         <div class="col-lg-2">
@@ -17,5 +17,15 @@
                         <p><textarea name="comment" id="comment" cols="24" rows="4"> </textarea></p>
                                 <div class="col-lg-2"><button type="submit" class="btn btn-danger">COMMENT</button></div>
                         </form>
+                <br>
+                <br>
+                <br>
+                <br>
+                @foreach($product->comments as $comment)
+                        <span style="font-size: 20px;">{{ $comment->user->name }}</span>:
+                        {{ $comment->comment }}
+                        <br>
+
+                @endforeach
         </div>
 @endsection
