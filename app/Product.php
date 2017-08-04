@@ -21,9 +21,9 @@ class Product extends Model
     {
         return $this->belongsTo('App\Size');
     }
-    public function likes()
+    public function users()
     {
-        return $this->hasMany('App\Like');
+        return $this->belongsToMany('App\User');
     }
 
     public function comments() {

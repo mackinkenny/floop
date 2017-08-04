@@ -14,7 +14,7 @@
 
             </div>
         </div>
-        @foreach($products as $product)
+        @foreach($user->products as $product)
 
             {{ $product->name }}
             <br>

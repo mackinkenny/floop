@@ -26,9 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 'visitor', 'admin', 'boutic',
     ];
-    public function likes()
+    public function products()
     {
-        return $this->hasMany('App\Like');
+        return $this->belongsToMany('App\Product');
     }
 
     public function comments() {

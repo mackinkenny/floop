@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLikesTable extends Migration
+class CreateProductUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateLikesTable extends Migration
      */
     public function up()
     {
-        Schema::create('likes', function (Blueprint $table) {
+        Schema::create('product_user', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('product_id');
+            $table->boolean('likeOrBuy')->default(0);
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateLikesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('likes');
+        Schema::dropIfExists('product_user');
     }
 }

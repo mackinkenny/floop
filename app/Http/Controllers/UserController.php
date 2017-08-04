@@ -47,24 +47,10 @@ class UserController extends Controller
 
     }
 
-    public function profile()
-        {
-//            $products = DB::table('products')
-//                ->crossJoin('likes', 'likes.product_id', '=', 'products.id')
-//                ->where('likes.user_id' ,'=', Auth::user()->id)
-//                ->get();
-
-            $likes = Like::all();
-            $products_2 = [];
-            $i = 0;
-            foreach ($likes as $like) {
-                $products_2[i] = $like->product_id;
-            }
-            $products_2 = $likes->product_id;
-        dd($products_2);
-        return view('profile', ['user' => Auth::user(), 'products' => $products]);
+    public function profile() {
 
 
+        return view('profile', ['user' => Auth::user()]);
     }
 
 }
