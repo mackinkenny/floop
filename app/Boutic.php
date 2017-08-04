@@ -14,4 +14,10 @@ class Boutic extends Model
     public function center() {
         return $this->belongsTo('App\Center');
     }
+    public function users(){
+        return $this->belongsToMany('App\User');
+    }
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

@@ -34,4 +34,14 @@ class User extends Authenticatable
     public function comments() {
         return $this->hasMany('App\Comment');
     }
+    public function bouticusers() {
+        return $this->hasManyThrough('App\BouticUser','App\Boutic');
+    }
+
+    public function boutics(){
+        return $this->belongsToMany('App\Boutic');
+    }
+    public function boutic(){
+        return $this->belongsTo('App\Boutic');
+    }
 }

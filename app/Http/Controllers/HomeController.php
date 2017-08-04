@@ -45,6 +45,7 @@ class HomeController extends Controller
     public function showusers()
     {
         $user = User::all();
+
         return view('home',['users' => $user]);
     }
 

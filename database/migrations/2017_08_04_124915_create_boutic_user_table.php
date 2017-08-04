@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBouticsTable extends Migration
+class CreateBouticUserTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateBouticsTable extends Migration
      */
     public function up()
     {
-        Schema::create('boutics', function (Blueprint $table) {
+        //
+        Schema::create('boutic_user', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
+            $table->integer('boutic_id');
             $table->integer('user_id');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateBouticsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('boutics');
+        //
     }
 }

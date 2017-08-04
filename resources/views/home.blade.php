@@ -9,17 +9,21 @@
 
                 <div class="panel-body">
                     @foreach($users as $user)
-                        <a href="/profile/{{ $user->id }}">
+                        
                             <div class="row">
 
+                                <a href="/profile/{{ $user->id }}">
                                 <div class="col-lg-1">
                                     <img class="img-responsive" src="/uploads/avatars/{{ $user->img_path }}" alt="">
                                 </div>
-                                <div class="col-lg-10">
+                                <div class="col-lg-8">
                                     {{ $user->name }}
                                 </div>
+                                    
+                                 </a>
+                                <div class="col-lg-3"><a href="/subscribe/{{ $user->boutic->id }}/{{ Auth::user()->id }}" class="btn">Подлизаться</a></div>
                             </div>
-                        </a>
+                       
 
 
                         <br>
