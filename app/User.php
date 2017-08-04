@@ -42,6 +42,6 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Boutic');
     }
     public function boutic(){
-        return $this->belongsTo('App\Boutic');
+        return $this->hasOne('App\Boutic');
     }
 }

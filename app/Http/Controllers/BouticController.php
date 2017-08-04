@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Boutic;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BouticController extends Controller
 {
@@ -17,7 +18,8 @@ class BouticController extends Controller
     {
         //
         $boutics = Boutic::all();
-        return view('all.boutics', ['boutics' => $boutics]);
+        $user =Auth::user();
+        return view('all.boutic', ['boutics' => $boutics, 'user' => $user]);
     }
 
     /**

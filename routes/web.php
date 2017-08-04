@@ -51,3 +51,5 @@ Route::post('/products/{id}/{u_id}', 'LikeController@index')->name('Like');
 Route::post('/{id}/{u_id}', 'CommentController@index')->name('Commnet');
 
 Route::get('/subscribe/{id}/{u_id}', 'SubscribeController@index');
+
+Route::get('/boutics', 'BouticController@index');
