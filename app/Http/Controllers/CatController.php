@@ -12,6 +12,8 @@ class CatController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
         $cats = Cat::all();

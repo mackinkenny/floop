@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Cat;
 
@@ -41,5 +42,11 @@ class HomeController extends Controller
 
         return view('index2', ['cats' => $cats, 'brands' => $brands, 'products' => $products ]);
     }
+    public function showusers()
+    {
+        $user = User::all();
+        return view('home',['users' => $user]);
+    }
+
 
 }
