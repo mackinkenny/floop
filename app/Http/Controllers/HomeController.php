@@ -27,7 +27,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+
+            $user = User::all();
+
+            return view('home',['users' => $user]);
+
     }
     public function settings()
     {
@@ -42,12 +46,7 @@ class HomeController extends Controller
 
         return view('index2', ['cats' => $cats, 'brands' => $brands, 'products' => $products ]);
     }
-    public function showusers()
-    {
-        $user = User::all();
 
-        return view('home',['users' => $user]);
-    }
 
 
 }

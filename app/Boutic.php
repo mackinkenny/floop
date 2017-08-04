@@ -18,6 +18,6 @@ class Boutic extends Model
         return $this->belongsToMany('App\User');
     }
     public function user(){
-        return $this->belongsTo('App\User');
+        return $this->hasMany('App\User');
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Boutic;
+use App\User;
 use Illuminate\Http\Request;
 
 class BouticController extends Controller
@@ -27,7 +28,8 @@ class BouticController extends Controller
     public function create()
     {
         //
-        return view('create.boutic');
+        $users = User::all();
+        return view('create.boutic',['users' => $users]);
     }
 
     /**
@@ -41,6 +43,7 @@ class BouticController extends Controller
         //
         $boutic = new Boutic();
         $boutic->name = $request->name;
+        $boutic->user_id = $request->user_id;
         $boutic->save();
 
         return back();

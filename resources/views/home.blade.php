@@ -21,9 +21,9 @@
                                 </div>
                                     
                                  </a>
-                                <div class="col-lg-3"><a href="/subscribe/{{ $user->boutic->id }}/{{ Auth::user()->id }}" class="btn">Подлизаться</a></div>
+                                <div class="col-lg-3"><a href="/subscribe/{{ $user->id }}/{{ Auth::user()->id }}" class="btn">Подлизаться</a></div>
                             </div>
-                       
+
 
 
                         <br>

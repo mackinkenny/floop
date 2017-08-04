@@ -8,7 +8,15 @@
 
             <input type="text" name="name">
 
-            <button type="submit" class="btn btn-danger">Create</button>
+            <select name="user_id">
+                @foreach($users as $user)
+
+                    <option value="{{ $user->id }}">{{ $user->name }}</option>
+
+                @endforeach
+            </select>
+
+            <button type="submit">Create</button>
         </form>
     </div>
 
