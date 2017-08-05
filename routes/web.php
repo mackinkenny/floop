@@ -48,6 +48,7 @@ Route::post('/all', 'HomeController@all')->name('filter');
 Route::get('/all', 'HomeController@all');
 
 Route::post('/products/{id}/{u_id}', 'LikeController@index')->name('Like');
+Route::post('/product/{id}/{u_id}','BuyController@index');
 Route::post('/{id}/{u_id}', 'CommentController@index')->name('Commnet');
 
 Route::get('/subscribe/{id}/{u_id}', 'SubscribeController@index');

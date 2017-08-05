@@ -12,6 +12,12 @@
                         {{ csrf_field() }}
                         <button type="submit" class="btn">Like</button>
                 </form>
+                <br>
+                <form action="/product/{{ $product->id }}/{{ Auth::user()->id }}" method="POST">
+                        {{ csrf_field() }}
+                        <button type="submit" class="btn">Buy</button>
+                </form>
+                <br>
                         <form action="/{{ $product->id }}/{{ Auth::user()->id }}" method="POST">
                                 {{ csrf_field() }}
                         <p><input name="comment" id="comment" cols="24" rows="4"></p>

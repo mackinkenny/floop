@@ -8,25 +8,27 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
-                    @foreach($users as $user)
-                        
+                    @foreach($boutics as $boutic)
+
                             <div class="row">
 
-                                <a href="/profile/{{ $user->id }}">
+                                <a href="/profile/{{ $boutic->user->id }}">
                                 <div class="col-lg-1">
-                                    <img class="img-responsive" src="/uploads/avatars/{{ $user->img_path }}" alt="">
+                                    <img class="img-responsive" src="/uploads/avatars/{{ $boutic->user->img_path }}" alt="">
                                 </div>
                                 <div class="col-lg-8">
-                                    {{ $user->name }}
+                                    {{ $boutic->name }}
                                 </div>
                                     
                                  </a>
-                                <div class="col-lg-3"><a href="/subscribe/{{ $user->id }}/{{ Auth::user()->id }}" class="btn">Подлизаться</a></div>
+                                <div class="col-lg-3"><a href="/subscribe/{{ $boutic->user->id }}/{{ Auth::user()->id }}" class="btn">Подлизаться</a></div>
                             </div>
 
 
 
+
                         <br>
+
                     @endforeach
                 </div>
             </div>
