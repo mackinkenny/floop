@@ -43,10 +43,17 @@ class BouticController extends Controller
     public function store(Request $request)
     {
         //
+
         $boutic = new Boutic();
+
         $boutic->name = $request->name;
         $boutic->user_id = $request->user_id;
         $boutic->save();
+
+        $user = User::all()->where('id', '=', $boutic->user_id)->first();
+        $user->is_boutic = 1;
+        $user->save();
+
 
         return back();
     }

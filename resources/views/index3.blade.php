@@ -18,6 +18,7 @@
                 <br>
                 {{ $product->size->name }}
                 <br>
+                {{ $product->boutic->name }}
 
                 <br>
 

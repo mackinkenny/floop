@@ -39,7 +39,7 @@ class User extends Authenticatable
     }
 
     public function boutics(){
-        return $this->belongsToMany('App\Boutic');
+        return $this->belongsToMany('App\Boutic')->withTimestamps();
     }
     public function boutic(){
         return $this->hasOne('App\Boutic');

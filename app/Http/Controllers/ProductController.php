@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Boutic;
 use App\Brand;
 use App\Cat;
 use App\Product;
@@ -38,7 +39,8 @@ class ProductController extends Controller
         $cats = Cat::all();
         $colors = Color::all();
         $sizes = Size::all();
-        return view('create.product', ['brands' => $brands, 'cats' => $cats, 'colors' => $colors, 'sizes' => $sizes]);
+        $boutics = Boutic::all();
+        return view('create.product', ['brands' => $brands, 'cats' => $cats, 'colors' => $colors, 'sizes' => $sizes, 'boutics' => $boutics]);
     }
 
     /**
@@ -56,6 +58,7 @@ class ProductController extends Controller
         $product->cat_id = $request->cat_id;
         $product->color_id = $request->color_id;
         $product->size_id = $request->size_id;
+        $product->boutic_id = $request->boutic_id;
         if ($request->hasFile('img_path'))
         {
 

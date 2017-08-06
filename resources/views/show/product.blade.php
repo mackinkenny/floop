@@ -4,7 +4,7 @@
 
 
         <h2>{{ $product->name }}</h2>
-        <div class="col-lg-4"><img class="img-responsive" src="/uploads/images/products/{{ $product->img_path }}" alt=""></div>
+        <div class="col-lg-3"><img class="img-responsive" src="/uploads/images/products/{{ $product->img_path }}" height="320px" width="350px" alt=""></div>
         <br>
         {{ $product->brand->name }}
         <div class="col-lg-2">
@@ -28,9 +28,15 @@
                 <br>
                 <br>
                 @foreach($product->comments as $comment)
-                        <span style="font-size: 20px;">{{ $comment->user->name }}</span>:
+                        @if($comment->user->boutic)
+                                <a href="/profile/{{ $comment->user->id }}"><span style="font-size: 20px;">{{ $comment->user->boutic->name }}</span></a>:
+                                {{ $comment->comment }}
+                                <br>
+                        @else
+                        <a href="/profile/{{ $comment->user->id }}"><span style="font-size: 20px;">{{ $comment->user->name }}</span></a>:
                         {{ $comment->comment }}
                         <br>
+                        @endif
 
                 @endforeach
         </div>

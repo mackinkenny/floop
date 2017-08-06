@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
-                <img src="/uploads/avatars/{{ $user->img_path }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
-               <h2>{{ $user->name }}'s Profile</h2>
-                <h5>Email: {{ $user->email }}</h5>
-                <h5>Phone:    {{ $user->phone_number }}</h5>
+                <img src="/uploads/avatars/{{ $boutic->user->img_path }}" style="width:150px; height:150px; float:left; border-radius:50%; margin-right:25px;">
+                <h2>{{ $boutic->name }}'s Page</h2>
+                <h5>Email: {{ $boutic->user->email }}</h5>
+                <h5>Phone:    {{ $boutic->user->phone_number }}</h5>
 
                 <br>
 
@@ -16,8 +16,7 @@
         </div>
         <br>
         <br>
-        <br>
-        @foreach($user->products as $product)
+        @foreach($boutic->products as $product)
 
             <div class="col-lg-4">
                 <input type="hidden" value="{{ $product->id }}" id="id">
@@ -34,8 +33,6 @@
                 <br>
                 {{ $product->size->name }}
                 <br>
-                {{ $product->boutic->name }}
-
                 <br>
 
 

@@ -17,8 +17,8 @@ class CreateProductUserTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('product_id');
-            $table->boolean('likeOrBuy')->default(0);
-            $table->boolean('status')->default(0);
+            $table->boolean('likeOrBuy')->default(false);
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

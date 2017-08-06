@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Boutic;
 use App\Like;
 use App\Product;
 use App\User;
@@ -56,7 +57,14 @@ class UserController extends Controller
     public function profileid($id)
     {
         $user = User::find($id);
-        return view('profile', ['user' => $user]);
+        if($user->is_boutic == 1)
+        {
+            $boutic = Boutic::all()->where('user_id', '=', $id)->first();
+            return view('profileboutic', ['boutic' => $boutic]);
+        }
+        else {
+            return view('profile', ['user' => $user]);
+        }
     }
 
 }

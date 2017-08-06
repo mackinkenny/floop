@@ -40,6 +40,14 @@
                 @endforeach
             </select>
 
+            <select name="boutic_id">
+                @foreach($boutics as $boutic)
+
+                    <option value="{{ $boutic->id }}">{{ $boutic->name }}</option>
+
+                @endforeach
+            </select>
+
             <input type="file" name="img_path">
 
             <button type="submit">Create</button>
