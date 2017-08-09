@@ -21,10 +21,7 @@ class Product extends Model
     {
         return $this->belongsTo('App\Size');
     }
-    public function users()
-    {
-        return $this->belongsToMany('App\User')->withTimestamps();
-    }
+
     public function boutic()
     {
         return $this->belongsTo('App\Boutic');

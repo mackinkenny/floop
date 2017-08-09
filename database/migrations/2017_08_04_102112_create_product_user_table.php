@@ -14,7 +14,6 @@ class CreateProductUserTable extends Migration
     public function up()
     {
         Schema::create('product_user', function (Blueprint $table) {
-            $table->increments('id');
             $table->integer('user_id');
             $table->integer('product_id');
             $table->boolean('likeOrBuy')->default(false);

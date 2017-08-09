@@ -18,7 +18,7 @@
         <br>
         <br>
         @foreach($user->products as $product)
-
+            @if($product->pivot->status)
             <div class="col-lg-4">
                 <input type="hidden" value="{{ $product->id }}" id="id">
                 <a href="{{ route('showProduct', $product->id) }}" id="link"><img class="img-responsive" src="/uploads/images/products/{{ $product->img_path }}" height="300px" width="300px" alt=""></a>
@@ -39,10 +39,11 @@
                 <br>
 
 
+
                 <br>
             </div>
 
-
+            @endif
         @endforeach
     </div>
 @endsection

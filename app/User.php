@@ -28,7 +28,9 @@ class User extends Authenticatable
     ];
     public function products()
     {
-        return $this->belongsToMany('App\Product');
+        return $this->belongsToMany('App\Product')
+            ->withTimestamps()
+            ->withPivot(['likeOrBuy', 'status']);
     }
 
     public function comments() {
@@ -39,9 +41,16 @@ class User extends Authenticatable
     }
 
     public function boutics(){
-        return $this->belongsToMany('App\Boutic')->withTimestamps();
+        return $this->belongsToMany('App\Boutic')
+            ->withPivot(['status'])
+            ->withTimestamps();
     }
     public function boutic(){
         return $this->hasOne('App\Boutic');
     }
+
+    public function notices() {
+        return $this->hasMany('App\Notice')->orderBy('id');
+    }
+
 }

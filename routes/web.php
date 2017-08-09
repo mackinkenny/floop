@@ -23,10 +23,14 @@ Route::get('/settings', 'HomeController@settings')->name('settings');
 Route::post('/edit/{id}', 'UserController@edit')->name('id');
 Route::get('/profile', 'UserController@profile')->name('profile');
 Route::get('/profile/{id}', 'UserController@profileid');
+Route::get('/notice','HomeController@notice')->name('notice');
 
 Route::get('/products/{id}', 'ProductController@show')->name('showProduct');
 
 Route::group(['middleware' => ['admin']],function() {
+
+
+
     Route::get('/createproduct', 'ProductController@create')->name('createProduct');
     Route::post('/storeproduct', 'ProductController@store')->name('storeProduct');
 
@@ -41,11 +45,13 @@ Route::group(['middleware' => ['admin']],function() {
 
     Route::get('/createcenter', 'CenterController@create')->name('createCenter');
     Route::post('/storecenter', 'CenterController@store')->name('storeCenter');
+
+    Route::post('/all', 'HomeController@all')->name('filter');
+    Route::get('/all', 'HomeController@all');
 });
 Route::get('/products', 'ProductController@index')->name('products');
 
-Route::post('/all', 'HomeController@all')->name('filter');
-Route::get('/all', 'HomeController@all');
+
 
 Route::post('/products/{id}/{u_id}', 'LikeController@index')->name('Like');
 Route::post('/product/{id}/{u_id}','BuyController@index');

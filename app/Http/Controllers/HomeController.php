@@ -5,9 +5,11 @@ namespace App\Http\Controllers;
 use App\Boutic;
 use App\Brand;
 
+use App\Notice;
 use App\User;
 use Illuminate\Http\Request;
 use App\Cat;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -46,6 +48,22 @@ class HomeController extends Controller
 
         return view('index2', ['cats' => $cats, 'brands' => $brands, 'products' => $products ]);
     }
+
+    public function notice()
+    {
+        //$notices = Notice::all();
+        if (Auth::user()->is_boutic) {
+            $boutic = Auth::user()->boutic;
+            $notices = $boutic->notices->sortByDesc('id');
+        }
+        else {
+            $notices = Notice::all();
+        }
+
+
+        return view('all.notice', ['notices' => $notices]);
+    }
+
 
 
 
