@@ -11,7 +11,6 @@ class Notice extends Model
     {
         return $this->belongsTo('App\User');
     }
-
     public function boutic()
     {
         return $this->belongsTo('App\Boutic');
@@ -20,5 +19,8 @@ class Notice extends Model
     {
         return $this->belongsTo('App\Product');
     }
-
+    public function comment()
+    {
+        return $this->belongsTo('App\Comment');
+    }
 }

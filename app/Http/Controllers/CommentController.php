@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Comment;
+use App\Notice;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -17,6 +18,16 @@ class CommentController extends Controller
         $comment->product_id = $id;
 
         $comment->save();
+
+        $notice = new Notice();
+        $notice->user_id = $u_id;
+        $notice->product_id = $id;
+        $notice->comment_id = $comment->id;
+        $notice->boutic_id = $comment->product->boutic_id;
+        $notice->text_id = 3;
+        $notice->status = 1;
+
+        $notice->save();
 
         return back();
     }

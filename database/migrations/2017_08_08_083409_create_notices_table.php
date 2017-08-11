@@ -19,6 +19,7 @@ class CreateNoticesTable extends Migration
             $table->integer('user_id');
             $table->integer('boutic_id')->default(0);
             $table->integer('product_id')->default(0);
+            $table->integer('comment_id')->default(0);
             $table->boolean('status')->default(0);
             $table->integer('text_id');
             $table->timestamps();

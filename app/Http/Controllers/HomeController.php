@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Boutic;
 use App\Brand;
 
+use App\Comment;
 use App\Notice;
 use App\User;
 use Illuminate\Http\Request;
