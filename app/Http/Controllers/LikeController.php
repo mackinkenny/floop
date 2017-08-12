@@ -14,34 +14,34 @@ use Mockery\Matcher\Not;
 class LikeController extends Controller
 {
     //
-public function index($id,$u_id)
+public function index(Request $request)
 {
-        $user = User::find($u_id);
+        $user = User::find($request->u_id);
 
 
-        $product = Product::find($id);
+        $product = Product::find($request->id);
 
 
 
         $productDB = DB::table('product_user')
-            ->where('user_id', '=', $u_id)
-            ->where('product_id', '=', $id)
+            ->where('user_id', '=', $request->u_id)
+            ->where('product_id', '=', $request->id)
             ->where('likeOrBuy', '=', 0)
             ->first();
 
         if ($productDB) {
-            $user->products()->detach($id);
+            $user->products()->detach($request->id);
             $user->count_likes--;
             $product->count_likes--;
         }
         else {
-            $user->products()->attach($id, ['likeOrBuy' => 0, 'status' => 1]);
+            $user->products()->attach($request->id, ['likeOrBuy' => 0, 'status' => 1]);
             $user->count_likes++;
             $product->count_likes++;
 
             $notice = new Notice();
-            $notice->user_id = $u_id;
-            $notice->product_id = $id;
+            $notice->user_id = $request->u_id;
+            $notice->product_id = $request->id;
             $notice->boutic_id = $product->boutic_id;
             $notice->text_id = 0;
             $notice->status = 1;
@@ -55,6 +55,6 @@ public function index($id,$u_id)
         $product->save();
 
 
-        return back();
+        return response()->json(['Success' => 'Success!']);
 }
 }

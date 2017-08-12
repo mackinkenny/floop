@@ -48,7 +48,7 @@
                 @endforeach
             </select>
 
-            <input type="file" name="img_path">
+            <input type="file" name="img_path" multiple="multiple" >
 
             <button type="submit">Create</button>
         </form>

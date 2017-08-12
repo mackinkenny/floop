@@ -53,9 +53,9 @@ Route::get('/products', 'ProductController@index')->name('products');
 
 
 
-Route::post('/products/{id}/{u_id}', 'LikeController@index')->name('Like');
-Route::post('/product/{id}/{u_id}','BuyController@index');
-Route::post('/{id}/{u_id}', 'CommentController@index')->name('Commnet');
+Route::post('/like', 'LikeController@index');
+Route::post('/buy','BuyController@index');
+Route::post('/comment', 'CommentController@index')->name('Commnet');
 
 Route::get('/subscribe/{id}/{u_id}', 'SubscribeController@index');
 

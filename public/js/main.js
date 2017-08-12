@@ -1,23 +1,27 @@
-/*$(document).ready(function () {
+$(document).ready(function () {
 
-    $('#link').click(function (e) {
-        e.preventDefault(e);
-        $('.modal-form').empty();
-
-        $.ajax({
-           type: "GET",
-           url: "/products/" + $('#id').val(),
+   $('#like').click(function (e) {
+       e.preventDefault(e);
+       $.ajaxSetup({
+           headers: {
+               'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+           }
+       });
+       $.ajax({
+           type: 'POST',
+           url: '/like',
+           data: {
+               'id': $('#id').val(),
+               'u_id': $('#u_id').val()
+           },
+           dataType: 'json',
            success: function (data) {
-             $('.modal-form').append('<img src="/uploads/images/products/' + data.img_path + '" style="height: 500px; width: auto;">').append('<br>' + data.name);
-               //alert(data.name);
+               alert('it works!' + data.Success);
            },
-           error: function () {
-               alert('ERROR');
-           },
-           dataType: "json"
-        });
+           /*error: function () {
+               alert('it doesn`t work!');
+           }*/
+       });
+   });
 
-        $('.modal-form').fadeIn(100);
-    });
-
-});*/
+});
