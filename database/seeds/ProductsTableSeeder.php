@@ -14,6 +14,7 @@ class ProductsTableSeeder extends Seeder
         //
         $product = new \App\Product([
             'name' => 'Шапка',
+            'price' => 10000,
             'brand_id' => 1,
             'cat_id' => 1,
             'size_id' => 1,
@@ -24,6 +25,7 @@ class ProductsTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Шапка',
+            'price' => 10000,
             'brand_id' => 1,
             'cat_id' => 1,
             'size_id' => 1,
@@ -34,6 +36,7 @@ class ProductsTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Шапка',
+            'price' => 10000,
             'brand_id' => 1,
             'cat_id' => 1,
             'size_id' => 2,
@@ -44,6 +47,7 @@ class ProductsTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Шапка',
+            'price' => 10000,
             'brand_id' => 1,
             'cat_id' => 1,
             'size_id' => 2,
@@ -54,6 +58,7 @@ class ProductsTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Шапка',
+            'price' => 10000,
             'brand_id' => 2,
             'cat_id' => 2,
             'size_id' => 1,
@@ -64,6 +69,7 @@ class ProductsTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Футболка',
+            'price' => 10000,
             'brand_id' => 1,
             'cat_id' => 1,
             'size_id' => 4,
@@ -74,6 +80,7 @@ class ProductsTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Футболка',
+            'price' => 10000,
             'brand_id' => 2,
             'cat_id' => 1,
             'size_id' => 3,
@@ -84,6 +91,7 @@ class ProductsTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Футболка',
+            'price' => 10000,
             'brand_id' => 2,
             'cat_id' => 2,
             'size_id' => 2,
@@ -94,6 +102,7 @@ class ProductsTableSeeder extends Seeder
 
         $product = new \App\Product([
             'name' => 'Футболка',
+            'price' => 10000,
             'brand_id' => 1,
             'cat_id' => 3,
             'size_id' => 1,

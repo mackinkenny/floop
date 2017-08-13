@@ -92,12 +92,12 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
         //
-        $productEdit = Product::find($product->id);
+        $product = Product::find($id);
 
-        return view('edit.product',['product' => $productEdit]);
+        return view('edit.product',['product' => $product]);
     }
 
     /**
@@ -107,11 +107,12 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request)
     {
         //
-        $productUp = Product::find($product->id);
-        $productUp->name = $request->name;
+        $productUp = Product::find($request->id);
+        $productUp->discount_id = $request->discount_id;
+
         $productUp->save();
 
         return back();

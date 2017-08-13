@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-   $('#like').click(function (e) {
+    $('#like').click(function (e) {
        e.preventDefault(e);
        $.ajaxSetup({
            headers: {
@@ -11,8 +11,8 @@ $(document).ready(function () {
            type: 'POST',
            url: '/like',
            data: {
-               'id': $('#id').val(),
-               'u_id': $('#u_id').val()
+               'id': $('#lid').val(),
+               'u_id': $('#lu_id').val()
            },
            dataType: 'json',
            success: function (data) {
@@ -22,6 +22,32 @@ $(document).ready(function () {
                alert('it doesn`t work!');
            }*/
        });
-   });
+    });
+
+    $('#buy').click(function (e) {
+        e.preventDefault(e);
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $.ajax({
+            type: 'POST',
+            url: '/buy',
+            data: {
+                'id': $('#bid').val(),
+                'u_id': $('#bu_id').val()
+            },
+            dataType: 'json',
+            success: function (data) {
+                alert('it works!' + data.Success);
+            },
+            /*error: function () {
+             alert('it doesn`t work!');
+             }*/
+        });
+    });
+
+
 
 });

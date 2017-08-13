@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Center;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
 
 class CenterController extends Controller
 {
@@ -41,8 +42,16 @@ class CenterController extends Controller
         //
         $center = new Center();
         $center->name = $request->name;
-        $center->save();
 
+        if ($request->hasFile('img_path')) {
+            $avatar = $request->file('img_path');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(300, 300)->save(public_path('uploads/centers/' . $filename));
+
+            $center->img_path = $filename;
+
+        }
+        $center->save();
         return back();
     }
 
@@ -52,11 +61,11 @@ class CenterController extends Controller
      * @param  \App\Center  $center
      * @return \Illuminate\Http\Response
      */
-    public function show(Center $center)
+    public function show($id)
     {
         //
-        $centerShow = Center::find($center->id);
-        return view('show.center', ['center' => $centerShow]);
+        $center = Center::find($id);
+        return view('show.center', ['center' => $center]);
     }
 
     /**

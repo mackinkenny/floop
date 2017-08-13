@@ -31,4 +31,8 @@ class Product extends Model
         return $this->hasMany('App\Comment');
     }
 
+    public function discount()  {
+        return $this->belongsTo('App\Discount');
+    }
+
 }

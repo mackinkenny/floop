@@ -14,8 +14,9 @@
                     <option value="{{ $user->id }}">{{ $user->name }}</option>
 
                 @endforeach
-
-                    @foreach($ucenters as $center)
+            </select>
+                    <select name="center_id">
+                    @foreach($centers as $center)
 
                         <option value="{{ $center->id }}">{{ $center->name }}</option>
 

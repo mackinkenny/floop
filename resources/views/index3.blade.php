@@ -22,6 +22,14 @@
 
                 <br>
 
+                @if($product->discount_id)
+                    -{{ $product->discount->percent }}%
+                    {{ $product->price - $product->price * $product->discount->percent / 100 }}
+                @else
+                    {{ $product->price }}
+                @endif
+
+
 
                 <br>
             </div>

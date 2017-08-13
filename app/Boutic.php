@@ -28,4 +28,8 @@ class Boutic extends Model
     public function notices() {
         return $this->hasMany('App\Notice')->orderBy('id');
     }
+
+    public function discounts() {
+        return $this->hasMany('App\Discount');
+    }
 }

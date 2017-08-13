@@ -24,6 +24,7 @@ Route::post('/edit/{id}', 'UserController@edit')->name('id');
 Route::get('/profile', 'UserController@profile')->name('profile');
 Route::get('/profile/{id}', 'UserController@profileid');
 Route::get('/notice','HomeController@notice')->name('notice');
+Route::get('/center/{id}','CenterController@show');
 
 Route::get('/products/{id}', 'ProductController@show')->name('showProduct');
 
@@ -49,13 +50,17 @@ Route::group(['middleware' => ['admin']],function() {
     Route::post('/all', 'HomeController@all')->name('filter');
     Route::get('/all', 'HomeController@all');
 });
+
+Route::get('/creatediscount', 'DiscountController@create');
+Route::post('/storediscount', 'DiscountController@store')->name('storeDiscount');
+Route::get('/edit/product/{id}', 'ProductController@edit');
+Route::post('/update/product', 'ProductController@update');
+
 Route::get('/products', 'ProductController@index')->name('products');
-
-
 
 Route::post('/like', 'LikeController@index');
 Route::post('/buy','BuyController@index');
-Route::post('/comment', 'CommentController@index')->name('Commnet');
+Route::post('/comment/{id}/{u_id}', 'CommentController@index');
 
 Route::get('/subscribe/{id}/{u_id}', 'SubscribeController@index');
 
