@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Boutic;
 use App\Brand;
 
+use App\Center;
 use App\Comment;
 use App\Notice;
 use App\User;
@@ -31,9 +32,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+            $centers =Center::all();
             $boutics = Boutic::all();
 
-            return view('home',['boutics' => $boutics]);
+            return view('home',['boutics' => $boutics, 'centers' => $centers]);
 
     }
     public function settings()

@@ -14,6 +14,12 @@
                     <option value="{{ $user->id }}">{{ $user->name }}</option>
 
                 @endforeach
+
+                    @foreach($ucenters as $center)
+
+                        <option value="{{ $center->id }}">{{ $center->name }}</option>
+
+                    @endforeach
             </select>
 
             <button type="submit">Create</button>

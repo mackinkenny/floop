@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Boutic;
+use App\Center;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -31,7 +32,8 @@ class BouticController extends Controller
     {
         //
         $users = User::all();
-        return view('create.boutic',['users' => $users]);
+        $centers = Center::all();
+        return view('create.boutic',['users' => $users, 'centers' => $centers]);
     }
 
     /**
@@ -48,6 +50,7 @@ class BouticController extends Controller
 
         $boutic->name = $request->name;
         $boutic->user_id = $request->user_id;
+        $boutic->center_id = $request->center_id;
         $boutic->save();
 
         $user = User::all()->where('id', '=', $boutic->user_id)->first();

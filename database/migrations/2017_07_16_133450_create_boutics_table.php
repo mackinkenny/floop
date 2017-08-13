@@ -18,6 +18,7 @@ class CreateBouticsTable extends Migration
             $table->string('name');
             $table->integer('subs')->default(0);
             $table->integer('user_id');
+            $table->integer('center_id');
             $table->timestamps();
         });
     }

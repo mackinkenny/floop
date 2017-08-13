@@ -16,6 +16,7 @@ class CreateCentersTable extends Migration
         Schema::create('centers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('img_path')->default('default.jpg');
             $table->timestamps();
         });
     }
