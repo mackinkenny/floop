@@ -55,6 +55,7 @@ Route::get('/creatediscount', 'DiscountController@create');
 Route::post('/storediscount', 'DiscountController@store')->name('storeDiscount');
 Route::get('/edit/product/{id}', 'ProductController@edit');
 Route::post('/update/product', 'ProductController@update');
+Route::post('/reset/product', 'ProductController@reset');
 
 Route::get('/products', 'ProductController@index')->name('products');
 
@@ -62,6 +63,7 @@ Route::post('/like', 'LikeController@index');
 Route::post('/buy','BuyController@index');
 Route::post('/comment/{id}/{u_id}', 'CommentController@index');
 
-Route::get('/subscribe/{id}/{u_id}', 'SubscribeController@index');
+Route::post('/subscribe', 'SubscribeController@index');
+Route::post('/subscribescount', 'SubscribeController@count');
 
 Route::get('/boutics', 'BouticController@index');

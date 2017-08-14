@@ -11,9 +11,10 @@
     <div class="col-lg-2">
         <div class="row">
             @if($product->discount)
-                <h3>{{ $product->price - $product->price * $product->discount->percent / 100 }} сом</h3>
+
+                <h3>Цена со скидкой <br>{{ $product->price - $product->price * $product->discount->percent / 100 }} сом</h3>
             @else
-                <h3>{{ $product->price }} сом</h3>
+                <h3>Цена <br>{{ $product->price }} сом</h3>
             @endif
         </div>
     </div>

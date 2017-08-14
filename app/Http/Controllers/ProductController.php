@@ -132,4 +132,18 @@ class ProductController extends Controller
 
         return back();
     }
+    public function reset(Request $request)
+    {
+         $product = Product::find($request->id);
+         if($product->discount_id == null)
+         {
+         }
+         else
+         {
+             $product->discount_id = null;
+         }
+         $product->save();
+         return back();
+    }
+
 }

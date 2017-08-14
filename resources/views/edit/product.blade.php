@@ -15,8 +15,12 @@
 
                     @endforeach
                 </select>
-
                 <button type="submit">Save</button>
+            </form>
+            <form action="/reset/product" method="POST">
+                {{ csrf_field() }}
+                <input type="hidden" name="id" value="{{ $product->id }}">
+                <button type="submit">Reset</button>
             </form>
         </div>
     </div>

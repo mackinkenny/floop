@@ -13,7 +13,7 @@
 
                 @foreach($center->boutics as $boutic)
 
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                         <a href="/profile/{{ $boutic->id }}">
                             <img class="img-responsive"  src="/uploads/avatars/{{ $boutic->user->img_path }}" alt="">
                         </a>

@@ -8,9 +8,29 @@
                 <h2>{{ $boutic->name }}'s Page</h2>
                 <h5>Email: {{ $boutic->user->email }}</h5>
                 <h5>Phone:    {{ $boutic->user->phone_number }}</h5>
-
+                @if(Auth::user()->is_boutic == 1)
+                @else
+                <form action="/subscribe" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" id="sid" name="id" value="{{ $boutic->id }}">
+                    <input type="hidden" id="sb_id" name="b_id" value="{{ $boutic->user->id }}">
+                    <input type="hidden" id="su_id" name="u_id" value="{{ Auth::user()->id }}">
+                    <button id="subscribe" type="submit">Subscribe</button>
+                </form>
+                @endif
                 <br>
-
+                <br>
+                <br>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <form action="/subscribescount" method="POST">
+                            {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $boutic->id }}">
+                            <button type="submit">Подписчики</button>
+                        </form>
+                    </div>
+                </div>
+                <br>
 
             </div>
         </div>
