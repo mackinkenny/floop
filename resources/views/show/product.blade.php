@@ -49,7 +49,7 @@
         <br>
         @foreach($product->comments as $comment)
             @if($comment->user->boutic)
-                    <a href="/profile/{{ $comment->user->id }}"><span style="font-size: 20px;">{{ $comment->user->boutic->name }}</span></a>:
+                    <a href="/profile/{{ $comment->user->id }}" style="text-decoration: none; "><span style="font-size: 20px;">{{ $comment->user->boutic->name }}</span></a>:
                     {{ $comment->comment }}
                     <br>
             @else

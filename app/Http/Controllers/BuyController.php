@@ -47,6 +47,6 @@ class BuyController extends Controller
         $product->save();
 
 
-        return response()->json(['Success' => 'WTF']);
+        return response()->json(['Successz' => 'WTF']);
     }
 }

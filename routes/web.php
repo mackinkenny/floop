@@ -56,6 +56,7 @@ Route::post('/storediscount', 'DiscountController@store')->name('storeDiscount')
 Route::get('/edit/product/{id}', 'ProductController@edit');
 Route::post('/update/product', 'ProductController@update');
 Route::post('/reset/product', 'ProductController@reset');
+Route::post('/bproduct', 'ProductController@bouticshow');
 
 Route::get('/products', 'ProductController@index')->name('products');
 

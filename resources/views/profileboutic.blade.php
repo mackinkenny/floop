@@ -9,6 +9,13 @@
                 <h5>Email: {{ $boutic->user->email }}</h5>
                 <h5>Phone:    {{ $boutic->user->phone_number }}</h5>
                 @if(Auth::user()->is_boutic == 1)
+                    @if($boutic->user_id == Auth::user()->id)
+                    <form action="/bproduct" method="POST">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $boutic->user->id}}">
+                        <button type="submit">edit</button>
+                    </form>
+                        @endif
                 @else
                 <form action="/subscribe" method="POST">
                     {{ csrf_field() }}

@@ -145,5 +145,16 @@ class ProductController extends Controller
          $product->save();
          return back();
     }
+    public function bouticshow(Request $request)
+    {
+        $boutic = Boutic::find($request->id);
+        $products = app('App\Http\Controllers\FilterController')->index($request);
+        $cats = Cat::all();
+        $brands = Brand::all();
+
+
+
+        return view('show.edit',['boutic' => $boutic,'cats' => $cats, 'brands' => $brands, 'products' => $products]);
+    }
 
 }
