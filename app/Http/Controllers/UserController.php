@@ -44,7 +44,7 @@ class UserController extends Controller
 
             $user->save();
 
-            return redirect('/home');
+            return redirect('/profile');
 
     }
 

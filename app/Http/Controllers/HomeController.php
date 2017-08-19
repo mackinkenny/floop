@@ -22,24 +22,17 @@ class HomeController extends Controller
      *
      * @return void
      */
-//    public function __construct()
-//    {
-//        $this->middleware('auth');
-//    }
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-            $centers = Center::all();
-            $boutics = Boutic::all();
 
-            return view('home',['boutics' => $boutics, 'centers' => $centers]);
-
-    }
     public function settings()
     {
         return view('auth.settings');
@@ -70,8 +63,4 @@ class HomeController extends Controller
 
         return view('all.notice', ['notices' => $notices]);
     }
-
-
-
-
 }

@@ -1,6 +1,9 @@
 body {
-    padding-top: 59px;
     background-color: #D8D9D9;
+}
+
+.content-m {
+    margin-top: 59px;
 }
 
 .cat {

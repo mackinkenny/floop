@@ -11,13 +11,11 @@
 |
 */
 
-Route::post('/', 'HomeController@all')->name('filter');
-Route::get('/', 'HomeController@all');
-
+Route::post('/all', 'ProductController@bouticshow')->name('filter');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'IndexController@index')->name('home');
 Route::get('/settings', 'HomeController@settings')->name('settings');
 Route::post('/edit/{id}', 'UserController@edit')->name('id');
 Route::get('/profile', 'UserController@profile')->name('profile');

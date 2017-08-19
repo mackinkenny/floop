@@ -22,7 +22,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse"  id="navbarNavDropdown">
                     <form class="form-inline my-2 my-lg-0 mx-auto">
                         <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="border-radius: 50px;">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
@@ -32,38 +32,29 @@
                             <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="position:relative; padding-left:50px;">
-                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" style="width:32px; height:32px; position:absolute; top:10px; left:10px; border-radius:50%">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+
+                                    {{ Auth::user()->name }}
 
                                 </a>
 
-                                <ul class="dropdown-menu" role="menu">
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <a class="dropdown-item" href="{{  route('profile') }}">Profile</a>
+                                    <a class="dropdown-item" href="{{  route('settings') }}">Settings</a>
+                                    <a class="dropdown-item" href=" {{ route('notice') }}">Notice</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                                        Logout
+                                    </a>
 
-                                    <li>
-                                        <a href="{{  route('profile') }}">Profile</a>
-                                    </li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
+                                </div>
 
-                                    <li>
-                                        <a href="{{  route('settings') }}">Settings</a>
-                                    </li>
-                                    <li>
-                                        <a href=" {{ route('notice') }}">Notice</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('logout') }}"
-                                           onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
 
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-
-                                    </li>
-                                </ul>
                             </li>
                         @endif
                     </ul>
@@ -75,8 +66,11 @@
 
     </header>
 
-    @yield('content')
+    <div class="content-m">
 
+        @yield('content')
+
+    </div>
 
     <footer class="py-4 bg-dark text-white">
         <div class="container">
