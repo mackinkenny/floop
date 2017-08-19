@@ -1,8 +1,67 @@
-.modal-form {
-    display: none;
-    background-color: #9c3328;
-    position: absolute;
-    margin-left: 200px;
-    height: 600px;
-    box-shadow: 1px 1px 5px 1px #000;
+body {
+    padding-top: 59px;
+    background-color: #D8D9D9;
+}
+
+.cat {
+    height: 150px;
+}
+
+.link {
+    color: #FEFEFE;
+}
+
+.link:hover {
+    text-decoration: none;
+    color: #FEFEFE;
+}
+
+a {
+    color: #464646;
+}
+
+a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.circle {
+    padding-top: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+footer {
+    background-color: #292929;
+    font-size: 14px;
+}
+
+footer a {
+    color: #797979;
+    padding-bottom: 4px !important;
+    padding-top: 4px !important;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
+
+.nick {
+    font-size: 3rem;
+    margin: 0px;
+}
+
+.f-18 {
+    font-size: 18px;
+}
+
+.subscribe {
+    border: 2px solid #000;
+    border-radius: 50px;
+}
+
+#sub:hover> div {
+    background-color: #dc3545 !important;
+    transition: 1s;
+    color: #fff;
 }

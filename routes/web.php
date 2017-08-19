@@ -11,9 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::post('/', 'HomeController@all')->name('filter');
+Route::get('/', 'HomeController@all');
 
 
 Auth::routes();
@@ -47,8 +46,7 @@ Route::group(['middleware' => ['admin']],function() {
     Route::get('/createcenter', 'CenterController@create')->name('createCenter');
     Route::post('/storecenter', 'CenterController@store')->name('storeCenter');
 
-    Route::post('/all', 'HomeController@all')->name('filter');
-    Route::get('/all', 'HomeController@all');
+
 });
 
 Route::get('/creatediscount', 'DiscountController@create');

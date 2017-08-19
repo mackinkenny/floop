@@ -20,10 +20,10 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+//    public function __construct()
+//    {
+//        $this->middleware('auth');
+//    }
 
     /**
      * Show the application dashboard.
@@ -32,7 +32,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-            $centers =Center::all();
+            $centers = Center::all();
             $boutics = Boutic::all();
 
             return view('home',['boutics' => $boutics, 'centers' => $centers]);
