@@ -10,7 +10,7 @@ class FilterController extends Controller
     //
     public function index(Request $request) {
 
-        $products = Product::all();
+        $products = Product::all()->where('boutic_id', '=', $request->id);
 
         if ($request->cat_id) {
             $products = $products->where('cat_id', '=', $request->cat_id);
@@ -19,6 +19,14 @@ class FilterController extends Controller
 
         if ($request->brand_id) {
             $products = $products->where('brand_id', '=', $request->brand_id);
+        }
+
+        if ($request->type_id) {
+            $products = $products->where('type_id', '=', $request->type_id);
+        }
+
+        if ($request->season_id) {
+            $products = $products->where('season_id', '=', $request->season_id);
         }
 
 

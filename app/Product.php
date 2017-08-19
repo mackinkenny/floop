@@ -14,6 +14,12 @@ class Product extends Model
     public function cat() {
         return $this->belongsTo('App\Cat');
     }
+    public function type() {
+        return $this->belongsTo('App\Type');
+    }
+    public function season() {
+        return $this->belongsTo('App\Season');
+    }
     public function color() {
         return $this->belongsTo('App\Color');
     }

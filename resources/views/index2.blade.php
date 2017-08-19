@@ -35,6 +35,32 @@
 
                         @endforeach
                     </div>
+
+                    <div class="col-lg-2">
+                        @foreach($types as $type)
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="type_id" id="optionsRadios2" value="{{ $type->id }}">
+                                    {{ $type->name }}
+                                </label>
+                            </div>
+
+                        @endforeach
+                    </div>
+
+                    <div class="col-lg-2">
+                        @foreach($seasons as $season)
+
+                            <div class="radio">
+                                <label>
+                                    <input type="radio" name="season_id" id="optionsRadios2" value="{{ $season->id }}">
+                                    {{ $season->name }}
+                                </label>
+                            </div>
+
+                        @endforeach
+                    </div>
                     <div class="col-lg-2"><button type="submit" class="btn btn-danger">FILTER</button></div>
 
 

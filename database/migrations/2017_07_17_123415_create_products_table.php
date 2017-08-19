@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->integer('brand_id');
             $table->integer('discount_id')->nullable();
             $table->integer('cat_id');
+            $table->integer('season_id');
+            $table->integer('type_id');
             $table->integer('size_id')->nullable();
             $table->integer('color_id')->nullable();
             $table->integer('boutic_id')->nullable();

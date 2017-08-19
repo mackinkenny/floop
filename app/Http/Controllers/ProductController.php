@@ -7,7 +7,9 @@ use App\Brand;
 use App\Cat;
 use App\Product;
 use App\Color;
+use App\Season;
 use App\Size;
+use App\Type;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 
@@ -40,7 +42,9 @@ class ProductController extends Controller
         $colors = Color::all();
         $sizes = Size::all();
         $boutics = Boutic::all();
-        return view('create.product', ['brands' => $brands, 'cats' => $cats, 'colors' => $colors, 'sizes' => $sizes, 'boutics' => $boutics]);
+        $types = Type::all();
+        $seasons = Season::all();
+        return view('create.product', ['brands' => $brands, 'cats' => $cats, 'colors' => $colors, 'sizes' => $sizes, 'boutics' => $boutics,'types' => $types, 'seasons' => $seasons]);
     }
 
     /**
@@ -59,6 +63,9 @@ class ProductController extends Controller
         $product->color_id = $request->color_id;
         $product->size_id = $request->size_id;
         $product->boutic_id = $request->boutic_id;
+        $product->type_id = $request->type_id;
+        $product->season_id = $request->season_id;
+        $product->price = $request->price;
         if ($request->hasFile('img_path'))
         {
 
@@ -151,10 +158,12 @@ class ProductController extends Controller
         $products = app('App\Http\Controllers\FilterController')->index($request);
         $cats = Cat::all();
         $brands = Brand::all();
+        $types = Type::all();
+        $seasons = Season::all();
 
 
 
-        return view('show.edit',['boutic' => $boutic,'cats' => $cats, 'brands' => $brands, 'products' => $products]);
+        return view('show.edit',['boutic' => $boutic,'cats' => $cats, 'brands' => $brands, 'products' => $products, 'types' => $types, 'seasons' => $seasons]);
     }
 
 }

@@ -19,7 +19,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 1,
             'size_id' => 1,
             'color_id' => 1,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 1,
+            'season_id' => 1
         ]);
         $product->save();
 
@@ -30,7 +32,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 1,
             'size_id' => 1,
             'color_id' => 2,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 1,
+            'season_id' => 2
         ]);
         $product->save();
 
@@ -41,7 +45,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 1,
             'size_id' => 2,
             'color_id' => 1,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 2,
+            'season_id' => 1
         ]);
         $product->save();
 
@@ -52,7 +58,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 1,
             'size_id' => 2,
             'color_id' => 2,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 1,
+            'season_id' => 1
         ]);
         $product->save();
 
@@ -63,7 +71,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 2,
             'size_id' => 1,
             'color_id' => 3,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 1,
+            'season_id' => 1
         ]);
         $product->save();
 
@@ -74,7 +84,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 1,
             'size_id' => 4,
             'color_id' => 1,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 1,
+            'season_id' => 1
         ]);
         $product->save();
 
@@ -85,7 +97,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 1,
             'size_id' => 3,
             'color_id' => 2,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 1,
+            'season_id' => 1
         ]);
         $product->save();
 
@@ -96,7 +110,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 2,
             'size_id' => 2,
             'color_id' => 3,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 1,
+            'season_id' => 1
         ]);
         $product->save();
 
@@ -107,7 +123,9 @@ class ProductsTableSeeder extends Seeder
             'cat_id' => 3,
             'size_id' => 1,
             'color_id' => 1,
-            'boutic_id' => 1
+            'boutic_id' => 1,
+            'type_id' => 1,
+            'season_id' => 1
         ]);
         $product->save();
     }

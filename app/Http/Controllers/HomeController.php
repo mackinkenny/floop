@@ -8,6 +8,8 @@ use App\Brand;
 use App\Center;
 use App\Comment;
 use App\Notice;
+use App\Season;
+use App\Type;
 use App\User;
 use Illuminate\Http\Request;
 use App\Cat;
@@ -43,13 +45,15 @@ class HomeController extends Controller
         return view('auth.settings');
     }
 
-    public function all(Request $request) {
+    public function showedit(Request $request) {
         $products = app('App\Http\Controllers\FilterController')->index($request);
         $cats = Cat::all();
         $brands = Brand::all();
+        $seasons = Season::all();
+        $types = Type::all();
 
 
-        return view('index2', ['cats' => $cats, 'brands' => $brands, 'products' => $products ]);
+        return view('show.edit', ['cats' => $cats, 'brands' => $brands, 'products' => $products,'seasons' => $seasons, 'types' => $types ]);
     }
 
     public function notice()

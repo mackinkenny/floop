@@ -5,7 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
         <form action="{{ route('storeBoutic') }}" method="POST">
             {{ csrf_field() }}
-
+            <br><br><br><br>
             <input type="text" name="name">
 
             <select name="user_id">

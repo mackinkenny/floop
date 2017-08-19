@@ -5,7 +5,7 @@
     <div class="col-md-10 col-md-offset-1">
         <form action="{{ route('storeProduct') }}" method="POST" enctype="multipart/form-data">
             {{ csrf_field() }}
-
+<br><br><br><br>
             <input type="text" name="name">
 
             <select name="brand_id">
@@ -48,7 +48,25 @@
                 @endforeach
             </select>
 
+            <select name="type_id">
+                @foreach($types as $type)
+
+                    <option value="{{ $type->id }}">{{ $type->name }}</option>
+
+                @endforeach
+            </select>
+
+            <select name="season_id">
+                @foreach($seasons as $season)
+
+                    <option value="{{ $season->id }}">{{ $season->name }}</option>
+
+                @endforeach
+            </select>
+
             <input type="file" name="img_path" multiple="multiple" >
+
+            <input type="number" name="price">
 
             <button type="submit">Create</button>
         </form>
