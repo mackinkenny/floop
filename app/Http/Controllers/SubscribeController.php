@@ -44,9 +44,9 @@ class SubscribeController extends Controller
         return response()->json(['Success' => 'Hello']);
     }
 
-    public function count(Request $request)
+    public function count($id)
     {
-        $boutic = Boutic::all()->where('id','=', $request->id)->first();
+        $boutic = Boutic::all()->where('id','=', $id)->first();
 
         return view('show/subscribe',['boutic' => $boutic]);
     }

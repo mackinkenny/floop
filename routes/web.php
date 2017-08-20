@@ -61,6 +61,6 @@ Route::post('/buy','BuyController@index');
 Route::post('/comment/{id}/{u_id}', 'CommentController@index');
 
 Route::post('/subscribe', 'SubscribeController@index');
-Route::post('/subscribescount', 'SubscribeController@count');
+Route::get('/subscribescount/{id}', 'SubscribeController@count');
 
 Route::get('/boutics', 'BouticController@index');

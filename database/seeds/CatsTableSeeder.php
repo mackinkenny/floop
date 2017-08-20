@@ -13,17 +13,20 @@ class CatsTableSeeder extends Seeder
     {
         //
         $cat = new \App\Cat([
-            'name' => 'Мужская'
+            'name' => 'Мужская',
+            'icon' => 'male.png'
         ]);
         $cat->save();
 
         $cat = new \App\Cat([
-            'name' => 'Женская'
+            'name' => 'Женская',
+            'icon' => 'female.png'
         ]);
         $cat->save();
 
         $cat = new \App\Cat([
-            'name' => 'Детская'
+            'name' => 'Детская',
+            'icon' => 'child.png'
         ]);
         $cat->save();
     }
