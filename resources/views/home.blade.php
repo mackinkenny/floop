@@ -80,12 +80,14 @@
                         @foreach($centers as $center)
 
                             <div class="col-12 mb-4">
-                                <div class="card bg-dark text-white">
-                                    <img class="card-img" src="img/centers/park.jpg" height="60" alt="Card image">
-                                    <div class="card-img-overlay text-center">
-                                        <h4 class="card-title">{{ $center->name }}</h4>
+                                <a href="/center/{{ $center->id }}">
+                                    <div class="card bg-dark text-white">
+                                        <img class="card-img" src="img/centers/park.jpg" height="60" alt="Card image">
+                                        <div class="card-img-overlay text-center">
+                                            <h4 class="card-title">{{ $center->name }}</h4>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
 
                         @endforeach
@@ -96,12 +98,14 @@
                         @foreach($boutics as $boutic)
 
                             <div class="col-12 mb-4">
-                                <div class="card bg-dark text-white">
-                                    <img class="card-img" src="img/centers/park.jpg" height="60" alt="Card image">
-                                    <div class="card-img-overlay text-center">
-                                        <h4 class="card-title">{{ $boutic->name }}</h4>
+                                <a href="/profile/{{ $boutic->user_id }}">
+                                    <div class="card bg-dark text-white">
+                                        <img class="card-img" src="img/centers/park.jpg" height="60" alt="Card image">
+                                        <div class="card-img-overlay text-center">
+                                            <h4 class="card-title">{{ $boutic->name }}</h4>
+                                        </div>
                                     </div>
-                                </div>
+                                </a>
                             </div>
 
                         @endforeach

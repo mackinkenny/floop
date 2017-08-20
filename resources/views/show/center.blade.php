@@ -2,7 +2,7 @@
 
 @section('content')
 
-        <div class="container">
+        <div class="container py-5">
 
             <div class="row">
                 <h2>{{ $center->name }}</h2>
@@ -13,9 +13,10 @@
 
                 @foreach($center->boutics as $boutic)
 
-                    <div class="col-lg-2">
+                    <div class="col-auto">
                         <a href="/profile/{{ $boutic->id }}">
-                            <img class="img-responsive"  src="/uploads/avatars/{{ $boutic->user->img_path }}" alt="">
+                            <img width="150" height="150" class="rounded-circle"  src="/uploads/avatars/{{ $boutic->user->img_path }}" alt="">
+                            <p class="text-center my-2">{{ $boutic->name }}</p>
                         </a>
                     </div>
 

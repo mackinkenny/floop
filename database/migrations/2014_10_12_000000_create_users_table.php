@@ -25,8 +25,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->boolean('admin')->default(false);
             $table->boolean('is_boutic')->default(false);
-            $table->integer('count_likes')->nullable();
-            $table->integer('count_buys')->nullable();
+            $table->integer('count_likes')->default(0);
+            $table->integer('count_buys')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

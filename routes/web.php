@@ -11,7 +11,7 @@
 |
 */
 
-Route::post('/all', 'ProductController@bouticshow')->name('filter');
+Route::get('/all', 'ProductController@bouticshow')->name('filter');
 
 Auth::routes();
 

@@ -41,13 +41,21 @@
                                 </a>
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="{{  route('profile') }}">Profile</a>
-                                    <a class="dropdown-item" href="{{  route('settings') }}">Settings</a>
-                                    <a class="dropdown-item" href=" {{ route('notice') }}">Notice</a>
+                                    @if(Auth::user()->is_boutic)
+
+                                        <a class="dropdown-item" href="/profile/{{ Auth::user()->boutic->id }}">Профиль</a>
+
+                                    @else
+
+                                        <a class="dropdown-item" href="{{  route('profile') }}">Профиль</a>
+
+                                    @endif
+
+                                    <a class="dropdown-item" href=" {{ route('notice') }}">Уведомления</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">
-                                        Logout
+                                        Выйти
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -79,13 +87,13 @@
                 <div class="col-auto">
                     <ul class="nav flex-column">
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">Active</a>
+                            <a class="nav-link" href="#">Главная</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">Политика конфиденциальности</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
+                            <a class="nav-link" href="#">Выход</a>
                         </li>
                     </ul>
                 </div>

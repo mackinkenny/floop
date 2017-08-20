@@ -1,20 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+
+    <div class="container py-5">
         <div class="row">
-            <div class="col-lg-6">
-    @foreach($boutic->users as $user)
-                    <div class="row">
+            @foreach($boutic->users as $user)
+                <div class="col-2">
                     <a href="/profile/{{ $user->id }}">
-                        <span class="col-lg-2"><img src="/uploads/avatars/{{ $user->img_path }}" class="img-responsive" alt=""></span>
-                        <span class="col-lg-10">{{ $user->name }}</span>
-                    <br>
-                        <br>
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-auto">
+                                <img class="rounded-circle" src="/uploads/avatars/{{ $user->img_path }}" width="100" height="100" alt="">
+                            </div>
+                            <div class="col-auto">
+                                <p class="mt-3">{{ $user->name }}</p>
+                            </div>
+                        </div>
                     </a>
-                    </div>
-    @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </div>
 @endsection
