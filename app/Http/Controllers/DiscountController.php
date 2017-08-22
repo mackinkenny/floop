@@ -24,4 +24,20 @@ class DiscountController extends Controller
 
         return back();
     }
+
+    public function edit(Request $request)
+    {
+        $data = json_decode($request->products);
+        dd($data);
+        foreach($request->products as $product) {
+
+        }
+
+
+        $product->discount_id = $request->discount_id;
+        $product->save();
+
+
+        return back();
+    }
 }

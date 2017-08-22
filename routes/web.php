@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/all', 'ProductController@bouticshow')->name('filter');
+
 
 Auth::routes();
 
@@ -50,15 +50,16 @@ Route::group(['middleware' => ['admin']],function() {
 Route::get('/creatediscount', 'DiscountController@create');
 Route::post('/storediscount', 'DiscountController@store')->name('storeDiscount');
 Route::get('/edit/product/{id}', 'ProductController@edit');
+Route::post('/discounts', 'DiscountController@edit');
 Route::post('/update/product', 'ProductController@update');
 Route::post('/reset/product', 'ProductController@reset');
 Route::post('/bproduct', 'ProductController@bouticshow');
 
 Route::get('/products', 'ProductController@index')->name('products');
 
-Route::post('/like', 'LikeController@index');
-Route::post('/buy','BuyController@index');
-Route::post('/comment/{id}/{u_id}', 'CommentController@index');
+Route::get('/like', 'LikeController@index');
+Route::get('/buy','BuyController@index');
+Route::get('/comment/{id}/{u_id}', 'CommentController@index');
 
 Route::post('/subscribe', 'SubscribeController@index');
 Route::get('/subscribescount/{id}', 'SubscribeController@count');

@@ -5,7 +5,7 @@
         <div class="row">
 
 
-            <form action="{{ route('filter') }}" method="POST" class="col-lg-6">
+            <form action="{{ url('/bproduct') }}" method="POST" class="col-lg-6">
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{ $boutic->user->id}}">
 
@@ -63,26 +63,32 @@
 
                         @endforeach
                     </div>
-                    <div class="col-lg-2"><button type="submit" class="btn btn-danger">FILTER</button></div>
-
-
-
-
-
-
-
                 </div>
+                    <div class="col-lg-2"><button type="submit" class="btn btn-danger">FILTER</button></div>
+            </form>
+
+    <form action="{{ url('/discounts') }}" method="POST" class="col-lg-6">
+        {{ csrf_field() }}
+        <input type="hidden" name="products[]" value="{{ $products}}" multiple>
+        <select name="discount_id">
+            @foreach(Auth::user()->boutic->discounts as $discount)
+
+                <option value="{{ $discount->id }}">{{ $discount->percent }}%</option>
+
+            @endforeach
+        </select>
+        <button type="submit">Скидка</button>
+    </form>
 
 
 
 
-            </form></div>
+
 
 
         <br>
         @include('index3')
 
-
+</div>
     </div>
-
 @endsection

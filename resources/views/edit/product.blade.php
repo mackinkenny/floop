@@ -8,13 +8,13 @@
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{ $product->id }}">
                 {{ $product->name }}
-                <select name="discount_id">
-                    @foreach(Auth::user()->boutic->discounts as $discount)
+                    <select name="discount_id">
+                        @foreach(Auth::user()->boutic->discounts as $discount)
 
-                        <option value="{{ $discount->id }}">{{ $discount->percent }}%</option>
+                            <option value="{{ $discount->id }}">{{ $discount->percent }}%</option>
 
-                    @endforeach
-                </select>
+                        @endforeach
+                    </select>
                 <button type="submit">Save</button>
             </form>
             <form action="/reset/product" method="POST">
