@@ -25,13 +25,13 @@
 
                 <div class="collapse navbar-collapse"  id="navbarNavDropdown">
                     <form class="form-inline my-2 my-lg-0 mx-auto">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" style="border-radius: 50px;">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Поиск" aria-label="Search" style="border-radius: 50px;">
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
                     </form>
                     <ul class="navbar-nav ">
                         @if (Auth::guest())
-                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Вход</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Регистрация</a></li>
                         @else
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

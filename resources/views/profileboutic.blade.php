@@ -82,7 +82,89 @@
     </section>
 
 
+<<<<<<< HEAD
     @include('index3')
+=======
+    <section>
+        <div class="container bg-light">
+            <div class="row">
+
+                @foreach($boutic->products as $product)
+
+                <a href="#modal"  data-toggle="modal" class="col-3 my-4">
+                    <div class="card bg-dark text-dark">
+                        <img class="card-img" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image">
+                        <div class="card-img-overlay text-center">
+                            <h4 class="card-title">{{ $product->name }}</h4>
+                        </div>
+                    </div>
+                </a>
+
+
+                    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                                <ol class="carousel-indicators">
+                                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                                                </ol>
+                                                <div class="carousel-inner" style="width: 420px; height: 480px;">
+                                                    <div class="carousel-item active">
+                                                        <img class="d-block w-100" src="/uploads/images/products/{{ $product->img_path }}" alt="First slide">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img class="d-block w-100" src="/uploads/images/products/{{ $product->img_path }}" alt="Second slide">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img class="d-block w-100" src="/uploads/images/products/{{ $product->img_path }}" alt="Third slide">
+                                                    </div>
+                                                    <div class="carousel-item">
+                                                        <img class="d-block w-100" src="/uploads/images/products/{{ $product->img_path }}" alt="Third slide">
+                                                    </div>
+                                                </div>
+                                                <a class="carousel-control-prev bg-light" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Previous</span>
+                                                </a>
+                                                <a class="carousel-control-next bg-light" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                                    <span class="sr-only">Next</span>
+                                                </a>
+                                            </div>
+                                            {{--<img src="/uploads/images/products/{{ $product->img_path }}" width="380" height="420" alt="">--}}
+                                        </div>
+                                        <div class="col">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h3>{{ $product->name }}</h3>
+                                                </div>
+                                                <div class="col">
+                                                    Описание
+                                                </div>
+                                                <div class="col-auto">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="cursor: pointer">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
+>>>>>>> 0ca84e66b8fe0a95218aa43af771607f09b012ab
 
 
 
