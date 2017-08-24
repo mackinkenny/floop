@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/main.css">
 
 </head>
-<body>
+<body id="body">
     <header>
         <img class="fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px" style="margin-top: 59px;">
         <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md navbar-light bg-light">
@@ -43,7 +43,7 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     @if(Auth::user()->is_boutic)
 
-                                        <a class="dropdown-item" href="/profile/{{ Auth::user()->boutic->id }}">Профиль</a>
+                                        <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">Профиль</a>
 
                                     @else
 

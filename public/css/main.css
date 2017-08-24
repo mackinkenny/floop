@@ -1,5 +1,5 @@
 body {
-    background-color: #D8D9D9;
+    background-color: #feffff;
 }
 
 .content-m {
@@ -69,3 +69,6 @@ footer a:hover {
     color: #fff;
 }
 
+.d-none {
+    display: none;
+}

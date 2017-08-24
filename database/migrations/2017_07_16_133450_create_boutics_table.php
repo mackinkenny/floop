@@ -16,6 +16,7 @@ class CreateBouticsTable extends Migration
         Schema::create('boutics', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('img_path');
             $table->integer('subs')->default(0);
             $table->integer('user_id');
             $table->integer('center_id');

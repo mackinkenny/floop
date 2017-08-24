@@ -14,8 +14,8 @@
                 @foreach($center->boutics as $boutic)
 
                     <div class="col-auto">
-                        <a href="/profile/{{ $boutic->id }}">
-                            <img width="150" height="150" class="rounded-circle"  src="/uploads/avatars/{{ $boutic->user->img_path }}" alt="">
+                        <a href="/profile/{{ $boutic->user_id }}">
+                            <img width="150" height="150" class="rounded-circle"  src="/uploads/avatars/{{ $boutic->img_path }}" alt="">
                             <p class="text-center my-2">{{ $boutic->name }}</p>
                         </a>
                     </div>

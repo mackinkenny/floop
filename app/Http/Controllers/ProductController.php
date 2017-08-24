@@ -166,4 +166,12 @@ class ProductController extends Controller
         return view('show.edit',['boutic' => $boutic,'cats' => $cats, 'brands' => $brands, 'products' => $products, 'types' => $types, 'seasons' => $seasons]);
     }
 
+    public function sort($id)
+    {
+        $products = Product::all();
+        $products = $products->where('type_id', '=', $id);
+
+        return view('show.sort',['products' => $products]);
+    }
+
 }

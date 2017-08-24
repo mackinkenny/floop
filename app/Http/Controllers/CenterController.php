@@ -17,7 +17,7 @@ class CenterController extends Controller
     {
         //
         $centers = Center::all();
-        return view('all.center', ['centers' => $centers]);
+        return response()->json(['Success' => $centers]);
     }
 
     /**

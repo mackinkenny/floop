@@ -19,8 +19,8 @@ class BouticController extends Controller
     {
         //
         $boutics = Boutic::all();
-        $user =Auth::user();
-        return view('all.boutic', ['boutics' => $boutics, 'user' => $user]);
+        $user = Auth::user();
+        return response()->json(['Success' => $boutics]);
     }
 
     /**
@@ -45,15 +45,17 @@ class BouticController extends Controller
     public function store(Request $request)
     {
         //
+        $user = User::find($request->user_id);
 
         $boutic = new Boutic();
 
         $boutic->name = $request->name;
         $boutic->user_id = $request->user_id;
         $boutic->center_id = $request->center_id;
+        $boutic->img_path = $user->img_path;
         $boutic->save();
 
-        $user = User::all()->where('id', '=', $boutic->user_id)->first();
+
         $user->is_boutic = 1;
         $user->save();
 

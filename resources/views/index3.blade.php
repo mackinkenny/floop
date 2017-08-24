@@ -4,9 +4,9 @@
 
             @foreach($boutic->products as $product)
 
-                <a href="#modal"  data-toggle="modal" class="col-4 my-4">
+                <a href="#modal"  data-toggle="modal" class="col-3 my-4">
                     <div class="card bg-dark text-dark" style="box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.55); border-radius: 0px;">
-                        <img class="card-img" src="/img/avatars/aZgO6hXbX5I.jpg" alt="Card image" height="340">
+                        <img class="card-img" src="/img/avatars/aZgO6hXbX5I.jpg" alt="Card image" height="253">
                         <div class="card-img-overlay text-center">
                             <h4 class="card-title">{{ $product->name }}</h4>
                         </div>

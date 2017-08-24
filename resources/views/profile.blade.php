@@ -15,7 +15,9 @@
                                 <p class="nick">{{ $user->name }}</p>
                             </div>
                             <div class="col-auto d-flex align-items-center justify-content-center">
-                                @if(Auth::user()->id == $user->id)
+                                @if(Auth::guest())
+
+                                @elseif(Auth::user()->id == $user->id)
 
                                     <a href="/settings" class="rounded-circle">
                                         <img src="/img/straights/options.png" width="40" height="40" alt="">
@@ -31,7 +33,7 @@
                                 <a href="">
                                     <div class="row">
                                         <div class="col-auto">
-                                            <span class="badge badge-light">{{ $user->count_likes }}</span>
+                                            <span class="badge badge-secondary">{{ $user->count_likes }}</span>
                                         </div>
                                         <div class="col-auto">
                                             <span class="row">Понравившихся</span>
@@ -43,7 +45,7 @@
                                 <a href="">
                                     <div class="row">
                                         <div class="col-auto">
-                                            <span class="badge badge-light">{{ $user->count_buys }}</span>
+                                            <span class="badge badge-secondary">{{ $user->count_buys }}</span>
                                         </div>
                                         <div class="col-auto">
                                             <span class="row">Покупок</span>

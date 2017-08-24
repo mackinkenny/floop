@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Cat;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CatController extends Controller
 {
@@ -107,5 +108,11 @@ class CatController extends Controller
         $catDel->delete();
 
 
+    }
+
+    public function sort($id) {
+        Session::put('catId', $id);
+
+        return response()->json(['Success' => Session::get('catId')]);
     }
 }

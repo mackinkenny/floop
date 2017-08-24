@@ -60,8 +60,12 @@ Route::get('/products', 'ProductController@index')->name('products');
 Route::get('/like', 'LikeController@index');
 Route::get('/buy','BuyController@index');
 Route::get('/comment/{id}/{u_id}', 'CommentController@index');
+Route::get('/sort/{id}', 'ProductController@sort');
 
 Route::post('/subscribe', 'SubscribeController@index');
 Route::get('/subscribescount/{id}', 'SubscribeController@count');
 
 Route::get('/boutics', 'BouticController@index');
+Route::get('/centers', 'CenterController@index');
+
+Route::get('/cat/{id}', 'CatController@sort');
