@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Boutic;
 use App\Cat;
+use App\Center;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -113,6 +115,8 @@ class CatController extends Controller
     public function sort($id) {
         Session::put('catId', $id);
 
-        return response()->json(['Success' => Session::get('catId')]);
+        $centers = Center::all()->where('id', '=', 1);
+        $boutics = Boutic::all()->where('id', '=', 1);
+        return response()->json(['Success' => Session::get('catId'), 'centers' => $centers, 'boutics' => $boutics]);
     }
 }

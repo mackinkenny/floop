@@ -16,6 +16,9 @@ class CreateCentersTable extends Migration
         Schema::create('centers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->tinyInteger('if_female');
+            $table->tinyInteger('if_male');
+            $table->tinyInteger('if_child');
             $table->string('img_path');
             $table->timestamps();
         });

@@ -44,6 +44,7 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
         <div class="carousel-inner">
             <div class="carousel-item active" style="height: 300px;">
@@ -57,6 +58,9 @@
             </div>
             <div class="carousel-item" style="height: 300px;">
                 <img class="img-responsive d-block w-100" src="img/slider/5.jpg" alt="Third slide">
+            </div>
+            <div class="carousel-item" style="height: 300px;">
+                <img class="img-responsive d-block w-100" src="img/slider/6.jpg" alt="Third slide">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -78,9 +82,6 @@
                             <h3>Торговые центры</h3>
                         </div>
 
-                        <div id="ajax-home" class="row">
-
-                        </div>
 
 
                     </div>

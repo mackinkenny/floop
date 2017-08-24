@@ -14,7 +14,7 @@
 <body id="body">
     <header>
         <img class="fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px" style="margin-top: 59px;">
-        <nav class="navbar navbar-dark bg-dark fixed-top navbar-expand-md navbar-light bg-light">
+        <nav class="navbar  fixed-top navbar-expand-md navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img src="/img/logo/logo.png" width="30" height="30" alt=""> | Floop <h1 style="display: none;">Floop</h1>
