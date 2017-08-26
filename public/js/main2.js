@@ -65,6 +65,56 @@ $(document).ready(function() {
 
     }
 
+    function appendItemsBoutics() {
+        for (var i = 0; i <= boutics.length - 1; i++) {
+            $('#ajax-boutics').append("<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4'>" +
+                "<span class='row'>" +
+                "<span class='col-auto pr-0'>" +
+                "<img src='/uploads/avatars/" + boutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                "</span>" +
+                "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
+                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + boutics[i].name + "</h4>" +
+                "</span>" +
+                "</span>" +
+                "</a>");
+            $('#ajax-boutics2').append("<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
+                "<span class='d-flex flex-row-reverse'>" +
+                "<div class='col-auto pl-0'>" +
+                "<img src='/uploads/avatars/" + boutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                "</div>" +
+                "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
+                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + boutics[i].name + "</h4>" +
+                "</span>" +
+                "</span>" +
+                "</a>");
+        };
+    }
+
+    function appendItemsCenters() {
+        for (var i = 0; i <= centers.length - 1; i++) {
+            $('#ajax-centers').append("<a href='/center/" + centers[i].id + "' class='col-12 my-4'>" +
+                "<span class='row'>" +
+                "<span class='col-auto pr-0'>" +
+                "<img src='/uploads/centers/" + centers[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                "</span>" +
+                "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
+                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + centers[i].name + "</h4>" +
+                "</span>" +
+                "</span>" +
+                "</a>");
+            $('#ajax-centers2').append("<a href='/center/" + centers[i].id + "' class='col-12 my-4 pr-0'>" +
+                "<span class='d-flex flex-row-reverse'>" +
+                "<div class='col-auto pl-0'>" +
+                "<img src='/uploads/centers/" + centers[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                "</div>" +
+                "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
+                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + centers[i].name + "</h4>" +
+                "</span>" +
+                "</span>" +
+                "</a>");
+        };
+    }
+
 
     function appendItems() {
         for (var i = 0; i <= centers.length - 1; i++) {
@@ -99,10 +149,8 @@ $(document).ready(function() {
 
         e.preventDefault(e);
         if (flag === false) {
-            $('#ajax-home').empty();
-            $('#ajax-home2').empty();
-            $('#ajax-home').append(html1);
-            $('#ajax-home2').append(html2);
+            $('#ajax-home').find('a.col-12').remove();
+            $('#ajax-home2').find('a.col-12').remove();
             $('#femalecol').addClass('mx-auto');
             $('#sort1').show(600);
             $('#sort2').show(600);
@@ -154,10 +202,8 @@ $(document).ready(function() {
 
         }
         else if (flag === true) {
-            $('#ajax-home').empty();
-            $('#ajax-home2').empty();
-            $('#ajax-home').append(html1);
-            $('#ajax-home2').append(html2);
+            $('#ajax-home').find('a.col-12').remove();
+            $('#ajax-home2').find('a.col-12').remove();
             $('#femalecol').removeClass('mx-auto');
             $('#sort1').hide();
             $('#sort2').hide();
@@ -183,10 +229,8 @@ $(document).ready(function() {
     $('#child').click(function(e) {
         e.preventDefault(e);
         if (!flag) {
-            $('#ajax-home').empty();
-            $('#ajax-home2').empty();
-            $('#ajax-home').append(html1);
-            $('#ajax-home2').append(html2);
+            $('#ajax-home').find('a.col-12').remove();
+            $('#ajax-home2').find('a.col-12').remove();
             $('#childcol').addClass('mx-auto');
             $('#sort1').show(600);
             $('#sort2').show(600);
@@ -238,10 +282,8 @@ $(document).ready(function() {
             });
         }
         else {
-            $('#ajax-home').empty();
-            $('#ajax-home2').empty();
-            $('#ajax-home').append(html1);
-            $('#ajax-home2').append(html2);
+            $('#ajax-home').find('a.col-12').remove();
+            $('#ajax-home2').find('a.col-12').remove();
             $('#childcol').removeClass('mx-auto');
             $('#sort1').hide();
             $('#sort2').hide();
@@ -265,10 +307,9 @@ $(document).ready(function() {
     $('#male').click(function(e) {
         e.preventDefault(e);
         if (!flag) {
-            $('#ajax-home').empty();
-            $('#ajax-home2').empty();
-            $('#ajax-home').append(html1);
-            $('#ajax-home2').append(html2);
+
+            $('#ajax-home').find('a.col-12').remove();
+            $('#ajax-home2').find('a.col-12').remove();
             $('#malecol').addClass('mx-auto');
             $('#sort1').show(600);
             $('#sort2').show(600);
@@ -319,10 +360,8 @@ $(document).ready(function() {
             });
         }
         else {
-            $('#ajax-home').empty();
-            $('#ajax-home2').empty();
-            $('#ajax-home').append(html1);
-            $('#ajax-home2').append(html2);
+            $('#ajax-home').find('a.col-12').remove();
+            $('#ajax-home2').find('a.col-12').remove();
             $('#malecol').removeClass('mx-auto');
             $('#sort1').hide();
             $('#sort2').hide();
@@ -359,28 +398,8 @@ $(document).ready(function() {
            $(this).removeAttr('style');
            $('#ajax-centers').empty();
            $('#ajax-centers2').empty();
-           for (var i = 0; i <= centers.length - 1; i++) {
-               $('#ajax-centers').append("<a href='/center/" + centers[i].id + "' class='col-12 my-4'>" +
-                   "<span class='row'>" +
-                   "<span class='col-auto pr-0'>" +
-                   "<img src='/uploads/centers/" + centers[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                   "</span>" +
-                   "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                   "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + centers[i].name + "</h4>" +
-                   "</span>" +
-                   "</span>" +
-                   "</a>");
-               $('#ajax-centers2').append("<a href='/center/" + centers[i].id + "' class='col-12 my-4 pr-0'>" +
-                   "<span class='d-flex flex-row-reverse'>" +
-                   "<div class='col-auto pl-0'>" +
-                   "<img src='/uploads/centers/" + centers[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                   "</div>" +
-                   "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                   "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + centers[i].name + "</h4>" +
-                   "</span>" +
-                   "</span>" +
-                   "</a>");
-           }
+           appendItemsCenters();
+
 
        });
     });
@@ -419,28 +438,7 @@ $(document).ready(function() {
             $(this).removeAttr('style');
             $('#ajax-boutics').empty();
             $('#ajax-boutics2').empty();
-            for (var i = 0; i <= boutics.length - 1; i++) {
-                $('#ajax-boutics').append("<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4'>" +
-                    "<span class='row'>" +
-                    "<span class='col-auto pr-0'>" +
-                    "<img src='/uploads/avatars/" + boutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                    "</span>" +
-                    "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                    "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + boutics[i].name + "</h4>" +
-                    "</span>" +
-                    "</span>" +
-                    "</a>");
-                $('#ajax-boutics2').append("<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
-                    "<span class='d-flex flex-row-reverse'>" +
-                    "<div class='col-auto pl-0'>" +
-                    "<img src='/uploads/avatars/" + boutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                    "</div>" +
-                    "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                    "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + boutics[i].name + "</h4>" +
-                    "</span>" +
-                    "</span>" +
-                    "</a>");
-            }
+            appendItemsBoutics();
 
         });
     });
@@ -461,5 +459,5 @@ $(document).ready(function() {
         });
     });
     
-    
+
 });
