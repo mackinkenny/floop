@@ -16,7 +16,7 @@
                 @endforeach
             </select>
 
-            <select name="cat_id">
+            <select name="cat_id" class="js-example-basic-single">
                 @foreach($cats as $cat)
 
                     <option value="{{ $cat->id }}">{{ $cat->name }}</option>

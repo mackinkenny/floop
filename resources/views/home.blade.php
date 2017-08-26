@@ -73,13 +73,15 @@
         </a>
     </div>
 
-    <section class="">
-        <div class="bg-light container">
+    <section id="sectionOfCentersAndBoutics">
+        @include('all.center')
+        @include('all.boutic')
+        <div class="bg-light container" id="sectionRightAndLeft" style="">
             <div class="row py-3 justify-content-between">
                 <div class="col-5">
                     <div id="ajax-home" class="row">
                         <div class="col-12 py-2"  id="body2" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px;">
-                            <h3>Торговые центры</h3>
+                            <a href="" id="centers"><h3>Торговые центры</h3></a>
                         </div>
 
 
@@ -89,7 +91,7 @@
                 <div class="col-5 text-right">
                     <div class="row" id="ajax-home2">
                         <div class="col-12 py-2" id="body3" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px;">
-                            <h3>Магазины</h3>
+                            <a href="" id="boutics"><h3>Магазины</h3></a>
                         </div>
 
 
@@ -101,64 +103,6 @@
     </section>
 
 
-    {{--<section class="py-2">--}}
-        {{--<div class="container card bg-secondary text-light">--}}
-            {{--<div class="row card-header">--}}
-                {{--<div class="col d-flex flex-row">--}}
-                    {{--<h3>Торговые центры</h3>--}}
-                    {{--<div class="rounded-circle bg-light px-2 py-1 mx-5">--}}
-                        {{--<img src="img/straights/down.png" width="23" height="11" alt="">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col d-flex flex-row-reverse">--}}
-                    {{--<h3>Магазины</h3>--}}
-                    {{--<div class="rounded-circle bg-light px-2 py-1 mx-5">--}}
-                        {{--<img src="img/straights/down.png" width="23" height="11" alt="">--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-            {{--<div class="row card-body">--}}
 
-                {{--<div class="col">--}}
-                    {{--<div class="row">--}}
-
-                        {{--@foreach($centers as $center)--}}
-
-                            {{--<div class="col-12 mb-4">--}}
-                                {{--<a href="/center/{{ $center->id }}">--}}
-                                    {{--<div class="card bg-dark text-white">--}}
-                                        {{--<img class="card-img" src="img/centers/park.jpg" height="60" alt="Card image">--}}
-                                        {{--<div class="card-img-overlay text-center">--}}
-                                            {{--<h4 class="card-title">{{ $center->name }}</h4>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-
-                        {{--@endforeach--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-                {{--<div class="col">--}}
-                    {{--<div class="row">--}}
-                        {{--@foreach($boutics as $boutic)--}}
-
-                            {{--<div class="col-12 mb-4">--}}
-                                {{--<a href="/profile/{{ $boutic->user_id }}">--}}
-                                    {{--<div class="card bg-dark text-white">--}}
-                                        {{--<img class="card-img" src="img/centers/park.jpg" height="60" alt="Card image">--}}
-                                        {{--<div class="card-img-overlay text-center">--}}
-                                            {{--<h4 class="card-title">{{ $boutic->name }}</h4>--}}
-                                        {{--</div>--}}
-                                    {{--</div>--}}
-                                {{--</a>--}}
-                            {{--</div>--}}
-
-                        {{--@endforeach--}}
-                    {{--</div>--}}
-                {{--</div>--}}
-
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</section>--}}
 
 @endsection

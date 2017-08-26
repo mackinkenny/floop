@@ -7,6 +7,12 @@ $(document).ready(function() {
 
     var centers;
     var boutics;
+    var centermale;
+    var centerchild;
+    var centerfemale;
+    var bouticchild;
+    var bouticmale;
+    var bouticfemale;
 
     var flag = false;
 
@@ -57,37 +63,36 @@ $(document).ready(function() {
             }
         });
 
-        function appendItems() {
-            for (var i = 0; i <= centers.length - 1; i++) {
-                $('#ajax-home').append( "<a href='/center/" + centers[i].id + "' class='col-12 my-4'>" +
-                    "<span class='row'>" +
-                    "<span class='col-auto pr-0'>" +
-                    "<img src='/uploads/centers/" + centers[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                    "</span>" +
-                    "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                    "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + centers[i].name + "</h4>" +
-                    "</span>" +
-                    "</span>" +
-                    "</a>");
-            };
-
-            for (var i = 0; i <= centers.length - 1; i++) {
-                $('#ajax-home2').append( "<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
-                    "<span class='d-flex flex-row-reverse'>" +
-                    "<div class='col-auto pl-0'>" +
-                    "<img src='/uploads/avatars/" + boutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                    "</div>" +
-                    "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                    "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + boutics[i].name + "</h4>" +
-                    "</span>" +
-                    "</span>" +
-                    "</a>" );
-            };
-        }
-
     }
 
 
+    function appendItems() {
+        for (var i = 0; i <= centers.length - 1; i++) {
+            $('#ajax-home').append( "<a href='/center/" + centers[i].id + "' class='col-12 my-4'>" +
+                "<span class='row'>" +
+                "<span class='col-auto pr-0'>" +
+                "<img src='/uploads/centers/" + centers[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                "</span>" +
+                "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
+                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + centers[i].name + "</h4>" +
+                "</span>" +
+                "</span>" +
+                "</a>");
+        };
+
+        for (var i = 0; i <= centers.length - 1; i++) {
+            $('#ajax-home2').append( "<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
+                "<span class='d-flex flex-row-reverse'>" +
+                "<div class='col-auto pl-0'>" +
+                "<img src='/uploads/avatars/" + boutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                "</div>" +
+                "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
+                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + boutics[i].name + "</h4>" +
+                "</span>" +
+                "</span>" +
+                "</a>" );
+        };
+    }
 
 
     $('#female').click(function(e) {
@@ -117,8 +122,9 @@ $(document).ready(function() {
                 url: '/cat/2',
                 dataType: 'json',
                 success: function (data) {
-
-                    for (var i = 0; i <= data.Success.length - 1; i++) {
+                    centerfemale = data.centers;
+                    bouticfemale = data.boutics;
+                    for (var i = 0; i <= data.centers.length - 1; i++) {
                         $('#ajax-home').append( "<a href='/center/" + data.centers[i].id + "' class='col-12 my-4'>" +
                             "<span class='row'>" +
                             "<span class='col-auto pr-0'>" +
@@ -201,8 +207,10 @@ $(document).ready(function() {
                 url: '/cat/3',
                 dataType: 'json',
                 success: function (data) {
+                    centerchild = data.centers;
+                    bouticchild = data.boutics;
 
-                    for (var i = 0; i <= data.Success.length - 1; i++) {
+                    for (var i = 0; i <= data.centers.length - 1; i++) {
                         $('#ajax-home').append( "<a href='/center/" + data.centers[i].id + "' class='col-12 my-4'>" +
                             "<span class='row'>" +
                             "<span class='col-auto pr-0'>" +
@@ -281,8 +289,9 @@ $(document).ready(function() {
                 url: '/cat/1',
                 dataType: 'json',
                 success: function (data) {
-
-                    for (var i = 0; i <= data.Success.length - 1; i++) {
+                    centermale = data.centers;
+                    bouticmale = data.boutics;
+                    for (var i = 0; i <= data.centers.length - 1; i++) {
                         $('#ajax-home').append( "<a href='/center/" + data.centers[i].id + "' class='col-12 my-4'>" +
                             "<span class='row'>" +
                             "<span class='col-auto pr-0'>" +
@@ -332,6 +341,124 @@ $(document).ready(function() {
             appendItems();
         }
         flag = !flag;
+    });
+
+
+    $('#centers').click(function (e) {
+       e.preventDefault(e);
+
+       $('#sectionRightAndLeft').animate({
+           marginLeft: 4999,
+       }, 1000, "", function () {
+           $('#sectionRightAndLeft').hide(500);
+       });
+        $('#containerWithCenters').show(500);
+       $('#containerWithCenters').animate({
+           marginLeft: ''
+       }, 500, "", function () {
+           $(this).removeAttr('style');
+           $('#ajax-centers').empty();
+           $('#ajax-centers2').empty();
+           for (var i = 0; i <= centers.length - 1; i++) {
+               $('#ajax-centers').append("<a href='/center/" + centers[i].id + "' class='col-12 my-4'>" +
+                   "<span class='row'>" +
+                   "<span class='col-auto pr-0'>" +
+                   "<img src='/uploads/centers/" + centers[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                   "</span>" +
+                   "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
+                   "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + centers[i].name + "</h4>" +
+                   "</span>" +
+                   "</span>" +
+                   "</a>");
+               $('#ajax-centers2').append("<a href='/center/" + centers[i].id + "' class='col-12 my-4 pr-0'>" +
+                   "<span class='d-flex flex-row-reverse'>" +
+                   "<div class='col-auto pl-0'>" +
+                   "<img src='/uploads/centers/" + centers[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                   "</div>" +
+                   "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
+                   "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + centers[i].name + "</h4>" +
+                   "</span>" +
+                   "</span>" +
+                   "</a>");
+           }
+
+       });
+    });
+
+    $('#backToAll').click(function (e) {
+        e.preventDefault(e);
+
+        $('#containerWithCenters').animate({
+            marginLeft: 4999,
+        }, 1000, "", function () {
+            $('#containerWithCenters').hide(500);
+        });
+        $('#sectionRightAndLeft').show(500);
+        $('#sectionRightAndLeft').animate({
+            marginLeft: ''
+        }, 500, "", function () {
+            $(this).removeAttr('style');
+        });
+    });
+
+
+
+
+    $('#boutics').click(function (e) {
+        e.preventDefault(e);
+
+        $('#sectionRightAndLeft').animate({
+            marginLeft: 4999,
+        }, 1000, "", function () {
+            $('#sectionRightAndLeft').hide(500);
+        });
+        $('#containerWithBoutics').show(500);
+        $('#containerWithBoutics').animate({
+            marginLeft: ''
+        }, 500, "", function () {
+            $(this).removeAttr('style');
+            $('#ajax-boutics').empty();
+            $('#ajax-boutics2').empty();
+            for (var i = 0; i <= boutics.length - 1; i++) {
+                $('#ajax-boutics').append("<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4'>" +
+                    "<span class='row'>" +
+                    "<span class='col-auto pr-0'>" +
+                    "<img src='/uploads/avatars/" + boutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                    "</span>" +
+                    "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
+                    "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + boutics[i].name + "</h4>" +
+                    "</span>" +
+                    "</span>" +
+                    "</a>");
+                $('#ajax-boutics2').append("<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
+                    "<span class='d-flex flex-row-reverse'>" +
+                    "<div class='col-auto pl-0'>" +
+                    "<img src='/uploads/avatars/" + boutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                    "</div>" +
+                    "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
+                    "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + boutics[i].name + "</h4>" +
+                    "</span>" +
+                    "</span>" +
+                    "</a>");
+            }
+
+        });
+    });
+
+    $('#backToAll2').click(function (e) {
+        e.preventDefault(e);
+
+        $('#containerWithBoutics').animate({
+            marginLeft: 4999,
+        }, 1000, "", function () {
+            $('#containerWithBoutics').hide(500);
+        });
+        $('#sectionRightAndLeft').show(500);
+        $('#sectionRightAndLeft').animate({
+            marginLeft: ''
+        }, 500, "", function () {
+            $(this).removeAttr('style');
+        });
     });
     
     

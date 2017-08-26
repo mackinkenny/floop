@@ -9,12 +9,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/main.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
 </head>
 <body id="body">
     <header>
         <img class="fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px" style="margin-top: 59px;">
-        <nav class="navbar  fixed-top navbar-expand-md navbar-light bg-light">
+        <nav class="navbar fixed-top navbar-expand-md navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <img src="/img/logo/logo.png" width="30" height="30" alt=""> | Floop <h1 style="display: none;">Floop</h1>
@@ -114,5 +115,11 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script src="/js/main2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $(".js-example-basic-single").select2();
+        });
+    </script>
 </body>
 </html>
