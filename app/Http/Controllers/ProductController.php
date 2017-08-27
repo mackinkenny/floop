@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Boutic;
 use App\Brand;
 use App\Cat;
+use App\Center;
 use App\Product;
 use App\Color;
 use App\Season;
@@ -76,6 +77,29 @@ class ProductController extends Controller
             $product->img_path = $filename;
         }
         $product->save();
+        $boutic = Boutic::find($request->boutic_id);
+        if ($request->cat_id == 1) {
+            $boutic->if_male = 1;
+        }
+        if ($request->cat_id == 2) {
+            $boutic->if_female = 1;
+        }
+        if ($request->cat_id == 3) {
+            $boutic->if_child = 1;
+        }
+
+        $boutic->save();
+        $center = Center::find($boutic->center->id);
+        if ($request->cat_id == 1) {
+            $center->if_male = 1;
+        }
+        if ($request->cat_id == 2) {
+            $center->if_female = 1;
+        }
+        if ($request->cat_id == 3) {
+            $center->if_child = 1;
+        }
+        $center->save();
         return back();
     }
 

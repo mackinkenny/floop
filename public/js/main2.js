@@ -130,7 +130,7 @@ $(document).ready(function() {
                 "</a>");
         };
 
-        for (var i = 0; i <= centers.length - 1; i++) {
+        for (var i = 0; i <= boutics.length - 1; i++) {
             $('#ajax-home2').append( "<a href='/profile/" + boutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
                 "<span class='d-flex flex-row-reverse'>" +
                 "<div class='col-auto pl-0'>" +

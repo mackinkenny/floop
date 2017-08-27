@@ -41,6 +41,7 @@ class CenterController extends Controller
     {
         //
         $center = new Center();
+
         $center->name = $request->name;
 
         if ($request->hasFile('img_path')) {

@@ -115,8 +115,8 @@ class CatController extends Controller
     public function sort($id) {
         Session::put('catId', $id);
 
-        $centers = Center::all()->where('id', '=', 1);
-        $boutics = Boutic::all()->where('id', '=', 1);
+        $centers = Center::all()->where('if_gen', '=', $id);
+        $boutics = Boutic::all()->where('if_gen', '=', $id);
         return response()->json(['Success' => Session::get('catId'), 'centers' => $centers, 'boutics' => $boutics]);
     }
 }
