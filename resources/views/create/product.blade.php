@@ -64,7 +64,7 @@
                 @endforeach
             </select>
 
-            <input type="file" name="img_path" multiple="multiple" >
+            <input type="file" name="img_paths[]" multiple>
 
             <input type="number" name="price">
 

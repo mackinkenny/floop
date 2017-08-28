@@ -114,9 +114,22 @@ class CatController extends Controller
 
     public function sort($id) {
         Session::put('catId', $id);
+        $centers = Center::all();
+        $boutics = Boutic::all();
 
-        $centers = Center::all()->where('if_gen', '=', $id);
-        $boutics = Boutic::all()->where('if_gen', '=', $id);
+        if ($id == 1) {
+            $centers = $centers->where('if_male', '=', 1);
+            $boutics = $boutics->where('if_male', '=', 1);
+        }
+        if ($id == 2) {
+            $centers = $centers->where('if_female', '=', 1);
+            $boutics = $boutics->where('if_female', '=', 1);
+        }
+        if ($id == 3) {
+            $centers = $centers->where('if_child', '=', 1);
+            $boutics = $boutics->where('if_child', '=', 1);
+        }
+
         return response()->json(['Success' => Session::get('catId'), 'centers' => $centers, 'boutics' => $boutics]);
     }
 }

@@ -6,6 +6,7 @@ use App\Boutic;
 use App\Brand;
 use App\Cat;
 use App\Center;
+use App\Photo;
 use App\Product;
 use App\Color;
 use App\Season;
@@ -56,7 +57,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $product = new Product();
         $product->name = $request->name;
         $product->brand_id = $request->brand_id;
@@ -67,16 +67,19 @@ class ProductController extends Controller
         $product->type_id = $request->type_id;
         $product->season_id = $request->season_id;
         $product->price = $request->price;
-        if ($request->hasFile('img_path'))
-        {
-
-            $image = $request->file('img_path');
-            $filename = time() . '.' . $image->getClientOriginalExtension();
-            Image::make($image)->resize(200, 200)->save( public_path('uploads/images/products/' . $filename) );
-
-            $product->img_path = $filename;
-        }
         $product->save();
+            foreach ($request->img_paths as $index => $photo) {
+                $filename = time() + random_int(random_int(-10000, 0), random_int(1000, 999999)) . '.' . $photo->getClientOriginalExtension();
+                Image::make($photo)->resize(600, 600)->save( public_path('uploads/images/products/' . $filename) );
+                $photonew = new Photo();
+                $photonew->img_path = $filename;
+                $photonew->product_id = $product->id;
+                $photonew->save();
+                if ($index == 0) {
+                    $product->img_path = $filename;
+                    $product->save();
+                }
+            }
         $boutic = Boutic::find($request->boutic_id);
         if ($request->cat_id == 1) {
             $boutic->if_male = 1;
@@ -155,13 +158,47 @@ class ProductController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
         //
-        $productDel = Product::find($product->id);
-        $productDel->delete();
+        $product = Product::find($id);
+        $catId = $product->cat_id;
+        $boutic = Boutic::find($product->boutic_id);
+        $product->delete();
 
-        return back();
+        $center = Center::find($boutic->center_id);
+        if ($catId == 1) {
+            if (!$boutic->products->where('cat_id', '=', 1)->first()) {
+                $boutic->if_male = 0;
+                $boutic->save();
+            }
+            if (!$center->products->where('cat_id', '=', 1)->first()) {
+                $center->if_male = 0;
+                $center->save();
+            }
+        }
+        if ($catId == 2) {
+            if (!$boutic->products->where('cat_id', '=', 2)->first()) {
+                $boutic->if_female = 0;
+                $boutic->save();
+            }
+            if (!$center->products->where('cat_id', '=', 2)->first()) {
+                $center->if_female = 0;
+                $center->save();
+            }
+        }
+        if ($catId == 3) {
+            if (!$boutic->products->where('cat_id', '=', 3)->first()) {
+                $boutic->if_child = 0;
+                $boutic->save();
+            }
+            if (!$center->products->where('cat_id', '=', 3)->first()) {
+                $center->if_child = 0;
+                $center->save();
+            }
+        }
+
+        return redirect('/');
     }
     public function reset(Request $request)
     {

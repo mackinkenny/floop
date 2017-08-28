@@ -24,6 +24,7 @@ Route::get('/notice','HomeController@notice')->name('notice');
 Route::get('/center/{id}','CenterController@show');
 
 Route::get('/products/{id}', 'ProductController@show')->name('showProduct');
+Route::get('/product/del/{id}', 'ProductController@destroy');
 
 Route::group(['middleware' => ['admin']],function() {
 

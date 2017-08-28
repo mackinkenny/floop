@@ -23,6 +23,9 @@
                     @endforeach
             </select>
 
+            <select name="words[]" class="js-example-tokenizer w-50" id="" multiple>
+            </select>
+
             <button type="submit">Create</button>
         </form>
     </div>

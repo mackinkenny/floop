@@ -41,4 +41,8 @@ class Product extends Model
         return $this->belongsTo('App\Discount');
     }
 
+    public function photos() {
+        return $this->hasMany('App\Photo');
+    }
+
 }

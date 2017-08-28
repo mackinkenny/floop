@@ -4,6 +4,7 @@
 
 
     <h2>{{ $product->name }}</h2>
+    <a href="/product/del/{{ $product->id }}" class="btn btn-danger">Удалить</a>
     <div class="col-lg-3"><img class="img-responsive" src="/uploads/images/products/{{ $product->img_path }}" height="320px" width="350px" alt=""></div>
     <br>
     {{ $product->brand->name }}

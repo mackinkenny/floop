@@ -121,5 +121,11 @@
             $(".js-example-basic-single").select2();
         });
     </script>
+    <script>
+        $(".js-example-tokenizer").select2({
+            tags: true,
+            tokenSeparators: [',']
+        })
+    </script>
 </body>
 </html>

@@ -47,7 +47,7 @@ class CenterController extends Controller
         if ($request->hasFile('img_path')) {
             $avatar = $request->file('img_path');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(300, 300)->save(public_path('uploads/centers/' . $filename));
+            Image::make($avatar)->resize(400, 400)->save(public_path('uploads/centers/' . $filename));
 
             $center->img_path = $filename;
 
