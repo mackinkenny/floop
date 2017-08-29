@@ -118,18 +118,19 @@ class CatController extends Controller
         $boutics = Boutic::all();
 
         if ($id == 1) {
-            $centers = $centers->where('if_male', '=', 1);
-            $boutics = $boutics->where('if_male', '=', 1);
+            $centers = Center::where('if_male', '=', 1)->get();
+            $boutics = Boutic::where('if_male', '=', 1)->get();
         }
         if ($id == 2) {
-            $centers = $centers->where('if_female', '=', 1);
-            $boutics = $boutics->where('if_female', '=', 1);
+            $centers = Center::where('if_female', '=', 1)->get();
+            $boutics = Boutic::where('if_female', '=', 1)->get();
         }
         if ($id == 3) {
-            $centers = $centers->where('if_child', '=', 1);
-            $boutics = $boutics->where('if_child', '=', 1);
+            $centers = Center::where('if_child', '=', 1)->get();
+            $boutics = Boutic::where('if_child', '=', 1)->get();
         }
 
-        return response()->json(['Success' => Session::get('catId'), 'centers' => $centers, 'boutics' => $boutics]);
+
+        return response()->json(['Success' => Session::get('catId'), 'centers' => $centers, 'boutics' => $boutics, 'centcount' => $centers->count(), 'boutcount' => $boutics->count()]);
     }
 }
