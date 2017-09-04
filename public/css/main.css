@@ -1,5 +1,5 @@
 body {
-    background-color: #feffff;
+    background-color: #FEFEFE;
 }
 
 .content-m {
@@ -35,7 +35,7 @@ a:hover {
 }
 
 footer {
-    background-color: #292929;
+    background-color: #D9DBDA;
     font-size: 14px;
 }
 
@@ -71,4 +71,35 @@ footer a:hover {
 
 .d-none {
     display: none;
+}
+
+#login-page {
+    background-image: url('../img/2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#form-login {
+    background-color: rgba(20, 20, 20, 0.8)!important;
+}
+
+#form-login input {
+    opacity: 0.6;
+}
+
+#form-login input:focus {
+    opacity: 1;
+}
+
+#sectionRightAndLeft, #containerWithBoutics, #containerWithCenters {
+    background-color: #EBEDEC;
+}
+
+nav {
+    background-color: #D9DBDA;
+}
+
+.container-spec {
+    background-color: #EBEDEC;
 }

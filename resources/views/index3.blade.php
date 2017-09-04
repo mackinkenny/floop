@@ -1,8 +1,8 @@
 <section>
-    <div class="container bg-light">
+    <div class="container container-spec">
         <div class="row">
 
-            @foreach($boutic->products as $product)
+            @foreach($products as $product)
                 <p style="display: none;">{{ $i = $product->photos->count() }}</p>
                 <a href="#modal{{ $product->id }}"  data-toggle="modal" class="col-3 my-4">
                     <div class="card bg-dark text-dark" style="box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.55); border-radius: 0px;">
@@ -16,7 +16,7 @@
 
                 <div class="modal fade" id="modal{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content bg-secondary" style="border-radius: 0px; border-top-right-radius: 45px;">
+                        <div class="modal-content" style="border-radius: 0px; border-top-right-radius: 45px; background-color: #EBEDEC;">
 
                             <div class="modal-body p-0">
                                 <div class="row">
@@ -69,7 +69,7 @@
                                             </div>
                                         </div>
                                         <div class="row justify-content-center">
-                                            <div class="col-auto bg-light py-2 mb-3" style="border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
+                                            <div class="col-10 text-center bg-light py-2 mb-3" style="border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
                                                 <h3 style="font-size: 1rem;">{{ $product->name }} ОТ {{$boutic->name}}</h3>
                                             </div>
                                         </div>
@@ -124,6 +124,38 @@
                                                 <hr class="my-1" style="border-top: 1px solid rgba(0, 0, 0, 0.53);">
                                             </div>
 
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="pr-1 col-auto">
+                                                {{--<a href="">--}}
+                                                    {{--<img src="/img/straights/likes.png" width="30" height="30" alt="">--}}
+                                                {{--</a>--}}
+                                                <form action="/like" method="POST">
+                                                    {{ csrf_field() }}
+
+                                                    <input type="hidden" id="lid" value="{{ $product->id }}">
+                                                    <input type="hidden" id="lu_id" value="{{ Auth::user()->id }}">
+                                                    <img src="/img/straights/likes.png" width="30" height="30" style="cursor: pointer;" id="like" alt="">
+                                                </form>
+                                            </div>
+                                            <div class="pl-1 col-auto" style="font-size: 1.5rem; line-height: 1.4rem; font-weight: 400;">
+                                                | {{ $product->count_likes }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-auto">
+                                                <form action="/buy" method="POST">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" id="bid" value="{{ $product->id }}">
+                                                    <input type="hidden" id="bu_id" value="{{ Auth::user()->id }}">
+                                                    <img src="/img/straights/buy.png" id="buy" width="30" height="30" alt="" style="cursor: pointer;">
+                                                </form>
+                                            </div>
+                                            <div class="text-light col d-flex flex-row align-items-center justify-content-center" style="margin-right: -19px; border-bottom-left-radius: 30px; border-top-left-radius: 30px; background-color: #E19075;">
+                                                <p class="m-0" style="font-size: 1.4rem;">10000 KGS</p>
+                                            </div>
                                         </div>
 
                                     </div>

@@ -9,6 +9,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 use function Sodium\add;
 
@@ -59,8 +60,21 @@ class UserController extends Controller
         $user = User::find($id);
         if($user->is_boutic == 1)
         {
+            $catId = Session::get('catId');
             $boutic = Boutic::all()->where('user_id', '=', $id)->first();
-            return view('profileboutic', ['boutic' => $boutic]);
+            if ($catId == 0) {
+                $products = $boutic->products;
+            }
+            elseif ($catId == 1) {
+                $products = $boutic->products->where('cat_id', '=', $catId);
+            }
+            elseif ($catId == 2) {
+                $products = $boutic->products->where('cat_id', '=', $catId);
+            }
+            elseif ($catId == 3) {
+                $products = $boutic->products->where('cat_id', '=', $catId);
+            }
+            return view('profileboutic', ['boutic' => $boutic, 'products' => $products]);
         }
         else {
             return view('profile', ['user' => $user]);

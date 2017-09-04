@@ -11,17 +11,17 @@
                     <a href="/sort/2" class="btn btn-danger">Брюки</a>
                 </div>
 
-                <div id="femalecol" class="col-auto py-5 px-5 text-center" style="background: #E69275;">
+                <div id="femalecol" class="col-auto p-1 p-md-5 text-center" style="background: #E69275;">
                     <a href="/cat/2" class="link" id="female"><img src="img/cats/female.png" width="60" height="60" alt="">
                         <h2 style="font-size: 1rem;">Женская одежда</h2>
                     </a>
                 </div>
-                <div id="childcol" class="col-auto py-5 px-5 text-center" style="background: #C69DB9;">
+                <div id="childcol" class="col-auto p-1 p-md-5 text-center" style="background: #C69DB9;">
                     <a href="cat/3" class="link" id="child"><img src="img/cats/child.png" width="60" height="60" alt="">
                         <h2 style="font-size: 1rem;">Детская одежда</h2>
                     </a>
                 </div>
-                <div id="malecol" class="col-auto py-5 px-5 text-center" style="background: #86C4DF;">
+                <div id="malecol" class="col-auto p-1 p-md-5 text-center" style="background: #86C4DF;">
                     <a href="cat/1" class="link" id="male"><img src="img/cats/male.png" width="60" height="60" alt="">
                         <h2 style="font-size: 1rem;">Мужская одежда</h2>
                     </a>
@@ -76,11 +76,11 @@
     <section id="sectionOfCentersAndBoutics">
         @include('all.center')
         @include('all.boutic')
-        <div class="bg-light container" id="sectionRightAndLeft" style="">
+        <div class="container" id="sectionRightAndLeft">
             <div class="row py-3 justify-content-between">
                 <div class="col-5">
                     <div id="ajax-home" class="row">
-                        <div class="col-12 py-2"  id="body2" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px;">
+                        <div class="col-12 py-2"  id="body2" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px; background-color: #C5C7C6;">
                             <a href="" id="centers"><h3>Торговые центры</h3></a>
                         </div>
 
@@ -90,7 +90,7 @@
                 </div>
                 <div class="col-5 text-right">
                     <div class="row" id="ajax-home2">
-                        <div class="col-12 py-2" id="body3" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px;">
+                        <div class="col-12 py-2" id="body3" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; background-color: #C5C7C6;">
                             <a href="" id="boutics"><h3>Магазины</h3></a>
                         </div>
 

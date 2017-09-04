@@ -4,11 +4,14 @@ $(document).ready(function () {
     $('#like').click(function (e) {
         e.preventDefault(e);
         $.ajax({
-            type: 'GET',
+            type: 'POST',
             url: '/like',
             data: {
                'id': $('#lid').val(),
                'u_id': $('#lu_id').val()
+            },
+            headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
             },
             dataType: 'json',
             success: function (data) {
@@ -23,11 +26,14 @@ $(document).ready(function () {
     $('#buy').click(function (e) {
         e.preventDefault(e);
         $.ajax({
-            type: 'GET',
+            type: 'POST',
             url: '/buy',
             data: {
                 'id': $('#bid').val(),
                 'u_id': $('#bu_id').val()
+            },
+            headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
             },
             dataType: 'json',
             success: function (data) {

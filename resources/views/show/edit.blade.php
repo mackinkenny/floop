@@ -87,8 +87,9 @@
 
 
         <br>
-        @include('index3')
+
 
 </div>
     </div>
+    @include('index3')
 @endsection

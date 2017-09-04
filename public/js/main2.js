@@ -18,6 +18,14 @@ $(document).ready(function() {
 
     var flag = false;
 
+    function ajax0() {
+        $.ajax({
+            type: 'GET',
+            url: '/cat/0',
+            dataType: 'json'
+        });
+    }
+
 
     if(!flag) {
 
@@ -34,7 +42,7 @@ $(document).ready(function() {
                         "<img src='/uploads/centers/" + data.Success[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                         "</span>" +
                         "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                        "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + data.Success[i].name + "</h4>" +
+                        "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + data.Success[i].name + "</h4>" +
                         "</span>" +
                         "</span>" +
                         "</a>");
@@ -57,7 +65,7 @@ $(document).ready(function() {
                         "<img src='/uploads/avatars/" + data.Success[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                         "</div>" +
                         "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                        "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + data.Success[i].name + "</h4>" +
+                        "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + data.Success[i].name + "</h4>" +
                         "</span>" +
                         "</span>" +
                         "</a>" );
@@ -75,7 +83,7 @@ $(document).ready(function() {
                 "<img src='/uploads/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                 "</span>" +
                 "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + bouts[i].name + "</h4>" +
+                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + bouts[i].name + "</h4>" +
                 "</span>" +
                 "</span>" +
                 "</a>");
@@ -85,7 +93,7 @@ $(document).ready(function() {
                 "<img src='/uploads/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                 "</div>" +
                 "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + bouts[i].name + "</h4>" +
+                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + bouts[i].name + "</h4>" +
                 "</span>" +
                 "</span>" +
                 "</a>");
@@ -100,7 +108,7 @@ $(document).ready(function() {
                 "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                 "</span>" +
                 "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
+                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
                 "</span>" +
                 "</span>" +
                 "</a>");
@@ -110,7 +118,7 @@ $(document).ready(function() {
                 "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                 "</div>" +
                 "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
+                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
                 "</span>" +
                 "</span>" +
                 "</a>");
@@ -126,7 +134,7 @@ $(document).ready(function() {
                 "<img src='/uploads/centers/" + allcenters[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                 "</span>" +
                 "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + allcenters[i].name + "</h4>" +
+                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + allcenters[i].name + "</h4>" +
                 "</span>" +
                 "</span>" +
                 "</a>");
@@ -139,7 +147,7 @@ $(document).ready(function() {
                 "<img src='/uploads/avatars/" + allboutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                 "</div>" +
                 "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + allboutics[i].name + "</h4>" +
+                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + allboutics[i].name + "</h4>" +
                 "</span>" +
                 "</span>" +
                 "</a>" );
@@ -182,7 +190,7 @@ $(document).ready(function() {
                             "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                            "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
+                            "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
                             "</span>" +
                             "</span>" +
                             "</a>");
@@ -194,7 +202,7 @@ $(document).ready(function() {
                             "<img src='/uploads/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                            "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
+                            "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
                             "</span>" +
                             "</span>" +
                             "</a>" );
@@ -205,6 +213,7 @@ $(document).ready(function() {
 
         }
         else if (flag === true) {
+            ajax0();
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#femalecol').removeClass('mx-auto');
@@ -213,13 +222,13 @@ $(document).ready(function() {
             $('#malecol').show();
             $("#childcol").show();
             $('#body').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#FEFEFE'
             }, 500);
             $('#body2').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#C5C7C6'
             }, 500);
             $('#body3').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#C5C7C6'
             }, 500);
             catId = 0;
             appendItems();
@@ -263,7 +272,7 @@ $(document).ready(function() {
                             "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                            "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
+                            "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
                             "</span>" +
                             "</span>" +
                             "</a>");
@@ -275,7 +284,7 @@ $(document).ready(function() {
                             "<img src='/uploads/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                            "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
+                            "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
                             "</span>" +
                             "</span>" +
                             "</a>" );
@@ -284,6 +293,7 @@ $(document).ready(function() {
             });
         }
         else {
+            ajax0();
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#childcol').removeClass('mx-auto');
@@ -292,13 +302,13 @@ $(document).ready(function() {
             $('#femalecol').show();
             $("#malecol").show();
             $('#body').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#FEFEFE'
             }, 1000);
             $('#body2').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#C5C7C6'
             }, 1000);
             $('#body3').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#C5C7C6'
             }, 1000);
             catId = 0;
 
@@ -342,7 +352,7 @@ $(document).ready(function() {
                             "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                            "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
+                            "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
                             "</span>" +
                             "</span>" +
                             "</a>");
@@ -354,7 +364,7 @@ $(document).ready(function() {
                             "<img src='/uploads/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                            "<h4 class='bg-secondary px-4 py-1 w-100' style='border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
+                            "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
                             "</span>" +
                             "</span>" +
                             "</a>" );
@@ -363,6 +373,7 @@ $(document).ready(function() {
             });
         }
         else {
+            ajax0();
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#malecol').removeClass('mx-auto');
@@ -371,13 +382,13 @@ $(document).ready(function() {
             $('#femalecol').show();
             $("#childcol").show();
             $('#body').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#FEFEFE'
             }, 1000);
             $('#body2').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#C5C7C6'
             }, 1000);
             $('#body3').animate({
-                backgroundColor: '#fff'
+                backgroundColor: '#C5C7C6'
             }, 1000);
             catId = 0;
 

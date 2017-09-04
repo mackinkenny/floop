@@ -58,8 +58,8 @@ Route::post('/bproduct', 'ProductController@bouticshow');
 
 Route::get('/products', 'ProductController@index')->name('products');
 
-Route::get('/like', 'LikeController@index');
-Route::get('/buy','BuyController@index');
+Route::post('like', 'LikeController@index');
+Route::post('buy','BuyController@index');
 Route::get('/comment/{id}/{u_id}', 'CommentController@index');
 Route::get('/sort/{id}', 'ProductController@sort');
 

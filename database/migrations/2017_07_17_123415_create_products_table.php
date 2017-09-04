@@ -26,8 +26,8 @@ class CreateProductsTable extends Migration
             $table->integer('size_id')->nullable();
             $table->integer('color_id')->nullable();
             $table->integer('boutic_id')->nullable();
-            $table->integer('count_likes')->nullable();
-            $table->integer('count_buys')->nullable();
+            $table->integer('count_likes')->default(0);
+            $table->integer('count_buys')->default(0);
 
             $table->timestamps();
 

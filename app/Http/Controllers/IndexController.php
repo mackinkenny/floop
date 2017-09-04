@@ -7,6 +7,7 @@ use App\Cat;
 use App\Center;
 use App\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class IndexController extends Controller
 {
@@ -17,6 +18,7 @@ class IndexController extends Controller
         $centers = Center::all();
         $boutics = Boutic::all();
         $cats = Cat::all();
+        Session::put('catId', 0);
 
         return view('home',['boutics' => $boutics, 'centers' => $centers,'types' => $types, 'cats' => $cats]);
 
