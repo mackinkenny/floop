@@ -96,9 +96,9 @@
         </div>
     </section>
 
-
+@if($is_products)
     @include('index3')
-
+@endif
 
 
 

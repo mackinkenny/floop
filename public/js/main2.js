@@ -162,8 +162,6 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#femalecol').addClass('mx-auto');
-            $('#sort1').show(600);
-            $('#sort2').show(600);
             $('#malecol').hide();
             $("#childcol").hide();
             $('#body').animate({
@@ -217,8 +215,6 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#femalecol').removeClass('mx-auto');
-            $('#sort1').hide();
-            $('#sort2').hide();
             $('#malecol').show();
             $("#childcol").show();
             $('#body').animate({
@@ -244,8 +240,6 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#childcol').addClass('mx-auto');
-            $('#sort1').show(600);
-            $('#sort2').show(600);
             $('#femalecol').hide();
             $("#malecol").hide();
             $('#body').animate({
@@ -297,8 +291,6 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#childcol').removeClass('mx-auto');
-            $('#sort1').hide();
-            $('#sort2').hide();
             $('#femalecol').show();
             $("#malecol").show();
             $('#body').animate({
@@ -324,8 +316,6 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#malecol').addClass('mx-auto');
-            $('#sort1').show(600);
-            $('#sort2').show(600);
             $('#femalecol').hide();
             $("#childcol").hide();
             $('#body').animate({
@@ -377,8 +367,6 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#malecol').removeClass('mx-auto');
-            $('#sort1').hide();
-            $('#sort2').hide();
             $('#femalecol').show();
             $("#childcol").show();
             $('#body').animate({

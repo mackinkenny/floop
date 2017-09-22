@@ -20,6 +20,7 @@ class CreateCentersTable extends Migration
             $table->tinyInteger('if_male')->default(0);
             $table->tinyInteger('if_child')->default(0);
             $table->string('img_path');
+            $table->integer('max_stages');
             $table->timestamps();
         });
     }

@@ -59,6 +59,11 @@
                                         <a class="dropdown-item" href="{{  route('profile') }}">Профиль</a>
 
                                     @endif
+                                    @if(Auth::user()->admin)
+
+                                        <a class="dropdown-item" href="{{ route('admin') }}">Админка</a>
+
+                                    @endif
 
                                     <a class="dropdown-item" href=" {{ route('notice') }}">Уведомления</a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"

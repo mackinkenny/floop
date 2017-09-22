@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Center;
+use App\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 
 class CenterController extends Controller
@@ -65,8 +67,25 @@ class CenterController extends Controller
     public function show($id)
     {
         //
+        $is_boutics = false;
+        $catId = Session::get('catId');
         $center = Center::find($id);
-        return view('show.center', ['center' => $center]);
+        $types = Type::all();
+        $boutics = $center->boutics;
+
+        if ($catId == 1) {
+            $boutics = $boutics->where('if_male', '=', 1);
+        }
+        elseif ($catId == 2) {
+            $boutics = $boutics->where('if_female', '=', 1);
+        }
+        elseif ($catId == 3) {
+            $boutics = $boutics->where('if_child', '=', 1);
+        }
+        if (!$boutics->isEmpty()) {
+            $is_boutics = true;
+        }
+        return view('show.center', ['center' => $center, 'boutics' => $boutics, 'is_boutics' => $is_boutics, 'catId' => $catId, 'types' => $types]);
     }
 
     /**

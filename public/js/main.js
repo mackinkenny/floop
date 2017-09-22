@@ -1,5 +1,53 @@
 $(document).ready(function () {
 
+    $('.modal.fade').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget)
+        var modal = $(this)
+        $.ajax({
+            url: '/products/' + button.data('id') + '',
+            type: 'GET',
+            success: function (data) {
+                var i = 0
+                modal.find('.carousel-inner').empty()
+                modal.find('.carousel-indicators').empty()
+                for (var photo of data.photos) {
+                    if (i === 0) {
+                        modal.find('.carousel-inner').append(
+                            '<div class="carousel-item active">' +
+                            '<img class="d-block w-100" src="/uploads/images/products/' + photo.img_path + '">' +
+                            '</div>'
+                        )
+                        modal.find('.carousel-indicators').append(
+                            '<li data-target="#carouselExampleIndicators" data-slide-to="' + i + '" class="active"></li>'
+                        )
+                    }
+                    else {
+                        modal.find('.carousel-inner').append(
+                            '<div class="carousel-item">' +
+                            '<img class="d-block w-100" src="/uploads/images/products/' + photo.img_path + '">' +
+                            '</div>'
+                        )
+                        modal.find('.carousel-indicators').append(
+                            '<li data-target="#carouselExampleIndicators" data-slide-to="' + i + '"></li>'
+                        )
+                    }
+                    i++
+
+                }
+                modal.find('.h4-text').text(data.boutic.name)
+                modal.find('.size-text').text(' ' + data.size)
+                modal.find('.brand-text').text(' ' + data.brand)
+                modal.find('.color-text').text(' ' + data.color)
+                modal.find('.product-boutic').text(data.product.name + ' ОТ ' + data.boutic.name)
+                modal.find('#lid').val(data.product.id)
+                modal.find('#lu_id').val(data.user)
+                modal.find('#bid').val(data.product.id)
+                modal.find('#bu_id').val(data.user)
+                modal.find('.price-text').text(data.product.price)
+
+            }
+        })
+    })
 
     $('#like').click(function (e) {
         e.preventDefault(e);
@@ -17,9 +65,6 @@ $(document).ready(function () {
             success: function (data) {
                alert('it works!' + data.Success);
             },
-            /*error: function () {
-               alert('it doesn`t work!');
-            }*/
         });
     });
 
@@ -39,9 +84,6 @@ $(document).ready(function () {
             success: function (data) {
                 alert('it works!' + data.Success);
             },
-            /*error: function () {
-             alert('it doesn`t work!');
-             }*/
         });
     });
 
@@ -55,13 +97,13 @@ $(document).ready(function () {
                 'b_id': $('#sb_id').val(),
                 'u_id': $('#su_id').val()
             },
+            headers: {
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
             dataType: 'json',
             success: function (data) {
                 alert('it works!' + data.Success);
             },
-            /*error: function () {
-             alert('it doesn`t work!');
-             }*/
         });
     });
 

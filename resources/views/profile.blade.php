@@ -3,7 +3,7 @@
 @section('content')
 
     <section>
-        <div class="container p-5">
+        <div class="container p-5 container-spec">
             <div class="row">
                 <div class="col-auto">
                     <img class="rounded-circle" width="150" height="150" src="/uploads/avatars/{{ $user->img_path }}" alt="">

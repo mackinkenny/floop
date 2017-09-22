@@ -57,6 +57,7 @@ class UserController extends Controller
 
     public function profileid($id)
     {
+        $is_products = false;
         $user = User::find($id);
         if($user->is_boutic == 1)
         {
@@ -74,7 +75,10 @@ class UserController extends Controller
             elseif ($catId == 3) {
                 $products = $boutic->products->where('cat_id', '=', $catId);
             }
-            return view('profileboutic', ['boutic' => $boutic, 'products' => $products]);
+            if (!$products->isEmpty()) {
+                $is_products = true;
+            }
+            return view('profileboutic', ['boutic' => $boutic, 'products' => $products, 'is_products' => $is_products]);
         }
         else {
             return view('profile', ['user' => $user]);

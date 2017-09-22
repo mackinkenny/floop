@@ -44,7 +44,10 @@ Route::group(['middleware' => ['admin']],function() {
 
     Route::get('/createcenter', 'CenterController@create')->name('createCenter');
     Route::post('/storecenter', 'CenterController@store')->name('storeCenter');
+    Route::get('/admin', 'AdminController@index');
 
+    Route::get('/createtype', 'TypeController@create');
+    Route::post('/storetype', 'TypeController@store')->name('storetype');
 
 });
 
@@ -70,3 +73,6 @@ Route::get('/boutics', 'BouticController@index');
 Route::get('/centers', 'CenterController@index');
 
 Route::get('/cat/{id}', 'CatController@sort');
+
+Route::get('/admin','AdminController@index')->name('admin');
+

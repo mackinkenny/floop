@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Cat;
 use App\Type;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+
 
 class TypeController extends Controller
 {
@@ -11,14 +14,23 @@ class TypeController extends Controller
     public function create()
     {
         //
-        return view('create.type');
+        $cats = Cat::all();
+        return view('create.type', ['cats' => $cats]);
     }
 
     public function store(Request $request)
     {
         //
         $type = new Type();
+        $type->cat_id = $request->cat_id;
         $type->name = $request->name;
+        if ($request->hasFile('img_path')) {
+            $avatar = $request->file('img_path');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(50, 50)->save(public_path('uploads/types/' . $filename));
+            $type->img_path = $filename;
+
+        }
         $type->save();
 
         return back();
@@ -39,7 +51,7 @@ class TypeController extends Controller
         if($request)
         {
             $typeUp = Type::find($type->id);
-            $typeup->name = $request->name;
+            $typeUp->name = $request->name;
             $typeUp->save();
         }
 
