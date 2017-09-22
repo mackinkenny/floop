@@ -24,7 +24,7 @@ class CreateBouticsTable extends Migration
             $table->integer('subs')->default(0);
             $table->integer('user_id');
             $table->integer('center_id');
-            $table->integer('stage');
+            $table->integer('stage')->default(random_int(1, 3));
             $table->timestamps();
         });
     }
