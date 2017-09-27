@@ -1,5 +1,25 @@
 $(document).ready(function () {
 
+    $.ajax({
+        type: 'GET',
+        url: '/is-subs',
+        data: {
+            'id': $('#sid').val(),
+            'b_id': $('#sb_id').val(),
+            'u_id': $('#su_id').val()
+        },
+        dataType: 'json',
+        success: function (data) {
+            if (data.subs_flag) {
+                $('#subs-flag').text('Отписаться')
+            }
+            else {
+                $('#subs-flag').text('Подписаться')
+            }
+            $('.sub-badge').text(data.subs_count)
+        }
+    })
+
     $('.modal.fade').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
         var modal = $(this)
@@ -64,6 +84,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                alert('it works!' + data.Success);
+               $('.like_count').text('| ' + data.like_count)
             },
         });
     });
@@ -87,6 +108,7 @@ $(document).ready(function () {
         });
     });
 
+
     $('#sub').click(function (e) {
         e.preventDefault(e);
         $.ajax({
@@ -102,7 +124,13 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-                alert('it works!' + data.Success);
+                if (!data.subs_flag) {
+                    $('#subs-flag').text('Отписаться')
+                }
+                else {
+                    $('#subs-flag').text('Подписаться')
+                }
+                $('.sub-badge').text(data.subs_count)
             },
         });
     });

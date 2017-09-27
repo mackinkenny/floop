@@ -55,6 +55,6 @@ class LikeController extends Controller
         $product->save();
 
 
-        return response()->json(['Success' => 'Success!']);
+        return response()->json(['Success' => 'Success!', 'like_count' => $product->count_likes]);
     }
 }

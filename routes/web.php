@@ -67,6 +67,7 @@ Route::get('/comment/{id}/{u_id}', 'CommentController@index');
 Route::get('/sort/{id}', 'ProductController@sort');
 
 Route::post('/subscribe', 'SubscribeController@index');
+Route::get('/is-subs', 'SubscribeController@is_index');
 Route::get('/subscribescount/{id}', 'SubscribeController@count');
 
 Route::get('/boutics', 'BouticController@index');

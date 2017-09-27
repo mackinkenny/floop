@@ -26,12 +26,12 @@
 
                             <div class="modal-body p-0">
                                 <div class="row">
-                                    <div class="col-auto pr-0">
+                                    <div class="col-auto pr-0" id="mobile-carousel-all">
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
 
                                             </ol>
-                                            <div class="carousel-inner">
+                                            <div class="carousel-inner mobile-carousel">
 
                                             </div>
                                             <a class="carousel-control-prev text-dark" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -47,17 +47,17 @@
                                     </div>
                                     <div class="col pr-5">
 
-                                        <div class="row text-light bg-success" style="border-bottom-right-radius: 50px; border-top-right-radius: 70px 60px; margin-right: -26px;">
-                                            <div class="col-auto mx-auto">
+                                        <div class="row text-light bg-success" id="main-modal-text" style="border-bottom-right-radius: 50px; border-top-right-radius: 70px 60px; margin-right: -26px;">
+                                            <div class="col-auto mx-auto pl-5">
                                                 <h1 class="text-center h4-text"></h1>
                                             </div>
                                             <div class="col-auto">
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="cursor: pointer">
-                                                    <span aria-hidden="true">&times;</span>
+                                                <button id="close" type="button" class="close text-light" data-dismiss="modal" aria-label="Close" style="cursor: pointer">
+                                                    <i class="fa fa-times"></i>
                                                 </button>
                                             </div>
                                         </div>
-                                        <div class="row justify-content-center">
+                                        <div class="row justify-content-center" id="premain-modal-text">
                                             <div class="col-10 text-center bg-light py-2 mb-3" style="border-bottom-left-radius: 30px; border-bottom-right-radius: 30px;">
                                                 <h3 class="product-boutic" style="font-size: 1rem;"></h3>
                                             </div>
@@ -128,7 +128,7 @@
                                                     <img src="/img/straights/likes.png" width="30" height="30" style="cursor: pointer;" id="like" alt="">
                                                 </form>
                                             </div>
-                                            <div class="pl-1 col-auto" style="font-size: 1.5rem; line-height: 1.4rem; font-weight: 400;">
+                                            <div class="pl-1 col-auto like_count" style="font-size: 1.5rem; line-height: 1.4rem; font-weight: 400;">
                                                 | {{ $product->count_likes }}
                                             </div>
                                         </div>

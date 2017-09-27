@@ -14,6 +14,7 @@ use App\Size;
 use App\Type;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
 
@@ -28,6 +29,7 @@ class ProductController extends Controller
     {
         //
         $products = Product::all();
+
 
         return view('all.product', ['products' => $products]);
     }
@@ -230,8 +232,13 @@ class ProductController extends Controller
     }
     public function bouticshow(Request $request)
     {
+        $is_products = false;
         $boutic = Boutic::find($request->id);
         $products = app('App\Http\Controllers\FilterController')->index($request);
+        if(!$products->isEmpty())
+        {
+            $is_products = true;
+        }
         $cats = Cat::all();
         $brands = Brand::all();
         $types = Type::all();
@@ -239,7 +246,7 @@ class ProductController extends Controller
 
 
 
-        return view('show.edit',['boutic' => $boutic,'cats' => $cats, 'brands' => $brands, 'products' => $products, 'types' => $types, 'seasons' => $seasons]);
+        return view('show.edit',['is_products' => $is_products, 'boutic' => $boutic,'cats' => $cats, 'brands' => $brands, 'products' => $products, 'types' => $types, 'seasons' => $seasons]);
     }
 
     public function sort($id)

@@ -165,13 +165,13 @@ $(document).ready(function() {
             $('#malecol').hide();
             $("#childcol").hide();
             $('#body').animate({
-                backgroundColor: '#E69275'
+                backgroundColor: '#E19075'
             }, 500);
             $('#body2').animate({
-                backgroundColor: '#E69275'
+                backgroundColor: '#E19075'
             }, 500);
             $('#body3').animate({
-                backgroundColor: '#E69275'
+                backgroundColor: '#E19075'
             }, 500);
             catId = 2;
             $.ajax({
@@ -243,13 +243,13 @@ $(document).ready(function() {
             $('#femalecol').hide();
             $("#malecol").hide();
             $('#body').animate({
-                backgroundColor: '#C69DB9'
+                backgroundColor: '#C46FA8'
             }, 1000);
             $('#body2').animate({
-                backgroundColor: '#C69DB9'
+                backgroundColor: '#C46FA8'
             }, 1000);
             $('#body3').animate({
-                backgroundColor: '#C69DB9'
+                backgroundColor: '#C46FA8'
             }, 1000);
             catId = 3;
             $.ajax({
@@ -319,13 +319,13 @@ $(document).ready(function() {
             $('#femalecol').hide();
             $("#childcol").hide();
             $('#body').animate({
-                backgroundColor: '#86C4DF'
+                backgroundColor: '#27A8E0'
             }, 1000);
             $('#body2').animate({
-                backgroundColor: '#86C4DF'
+                backgroundColor: '#27A8E0'
             }, 1000);
             $('#body3').animate({
-                backgroundColor: '#86C4DF'
+                backgroundColor: '#27A8E0'
             }, 1000);
             catId = 1;
             $.ajax({
@@ -388,17 +388,8 @@ $(document).ready(function() {
 
     $('#centers').click(function (e) {
        e.preventDefault(e);
-
-       $('#sectionRightAndLeft').animate({
-           marginLeft: 4999,
-       }, 1000, "", function () {
            $('#sectionRightAndLeft').hide(500);
-       });
-        $('#containerWithCenters').show(500);
-       $('#containerWithCenters').animate({
-           marginLeft: ''
-       }, 500, "", function () {
-           $(this).removeAttr('style');
+       $('#containerWithCenters').show(500);
            $('#ajax-centers').empty();
            $('#ajax-centers2').empty();
            if (catId === 1)
@@ -409,23 +400,13 @@ $(document).ready(function() {
                appendItemsCenters(centerchild);
            if (catId === 0)
                appendItemsCenters(allcenters);
-       });
     });
 
     $('#backToAll').click(function (e) {
         e.preventDefault(e);
-
-        $('#containerWithCenters').animate({
-            marginLeft: 4999,
-        }, 1000, "", function () {
             $('#containerWithCenters').hide(500);
-        });
         $('#sectionRightAndLeft').show(500);
-        $('#sectionRightAndLeft').animate({
-            marginLeft: ''
-        }, 500, "", function () {
-            $(this).removeAttr('style');
-        });
+
     });
 
 
@@ -433,17 +414,8 @@ $(document).ready(function() {
 
     $('#boutics').click(function (e) {
         e.preventDefault(e);
-
-        $('#sectionRightAndLeft').animate({
-            marginLeft: 4999,
-        }, 1000, "", function () {
             $('#sectionRightAndLeft').hide(500);
-        });
         $('#containerWithBoutics').show(500);
-        $('#containerWithBoutics').animate({
-            marginLeft: ''
-        }, 500, "", function () {
-            $(this).removeAttr('style');
             $('#ajax-boutics').empty();
             $('#ajax-boutics2').empty();
             if (catId === 1)
@@ -456,23 +428,14 @@ $(document).ready(function() {
                 appendItemsBoutics(allboutics);
 
         });
-    });
 
     $('#backToAll2').click(function (e) {
         e.preventDefault(e);
 
-        $('#containerWithBoutics').animate({
-            marginLeft: 4999,
-        }, 1000, "", function () {
+
             $('#containerWithBoutics').hide(500);
-        });
         $('#sectionRightAndLeft').show(500);
-        $('#sectionRightAndLeft').animate({
-            marginLeft: ''
-        }, 500, "", function () {
-            $(this).removeAttr('style');
         });
-    });
 
 
 });

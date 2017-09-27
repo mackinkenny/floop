@@ -137,6 +137,28 @@ nav {
     height: 30px;
 }
 
+#nav-mobile {
+    background-color: #073642;
+    position: fixed;
+    z-index: 9999;
+}
+
+#preloader {
+    z-index: 10000;
+    background-image: url("/img/logo/fon.jpg");
+    background-size: cover;
+    background-position: center center;
+}
+
+.backdrop {
+    display: none;
+    background-color: #000;
+    opacity: 0.8;
+    position: fixed;
+    content: "";
+    z-index:9997;
+}
+
 @media (min-width: 576px) {
     a.boutic-in-center p {
         opacity: 0;
@@ -258,5 +280,42 @@ nav {
 
     a.boutic-in-center img {
         border-radius: 5px;
+    }
+
+    .mobile-carousel {
+        width: 300px;
+        height: 300px;
+    }
+    
+    #main-modal-text {
+        -webkit-transform: translate(5px, -302px);
+        -moz-transform: translate(5px, -302px);
+        -ms-transform: translate(5px, -302px);
+        -o-transform: translate(5px, -302px);
+        transform: translate(5px, -302px);
+    }
+
+    #premain-modal-text {
+        -webkit-transform: translate(15px, -303px);
+        -moz-transform: translate(15px, -303px);
+        -ms-transform: translate(15px, -303px);
+        -o-transform: translate(15px, -303px);
+        transform: translate(15px, -303px);
+    }
+    
+    #mobile-carousel-all {
+        -webkit-transform: translate(20px, 90px);
+        -moz-transform: translate(20px, 90px);
+        -ms-transform: translate(20px, 90px);
+        -o-transform: translate(20px, 90px);
+        transform: translate(20px, 90px);
+    }
+    
+    #close {
+        -webkit-transform: scale(0.8, 0.8);
+        -moz-transform: scale(0.8, 0.8);
+        -ms-transform: scale(0.8, 0.8);
+        -o-transform: scale(0.8, 0.8);
+        transform: scale(0.8, 0.8);
     }
 }

@@ -39,9 +39,28 @@ class SubscribeController extends Controller
 
             $notice->save();
         }
+        $subs_flag = false;
+        if ($bouticDB) {
+            $subs_flag = true;
+        }
         
         $boutic->save();
-        return response()->json(['Success' => 'Hello']);
+        return response()->json(['Success' => 'Hello', 'subs_count' => $boutic->subs, 'subs_flag' => $subs_flag]);
+    }
+
+    public function is_index(Request $request) {
+        $boutic = Boutic::all()->where('user_id', '=', $request->b_id)->first();
+        $bouticDB = BouticUser::all()
+            ->where('user_id', '=', $request->u_id)
+            ->where('boutic_id', '=', $boutic->id)
+            ->first();
+        $subs_flag = false;
+
+        if ($bouticDB) {
+            $subs_flag = true;
+        }
+
+        return response()->json(['subs_flag' => $subs_flag, 'subs_count' => $boutic->subs]);
     }
 
     public function count($id)

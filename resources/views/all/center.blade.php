@@ -1,4 +1,4 @@
-<div class="container" id="containerWithCenters" style="margin-left: -4999px; display: none;">
+<div class="container" id="containerWithCenters"style="display: none;">
     <div class="row">
         <div class="col">
             <h3>Lorem</h3>

@@ -15,19 +15,24 @@
 <body id="body" @if(Session::get('catId') == 0)
                     style="background-color: #fefefe;"
                 @elseif(Session::get('catId') == 1)
-                    style="background-color: #86C4DF;"
+                    style="background-color: #27A8E0;"
                 @elseif(Session::get('catId') == 2)
-                    style="background-color: #E69275;"
+                    style="background-color: #E19075;"
                 @elseif(Session::get('catId') == 3)
-                    style="background-color: #C69DB9;"
+                    style="background-color: #C46FA8;"
                 @endif>
+    <div id="preloader" class="d-md-none w-100 h-100 fixed-top bg-dark"></div>
+
     <header>
         <img class="fixed-shadow fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px">
         <nav class="navbar fixed-top navbar-expand-md">
             <div class="container">
+                <a id="menu-mobile" class="mr-5 d-md-none"><img src="/img/logo/menu.png" width="20" height="20" alt=""></a>
                 <a class="navbar-brand mx-auto mx-md-0" href="/">
                     <img class="logo" src="/img/logo/logo2.png" width="108" height="30" alt=""><h1 style="display: none;">Floop</h1>
                 </a>
+                <a href="" class="mx-1 d-md-none"><img src="/img/logo/percent.png" width="20" height="20" alt=""></a>
+                <a href="" class="mx-1 d-md-none"><img src="/img/logo/search.png" width="20" height="20" alt=""></a>
 
 
                 <div class="collapse navbar-collapse"  id="navbarNavDropdown">
@@ -101,6 +106,26 @@
 
         </nav>
 
+        <div id="backdrop" class="backdrop fixed-top w-100 h-100">/</div>
+
+        <nav class="d-md-none fixed-top w-50 h-100 text-light" id="nav-mobile">
+            <ul class="nav flex-column my-5 px-3">
+                <span style="text-align: right; margin-top: -35px;" class="mb-4"><i class="fa fa-times" aria-hidden="true"></i></span>
+                <li class="nav-item">
+                    <a class="nav-link text-light active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-light disabled" href="#">Disabled</a>
+                </li>
+            </ul>
+        </nav>
+
     </header>
 
     <div class="content-m">
@@ -154,6 +179,12 @@
         $(".js-example-tokenizer").select2({
             tags: true,
             tokenSeparators: [',']
+        })
+    </script>
+
+    <script>
+        $(window).on('load', function () {
+            $('#preloader').delay(5000).fadeOut()
         })
     </script>
 </body>
