@@ -7,6 +7,7 @@
     <meta name="csrf-token" content="{!! csrf_token() !!}">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/main.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
@@ -21,7 +22,15 @@
                 @elseif(Session::get('catId') == 3)
                     style="background-color: #C46FA8;"
                 @endif>
-    <div id="preloader" class="d-md-none w-100 h-100 fixed-top bg-dark"></div>
+    <div id="preloader" class="d-md-none w-100 h-100 fixed-top bg-dark container">
+        {{--<img class="logo" src="/img/logo/logo2.png" width="288" height="80" alt="" style="width: 144px; height: 40px; -webkit-transform: translate(95px, 150px);-moz-transform: translate(95px, 150px);-ms-transform: translate(95px, 150px);-o-transform: translate(95px, 150px);transform: translate(95px, 150px);">--}}
+
+        <div id="circleG" style="-webkit-transform: translateY(520px);-moz-transform: translateY(520px);-ms-transform: translateY(520px);-o-transform: translateY(520px);transform: translateY(520px);">
+            <div id="circleG_1" class="circleG"></div>
+            <div id="circleG_2" class="circleG"></div>
+            <div id="circleG_3" class="circleG"></div>
+        </div>
+    </div>
 
     <header>
         <img class="fixed-shadow fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px">
