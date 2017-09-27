@@ -22,15 +22,13 @@
                     style="background-color: #C69DB9;"
                 @endif>
     <header>
-        <img class="fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px" style="margin-top: 59px;">
+        <img class="fixed-shadow fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px">
         <nav class="navbar fixed-top navbar-expand-md">
             <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img src="/img/logo/logo.png" width="30" height="30" alt=""> | Floop <h1 style="display: none;">Floop</h1>
+                <a class="navbar-brand mx-auto mx-md-0" href="/">
+                    <img class="logo" src="/img/logo/logo2.png" width="108" height="30" alt=""><h1 style="display: none;">Floop</h1>
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
 
                 <div class="collapse navbar-collapse"  id="navbarNavDropdown">
                     <form class="form-inline my-2 my-lg-0 mx-auto">
@@ -87,6 +85,22 @@
         </nav>
 
 
+        <nav class="d-md-none navbar fixed-bottom navbar-expand-md">
+            <img class="fixed-bottom" src="/img/menu/menu2.png" alt="" width="100%" height="10px" style="margin-bottom: 56px;">
+            <div class="container d-flex flex-row justify-content-center">
+                <a class="navbar-brand mx-4" href="/">
+                    <img src="/img/logo/home.png" width="25" height="25" alt="">
+                </a>
+                <a class="navbar-brand mx-4" href="/">
+                    <img src="/img/logo/buy.png" width="25" height="25" alt="">
+                </a>
+                <a class="navbar-brand mx-4" href="/">
+                    <img src="/img/logo/profile.png" width="25" height="25" alt="">
+                </a>
+            </div>
+
+        </nav>
+
     </header>
 
     <div class="content-m">
@@ -95,7 +109,7 @@
 
     </div>
 
-    <footer class="py-4 text-dark">
+    <footer class="py-4 text-dark d-none d-md-block">
         <div class="container">
             <div class="row">
                 <div class="col-auto">
@@ -129,6 +143,7 @@
 
     <script src="/js/main2.js"></script>
     <script src="/js/main3.js"></script>
+    <script src="/js/main4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {

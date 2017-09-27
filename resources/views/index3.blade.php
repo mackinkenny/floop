@@ -4,9 +4,9 @@
 @if($is_products == true)
             @foreach($products as $product)
                 <p style="display: none;">{{ $i = $product->photos->count() }}</p>
-                <a href="#modal"  data-toggle="modal" class="col-3 my-4" data-id = "{{ $product->id }}">
+                <a href="#modal"  data-toggle="modal" class="col-md-3 col-6 my-4" data-id = "{{ $product->id }}">
                     <div class="card bg-dark text-dark" style="box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.55); border-radius: 0px;">
-                        <img class="card-img" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image" height="253">
+                        <img class="card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image" height="253">
                         <div class="card-img-overlay text-center">
                             <h4 class="card-title">{{ $product->name }}</h4>
                         </div>
@@ -31,7 +31,7 @@
                                             <ol class="carousel-indicators">
 
                                             </ol>
-                                            <div class="carousel-inner" style="width: 600px; height: 600px;">
+                                            <div class="carousel-inner">
 
                                             </div>
                                             <a class="carousel-control-prev text-dark" href="#carouselExampleIndicators" role="button" data-slide="prev">

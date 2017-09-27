@@ -87,7 +87,7 @@ $(document).ready(function () {
         });
     });
 
-    $('#subscribe').click(function (e) {
+    $('#sub').click(function (e) {
         e.preventDefault(e);
         $.ajax({
             type: 'POST',

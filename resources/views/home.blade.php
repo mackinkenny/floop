@@ -6,19 +6,19 @@
         <div class="container">
             <div class="row justify-content-center">
 
-                <div id="femalecol" class="col-auto p-1 p-md-5 text-center" style="background: #E69275;">
-                    <a href="/cat/2" class="link" id="female"><img src="img/cats/female.png" width="60" height="60" alt="">
-                        <h2 style="font-size: 1rem;">Женская одежда</h2>
+                <div id="femalecol" class="col-auto p-3 p-md-5 text-center" style="background: #E69275;">
+                    <a href="/cat/2" class="link" id="female"><img class="logo-cat" src="img/cats/female.png" width="60" height="60" alt="">
+                        <h2 class="d-none d-md-block" style="font-size: 1rem;">Женская одежда</h2>
                     </a>
                 </div>
-                <div id="childcol" class="col-auto p-1 p-md-5 text-center" style="background: #C69DB9;">
-                    <a href="cat/3" class="link" id="child"><img src="img/cats/child.png" width="60" height="60" alt="">
-                        <h2 style="font-size: 1rem;">Детская одежда</h2>
+                <div id="childcol" class="col-auto p-3 p-md-5 text-center" style="background: #C69DB9;">
+                    <a href="cat/3" class="link" id="child"><img class="logo-cat" src="img/cats/child.png" width="60" height="60" alt="">
+                        <h2 class="d-none d-md-block" style="font-size: 1rem;">Детская одежда</h2>
                     </a>
                 </div>
-                <div id="malecol" class="col-auto p-1 p-md-5 text-center" style="background: #86C4DF;">
-                    <a href="cat/1" class="link" id="male"><img src="img/cats/male.png" width="60" height="60" alt="">
-                        <h2 style="font-size: 1rem;">Мужская одежда</h2>
+                <div id="malecol" class="col-auto p-3 p-md-5 text-center" style="background: #86C4DF;">
+                    <a href="cat/1" class="link" id="male"><img class="logo-cat" src="img/cats/male.png" width="60" height="60" alt="">
+                        <h2 class="d-none d-md-block" style="font-size: 1rem;">Мужская одежда</h2>
                     </a>
                 </div>
 

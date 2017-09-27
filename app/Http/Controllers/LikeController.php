@@ -14,8 +14,8 @@ use Mockery\Matcher\Not;
 class LikeController extends Controller
 {
     //
-public function index(Request $request)
-{
+    public function index(Request $request)
+    {
         $user = User::find($request->u_id);
 
 
@@ -56,5 +56,5 @@ public function index(Request $request)
 
 
         return response()->json(['Success' => 'Success!']);
-}
+    }
 }
