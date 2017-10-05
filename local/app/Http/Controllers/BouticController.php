@@ -7,6 +7,8 @@ use App\Center;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 
 class BouticController extends Controller
 {
@@ -82,12 +84,6 @@ class BouticController extends Controller
      * @param  \App\Boutic  $boutic
      * @return \Illuminate\Http\Response
      */
-    public function edit(Boutic $boutic)
-    {
-        //
-        $bouticEdit = Boutic::findOrFail($boutic->id);
-        return view('edit.boutic', ['boutic' => $bouticEdit]);
-    }
 
     /**
      * Update the specified resource in storage.
@@ -124,7 +120,83 @@ class BouticController extends Controller
         return back();
     }
 
-    public function sort($id) {
-        $boutics = Boutic::all();
+    public function sort(Request $request, $id) {
+
+
+        if($request->types) {
+
+
+            $bouticcols = [];
+            $types = $request->types;
+
+            $boutics = Boutic::all()->where('center_id','=', $id);
+
+            foreach ($types as $type) {
+                foreach ($boutics as $boutic){
+
+
+                    foreach($boutic->products as $product)
+                    {
+
+                        if($product->type_id == $type)
+                        {
+
+                            $bouticcols[] = $boutic;
+
+                            break;
+                        }
+                    }
+                }
+            }
+            $bouticcolected = collect($bouticcols);
+            $bouticcolected = $bouticcolected->unique();
+
+            return response()->json(['boutics' => $bouticcolected]);
+
+
+        }
+        else {
+            $allboutics = Boutic::where('center_id', '=', $id)->get();
+
+            return response()->json(['boutics' => $allboutics]);
+        }
+
+
+
+
+//        return response()->json(['success' => 'success']);
+    }
+
+    public function edit($id, Request $request)
+    {
+        $boutic = Boutic::all()->where('user_id', '=', $id)->first();
+        $user = User::all()->where('id','=',$id)->first;
+
+        if ($request->name)
+            $boutic->name = $request->name;
+
+        if ($request->info)
+            $boutic->info = $request->info;
+
+        if ($request->phone_number)
+            $boutic->phone_number = $request->phone_number;
+
+        if ($request->delivery)
+            $boutic->delivery = $request->delivery;
+        if ($request->hasFile('img_path'))
+        {
+
+            $avatar = $request->file('img_path');
+            $filename = time() . '.' . $avatar->getClientOriginalExtension();
+            Image::make($avatar)->resize(400, 400)->save( 'uploads/boutic/avatars/' . $filename );
+
+            $boutic->img_path = $filename;
+            $boutic->save();
+        }
+
+        $boutic->save();
+
+        return back();
+
     }
 }

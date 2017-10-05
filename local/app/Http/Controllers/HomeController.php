@@ -63,4 +63,10 @@ class HomeController extends Controller
 
         return view('all.notice', ['notices' => $notices]);
     }
+
+    public function bsettings()
+    {
+        return view('auth.bsettings');
+    }
+
 }

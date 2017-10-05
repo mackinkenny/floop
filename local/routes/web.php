@@ -18,8 +18,10 @@ Auth::routes();
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/settings', 'HomeController@settings')->name('settings');
 Route::post('/edit/{id}', 'UserController@edit')->name('id');
+Route::post('/edit/{id}', 'BouticController@edit')->name('bid');
 Route::get('/profile', 'UserController@profile')->name('profile');
 Route::get('/profile/{id}', 'UserController@profileid');
+Route::get('/bset/{id}', 'HomeController@bsettings');
 Route::get('/notice','HomeController@notice')->name('notice');
 Route::get('/center/{id}','CenterController@show');
 
@@ -77,4 +79,6 @@ Route::get('/cat/{id}', 'CatController@sort');
 Route::get('/sorttype/{id}', 'BouticController@sort');
 
 Route::get('/admin','AdminController@index')->name('admin');
+Route::get('/sdiscounts', 'DiscountController@discounts');
+
 

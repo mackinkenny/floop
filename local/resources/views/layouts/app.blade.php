@@ -40,7 +40,7 @@
                 <a class="navbar-brand mx-auto mx-md-0" href="/">
                     <img class="logo" src="/img/logo/logo2.png" width="108" height="30" alt=""><h1 style="display: none;">Floop</h1>
                 </a>
-                <a href="" class="mx-1 d-md-none"><img src="/img/logo/percent.png" width="20" height="20" alt=""></a>
+                <a href="sdiscounts" class="mx-1 d-md-none"><img src="/img/logo/percent.png" width="20" height="20" alt=""></a>
                 <a href="" class="mx-1 d-md-none"><img src="/img/logo/search.png" width="20" height="20" alt=""></a>
 
 
@@ -54,6 +54,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Вход</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Регистрация</a></li>
                         @else
+                            <div class="form-inline my-auto"><a href="sdiscounts"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></div>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
@@ -65,6 +66,9 @@
                                     @if(Auth::user()->is_boutic)
 
                                         <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">Профиль</a>
+
+                                        <a class="dropdown-item" href="/bset/{{ Auth::user()->id }}">Настройки</a>
+
 
                                     @else
 
@@ -108,9 +112,21 @@
                 <a class="navbar-brand mx-4" href="/">
                     <img src="/img/logo/buy.png" width="25" height="25" alt="">
                 </a>
-                <a class="navbar-brand mx-4" href="{{  route('profile') }}">
-                    <img src="/img/logo/profile.png" width="25" height="25" alt="">
-                </a>
+                @if(Auth::user())
+                    @if(Auth::user()->is_boutic)
+                        <a class="navbar-brand mx-4" href="/profile/{{Auth::user()->id}}">
+                            <img src="/img/logo/profile.png" width="25" height="25" alt="">
+                        </a>
+                    @else
+                    <a class="navbar-brand mx-4" href="{{  route('profile') }}">
+                        <img src="/img/logo/profile.png" width="25" height="25" alt="">
+                    </a>
+                    @endif
+                    @else
+                    <a class="navbar-brand mx-4" href="{{ url('/login') }}">
+                        <img src="/img/logo/profile.png" width="25" height="25" alt="">
+                    </a>
+                    @endif
             </div>
 
         </nav>
@@ -190,6 +206,7 @@
     <script src="/js/main2.js"></script>
     <script src="/js/main3.js"></script>
     <script src="/js/main4.js"></script>
+    <script src="/js/main5.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
@@ -205,7 +222,7 @@
 
     <script>
         $(window).on('load', function () {
-            $('#preloader').delay(5000).fadeOut()
+            $('#preloader').fadeOut()
         })
     </script>
 </body>

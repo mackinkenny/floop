@@ -1,12 +1,18 @@
 <section>
     <div class="container container-spec">
         <div class="row">
-@if($is_products == true)
+            @if($is_products == false)
+
+                <div class="col d-flex flex-row p-5 justify-content-center">
+                    <p>К сожалению, на данный момент вещей нет!</p>
+                </div>
+
+@elseif($is_products == true)
             @foreach($products as $product)
                 <p style="display: none;">{{ $i = $product->photos->count() }}</p>
                 <a href="#modal"  data-toggle="modal" class="col-md-3 col-6 my-4" data-id = "{{ $product->id }}">
-                    <div class="card bg-dark text-dark" style="box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.55); border-radius: 0px;">
-                        <img class="card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image" height="253">
+                    <div class="card bg-dark text-dark" style="box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.55); border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover; height: 253px;">
+                        <img style="opacity: 0;" class="card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image" height="253">
                         <div class="card-img-overlay text-center">
                             <h4 class="card-title">{{ $product->name }}</h4>
                         </div>

@@ -6,6 +6,7 @@
 body {
     background-color: #FEFEFE;
     font-family:  'Comfortaa', cursive;
+    /*font-family:  Clutch;*/
 }
 
 .content-m {
@@ -144,7 +145,7 @@ nav {
 }
 
 #nav-mobile {
-    background-color: #073642;
+    background-color: rgba(7, 54, 66, 0.8);
     position: fixed;
     z-index: 9999;
 }

@@ -2,12 +2,13 @@
 
 @section('content')
 
+
     <section class="cats d-none d-md-block">
         <div class="container">
-            <div class="row justify-content-center">
+            <div class="row">
 
 
-                <div id="sort1" class="col-5 p-3">
+                <div id="sort" class="col-5 p-3">
 
                     @foreach($types->where('cat_id','=', $catId) as $index => $type)
                         @if($index < 10)
@@ -16,8 +17,8 @@
                                 <br>
                             @endif
 
-                            <a class="link link-type mx-md-2" href="" id="{{$index}}" flag="0">
-                                <img class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" style="filter:invert(1);" alt="">
+                            <a class="link link-type mx-md-2" href="" id="{{$type->id}}" flag="0">
+                                <img class="logo-type" title="{{ $type->name }}" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" style="filter:invert(1);" alt="">
                             </a>
                         @endif
 
@@ -25,14 +26,14 @@
                 </div>
 
                 @if($catId == 0)
-                    <div id="main" class="col-auto p-1 p-md-5 text-center d-flex flex-row align-items-center" style="background: white;">
+                    <div id="main" class="col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: white;">
                         <span>
                             <img class="logo-cat" src="/img/logo/logo.png" width="80" height="80" alt="">
                         </span>
                     </div>
                 @endif
                 @if($catId == 2)
-                <div id="femalecol" class="col-auto p-1 p-md-5 text-center" style="background: #E19075;">
+                <div id="femalecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #E19075;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/female.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Женская одежда</h2>--}}
@@ -40,7 +41,7 @@
                 </div>
                 @endif
                 @if($catId == 3)
-                <div id="childcol" class="col-auto p-1 p-md-5 text-center" style="background: #C46FA8;">
+                <div id="childcol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #C46FA8;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/child.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Детская одежда</h2>--}}
@@ -48,7 +49,7 @@
                 </div>
                 @endif
                 @if($catId == 1)
-                <div id="malecol" class="col-auto p-1 p-md-5 text-center" style="background: #27A8E0;">
+                <div id="malecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #27A8E0;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/male.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Мужская одежда</h2>--}}
@@ -56,7 +57,7 @@
                 </div>
                 @endif
 
-                    <div id="sort2" class="col-5 p-3 d-flex flex-row justify-content-end">
+                    <div id="sort2" class="col-5 p-3 text-right">
                         @foreach($types->where('cat_id','=', $catId) as $index => $type)
                             @if($index > 9)
                                 @if($index == 15)
@@ -64,7 +65,8 @@
                                     <br>
                                 @endif
 
-                                <a class="link link-type mx-md-2" href=""><img class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" style="filter:invert(1);" alt=""></a>
+                                <a class="link link-type mx-md-2" href="" id="{{$type->id}}">
+                                    <img title="{{ $type->name }}" class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" style="filter:invert(1);" alt=""></a>
                             @endif
 
                         @endforeach
@@ -81,7 +83,8 @@
 
 <div id="show">
 
-    <h2 class="text-center pt-4">{{ $center->name }}</h2>
+    <h2 class="text-center pt-4 pb-2">{{ $center->name }}</h2>
+    <input type="hidden" value="{{ $center->id }}" id="idcenter">
         <div class="container py-md-5 py-3 container-spec">
 
             @if($is_boutics)
@@ -158,7 +161,7 @@
 
                                     @if($boutic->stage == $i + 1)
                                     <div class="col-4 p-2 col-md-3 my-4 my-md-5">
-                                        <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}"><img style="width: 100%; height: auto;" class=""  src="/uploads/avatars/{{ $boutic->img_path }}" alt="">
+                                        <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}"><img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
                                             <p class="text-center text-dark">{{ $boutic->name }}</p>
                                         </a>
                                     </div>
@@ -175,7 +178,7 @@
                                     @if($boutic->stage == $i + 1)
                                         <div class="col-3">
                                             <a href="/profile/{{ $boutic->user_id }}">
-                                                <img width="150" height="150" class="rounded-circle"  src="/uploads/avatars/{{ $boutic->img_path }}" alt="">
+                                                <img width="150" height="150" class="rounded-circle"  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
                                                 <p class="text-center my-2">{{ $boutic->name }}</p>
                                             </a>
                                         </div>

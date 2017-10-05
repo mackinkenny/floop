@@ -63,7 +63,7 @@ $(document).ready(function () {
                 modal.find('#lu_id').val(data.user)
                 modal.find('#bid').val(data.product.id)
                 modal.find('#bu_id').val(data.user)
-                modal.find('.price-text').text(data.product.price)
+                modal.find('.price-text').text(data.product.price - (data.product.price * data.discount / 100))
 
             }
         })

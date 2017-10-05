@@ -18,6 +18,9 @@ class CreateBouticsTable extends Migration
             $table->string('name');
             $table->string('img_path');
             $table->integer('floor_num')->nullable();
+            $table->string('info')->nullable();
+            $table->string('delivery')->nullable();
+            $table->string('phone_number')->nullable();
             $table->tinyInteger('if_female')->default(0);
             $table->tinyInteger('if_male')->default(0);
             $table->tinyInteger('if_child')->default(0);

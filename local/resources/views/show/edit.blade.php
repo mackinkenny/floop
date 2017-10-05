@@ -2,9 +2,18 @@
 @section('content')
 
     <div class="container">
-        <div class="row">
 
 
+            <div class="row p-5">
+                <form action="/storediscount" method="POST">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="boutic_id" value="{{ Auth::user()->boutic->id }}">
+                    <input type="text" name="percent">
+                    <button class="btn btn-danger">Создать</button>
+                </form>
+            </div>
+
+        <div class="row p-5">
             <form action="{{ url('/bproduct') }}" method="POST" class="col-lg-6">
                 {{ csrf_field() }}
                 <input type="hidden" name="id" value="{{ $boutic->user->id}}">
@@ -23,7 +32,7 @@
 
                         @endforeach
                     </div>
-                    <div class="col-lg-2">
+                    <div class="col-auto mx-auto">
                         @foreach($brands as $brand)
 
 
@@ -38,7 +47,7 @@
                     </div>
 
 
-                    <div class="col-lg-2">
+                    <div class="col-auto mx-auto">
                         @foreach($types as $type)
 
                             <div class="radio">
@@ -51,7 +60,7 @@
                         @endforeach
                     </div>
 
-                    <div class="col-lg-2">
+                    <div class="col-auto mx-auto">
                         @foreach($seasons as $season)
 
                             <div class="radio">
@@ -63,13 +72,20 @@
 
                         @endforeach
                     </div>
+
+                    <div class="col-auto"><button type="submit" class="btn btn-danger">FILTER</button></div>
                 </div>
-                    <div class="col-lg-2"><button type="submit" class="btn btn-danger">FILTER</button></div>
             </form>
 
-    <form action="{{ url('/discounts') }}" method="POST" class="col-lg-6">
+
+    <form action="{{ url('/discounts') }}" method="POST" class="col-auto">
         {{ csrf_field() }}
-        <input type="hidden" name="products[]" value="{{ $products}}" multiple>
+        {{--<input type="hidden" name="products[]" value="{{ $products }}" multiple>--}}
+        <select class="d-none" name="products[]" id="" multiple>
+            @foreach($products as $product)
+                <option value="{{ $product }}" selected></option>
+            @endforeach
+        </select>
         <select name="discount_id">
             @foreach(Auth::user()->boutic->discounts as $discount)
 
@@ -79,6 +95,7 @@
         </select>
         <button type="submit">Скидка</button>
     </form>
+
 
 
 
