@@ -50,7 +50,7 @@
                                 @if($boutic->user_id == Auth::user()->id)
 
 
-                                    <form action="/bproduct" method="GET" class="mt-4 mt-md-0 col-auto ml-md-auto d-flex align-items-center justify-content-center">
+                                    <form action="/bproduct" method="POST" class="mt-4 mt-md-0 col-auto ml-md-auto d-flex align-items-center justify-content-center">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id" value="{{ $boutic->id}}">
                                         <button  type="submit"  class="rounded-circle p-0" style="cursor: pointer; border: 0px;">

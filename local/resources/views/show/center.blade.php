@@ -105,14 +105,14 @@
                             @foreach($boutics as $boutic)
                                 @if($l == 0 && $i + 1 == $boutic->stage)
                                     <li class="nav-item">
-                                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#{{ $i }}" role="tab" aria-controls="home" aria-expanded="true">{{ $i + 1 }}</a>
+                                        <a class="nav-link active" id="{{ $i }}-tab" data-toggle="tab" href="#{{ $i }}" role="tab" aria-controls="{{ $i }}" aria-expanded="true">{{ $i + 1 }}</a>
                                     </li>
                                     <input type="hidden" value="{{ $l = 1 }}">
                                     <input type="hidden" value="{{ $active = $i }}">
                                     @break
                                 @elseif($i + 1 == $boutic->stage && $l = 1)
                                     <li class="nav-item">
-                                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#{{ $i }}" role="tab" aria-controls="profile">{{ $i + 1 }}</a>
+                                        <a class="nav-link" id="{{ $i }}-tab" data-toggle="tab" href="#{{ $i }}" role="tab" aria-controls="{{ $i }}">{{ $i + 1 }}</a>
                                     </li>
                                     @break
                                 @endif
@@ -155,13 +155,15 @@
                     @for($i = 0; $i < $center->max_stages; $i++)
 
                         @if($i == $active)
-                            <div class="tab-pane fade show active" id="{{ $i }}" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="tab-pane fade show active" id="{{ $i }}" role="tabpanel" aria-labelledby="{{ $i }}-tab">
                                 <div class="row">
+
                                 @foreach ($boutics as $boutic)
 
                                     @if($boutic->stage == $i + 1)
                                     <div class="col-4 p-2 col-md-3 my-4 my-md-5">
-                                        <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}"><img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
+                                        <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
+                                            <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
                                             <p class="text-center text-dark">{{ $boutic->name }}</p>
                                         </a>
                                     </div>
@@ -171,15 +173,15 @@
                                 </div>
                             </div>
                         @else
-                            <div class="tab-pane fade" id="{{ $i }}" role="tabpanel" aria-labelledby="profile-tab">
+                            <div class="tab-pane fade" id="{{ $i }}" role="tabpanel" aria-labelledby="{{ $i }}-tab">
                                 <div class="row">
                                 @foreach ($boutics as $boutic)
 
                                     @if($boutic->stage == $i + 1)
-                                        <div class="col-3">
-                                            <a href="/profile/{{ $boutic->user_id }}">
-                                                <img width="150" height="150" class="rounded-circle"  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
-                                                <p class="text-center my-2">{{ $boutic->name }}</p>
+                                        <div class="col-4 p-2 col-md-3 my-4 my-md-5">
+                                            <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
+                                                <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
+                                                <p class="text-center text-dark">{{ $boutic->name }}</p>
                                             </a>
                                         </div>
                                     @endif

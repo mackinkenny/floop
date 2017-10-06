@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="cats">
-        <div class="container">
+        <div class="container" style="background: #fefefe;">
             <div class="row justify-content-center">
 
                 <div id="femalecol" class="col-auto p-3 p-md-5 text-center" style="background: #E19075;">

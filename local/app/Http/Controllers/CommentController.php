@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Comment;
 use App\Notice;
+use App\User;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller
@@ -29,6 +30,8 @@ class CommentController extends Controller
 
         $notice->save();
 
-        return back();
+        $user = User::find($u_id);
+        $username = $user->name;
+        return response()->json(['user_name' => $username]);
     }
 }

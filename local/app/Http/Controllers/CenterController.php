@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Boutic;
 use App\Center;
 use App\Type;
 use Illuminate\Http\Request;
@@ -74,13 +75,13 @@ class CenterController extends Controller
         $boutics = $center->boutics;
 
         if ($catId == 1) {
-            $boutics = $boutics->where('if_male', '=', 1);
+            $boutics = Boutic::where('if_male', '=', 1)->get();
         }
         elseif ($catId == 2) {
-            $boutics = $boutics->where('if_female', '=', 1);
+            $boutics = Boutic::where('if_female', '=', 1)->get();
         }
         elseif ($catId == 3) {
-            $boutics = $boutics->where('if_child', '=', 1);
+            $boutics = Boutic::where('if_child', '=', 1)->get();
         }
         if (!$boutics->isEmpty()) {
             $is_boutics = true;

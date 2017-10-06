@@ -34,7 +34,7 @@ $(document).ready(function () {
                     if (i === 0) {
                         modal.find('.carousel-inner').append(
                             '<div class="carousel-item active">' +
-                            '<img class="d-block w-100" src="/uploads/images/products/' + photo.img_path + '">' +
+                            '<img style="border: 8px solid #fff;" class="d-block w-100" src="/uploads/images/products/' + photo.img_path + '">' +
                             '</div>'
                         )
                         modal.find('.carousel-indicators').append(
@@ -44,7 +44,7 @@ $(document).ready(function () {
                     else {
                         modal.find('.carousel-inner').append(
                             '<div class="carousel-item">' +
-                            '<img class="d-block w-100" src="/uploads/images/products/' + photo.img_path + '">' +
+                            '<img style="border: 8px solid #fff;" class="d-block w-100" src="/uploads/images/products/' + photo.img_path + '">' +
                             '</div>'
                         )
                         modal.find('.carousel-indicators').append(
@@ -62,9 +62,40 @@ $(document).ready(function () {
                 modal.find('#lid').val(data.product.id)
                 modal.find('#lu_id').val(data.user)
                 modal.find('#bid').val(data.product.id)
+                for (var val of data.comments) {
+                    modal.find('#style-1').append(
+                        '<p class="col-12">' + val.comment + '</p>'
+                    )
+                }
+                var div = $("#style-1");
+                div.scrollTop(div.prop('scrollHeight'));
                 modal.find('#bu_id').val(data.user)
                 modal.find('.price-text').text(data.product.price - (data.product.price * data.discount / 100))
 
+            }
+        })
+    })
+
+
+    $('#commentbutton').click(function (e) {
+        e.preventDefault(e)
+
+
+        $.ajax({
+            url: '/comment/' + $('#lid').val() + '/' + $('#lu_id').val(),
+            type: 'GET',
+            dataType: 'json',
+            data: {
+                'comment': $('#comment_form input.text-center').val(),
+            },
+            success: function (data) {
+
+                $('#style-1').append(
+                    '<p class="col-12">' + $('#comment_form input.text-center').val() + '</p>'
+                )
+                $('#comment_form input.text-center').val('')
+                var div = $("#style-1");
+                div.scrollTop(div.prop('scrollHeight'));
             }
         })
     })

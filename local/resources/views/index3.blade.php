@@ -13,9 +13,9 @@
                 <a href="#modal"  data-toggle="modal" class="col-md-3 col-6 my-4" data-id = "{{ $product->id }}">
                     <div class="card bg-dark text-dark" style="box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.55); border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover; height: 253px;">
                         <img style="opacity: 0;" class="card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image" height="253">
-                        <div class="card-img-overlay text-center">
-                            <h4 class="card-title">{{ $product->name }}</h4>
-                        </div>
+                        {{--<div class="card-img-overlay text-center">--}}
+                            {{--<h4 class="card-title">{{ $product->name }}</h4>--}}
+                        {{--</div>--}}
                     </div>
                 </a>
 
@@ -28,7 +28,7 @@
 
                 <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg" role="document">
-                        <div class="modal-content" style="border-radius: 0px; border-top-right-radius: 45px; background-color: #EBEDEC;">
+                        <div class="modal-content" style=" background-color: #EBEDEC;">
 
                             <div class="modal-body p-0">
                                 <div class="row">
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="col pr-5">
 
-                                        <div class="row text-light bg-success" id="main-modal-text" style="border-bottom-right-radius: 50px; border-top-right-radius: 70px 60px; margin-right: -26px;">
+                                        <div class="row text-light bg-success" id="main-modal-text" style="margin-right: -33px;">
                                             <div class="col-auto mx-auto pl-5">
                                                 <h1 class="text-center h4-text"></h1>
                                             </div>
@@ -139,9 +139,7 @@
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="embed-responsive embed-responsive-4by3 ml-3">
-                                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" allowfullscreen></iframe>
-                                            </div>
+                                            @include('commentform')
                                         </div>
 
                                         <div class="row  my-2">

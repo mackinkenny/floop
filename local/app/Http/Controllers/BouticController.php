@@ -122,6 +122,7 @@ class BouticController extends Controller
 
     public function sort(Request $request, $id) {
 
+        $center = Center::find($id);
 
         if($request->types) {
 
@@ -151,14 +152,14 @@ class BouticController extends Controller
             $bouticcolected = collect($bouticcols);
             $bouticcolected = $bouticcolected->unique();
 
-            return response()->json(['boutics' => $bouticcolected]);
+            return response()->json(['boutics' => $bouticcolected, 'center' => $center]);
 
 
         }
         else {
             $allboutics = Boutic::where('center_id', '=', $id)->get();
 
-            return response()->json(['boutics' => $allboutics]);
+            return response()->json(['boutics' => $allboutics,  'center' => $center]);
         }
 
 

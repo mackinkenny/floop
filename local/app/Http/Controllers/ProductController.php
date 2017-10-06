@@ -126,6 +126,7 @@ class ProductController extends Controller
         $user = Auth::user()->id;
         $photos = $product->photos;
         $percent = $product->discount->percent;
+        $comments = $product->comments;
 
         return response()->json([
             'product' => $product,
@@ -136,6 +137,7 @@ class ProductController extends Controller
             'user' => $user,
             'photos' => $photos,
             'discount' => $percent,
+            'comments' => $comments,
         ]);
     }
 
