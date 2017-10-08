@@ -40,7 +40,6 @@
                 <a class="navbar-brand mx-auto mx-md-0" href="/">
                     <img class="logo" src="/img/logo/logo2.png" width="108" height="30" alt=""><h1 style="display: none;">Floop</h1>
                 </a>
-                <a href="sdiscounts" class="mx-1 d-md-none"><img src="/img/logo/percent.png" width="20" height="20" alt=""></a>
                 <a href="" class="mx-1 d-md-none"><img src="/img/logo/search.png" width="20" height="20" alt=""></a>
 
 
@@ -54,7 +53,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Вход</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Регистрация</a></li>
                         @else
-                            <div class="form-inline my-auto"><a href="sdiscounts"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></div>
+                            <div class="form-inline my-auto"><a href="{{ route('sdiscounts') }}"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></div>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 

@@ -86,7 +86,10 @@
 
     <h2 class="text-center pt-4 pb-2">{{ $center->name }}</h2>
     <input type="hidden" value="{{ $center->id }}" id="idcenter">
-        <div class="container py-md-5 py-3 container-spec">
+    <div class="d-none container py-md-5 py-3 container-spec" id="containerWithBouticsinCenternone">
+        <div class="row"></div>
+    </div>
+        <div class="container py-md-5 py-3 container-spec" id="containerWithBouticsinCenter">
 
             @if($is_boutics)
             <div class="row">
@@ -121,7 +124,7 @@
 
                         @endfor
                     </ul></div>
-                <div class="col bg-light px-5 d-flex flex-row align-items-center"><p class="m-0 font-weight-bold">Этажи</p></div>
+                <div class="col bg-light px-5 d-flex flex-row align-items-center" id="rekt"><p class="m-0 font-weight-bold">Этажи</p></div>
             </div>
 
 

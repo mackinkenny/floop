@@ -2,6 +2,7 @@
 
 @section('content')
 
+    @if($boutic->subs)
     <div class="container py-5" id="users">
         @if(Auth::user() && Auth::user()->is_boutic == 1)
             <input class="search my-5 d-none d-md-block" placeholder="Поиск по подписчикам">
@@ -32,4 +33,11 @@
 
         var userList = new List('users', options);
     </script>
+    @else
+        <div class="container py-5" id="users">
+        <ul class="row list" style="list-style: none;">
+            Подписчиков нет!
+        </ul>
+        </div>
+    @endif
 @endsection

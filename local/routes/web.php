@@ -80,6 +80,6 @@ Route::get('/cat/{id}', 'CatController@sort');
 Route::get('/sorttype/{id}', 'BouticController@sort');
 
 Route::get('/admin','AdminController@index')->name('admin');
-Route::get('/sdiscounts', 'DiscountController@discounts');
+Route::get('/sdiscounts', 'DiscountController@discounts')->name('sdiscounts');
 
 
