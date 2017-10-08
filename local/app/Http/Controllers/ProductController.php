@@ -118,6 +118,8 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+        $is_percent = false;
+
         $product = Product::find($id);
         $boutic = Boutic::find($product->boutic_id);
         $size = $product->size->name;
@@ -125,8 +127,15 @@ class ProductController extends Controller
         $color = $product->color->name;
         $user = Auth::user()->id;
         $photos = $product->photos;
-        $percent = $product->discount->percent;
+        $percent = 1;
+
         $comments = $product->comments;
+
+        if($product->discount_id)
+        {
+            $is_percent = true;
+            $percent = $product->discount->percent;
+        }
 
         return response()->json([
             'product' => $product,
@@ -138,6 +147,7 @@ class ProductController extends Controller
             'photos' => $photos,
             'discount' => $percent,
             'comments' => $comments,
+            'is_percent' => $is_percent,
         ]);
     }
 
