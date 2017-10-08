@@ -24,6 +24,7 @@ Route::get('/profile/{id}', 'UserController@profileid');
 Route::get('/bset/{id}', 'HomeController@bsettings');
 Route::get('/notice','HomeController@notice')->name('notice');
 Route::get('/center/{id}','CenterController@show');
+Route::get('/api/center/{id}','CenterController@showajax');
 
 Route::get('/products/{id}', 'ProductController@show')->name('showProduct');
 Route::get('/product/del/{id}', 'ProductController@destroy');

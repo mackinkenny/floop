@@ -14,9 +14,9 @@
 
 </head>
 <body id="body" @if(Session::get('catId') == 0)
-                    style="background-color: #fefefe;"
+                    style="background-color: #D8D9D9;"
                 @elseif(Session::get('catId') == 1)
-                    style="background-color: #27A8E0;"
+                    style="background-color: #86C4DF;"
                 @elseif(Session::get('catId') == 2)
                     style="background-color: #E19075;"
                 @elseif(Session::get('catId') == 3)

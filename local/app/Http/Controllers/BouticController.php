@@ -8,6 +8,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 
 class BouticController extends Controller
@@ -124,13 +125,24 @@ class BouticController extends Controller
 
         $center = Center::find($id);
 
+
         if($request->types) {
 
 
             $bouticcols = [];
             $types = $request->types;
+            $catId = Session::get('catId');
 
             $boutics = Boutic::all()->where('center_id','=', $id);
+            if ($catId == 1) {
+                $boutics = $center->boutics->where('if_male', '=', 1);
+            }
+            elseif ($catId == 2) {
+                $boutics = $center->boutics->where('if_female', '=', 1);
+            }
+            elseif ($catId == 3) {
+                $boutics = $center->boutics->where('if_child', '=', 1);
+            }
 
             foreach ($types as $type) {
                 foreach ($boutics as $boutic){
@@ -152,6 +164,7 @@ class BouticController extends Controller
             $bouticcolected = collect($bouticcols);
             $bouticcolected = $bouticcolected->unique();
 
+
             return response()->json(['boutics' => $bouticcolected, 'center' => $center]);
 
 
@@ -161,6 +174,7 @@ class BouticController extends Controller
 
             return response()->json(['boutics' => $allboutics,  'center' => $center]);
         }
+        return response()->json(['slider' => view('slider')]);
 
 
 

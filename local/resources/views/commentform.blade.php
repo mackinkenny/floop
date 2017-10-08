@@ -4,16 +4,28 @@
 
 
     </div>
-    <form class="col-12 mt-3" id="comment_form" action="" method="POST">
-        {{ csrf_field() }}
+    @if(Auth::guest())
+        <form class="col-12 mt-3" id="comment_form" action="/login" method="GET">
+            {{ csrf_field() }}
 
-        <input type="hidden" id="id_product">
-        <input type="hidden" id="id_user" value="{{ Auth::user()->id }}">
 
-        <input type="text" class="w-100 text-center" placeholder="Комментарии" style="border-radius: 30px;">
+            <input type="text" class="w-100 text-center" placeholder="Комментарии" style="border-radius: 30px;">
 
-        <button type="submit" class="" style="opacity: 0; margin-left: -9999px;" id="commentbutton"></button>
+            <button type="submit" class="" style="opacity: 0; margin-left: -9999px;"></button>
 
-    </form>
+        </form>
+    @elseif(Auth::user())
+        <form class="col-12 mt-3" id="comment_form" action="" method="POST">
+            {{ csrf_field() }}
+
+            <input type="hidden" id="id_product">
+            <input type="hidden" id="id_user" value="{{ Auth::user()->id }}">
+
+            <input type="text" class="w-100 text-center" placeholder="Комментарии" style="border-radius: 30px;">
+
+            <button type="submit" class="" style="opacity: 0; margin-left: -9999px;" id="commentbutton"></button>
+
+        </form>
+    @endif
 </div>
 

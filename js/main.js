@@ -22,9 +22,10 @@ $(document).ready(function () {
 
     $('.modal.fade').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
+        alert(button.data('id'))
         var modal = $(this)
         $.ajax({
-            url: '/products/' + button.data('id') + '',
+            url: '/products/' + button.data('id'),
             type: 'GET',
             success: function (data) {
                 var i = 0

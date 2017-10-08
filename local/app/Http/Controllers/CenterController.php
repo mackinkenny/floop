@@ -70,22 +70,53 @@ class CenterController extends Controller
         //
         $is_boutics = false;
         $catId = Session::get('catId');
+//        $catId = 1;
         $center = Center::find($id);
         $types = Type::all();
         $boutics = $center->boutics;
+//        $boutics = $center->boutics->where('if_male', '=', 1);
+
+//        if ($catId == 1) {
+//            $boutics = Boutic::where('if_male', '=', 1)->get();
+//        }
+//        elseif ($catId == 2) {
+//            $boutics = Boutic::where('if_female', '=', 1)->get();
+//        }
+//        elseif ($catId == 3) {
+//            $boutics = Boutic::where('if_child', '=', 1)->get();
+//        }
+//        if (!$boutics->isEmpty()) {
+//            $is_boutics = true;
+//        }
+
+//        if ($catId == 1) {
+//            $boutics = Boutic::all()->where('if_male', '=', 1);
+//        }
+//        elseif ($catId == 2) {
+//            $boutics = Boutic::all()->where('if_female', '=', 1);
+//        }
+//        elseif ($catId == 3) {
+//            $boutics = Boutic::all()->where('if_child', '=', 1);
+//        }
+//        if (!$boutics->isEmpty()) {
+//            $is_boutics = true;
+//        }
 
         if ($catId == 1) {
-            $boutics = Boutic::where('if_male', '=', 1)->get();
+            $boutics = $center->boutics->where('if_male', '=', 1);
         }
         elseif ($catId == 2) {
-            $boutics = Boutic::where('if_female', '=', 1)->get();
+            $boutics = $center->boutics->where('if_female', '=', 1);
         }
         elseif ($catId == 3) {
-            $boutics = Boutic::where('if_child', '=', 1)->get();
+            $boutics = $center->boutics->where('if_child', '=', 1);
         }
         if (!$boutics->isEmpty()) {
             $is_boutics = true;
         }
+
+
+//        dd($boutics);
         return view('show.center', ['center' => $center, 'boutics' => $boutics, 'is_boutics' => $is_boutics, 'catId' => $catId, 'types' => $types]);
     }
 
@@ -133,4 +164,47 @@ class CenterController extends Controller
 
         return back();
     }
+
+
+    public function showajax($id)
+    {
+        //
+        $is_boutics = false;
+        $catId = Session::get('catId');
+//        $catId = 1;
+        $center = Center::find($id);
+        $types = Type::all();
+        $boutics = $center->boutics;
+
+        if ($catId == 1) {
+            $boutics = Boutic::where('if_male', '=', 1)->get();
+        }
+        elseif ($catId == 2) {
+            $boutics = Boutic::where('if_female', '=', 1)->get();
+        }
+        elseif ($catId == 3) {
+            $boutics = Boutic::where('if_child', '=', 1)->get();
+        }
+        if (!$boutics->isEmpty()) {
+            $is_boutics = true;
+        }
+
+//        if ($catId == 1) {
+//            $boutics = Boutic::all()->where('if_male', '=', 1);
+//        }
+//        elseif ($catId == 2) {
+//            $boutics = Boutic::all()->where('if_female', '=', 1);
+//        }
+//        elseif ($catId == 3) {
+//            $boutics = Boutic::all()->where('if_child', '=', 1);
+//        }
+//        if (!$boutics->isEmpty()) {
+//            $is_boutics = true;
+//        }
+
+//        dd($boutics);
+        return response()->json(['center' => $center, 'boutics' => $boutics, 'is_boutics' => $is_boutics, 'catId' => $catId, 'types' => $types]);
+    }
+
+
 }

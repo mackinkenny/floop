@@ -3,7 +3,7 @@
 @section('content')
 
     <section class="cats">
-        <div class="container" style="background: #fefefe;">
+        <div class="container" >
             <div class="row justify-content-center">
 
                 <div id="femalecol" class="col-auto p-3 p-md-5 text-center" style="background: #E19075;">
@@ -16,7 +16,7 @@
                         <h2 class="d-none d-md-block" style="font-size: 1rem;">Детская одежда</h2>
                     </a>
                 </div>
-                <div id="malecol" class="col-auto p-3 p-md-5 text-center" style="background: #27A8E0;">
+                <div id="malecol" class="col-auto p-3 p-md-5 text-center" style="background: #86C4DF;">
                     <a href="cat/1" class="link" id="male"><img class="logo-cat" src="img/cats/male.png" width="60" height="60" alt="">
                         <h2 class="d-none d-md-block" style="font-size: 1rem;">Мужская одежда</h2>
                     </a>
