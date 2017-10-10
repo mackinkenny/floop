@@ -20,6 +20,7 @@ $(document).ready(function () {
         }
     })
 
+    
     $('.modal.fade').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget)
         // alert(button.data('id'))
