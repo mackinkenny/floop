@@ -7,7 +7,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Settings</div>
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="/edit/{{ Auth::user()->id }}" enctype="multipart/form-data">
+                        <form class="form-horizontal" method="POST" action="/edituser/{{ Auth::user()->id }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <label for="name">Name</label>
                             <input type="text" name="name">

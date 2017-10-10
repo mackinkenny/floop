@@ -20,7 +20,7 @@
                 @elseif(Session::get('catId') == 2)
                     style="background-color: #E19075;"
                 @elseif(Session::get('catId') == 3)
-                    style="background-color: #C46FA8;"
+                    style="background-color: #C69DB9;"
                 @endif>
     <div id="preloader" class="d-md-none w-100 h-100 fixed-top bg-dark container">
         {{--<img class="logo" src="/img/logo/logo2.png" width="288" height="80" alt="" style="width: 144px; height: 40px; -webkit-transform: translate(95px, 150px);-moz-transform: translate(95px, 150px);-ms-transform: translate(95px, 150px);-o-transform: translate(95px, 150px);transform: translate(95px, 150px);">--}}
@@ -34,13 +34,12 @@
 
     <header>
         <img class="fixed-shadow fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px">
-        <nav class="navbar fixed-top navbar-expand-md">
+        <nav class="navbar fixed-top navbar-expand-md" id="navbar-top">
             <div class="container">
                 <a id="menu-mobile" class="mr-5 d-md-none"><img src="/img/logo/menu.png" width="20" height="20" alt=""></a>
                 <a class="navbar-brand mx-auto mx-md-0" href="/">
                     <img class="logo" src="/img/logo/logo2.png" width="108" height="30" alt=""><h1 style="display: none;">Floop</h1>
                 </a>
-                <a href="sdiscounts" class="mx-1 d-md-none"><img src="/img/logo/percent.png" width="20" height="20" alt=""></a>
                 <a href="" class="mx-1 d-md-none"><img src="/img/logo/search.png" width="20" height="20" alt=""></a>
 
 
@@ -54,7 +53,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Вход</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Регистрация</a></li>
                         @else
-                            <div class="form-inline my-auto"><a href="sdiscounts"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></div>
+                            <div class="form-inline my-auto"><a href="{{ route('sdiscounts') }}"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></div>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 

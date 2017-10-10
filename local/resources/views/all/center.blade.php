@@ -1,10 +1,10 @@
 <div class="container" id="containerWithCenters"style="display: none;">
-    <div class="row">
-        <div class="col">
-            <h3>Lorem</h3>
+    <div class="row py-3">
+        <div class="col-auto mx-auto">
+            <h3>Торговые центры</h3>
         </div>
         <div class="col-auto">
-            <a href="" class="bg-danger" id="backToAll"><img src="/img/straights/right.png" width="10" height="10" alt=""></a>
+            <a href="" class="" id="backToAll"><p class="p-md-3 bg-danger text-light">назад ></p></a>
         </div>
     </div>
     <div class="row justify-content-between">

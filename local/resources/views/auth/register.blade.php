@@ -79,12 +79,12 @@
     <div class="container" id="content">
         <div class="row justify-content-center align-items-center" id="body-content">
 
-            <form class="col-5 text-light p-5" id="form-login"  method="POST" action="{{ route('register') }}">
+            <form class="col-12 text-light p-5" id="form-login"  method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                    <label for="name">Name</label>
-                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus placeholder="Enter your name">
+                    <label for="name">Имя</label>
+                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus placeholder="Введите Ваше имя">
                     @if ($errors->has('name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('name') }}</strong>
@@ -93,8 +93,8 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter email" value="{{ old('email') }}" required>
+                    <label for="exampleInputEmail1">E-mail</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="E-mail" value="{{ old('email') }}" required>
                     @if ($errors->has('email'))
                         <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
@@ -102,8 +102,8 @@
                     @endif
                 </div>
                 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"  name="password" required>
+                    <label for="exampleInputPassword1">Пароль</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder=""  name="password" required>
                     @if ($errors->has('password'))
                         <span class="help-block">
                             <strong>{{ $errors->first('password') }}</strong>
@@ -111,10 +111,10 @@
                     @endif
                 </div>
                 <div class="form-group">
-                    <label for="password-confirm">Confirm Password</label>
-                    <input id="password-confirm" type="password" class="form-control" placeholder="Confirm password" name="password_confirmation" required>
+                    <label for="password-confirm">Подтвердите пароль</label>
+                    <input id="password-confirm" type="password" class="form-control" placeholder="" name="password_confirmation" required>
                 </div>
-                <button type="submit" class="col-auto btn btn-primary">Register</button>
+                <button type="submit" class="col-auto btn btn-primary">Регистрация</button>
             </form>
 
         </div>

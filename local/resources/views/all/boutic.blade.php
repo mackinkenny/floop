@@ -1,10 +1,10 @@
 <div class="container" id="containerWithBoutics" style="display: none;">
-    <div class="row">
+    <div class="row py-3">
         <div class="col-auto">
-            <a href="" class="bg-danger" id="backToAll2"><img src="/img/straights/right.png" width="10" height="10" alt=""></a>
+            <a href="" class="" id="backToAll2"><p class="bg-danger text-light p-md-3">< назад</p></a>
         </div>
-        <div class="col">
-            <h3>Lorem</h3>
+        <div class="col-auto mx-auto">
+            <h3>Магазины</h3>
         </div>
     </div>
     <div class="row justify-content-between">

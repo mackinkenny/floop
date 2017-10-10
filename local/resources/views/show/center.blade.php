@@ -9,24 +9,25 @@
 
 
                 <div id="sort" class="col-5 p-3">
-
+                    <input type="hidden" value="{{ $i = 0 }}">
                     @foreach($types->where('cat_id','=', $catId) as $index => $type)
-                        @if($index < 10)
-                            @if($index == 5)
+                        @if($i < 10)
+                            @if($i == 5)
                                 <br>
                                 <br>
                             @endif
 
                             <a class="link link-type mx-md-2" href="" id="{{ $type->id }}">
-                                <img class="logo-type" title="{{ $type->name }}" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" style="filter:invert(1);" alt="">
+                                <img class="logo-type" title="{{ $type->name }}" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">
                             </a>
                         @endif
 
+                            <input type="hidden" {{ $i++ }}>
                     @endforeach
                 </div>
 
                 @if($catId == 0)
-                    <div id="main" class="col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: white;">
+                    <div id="main" class="col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: #D8D9D9;">
                         <span>
                             <img class="logo-cat" src="/img/logo/logo.png" width="80" height="80" alt="">
                         </span>
@@ -49,7 +50,7 @@
                 </div>
                 @endif
                 @if($catId == 1)
-                <div id="malecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #27A8E0;">
+                <div id="malecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #86C4DF;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/male.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Мужская одежда</h2>--}}
@@ -58,18 +59,22 @@
                 @endif
 
                     <div id="sort2" class="col-5 p-3 text-right">
+                        <input type="hidden" value="{{ $i = 0 }}">
                         @foreach($types->where('cat_id','=', $catId) as $index => $type)
-                            @if($index > 9)
-                                @if($index == 15)
+                            @if($i > 9)
+                                @if($i == 15)
                                     <br>
                                     <br>
                                 @endif
 
                                 <a class="link link-type mx-md-2" href="" id="{{ $type->id }}">
-                                    <img title="{{ $type->name }}" class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" style="filter:invert(1);" alt="">
+                                    <img title="{{ $type->name }}" class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">
                                 </a>
                             @endif
-
+                                <input type="hidden" value="{{ $i++ }}">
+                            @if($i > 19)
+                                @break
+                            @endif
                         @endforeach
 
                     </div>
@@ -86,7 +91,10 @@
 
     <h2 class="text-center pt-4 pb-2">{{ $center->name }}</h2>
     <input type="hidden" value="{{ $center->id }}" id="idcenter">
-        <div class="container py-md-5 py-3 container-spec">
+    <div class="d-none container py-md-5 py-3 container-spec" id="containerWithBouticsinCenternone">
+        <div class="row"></div>
+    </div>
+        <div class="container py-md-5 py-3 container-spec" id="containerWithBouticsinCenter">
 
             @if($is_boutics)
             <div class="row">
@@ -121,7 +129,7 @@
 
                         @endfor
                     </ul></div>
-                <div class="col bg-light px-5 d-flex flex-row align-items-center"><p class="m-0 font-weight-bold">Этажи</p></div>
+                <div class="col bg-light px-5 d-flex flex-row align-items-center" id="rekt"><p class="m-0 font-weight-bold">Этажи</p></div>
             </div>
 
 
@@ -160,9 +168,8 @@
                                 <div class="row">
 
                                 @foreach ($boutics as $boutic)
-
                                     @if($boutic->stage == $i + 1)
-                                    <div class="col-4 p-2 col-md-3 my-4 my-md-5">
+                                    <div class="col-4 p-2 col-md-3 my-4 my-md-4">
                                         <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
                                             <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
                                             <p class="text-center text-dark">{{ $boutic->name }}</p>
@@ -179,7 +186,7 @@
                                 @foreach ($boutics as $boutic)
 
                                     @if($boutic->stage == $i + 1)
-                                        <div class="col-4 p-2 col-md-3 my-4 my-md-5">
+                                        <div class="col-4 p-2 col-md-3 my-4 my-md-4">
                                             <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
                                                 <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
                                                 <p class="text-center text-dark">{{ $boutic->name }}</p>
