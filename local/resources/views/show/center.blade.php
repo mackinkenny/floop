@@ -18,7 +18,7 @@
                             @endif
 
                             <a class="link link-type mx-md-2" href="" id="{{ $type->id }}">
-                                <img class="logo-type" title="{{ $type->name }}" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" style="filter:invert(1);" alt="">
+                                <img class="logo-type" title="{{ $type->name }}" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">
                             </a>
                         @endif
 
@@ -26,7 +26,7 @@
                 </div>
 
                 @if($catId == 0)
-                    <div id="main" class="col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: white;">
+                    <div id="main" class="col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: #D8D9D9;">
                         <span>
                             <img class="logo-cat" src="/img/logo/logo.png" width="80" height="80" alt="">
                         </span>
@@ -49,7 +49,7 @@
                 </div>
                 @endif
                 @if($catId == 1)
-                <div id="malecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #27A8E0;">
+                <div id="malecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #86C4DF;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/male.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Мужская одежда</h2>--}}
@@ -66,7 +66,7 @@
                                 @endif
 
                                 <a class="link link-type mx-md-2" href="" id="{{ $type->id }}">
-                                    <img title="{{ $type->name }}" class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" style="filter:invert(1);" alt="">
+                                    <img title="{{ $type->name }}" class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">
                                 </a>
                             @endif
 
@@ -165,7 +165,7 @@
                                 @foreach ($boutics as $boutic)
 
                                     @if($boutic->stage == $i + 1)
-                                    <div class="col-4 p-2 col-md-3 my-4 my-md-5">
+                                    <div class="col-4 p-2 col-md-3 my-4 my-md-4">
                                         <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
                                             <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
                                             <p class="text-center text-dark">{{ $boutic->name }}</p>
@@ -182,7 +182,7 @@
                                 @foreach ($boutics as $boutic)
 
                                     @if($boutic->stage == $i + 1)
-                                        <div class="col-4 p-2 col-md-3 my-4 my-md-5">
+                                        <div class="col-4 p-2 col-md-3 my-4 my-md-4">
                                             <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
                                                 <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
                                                 <p class="text-center text-dark">{{ $boutic->name }}</p>

@@ -42,7 +42,7 @@ $(document).ready(function() {
                         "<img src='/uploads/centers/" + data.Success[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
                         "</span>" +
                         "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                        "<h4 class='px-4 py-1 w-100' style='background-color: #fefefe; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + data.Success[i].name + "</h4>" +
+                        "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + data.Success[i].name + "</h4>" +
                         "</span>" +
                         "</span>" +
                         "</a>");
@@ -65,7 +65,7 @@ $(document).ready(function() {
                         "<img src='/uploads/boutic/avatars/" + data.Success[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
                         "</div>" +
                         "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                        "<h4 class='px-4 py-1 w-100' style='background-color: #fefefe; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + data.Success[i].name + "</h4>" +
+                        "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + data.Success[i].name + "</h4>" +
                         "</span>" +
                         "</span>" +
                         "</a>" );
@@ -77,51 +77,62 @@ $(document).ready(function() {
 
     function appendItemsBoutics(bouts) {
         for (var i = 0; i <= bouts.length - 1; i++) {
-            $('#ajax-boutics').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4'>" +
-                "<span class='row'>" +
-                "<span class='col-auto pr-0'>" +
-                "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                "</span>" +
-                "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + bouts[i].name + "</h4>" +
-                "</span>" +
-                "</span>" +
-                "</a>");
-            $('#ajax-boutics2').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4 pr-0'>" +
-                "<span class='d-flex flex-row-reverse'>" +
-                "<div class='col-auto pl-0'>" +
-                "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                "</div>" +
-                "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + bouts[i].name + "</h4>" +
-                "</span>" +
-                "</span>" +
-                "</a>");
+            if ((i + 1) % 2 != 0) {
+                $('#ajax-boutics').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4'>" +
+                    "<span class='row'>" +
+                    "<span class='col-auto pr-0'>" +
+                    "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                    "</span>" +
+                    "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + bouts[i].name + "</h4>" +
+                    "</span>" +
+                    "</span>" +
+                    "</a>");
+            }
+            else {
+                $('#ajax-boutics2').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4 pr-0'>" +
+                    "<span class='d-flex flex-row-reverse'>" +
+                    "<div class='col-auto pl-0'>" +
+                    "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                    "</div>" +
+                    "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + bouts[i].name + "</h4>" +
+                    "</span>" +
+                    "</span>" +
+                    "</a>");
+            }
+
+
         };
     }
 
     function appendItemsCenters(cents) {
         for (var i = 0; i <= cents.length - 1; i++) {
-            $('#ajax-centers').append("<a href='/center/" + cents[i].id + "' class='col-12 my-4'>" +
-                "<span class='row'>" +
-                "<span class='col-auto pr-0'>" +
-                "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                "</span>" +
-                "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
-                "</span>" +
-                "</span>" +
-                "</a>");
-            $('#ajax-centers2').append("<a href='/center/" + cents[i].id + "' class='col-12 my-4 pr-0'>" +
-                "<span class='d-flex flex-row-reverse'>" +
-                "<div class='col-auto pl-0'>" +
-                "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
-                "</div>" +
-                "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
-                "</span>" +
-                "</span>" +
-                "</a>");
+            if ((i + 1) % 2 != 0) {
+                $('#ajax-centers').append("<a href='/center/" + cents[i].id + "' class='col-12 my-4'>" +
+                    "<span class='row'>" +
+                    "<span class='col-auto pr-0'>" +
+                    "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                    "</span>" +
+                    "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
+                    "</span>" +
+                    "</span>" +
+                    "</a>");
+            }
+            else {
+                $('#ajax-centers2').append("<a href='/center/" + cents[i].id + "' class='col-12 my-4 pr-0'>" +
+                    "<span class='d-flex flex-row-reverse'>" +
+                    "<div class='col-auto pl-0'>" +
+                    "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                    "</div>" +
+                    "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
+                    "</span>" +
+                    "</span>" +
+                    "</a>");
+            }
+
         };
     }
 
@@ -131,7 +142,7 @@ $(document).ready(function() {
             $('#ajax-home').append( "<a href='/center/" + allcenters[i].id + "' class='col-12 my-4'>" +
                 "<span class='row'>" +
                 "<span class='col-auto pr-0'>" +
-                "<img src='/uploads/centers/" + allcenters[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                "<img src='/uploads/centers/" + allcenters[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
                 "</span>" +
                 "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                 "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + allcenters[i].name + "</h4>" +
@@ -144,7 +155,7 @@ $(document).ready(function() {
             $('#ajax-home2').append( "<a href='/profile/" + allboutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
                 "<span class='d-flex flex-row-reverse'>" +
                 "<div class='col-auto pl-0'>" +
-                "<img src='/uploads/boutic/avatars/" + allboutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                "<img src='/uploads/boutic/avatars/" + allboutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
                 "</div>" +
                 "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                 "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + allboutics[i].name + "</h4>" +
@@ -218,13 +229,13 @@ $(document).ready(function() {
             $('#malecol').show();
             $("#childcol").show();
             $('#body').animate({
-                backgroundColor: '#FEFEFE'
+                backgroundColor: '#D8D9D9'
             }, 500);
             $('#body2').animate({
-                backgroundColor: '#C5C7C6'
+                backgroundColor: '#C3C4C4'
             }, 500);
             $('#body3').animate({
-                backgroundColor: '#C5C7C6'
+                backgroundColor: '#C3C4C4'
             }, 500);
             catId = 0;
             appendItems();
@@ -263,7 +274,7 @@ $(document).ready(function() {
                         $('#ajax-home').append( "<a href='/center/" + val.id + "' class='col-12 my-4'>" +
                             "<span class='row'>" +
                             "<span class='col-auto pr-0'>" +
-                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
@@ -275,7 +286,7 @@ $(document).ready(function() {
                         $('#ajax-home2').append( "<a href='/profile/" + val.user_id + "' class='col-12 my-4 pr-0'>" +
                             "<span class='d-flex flex-row-reverse'>" +
                             "<div class='col-auto pl-0'>" +
-                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
@@ -294,13 +305,13 @@ $(document).ready(function() {
             $('#femalecol').show();
             $("#malecol").show();
             $('#body').animate({
-                backgroundColor: '#FEFEFE'
+                backgroundColor: '#D8D9D9'
             }, 1000);
             $('#body2').animate({
-                backgroundColor: '#C5C7C6'
+                backgroundColor: '#C3C4C4'
             }, 1000);
             $('#body3').animate({
-                backgroundColor: '#C5C7C6'
+                backgroundColor: '#C3C4C4'
             }, 1000);
             catId = 0;
 
@@ -319,13 +330,13 @@ $(document).ready(function() {
             $('#femalecol').hide();
             $("#childcol").hide();
             $('#body').animate({
-                backgroundColor: '#27A8E0'
+                backgroundColor: '#86C4DF'
             }, 1000);
             $('#body2').animate({
-                backgroundColor: '#27A8E0'
+                backgroundColor: '#86C4DF'
             }, 1000);
             $('#body3').animate({
-                backgroundColor: '#27A8E0'
+                backgroundColor: '#86C4DF'
             }, 1000);
             catId = 1;
             $.ajax({
@@ -339,7 +350,7 @@ $(document).ready(function() {
                         $('#ajax-home').append( "<a href='/center/" + val.id + "' class='col-12 my-4'>" +
                             "<span class='row'>" +
                             "<span class='col-auto pr-0'>" +
-                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
@@ -351,7 +362,7 @@ $(document).ready(function() {
                         $('#ajax-home2').append( "<a href='/profile/" + val.user_id + "' class='col-12 my-4 pr-0'>" +
                             "<span class='d-flex flex-row-reverse'>" +
                             "<div class='col-auto pl-0'>" +
-                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #fff;'>" +
+                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
@@ -370,13 +381,13 @@ $(document).ready(function() {
             $('#femalecol').show();
             $("#childcol").show();
             $('#body').animate({
-                backgroundColor: '#FEFEFE'
+                backgroundColor: '#D8D9D9'
             }, 1000);
             $('#body2').animate({
-                backgroundColor: '#C5C7C6'
+                backgroundColor: '#C3C4C4'
             }, 1000);
             $('#body3').animate({
-                backgroundColor: '#C5C7C6'
+                backgroundColor: '#C3C4C4'
             }, 1000);
             catId = 0;
 

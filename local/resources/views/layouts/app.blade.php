@@ -20,7 +20,7 @@
                 @elseif(Session::get('catId') == 2)
                     style="background-color: #E19075;"
                 @elseif(Session::get('catId') == 3)
-                    style="background-color: #C46FA8;"
+                    style="background-color: #C69DB9;"
                 @endif>
     <div id="preloader" class="d-md-none w-100 h-100 fixed-top bg-dark container">
         {{--<img class="logo" src="/img/logo/logo2.png" width="288" height="80" alt="" style="width: 144px; height: 40px; -webkit-transform: translate(95px, 150px);-moz-transform: translate(95px, 150px);-ms-transform: translate(95px, 150px);-o-transform: translate(95px, 150px);transform: translate(95px, 150px);">--}}

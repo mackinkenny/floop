@@ -64,6 +64,7 @@ $(document).ready(function () {
                 modal.find('#lu_id').val(data.user)
                 modal.find('#bid').val(data.product.id)
                 modal.find('#style-1').text('')
+                modal.find('.like_count').text('| ' + data.like_count)
                 for (var val of data.comments) {
                     modal.find('#style-1').append(
                         '<p class="col-12">' + val.comment + '</p>'
@@ -122,7 +123,6 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-               alert('it works!' + data.Success);
                $('.like_count').text('| ' + data.like_count)
             },
         });
@@ -142,7 +142,6 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-                alert('it works!' + data.Success);
             },
         });
     });

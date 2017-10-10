@@ -128,6 +128,7 @@ class ProductController extends Controller
         $user = Auth::user()->id;
         $photos = $product->photos;
         $percent = 1;
+        $count_likes = $product->count_likes;
 
         $comments = $product->comments;
 
@@ -148,6 +149,7 @@ class ProductController extends Controller
             'discount' => $percent,
             'comments' => $comments,
             'is_percent' => $is_percent,
+            'like_count' => $count_likes,
         ]);
     }
 
