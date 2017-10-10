@@ -100,7 +100,7 @@ footer a:hover {
 }
 
 #sectionRightAndLeft, #containerWithBoutics, #containerWithCenters {
-    background-color: #7f8180;
+    background-color: #EBEBEB;
 }
 
 nav {
@@ -108,7 +108,7 @@ nav {
 }
 
 .container-spec {
-    background-color: #EBEDEC;
+    background-color: #EBEBEB;
 }
 
 .icon-toggle {
@@ -176,6 +176,14 @@ nav {
     height: 200px;
 }
 
+#a-products {
+    height: 255px;
+}
+
+#products {
+    height: 255px;
+}
+
 @media (min-width: 576px) {
     a.boutic-in-center p {
         opacity: 0;
@@ -215,7 +223,7 @@ nav {
     }
 
     p {
-        font-size: 14px;
+        font-size: 10px;
     }
 
     h3 {
@@ -282,8 +290,20 @@ nav {
         margin-top: 55px;
     }
 
+    #products {
+        height: 100px;
+    }
+
+    #a-products {
+        height: 100px;
+    }
+
     .content-m {
         margin-top: 54px;
+        /*margin-bottom: 54px;*/
+    }
+
+    section {
         margin-bottom: 54px;
     }
 

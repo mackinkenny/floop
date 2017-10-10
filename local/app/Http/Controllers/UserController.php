@@ -51,38 +51,40 @@ class UserController extends Controller
 
     public function profile() {
 
+        $is_products_liked = false;
+        $is_products_buied = false;
+        $products = Auth::user()->products;
+        Session::put('catId', 0);
 
-        return view('profile', ['user' => Auth::user()]);
+        return view('profile', [
+            'user' => Auth::user(),
+            'products' => $products,
+            ]);
     }
 
     public function profileid($id)
     {
-        $is_products = false;
-        $user = User::find($id);
-        if($user->is_boutic == 1)
-        {
-            $catId = Session::get('catId');
-            $boutic = Boutic::all()->where('user_id', '=', $id)->first();
-            if ($catId == 0) {
-                $products = $boutic->products;
+            $is_products = false;
+            $user = User::find($id);
+            if ($user->is_boutic == 1) {
+                $catId = Session::get('catId');
+                $boutic = Boutic::all()->where('user_id', '=', $id)->first();
+                if ($catId == 0) {
+                    $products = $boutic->products;
+                } elseif ($catId == 1) {
+                    $products = $boutic->products->where('cat_id', '=', $catId);
+                } elseif ($catId == 2) {
+                    $products = $boutic->products->where('cat_id', '=', $catId);
+                } elseif ($catId == 3) {
+                    $products = $boutic->products->where('cat_id', '=', $catId);
+                }
+                if (!$products->isEmpty()) {
+                    $is_products = true;
+                }
+                return view('profileboutic', ['boutic' => $boutic, 'products' => $products, 'is_products' => $is_products]);
+            } else {
+                return view('profile', ['user' => $user]);
             }
-            elseif ($catId == 1) {
-                $products = $boutic->products->where('cat_id', '=', $catId);
-            }
-            elseif ($catId == 2) {
-                $products = $boutic->products->where('cat_id', '=', $catId);
-            }
-            elseif ($catId == 3) {
-                $products = $boutic->products->where('cat_id', '=', $catId);
-            }
-            if (!$products->isEmpty()) {
-                $is_products = true;
-            }
-            return view('profileboutic', ['boutic' => $boutic, 'products' => $products, 'is_products' => $is_products]);
         }
-        else {
-            return view('profile', ['user' => $user]);
-        }
-    }
 
 }

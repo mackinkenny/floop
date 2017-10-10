@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $('#body-content').css('height', $(window).height());
-    $('#login-page').css('height', $(window).height());
+    $('#login-page').css('height', $(window).height() - $('footer').height() - $('#navbar-top').height());
     $('#nav-mobile').css('height', $(window).height());
     $('#backdrop').css('height', $(window).height());
 

@@ -14,11 +14,12 @@
                             <div class="col-md-auto col-12 text-center">
                                 <p class="nick">{{ $boutic->name }}'s Page</p>
                             </div>
-                            <div class="d-flex align-items-center justify-content-center"><i class="fa fa-3x fa-info-circle" aria-hidden="true"></i></div>
+
 
                             @if(Auth::guest())
                                 <form  class="mt-4 mt-md-0 col-auto ml-md-auto d-flex align-items-center justify-content-center">
-
+                                    <input type="hidden" id="sid" name="id" value="{{ $boutic->id }}">
+                                    <input type="hidden" id="sb_id" name="b_id" value="{{ $boutic->user->id }}">
                                     <a href="/login" class="rounded-circle p-0" style="cursor: pointer; border: 0px;">
                                         <div class="row bg-light subscribe align-items-center">
                                             <p class="col-auto mr-auto m-0">Подписаться</p>
@@ -53,6 +54,8 @@
                                     <form action="/bproduct" method="POST" class="mt-4 mt-md-0 col-auto ml-md-auto d-flex align-items-center justify-content-center">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="id" value="{{ $boutic->id}}">
+                                        <input type="hidden" id="sid" name="id" value="{{ $boutic->id }}">
+                                        <input type="hidden" id="sb_id" name="b_id" value="{{ $boutic->user->id }}">
                                         <button  type="submit"  class="rounded-circle p-0" style="cursor: pointer; border: 0px;">
                                             <div class="row bg-light subscribe align-items-center">
                                                 <p style="font-size: 24px;" class="col-auto mr-auto m-0">Настройки</p>
@@ -70,9 +73,9 @@
                         <div id="info2" class="col-12 align-items-left  justify-content-center">
                             <p class="">Информация: {{$boutic->info}} </p>
 
-                            <span>Доставка: {{$boutic->delivery}} </span>
-                            <br>
-                            <span>Номер:  {{$boutic->phone_number}}</span>
+                            <p>Доставка: {{$boutic->delivery}} </p>
+
+                            <p>Номер:  {{$boutic->phone_number}}</p>
                         </div>
                         </div>
                     </div>

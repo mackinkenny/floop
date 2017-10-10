@@ -63,6 +63,8 @@ $(document).ready(function () {
                 modal.find('#lid').val(data.product.id)
                 modal.find('#lu_id').val(data.user)
                 modal.find('#bid').val(data.product.id)
+                modal.find('#style-1').text('')
+                modal.find('.like_count').text('| ' + data.like_count)
                 for (var val of data.comments) {
                     modal.find('#style-1').append(
                         '<p class="col-12">' + val.comment + '</p>'
@@ -71,7 +73,13 @@ $(document).ready(function () {
                 var div = $("#style-1");
                 div.scrollTop(div.prop('scrollHeight'));
                 modal.find('#bu_id').val(data.user)
-                modal.find('.price-text').text(data.product.price - (data.product.price * data.discount / 100))
+                if(data.is_percent) {
+                    modal.find('.price-text').text(data.product.price - (data.product.price * data.discount / 100))
+                }
+                else
+                {
+                    modal.find('.price-text').text(data.product.price)
+                }
 
             }
         })
@@ -115,7 +123,6 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-               alert('it works!' + data.Success);
                $('.like_count').text('| ' + data.like_count)
             },
         });
@@ -135,7 +142,6 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
-                alert('it works!' + data.Success);
             },
         });
     });

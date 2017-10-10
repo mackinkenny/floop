@@ -25,7 +25,7 @@ class DiscountController extends Controller
 
         $discount->save();
 
-        return back();
+        return redirect('/');
     }
 
     public function edit(Request $request)
