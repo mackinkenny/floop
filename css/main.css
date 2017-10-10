@@ -6,7 +6,20 @@
 body {
     background-color: #FEFEFE;
     font-family:  'Comfortaa', cursive;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     /*font-family:  Clutch;*/
+}
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+a {
+    -webkit-user-drag: none;
+    user-drag: none;
 }
 
 .content-m {
