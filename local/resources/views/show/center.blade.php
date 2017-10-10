@@ -9,10 +9,10 @@
 
 
                 <div id="sort" class="col-5 p-3">
-
+                    <input type="hidden" value="{{ $i = 0 }}">
                     @foreach($types->where('cat_id','=', $catId) as $index => $type)
-                        @if($index < 10)
-                            @if($index == 5)
+                        @if($i < 10)
+                            @if($i == 5)
                                 <br>
                                 <br>
                             @endif
@@ -22,6 +22,7 @@
                             </a>
                         @endif
 
+                            <input type="hidden" {{ $i++ }}>
                     @endforeach
                 </div>
 
@@ -58,9 +59,10 @@
                 @endif
 
                     <div id="sort2" class="col-5 p-3 text-right">
+                        <input type="hidden" value="{{ $i = 0 }}">
                         @foreach($types->where('cat_id','=', $catId) as $index => $type)
-                            @if($index > 9)
-                                @if($index == 15)
+                            @if($i > 9)
+                                @if($i == 15)
                                     <br>
                                     <br>
                                 @endif
@@ -69,7 +71,10 @@
                                     <img title="{{ $type->name }}" class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">
                                 </a>
                             @endif
-
+                                <input type="hidden" value="{{ $i++ }}">
+                            @if($i > 19)
+                                @break
+                            @endif
                         @endforeach
 
                     </div>
@@ -163,7 +168,6 @@
                                 <div class="row">
 
                                 @foreach ($boutics as $boutic)
-
                                     @if($boutic->stage == $i + 1)
                                     <div class="col-4 p-2 col-md-3 my-4 my-md-4">
                                         <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
