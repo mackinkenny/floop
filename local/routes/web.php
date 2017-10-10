@@ -17,7 +17,7 @@ Auth::routes();
 
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/settings', 'HomeController@settings')->name('settings');
-Route::post('/edit/{id}', 'UserController@edit')->name('id');
+Route::post('/edituser/{id}', 'UserController@edit')->name('id');
 Route::post('/edit/{id}', 'BouticController@edit')->name('bid');
 Route::get('/profile', 'UserController@profile')->name('profile');
 Route::get('/profile/{id}', 'UserController@profileid');

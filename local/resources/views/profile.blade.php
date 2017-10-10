@@ -79,7 +79,7 @@
                     <div class="row">
 
                         @foreach($user->products as $product)
-                            @if($product->pivot->status)
+                            @if($product->pivot->likeOrBuy == 0)
 
                                 <div class="col-md-3 col-6 my-4">
                                     <div class="card bg-dark text-white">

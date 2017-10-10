@@ -51,8 +51,15 @@ class UserController extends Controller
 
     public function profile() {
 
+        $is_products_liked = false;
+        $is_products_buied = false;
+        $products = Auth::user()->products;
+        Session::put('catId', 0);
 
-        return view('profile', ['user' => Auth::user()]);
+        return view('profile', [
+            'user' => Auth::user(),
+            'products' => $products,
+            ]);
     }
 
     public function profileid($id)

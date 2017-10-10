@@ -10,7 +10,7 @@
 @elseif($is_products == true)
             @foreach($products as $product)
                 <p style="display: none;">{{ $i = $product->photos->count() }}</p>
-                <a href="#modal" data-toggle="modal" class="col-md-3 col-4 my-4" data-id = "{{ $product->id }}">
+                <a href="#modal" id="a-products" data-toggle="modal" class="col-md-3 col-4 my-4" data-id = "{{ $product->id }}">
                     <div class="card bg-dark text-dark" id="products" style="box-shadow: 5px 5px 12px 0px rgba(0,0,0,0.55); border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover;">
                         <img style="opacity: 0;" class="card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image">
                         {{--<div class="card-img-overlay text-center">--}}

@@ -35,6 +35,7 @@ class AdminController extends Controller
             'typesizes' => TypeSize::all(),
             'users' => User::all(),
             'colors' => Color::all(),
-            'words' => Word::all()]);
+            'words' => Word::all(),
+        ]);
     }
 }

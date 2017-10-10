@@ -176,6 +176,10 @@ nav {
     height: 200px;
 }
 
+#a-products {
+    height: 255px;
+}
+
 #products {
     height: 255px;
 }
@@ -287,6 +291,10 @@ nav {
     }
 
     #products {
+        height: 100px;
+    }
+
+    #a-products {
         height: 100px;
     }
 
