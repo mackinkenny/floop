@@ -36,11 +36,11 @@
         <img class="fixed-shadow fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px">
         <nav class="navbar fixed-top navbar-expand-md" id="navbar-top">
             <div class="container">
-                <a id="menu-mobile" class="mr-5 d-md-none"><img src="/img/logo/menu.png" width="20" height="20" alt=""></a>
+                <a id="menu-mobile" class=" d-md-none"><img src="/img/logo/menu.png" width="30" height="30" alt=""></a>
                 <a class="navbar-brand mx-auto mx-md-0" href="/">
                     <img class="logo" src="/img/logo/logo2.png" width="108" height="30" alt=""><h1 style="display: none;">Floop</h1>
                 </a>
-                <a href="" class="mx-1 d-md-none"><img src="/img/logo/search.png" width="20" height="20" alt=""></a>
+                <a href="" class="d-md-none"><img src="/img/logo/search.png" width="30" height="30" alt=""></a>
 
 
                 <div class="collapse navbar-collapse"  id="navbarNavDropdown">
@@ -53,7 +53,7 @@
                             <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Вход</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{ route('register') }}">Регистрация</a></li>
                         @else
-                            <div class="form-inline my-auto"><a href="{{ route('sdiscounts') }}"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></div>
+                            <li class="nav-item d-flex flex-row align-items-center"><a href="{{ route('sdiscounts') }}"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
@@ -106,24 +106,24 @@
             <img class="fixed-bottom" src="/img/menu/menu2.png" alt="" width="100%" height="10px" style="margin-bottom: 56px;">
             <div class="container d-flex flex-row justify-content-center">
                 <a class="navbar-brand mx-4" href="/">
-                    <img src="/img/logo/home.png" width="25" height="25" alt="">
+                    <img src="/img/logo/home.png" width="30" height="30" alt="">
                 </a>
                 <a class="navbar-brand mx-4" href="/">
-                    <img src="/img/logo/buy.png" width="25" height="25" alt="">
+                    <img src="/img/logo/buy.png" width="30" height="30" alt="">
                 </a>
                 @if(Auth::user())
                     @if(Auth::user()->is_boutic)
                         <a class="navbar-brand mx-4" href="/profile/{{Auth::user()->id}}">
-                            <img src="/img/logo/profile.png" width="25" height="25" alt="">
+                            <img src="/img/logo/profile.png" width="30" height="30" alt="">
                         </a>
                     @else
                     <a class="navbar-brand mx-4" href="{{  route('profile') }}">
-                        <img src="/img/logo/profile.png" width="25" height="25" alt="">
+                        <img src="/img/logo/profile.png" width="30" height="30" alt="">
                     </a>
                     @endif
                     @else
                     <a class="navbar-brand mx-4" href="{{ url('/login') }}">
-                        <img src="/img/logo/profile.png" width="25" height="25" alt="">
+                        <img src="/img/logo/profile.png" width="30" height="30" alt="">
                     </a>
                     @endif
             </div>

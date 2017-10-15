@@ -73,7 +73,7 @@ class ProductController extends Controller
         $product->save();
             foreach ($request->img_paths as $index => $photo) {
                 $filename = time() + random_int(random_int(-10000, 0), random_int(1000, 999999)) . '.' . $photo->getClientOriginalExtension();
-                Image::make($photo)->rotate(-90)->resize(466, 700)->save( 'uploads/images/products/' . $filename );
+                Image::make($photo)->resize(466, 700)->save( 'uploads/images/products/' . $filename );
                 $photonew = new Photo();
                 $photonew->img_path = $filename;
                 $photonew->product_id = $product->id;
