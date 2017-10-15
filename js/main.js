@@ -11,15 +11,14 @@ $(document).ready(function () {
         dataType: 'json',
         success: function (data) {
             if (data.subs_flag) {
+                $('#sub div').css('backgroundColor', '#dc3545')
                 $('#subs-flag').text('Отписаться')
             }
             else {
+                $('#sub div').css('backgroundColor', '#fff')
                 $('#subs-flag').text('Подписаться')
             }
             $('.sub-badge').text(data.subs_count)
-            if (data.subs_count >= 10000) {
-                $('.sub-badge').text('к')
-            }
         }
     })
 
@@ -167,9 +166,11 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 if (!data.subs_flag) {
+                    $('#sub div').css('backgroundColor', '#dc3545')
                     $('#subs-flag').text('Отписаться')
                 }
                 else {
+                    $('#sub div').css('backgroundColor', '#fff')
                     $('#subs-flag').text('Подписаться')
                 }
                 $('.sub-badge').text(data.subs_count)

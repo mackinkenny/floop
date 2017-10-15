@@ -33,6 +33,17 @@
 
 
     @include('slider')
+    <div class="d-md-none">
+        @if(Session::get('catId') == 1)
+            <img src="/img/slider/male.jpg" class="w-100" alt="">
+        @elseif(Session::get('catId') == 2)
+            <img src="/img/slider/female.jpg" class="w-100" alt="">
+        @elseif(Session::get('catId') == 3)
+            <img src="/img/slider/child.jpg" class="w-100" alt="">
+        @elseif(Session::get('catId') == 0)
+            <img src="/img/slider/female.jpg" class="w-100" alt="">
+        @endif
+    </div>
 
     <section id="sectionOfCentersAndBoutics">
         @include('all.center')

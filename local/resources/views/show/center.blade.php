@@ -86,6 +86,17 @@
         </div>
     </section>
     @include('slider')
+    <div class="d-md-none">
+        @if(Session::get('catId') == 1)
+            <img src="/img/slider/male.jpg" class="w-100" alt="">
+        @elseif(Session::get('catId') == 2)
+            <img src="/img/slider/female.jpg" class="w-100" alt="">
+        @elseif(Session::get('catId') == 3)
+            <img src="/img/slider/child.jpg" class="w-100" alt="">
+        @elseif(Session::get('catId') == 0)
+            <img src="/img/slider/female.jpg" class="w-100" alt="">
+        @endif
+    </div>
 
 <div id="show">
 
@@ -98,7 +109,7 @@
 
             @if($is_boutics)
             <div class="row">
-                <div class="col-2 bg-light br-r py-3 d-flex flex-row justify-content-center align-items-center"><p class="m-0 fs-20 text-uppercase">Этажи</p></div>
+                <div class="col-2 bg-light br-r py-md-3 py-1 d-flex flex-row justify-content-center align-items-center"><p class="m-0 fs-20 text-uppercase">Этажи</p></div>
                 <div class="col-auto px-5"><ul class="row nav nav-tabs" id="myTab" role="tablist">
                         {{--@foreach($center->boutics as $index => $boutic)--}}
                         {{--{{ dd($boutic->where('stage', '=', 2)->first()) }}--}}
@@ -129,7 +140,7 @@
 
                         @endfor
                     </ul></div>
-                <div class="col bl-r bg-light px-5 py-3 d-flex flex-row align-items-center" id="rekt"><p class="text-center fs-20 text-uppercase m-0 font-weight-bold">{{ $center->name }}</p></div>
+                <div class="col bl-r bg-light px-3 px-md-5 py-md-3 py-1 d-flex flex-row align-items-center" id="rekt"><p class="text-center fs-20 text-uppercase m-0 font-weight-bold">{{ $center->name }}</p></div>
             </div>
 
 

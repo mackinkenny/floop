@@ -21,7 +21,7 @@
                                     <input type="hidden" id="sid" name="id" value="{{ $boutic->id }}">
                                     <input type="hidden" id="sb_id" name="b_id" value="{{ $boutic->user->id }}">
                                     <a href="/login" class="rounded-circle p-0" style="cursor: pointer; border: 0px;">
-                                        <div class="row bg-light subscribe align-items-center">
+                                        <div class="row subscribe align-items-center">
                                             <p class="col-auto mr-auto m-0">Подписаться</p>
                                             <div class="p-2 p-md-3 rounded-circle bg-danger">
                                                 <img class="logo-sub" src="/img/straights/sub.png" alt="">
@@ -38,7 +38,7 @@
                                     <input type="hidden" id="su_id" name="u_id" value="{{ Auth::user()->id }}">
 
                                     <a id="sub" class="rounded-circle p-0" style="cursor: pointer; border: 0px;">
-                                        <div class="row bg-light subscribe align-items-center">
+                                        <div class="row subscribe align-items-center">
                                             <p class="col-auto mr-auto m-0" id="subs-flag">Subscribe</p>
                                             <div class="p-2 p-md-3 rounded-circle bg-danger">
                                                 <img src="/img/straights/sub.png" class="logo-sub" alt="">
