@@ -7,18 +7,21 @@
             <div class="row justify-content-center">
 
                 <div id="femalecol" class="col-auto p-3 p-md-5 text-center" style="background: #E19075;">
-                    <a href="/cat/2" class="link" id="female"><img class="logo-cat" src="img/cats/female.png" width="60" height="60" alt="">
-                        <h2 class="d-none d-md-block" style="font-size: 1rem;">Женская одежда</h2>
+                    <a href="/cat/2" class="link" id="female">
+                        <img class="logo-cat mb-2" src="img/cats/female.png" width="60" height="60" alt="">
+                        <h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Женская одежда</h2>
                     </a>
                 </div>
                 <div id="childcol" class="col-auto p-3 p-md-5 text-center" style="background: #C46FA8;">
-                    <a href="cat/3" class="link" id="child"><img class="logo-cat" src="img/cats/child.png" width="60" height="60" alt="">
-                        <h2 class="d-none d-md-block" style="font-size: 1rem;">Детская одежда</h2>
+                    <a href="cat/3" class="link" id="child">
+                        <img class="logo-cat mb-2" src="img/cats/child.png" width="60" height="60" alt="">
+                        <h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Детская одежда</h2>
                     </a>
                 </div>
                 <div id="malecol" class="col-auto p-3 p-md-5 text-center" style="background: #86C4DF;">
-                    <a href="cat/1" class="link" id="male"><img class="logo-cat" src="img/cats/male.png" width="60" height="60" alt="">
-                        <h2 class="d-none d-md-block" style="font-size: 1rem;">Мужская одежда</h2>
+                    <a href="cat/1" class="link" id="male">
+                        <img class="logo-cat mb-2" src="img/cats/male.png" width="60" height="60" alt="">
+                        <h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Мужская одежда</h2>
                     </a>
                 </div>
 

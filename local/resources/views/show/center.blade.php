@@ -89,7 +89,7 @@
 
 <div id="show">
 
-    <h2 class="text-center pt-4 pb-2">{{ $center->name }}</h2>
+
     <input type="hidden" value="{{ $center->id }}" id="idcenter">
     <div class="d-none container py-md-5 py-3 container-spec" id="containerWithBouticsinCenternone">
         <div class="row"></div>
@@ -98,7 +98,7 @@
 
             @if($is_boutics)
             <div class="row">
-                <div class="col-2  bg-light"></div>
+                <div class="col-2 bg-light br-r py-3 d-flex flex-row justify-content-center align-items-center"><p class="m-0 fs-20 text-uppercase">Этажи</p></div>
                 <div class="col-auto px-5"><ul class="row nav nav-tabs" id="myTab" role="tablist">
                         {{--@foreach($center->boutics as $index => $boutic)--}}
                         {{--{{ dd($boutic->where('stage', '=', 2)->first()) }}--}}
@@ -129,7 +129,7 @@
 
                         @endfor
                     </ul></div>
-                <div class="col bg-light px-5 d-flex flex-row align-items-center" id="rekt"><p class="m-0 font-weight-bold">Этажи</p></div>
+                <div class="col bl-r bg-light px-5 py-3 d-flex flex-row align-items-center" id="rekt"><p class="text-center fs-20 text-uppercase m-0 font-weight-bold">{{ $center->name }}</p></div>
             </div>
 
 

@@ -6,7 +6,7 @@
         <div class="container p-md-5 p-4 container-spec">
             <div class="row justify-content-center">
                 <div class="col-auto">
-                    <img class="rounded-circle logo-ava" width="150" height="150" src="/uploads/avatars/{{ $user->img_path }}" alt="">
+                    <img class="rounded-circle border b-5 border-light logo-ava" width="150" height="150" src="/uploads/avatars/{{ $user->img_path }}" alt="">
                 </div>
                 <div class="col d-flex align-content-between flex-wrap">
                     <div class="col-12">
@@ -28,30 +28,26 @@
                         </div>
                     </div>
                     <div class="col-12 f-18">
-                        <div class="row justify-content-around p-md-3">
-                            <div class="col-auto mr-5">
-                                <a href="">
-                                    <div class="row">
-                                        <div class="col-auto row">
-                                            <span class="badge badge-secondary">{{ $user->count_likes }}</span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <span class="row ml-1 ml-md-0">Понравившихся</span>
-                                        </div>
+                        <div class="row justify-content-around">
+                            <div class="col-auto">
+                                <div class="row">
+                                    <div class="col-auto d-flex flex-row align-items-center py-1 px-3 rounded-circle-our br-r-0 bg-gray text-light">
+                                        <span class="">{{ $user->count_likes }}</span>
                                     </div>
-                                </a>
+                                    <div class="col-auto py-1 px-3 bg-light bl-r-0 d-flex flex-row align-items-center rounded-circle-our">
+                                        <span class="">Понравившихся</span>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-auto">
-                                <a href="">
-                                    <div class="row">
-                                        <div class="col-auto row">
-                                            <span class="badge badge-secondary">{{ $user->count_buys }}</span>
-                                        </div>
-                                        <div class="col-auto">
-                                            <span class="row ml-1 ml-md-0">Покупок</span>
-                                        </div>
+                                <div class="row">
+                                    <div class="col-auto py-1 rounded-circle-our br-r-0 px-3 bg-gray text-light d-flex flex-row align-items-center">
+                                        <span class="">{{ $user->count_buys }}</span>
                                     </div>
-                                </a>
+                                    <div class="col-auto px-3 py-1 bg-light bl-r-0 rounded-circle-our d-flex flex-row align-items-center">
+                                        <span class="">Покупок</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -17,6 +17,9 @@ $(document).ready(function () {
                 $('#subs-flag').text('Подписаться')
             }
             $('.sub-badge').text(data.subs_count)
+            if (data.subs_count >= 10000) {
+                $('.sub-badge').text('к')
+            }
         }
     })
 

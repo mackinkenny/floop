@@ -3,14 +3,68 @@
     src: url('/../fonts/clutchsans-regular.otf')
 }
 
+
+@font-face {
+    font-family: "Century Gothic";
+    src: url('/../fonts/CenturyGothic.ttf')
+}
+
+input:focus {
+    background: #9D9F9E;
+}
+
+.bl-r-0 {
+    border-bottom-left-radius: 0px!important;
+    border-top-left-radius: 0px!important;
+}
+
+.br-r-0 {
+    border-bottom-right-radius: 0px!important;
+    border-top-right-radius: 0px!important;
+}
+
+.bl-r {
+    border-bottom-left-radius: 50px!important;
+    border-top-left-radius: 50px!important;
+}
+
+.b-5 {
+    border: 5px solid #fff !important ;
+}
+
+.br-r {
+    border-bottom-right-radius: 50px!important;
+    border-top-right-radius: 50px!important;
+}
+
 body {
     background-color: #FEFEFE;
-    font-family:  'Comfortaa', cursive;
+    font-family: "Century Gothic";
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    font-weight: 300;
+
     /*font-family:  Clutch;*/
+}
+
+.fs-15 {
+    font-size: 15px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.input-group-addon {
+    background: #9D9F9E;
+    color: #fff;
+}
+
+.rounded-circle-our {
+    border-radius: 35px;
+    padding: 5px 10px 5px 10px;
 }
 
 img {
@@ -116,8 +170,12 @@ footer a:hover {
     background-color: #EBEBEB;
 }
 
-nav {
-    background-color: #D9DBDA;
+.bg-gray {
+    background: #9D9F9E;
+}
+
+#navbar-top {
+    background-color: #D8D9D9;
 }
 
 .container-spec {
@@ -197,6 +255,11 @@ nav {
     height: 255px;
 }
 
+.right-some {
+    width: 50px;
+    height: 50px;
+}
+
 @media (min-width: 576px) {
     a.boutic-in-center p {
         opacity: 0;
@@ -248,8 +311,10 @@ nav {
     }
 
     #sectionOfCentersAndBoutics a img.rounded-circle {
-        width: 30px;
-        height: 30px;
+        width: 50px;
+        height: 50px;
+        margin-right: -5px;
+        margin-left: -5px;
     }
 
     .nav-link {
@@ -316,6 +381,11 @@ nav {
         /*margin-bottom: 54px;*/
     }
 
+    .right-some {
+        width: 30px;
+        height: 30px;
+    }
+
     section {
         margin-bottom: 54px;
     }
@@ -335,6 +405,10 @@ nav {
     .mobile-carousel {
         width: 300px;
         height: 300px;
+    }
+
+    #navbar-top {
+        background-color: #fff;
     }
     
     #main-modal-text {
