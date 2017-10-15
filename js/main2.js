@@ -39,7 +39,7 @@ $(document).ready(function() {
                     $('#ajax-home').append( "<a href='/center/" + data.Success[i].id + "' class='col-12 my-4'>" +
                         "<span class='row'>" +
                         "<span class='col-auto pr-0'>" +
-                        "<img src='/uploads/centers/" + data.Success[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                        "<img src='/uploads/centers/" + data.Success[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                         "</span>" +
                         "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                         "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + data.Success[i].name + "</h4>" +
@@ -62,7 +62,7 @@ $(document).ready(function() {
                     $('#ajax-home2').append( "<a href='/profile/" + data.Success[i].user_id + "' class='col-12 my-4 pr-0'>" +
                         "<span class='d-flex flex-row-reverse'>" +
                         "<div class='col-auto pl-0'>" +
-                        "<img src='/uploads/boutic/avatars/" + data.Success[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                        "<img src='/uploads/boutic/avatars/" + data.Success[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                         "</div>" +
                         "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                         "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + data.Success[i].name + "</h4>" +
@@ -81,7 +81,7 @@ $(document).ready(function() {
                 $('#ajax-boutics').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4'>" +
                     "<span class='row'>" +
                     "<span class='col-auto pr-0'>" +
-                    "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                    "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                     "</span>" +
                     "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                     "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + bouts[i].name + "</h4>" +
@@ -93,7 +93,7 @@ $(document).ready(function() {
                 $('#ajax-boutics2').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4 pr-0'>" +
                     "<span class='d-flex flex-row-reverse'>" +
                     "<div class='col-auto pl-0'>" +
-                    "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                    "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                     "</div>" +
                     "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                     "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + bouts[i].name + "</h4>" +
@@ -112,7 +112,7 @@ $(document).ready(function() {
                 $('#ajax-centers').append("<a href='/center/" + cents[i].id + "' class='col-12 my-4'>" +
                     "<span class='row'>" +
                     "<span class='col-auto pr-0'>" +
-                    "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                    "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                     "</span>" +
                     "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                     "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
@@ -124,7 +124,7 @@ $(document).ready(function() {
                 $('#ajax-centers2').append("<a href='/center/" + cents[i].id + "' class='col-12 my-4 pr-0'>" +
                     "<span class='d-flex flex-row-reverse'>" +
                     "<div class='col-auto pl-0'>" +
-                    "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                    "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                     "</div>" +
                     "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                     "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
@@ -142,7 +142,7 @@ $(document).ready(function() {
             $('#ajax-home').append( "<a href='/center/" + allcenters[i].id + "' class='col-12 my-4'>" +
                 "<span class='row'>" +
                 "<span class='col-auto pr-0'>" +
-                "<img src='/uploads/centers/" + allcenters[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                "<img src='/uploads/centers/" + allcenters[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                 "</span>" +
                 "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                 "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + allcenters[i].name + "</h4>" +
@@ -155,7 +155,7 @@ $(document).ready(function() {
             $('#ajax-home2').append( "<a href='/profile/" + allboutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
                 "<span class='d-flex flex-row-reverse'>" +
                 "<div class='col-auto pl-0'>" +
-                "<img src='/uploads/boutic/avatars/" + allboutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                "<img src='/uploads/boutic/avatars/" + allboutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                 "</div>" +
                 "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                 "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + allboutics[i].name + "</h4>" +
@@ -196,7 +196,7 @@ $(document).ready(function() {
                         $('#ajax-home').append( "<a href='/center/" + val.id + "' class='col-12 my-4'>" +
                             "<span class='row'>" +
                             "<span class='col-auto pr-0'>" +
-                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
@@ -208,7 +208,7 @@ $(document).ready(function() {
                         $('#ajax-home2').append( "<a href='/profile/" + val.user_id + "' class='col-12 my-4 pr-0'>" +
                             "<span class='d-flex flex-row-reverse'>" +
                             "<div class='col-auto pl-0'>" +
-                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
@@ -274,7 +274,7 @@ $(document).ready(function() {
                         $('#ajax-home').append( "<a href='/center/" + val.id + "' class='col-12 my-4'>" +
                             "<span class='row'>" +
                             "<span class='col-auto pr-0'>" +
-                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
@@ -286,7 +286,7 @@ $(document).ready(function() {
                         $('#ajax-home2').append( "<a href='/profile/" + val.user_id + "' class='col-12 my-4 pr-0'>" +
                             "<span class='d-flex flex-row-reverse'>" +
                             "<div class='col-auto pl-0'>" +
-                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +
@@ -350,7 +350,7 @@ $(document).ready(function() {
                         $('#ajax-home').append( "<a href='/center/" + val.id + "' class='col-12 my-4'>" +
                             "<span class='row'>" +
                             "<span class='col-auto pr-0'>" +
-                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                            "<img src='/uploads/centers/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + val.name + "</h4>" +
@@ -362,7 +362,7 @@ $(document).ready(function() {
                         $('#ajax-home2').append( "<a href='/profile/" + val.user_id + "' class='col-12 my-4 pr-0'>" +
                             "<span class='d-flex flex-row-reverse'>" +
                             "<div class='col-auto pl-0'>" +
-                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 5px solid #fff;'>" +
+                            "<img src='/uploads/boutic/avatars/" + val.img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
                             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + val.name + "</h4>" +

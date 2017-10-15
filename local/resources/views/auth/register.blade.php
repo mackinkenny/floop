@@ -79,7 +79,7 @@
     <div class="container" id="content">
         <div class="row justify-content-center align-items-center" id="body-content">
 
-            <form class="col-12 text-light p-5" id="form-login"  method="POST" action="{{ route('register') }}">
+            <form class="col-12 col-md-5 text-light p-5" id="form-login"  method="POST" action="{{ route('register') }}">
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">

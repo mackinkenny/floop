@@ -215,7 +215,7 @@
     <script src="/js/app.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-    <script src="/js/main2.min.js"></script>
+    <script src="/js/main2.js"></script>
     <script src="/js/main3.min.js"></script>
     <script src="/js/main4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
