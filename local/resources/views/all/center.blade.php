@@ -4,7 +4,7 @@
             <h3>Торговые центры</h3>
         </div>
         <div class="col-auto">
-            <a href="" class="" id="backToAll"><p class="p-md-3 bg-danger text-light">назад ></p></a>
+            <a href="" class="" id="backToAll"><img style="width:60px; height:50px;" src="/img/logo/right.png"></a>
         </div>
     </div>
     <div class="row justify-content-between">
