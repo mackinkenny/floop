@@ -1,6 +1,6 @@
 <section>
     <div class="container container-spec">
-        <div class="row">
+        <div class="row" style="margin-top: 100px;">
             @if($is_products == false)
 
                 <div class="col d-flex flex-row p-5 justify-content-center">
@@ -12,6 +12,9 @@
                 <p style="display: none;">{{ $i = $product->photos->count() }}</p>
 
                 <div class="col-md-3 col-4 my-md-1 p-1">
+                    <span class="circle-icon bg-success rounded-circle p-4" style="position: absolute; transform: rotate(25deg); right: -20px; top: -20px; line-height: 34px; z-index:555; border: 2px solid #fefefe;">
+                        <span class="fs-20 font-weight-bold">10</span>%
+                    </span>
                     <a href="#modal" id="a-products" data-toggle="modal" class="" data-id = "{{ $product->id }}">
                         <div class="card bg-dark text-dark" id="products" style=" border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover;">
                             <img style="opacity: 0;" class="d-none card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image">
@@ -37,6 +40,9 @@
                             <div class="modal-body p-0">
                                 <div class="row">
                                     <div class="col-auto pr-0" id="mobile-carousel-all">
+                                        <span class="circle-icon bg-success rounded-circle p-4" style="position: absolute; transform: rotate(25deg); right: -20px; top: -20px; line-height: 34px; z-index:555; border: 2px solid #fefefe;">
+                        <span class="fs-20 font-weight-bold">10</span>%
+                    </span>
                                         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                                             <ol class="carousel-indicators">
 

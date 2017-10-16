@@ -76,8 +76,9 @@ $(document).ready(function () {
                 var div = $("#style-1");
                 div.scrollTop(div.prop('scrollHeight'));
                 modal.find('#bu_id').val(data.user)
+                modal.find('.price-text').empty();
                 if(data.is_percent) {
-                    modal.find('.price-text').text(data.product.price - (data.product.price * data.discount / 100))
+                    modal.find('.price-text').append('<span style="text-decoration:line-through">' + data.product.price + '</span>'  + '  /  ' + (data.product.price - (data.product.price * data.discount / 100)))
                 }
                 else
                 {

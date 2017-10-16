@@ -125,7 +125,7 @@ class ProductController extends Controller
         $size = $product->size->name;
         $brand = $product->brand->name;
         $color = $product->color->name;
-        $user = Auth::user()->id;
+//        $user = Auth::user()->id;
         $photos = $product->photos;
         $percent = 1;
         $count_likes = $product->count_likes;
@@ -144,7 +144,7 @@ class ProductController extends Controller
             'size' => $size,
             'color' => $color,
             'brand' => $brand,
-            'user' => $user,
+//            'user' => $user,
             'photos' => $photos,
             'discount' => $percent,
             'comments' => $comments,
