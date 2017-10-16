@@ -51,7 +51,7 @@
         @endif
     </div>
 
-    <section id="sectionOfCentersAndBoutics">
+    <section id="sectionOfCentersAndBoutics" style="margin-bottom: 54px;">
         @include('all.center')
         @include('all.boutic')
         <div class="container" id="sectionRightAndLeft">
