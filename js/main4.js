@@ -30,10 +30,10 @@ $(document).ready(function() {
                 success: function (data) {
 
 
-                    var l = 0
-                    var active = 0
-                    $('#myTab').empty()
-                    $('#myTabContent').empty()
+                    var l = 0;
+                    var active = 0;
+                    $('#myTab').empty();
+                    $('#myTabContent').empty();
                     for (var i = 0; i < data.center.max_stages; i++) {
                         for (var boutic of data.boutics) {
                             if(l === 0 && i + 1 === boutic.stage) {
@@ -41,11 +41,11 @@ $(document).ready(function() {
                                     '<li class="nav-item">' +
                                         '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
                                     '</li>'
-                                )
-                                l = 1
-                                active = i
+                                );
+                                l = 1;
+                                active = i;
 
-                                break
+                                break;
 
                             }
                             else if (i + 1 === boutic.stage && l === 1) {
@@ -53,8 +53,8 @@ $(document).ready(function() {
                                     '<li class="nav-item">' +
                                         '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
                                     '</li>'
-                                )
-                                break
+                                );
+                                break;
                             }
                         }
                     }
@@ -67,9 +67,10 @@ $(document).ready(function() {
                                     '<div class="row">' +
                                     '</div>' +
                                 '</div>'
-                            )
+                            );
                             for (var boutic of data.boutics) {
-                                console.log(boutic.stage === j + 1)
+                                console.log(boutic.stage === j + 1);
+                                console.log(boutic.stage);
 // console.log(j + 1)
                                 if (boutic.stage == (j + 1)) {
                                     // console.log(j + 1)
@@ -80,7 +81,7 @@ $(document).ready(function() {
                                             '<p class="text-center text-dark">' + boutic.name + '</p>' +
                                             '</a>' +
                                             '</div>'
-                                        )
+                                        );
                                     // }
 
                                     // console.log(j + 1)
@@ -98,10 +99,10 @@ $(document).ready(function() {
                                     '<div class="row">' +
                                     '</div>' +
                                 '</div>'
-                            )
+                            );
                             for (var boutic of data.boutics) {
                                 // console.log(j + 1)
-                                console.log(boutic.stage == j + 1)
+                                console.log(boutic.stage == j + 1);
                                 if (boutic.stage == (j + 1)) {
                                     // console.log(j + 1)
                                     // if (true != (boutic.stage != j + 1)) {
@@ -111,7 +112,7 @@ $(document).ready(function() {
                                             '<p class="text-center text-dark">' + boutic.name + '</p>' +
                                             '</a>' +
                                             '</div>'
-                                        )
+                                        );
 
                                     // }
                                     // console.log(j + 1)
@@ -144,10 +145,10 @@ $(document).ready(function() {
                     //     )
                     // }
 
-                    console.log('Access in')
+                    console.log('Access in');
                 },
                 error: function () {
-                    alert('ERROR!')
+                    alert('ERROR!');
                 }
             });
         }
@@ -155,7 +156,7 @@ $(document).ready(function() {
         if (!flag) {
             for (var i = 0; i < arr.length; i++) {
                 if (arr[i] === this.id) {
-                    arr.splice(i, 1)
+                    arr.splice(i, 1);
                 }
             }
             $.ajax({
@@ -167,10 +168,10 @@ $(document).ready(function() {
                 url: '/sorttype/' + $('#idcenter').val(),
                 success: function (data) {
 
-                    var l = 0
-                    var active = 0
-                    $('#myTab').empty()
-                    $('#myTabContent').empty()
+                    var l = 0;
+                    var active = 0;
+                    $('#myTab').empty();
+                    $('#myTabContent').empty();
                     for (var i = 0; i < data.center.max_stages; i++) {
                         for (var boutic of data.boutics) {
                             if(l === 0 && i + 1 === boutic.stage) {
@@ -178,10 +179,10 @@ $(document).ready(function() {
                                     '<li class="nav-item">' +
                                     '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
                                     '</li>'
-                                )
-                                l = 1
-                                active = i
-                                break
+                                );
+                                l = 1;
+                                active = i;
+                                break;
 
                             }
                             else if (i + 1 === boutic.stage && l === 1) {
@@ -189,8 +190,8 @@ $(document).ready(function() {
                                     '<li class="nav-item">' +
                                     '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
                                     '</li>'
-                                )
-                                break
+                                );
+                                break;
                             }
                         }
                     }
@@ -202,7 +203,7 @@ $(document).ready(function() {
                                 '<div class="row">' +
                                 '</div>' +
                                 '</div>'
-                            )
+                            );
                             for (var boutic of data.boutics) {
                                 if (boutic.stage == j + 1) {
                                     $('#myTabContent .tab-pane.active .row').append(
@@ -211,7 +212,7 @@ $(document).ready(function() {
                                                 '<p class="text-center text-dark">' + boutic.name + '</p>' +
                                             '</a>' +
                                         '</div>'
-                                    )
+                                    );
                                 }
                             }
                         }
@@ -221,7 +222,7 @@ $(document).ready(function() {
                                 '<div class="row">' +
                                 '</div>' +
                                 '</div>'
-                            )
+                            );
                             for (var boutic of data.boutics) {
                                 if (boutic.stage == j + 1) {
                                     $('#myTabContent .tab-pane.non-active .row').append(
@@ -230,7 +231,7 @@ $(document).ready(function() {
                                         '<p class="text-center text-dark">' + boutic.name + '</p>' +
                                         '</a>' +
                                         '</div>'
-                                    )
+                                    );
                                 }
                             }
                         }
@@ -240,16 +241,16 @@ $(document).ready(function() {
                     // $('#containerWithBouticsinCenternone').hide()
                     // $('#containerWithBouticsinCenter').show()
 
-                    console.log('Access out')
+                    console.log('Access out');
                 },
                 error: function () {
-                    alert('ERROR')
+                    alert('ERROR');
                 }
             });
         }
 
 
-        console.log(arr)
+        console.log(arr);
 
         $(this).toggleClass('mx-1', 200);
     });

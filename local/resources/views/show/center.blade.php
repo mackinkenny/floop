@@ -97,6 +97,7 @@
             <img src="/img/slider/female.jpg" class="w-100" alt="">
         @endif
     </div>
+    
 
 <div id="show">
 
