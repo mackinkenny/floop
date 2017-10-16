@@ -1,5 +1,5 @@
 <section>
-    <div class="container container-spec">
+    <div class="container container-spec py-3">
         <div class="row" style="margin-bottom: 54px;">
             @if($is_products == false)
 
