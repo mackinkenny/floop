@@ -135,6 +135,7 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                $('.like_count').text('| ' + data.like_count)
+                $('#like-0').css('opacity','1')
             },
         });
     });
@@ -153,6 +154,7 @@ $(document).ready(function () {
             },
             dataType: 'json',
             success: function (data) {
+                $('#buy-0').css('opacity','1')
             },
         });
     });

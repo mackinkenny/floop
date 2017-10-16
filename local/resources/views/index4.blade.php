@@ -44,11 +44,11 @@
                             </div>
                         </div>
 
-                        <div class="row py-1">
+                        <div class="mx-auto m-md-0 row py-1">
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-auto pr-0">
-                                        <p class="m-0">РАЗМЕРЫ - </p>
+                                        <span class="m-0">РАЗМЕРЫ - </span>
                                     </div>
                                     <div class="col pl-1">
                                         <span class="size-text"></span>
@@ -60,7 +60,7 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-auto pr-0">
-                                        <p class="m-0">ЦВЕТА - </p>
+                                        <span class="m-0">ЦВЕТА - </span>
                                     </div>
                                     <div class="col pl-1">
                                         <span class="color-text"></span>
@@ -72,7 +72,7 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-auto pr-0">
-                                        <p class="m-0">МАТЕРИАЛ - </p>
+                                        <span class="m-0">МАТЕРИАЛ - </span>
                                     </div>
                                     <div class="col pl-1">
                                         <span> ШЕЛК</span>
@@ -85,7 +85,7 @@
                             <div class="col-12">
                                 <div class="row">
                                     <div class="col-auto pr-0">
-                                        <p class="m-0">ПРОИЗВОДСТВО - </p>
+                                        <span class="m-0">ПРОИЗВОДСТВО - </span>
                                     </div>
                                     <div class="col pl-1">
                                         <span class="brand-text"></span>
@@ -96,7 +96,7 @@
 
                         </div>
 
-                        <div class="row my-1">
+                        <div class="row mx-auto m-md-0 my-1">
                             <div class="pr-1 col-auto" id="like-form">
                                 {{--<a href="">--}}
                                 {{--<img src="/img/straights/likes.png" width="30" height="30" alt="">--}}
@@ -106,13 +106,14 @@
 
                                     <input type="hidden" id="lid" value="">
                                     <input type="hidden" id="lu_id" value="">
-                                    <img src="/img/straights/likes.png" width="30" height="30" style="cursor: pointer;" id="like" alt="">
+                                    <img src="/img/logo/like3.png" width="30" height="30" style="cursor: pointer; opacity:0; position:absolute;" id="like-0" alt="">
+                                    <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer;" id="like" alt="">
                                 </form>
                             </div>
                             <div class="pl-1 col-auto like_count" style="font-size: 1.5rem; line-height: 1.4rem; font-weight: 400;">
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row ml-auto m-md-0">
                             @include('commentform')
                         </div>
 
@@ -122,11 +123,12 @@
                                     {{ csrf_field() }}
                                     <input type="hidden" id="bid" value="">
                                     <input type="hidden" id="bu_id" value="">
-                                    <img src="/img/straights/buy.png" id="buy" width="50" height="50" alt="" style="cursor: pointer;">
+                                    <img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="cursor: pointer;opacity:0; position:absolute; ">
+                                    <img src="/img/logo/korzina1.png" id="buy" width="50" height="50" alt="" style="cursor: pointer;">
                                 </form>
                             </div>
                             <div class="text-light col d-flex flex-row align-items-center justify-content-center" style="margin-right: -19px; border-bottom-left-radius: 30px; border-top-left-radius: 30px; background-color: #E19075;">
-                                <p class="m-0" style="font-size: 1.4rem;"><span class="price-text"></span> KGS</p>
+                                <p class="m-0" style="font-size: 1rem;"><span class="price-text"></span> KGS</p>
                             </div>
                         </div>
 
