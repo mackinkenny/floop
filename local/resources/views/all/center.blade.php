@@ -1,4 +1,4 @@
-<div class="container" id="containerWithCenters"style="display: none;">
+<div class="container" id="containerWithCenters"style="display: none; margin-bottom: 54px;">
     <div class="row py-3">
         <div class="col-auto mx-auto">
             <h3>Торговые центры</h3>
