@@ -110,7 +110,6 @@
                                 </form>
                             </div>
                             <div class="pl-1 col-auto like_count" style="font-size: 1.5rem; line-height: 1.4rem; font-weight: 400;">
-                                | {{ $product->count_likes }}
                             </div>
                         </div>
                         <div class="row">
