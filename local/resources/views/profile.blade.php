@@ -73,15 +73,15 @@
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="like-show-show" role="tabpanel" aria-labelledby="like-tab">
 
-
-                        @include('index3', ['products' => $products_liked, 'is_products' => $is_products_liked])
+                    @include('index3', ['products' => $products_buied, 'is_products' => $is_products_buied])
 
 
                 </div>
                 <div class="tab-pane fade" id="buy-show-show" role="tabpanel" aria-labelledby="buy-tab">
 
 
-                        @include('index3', ['products' => $products_buied, 'is_products' => $is_products_buied])
+                    @include('index3', ['products' => $products_liked, 'is_products' => $is_products_liked])
+
 
                 </div>
             </div>
