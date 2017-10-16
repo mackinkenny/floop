@@ -106,8 +106,8 @@
 
                                     <input type="hidden" id="lid" value="">
                                     <input type="hidden" id="lu_id" value="">
-                                    <img src="/img/logo/like3.png" width="30" height="30" style="cursor: pointer; opacity:0; position:absolute;" id="like-0" alt="">
                                     <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer;" id="like" alt="">
+                                    {{--<img src="/img/logo/like3.png" width="30" height="30" style="cursor: pointer; opacity:0; position:absolute;" id="like-0" alt="">--}}
                                 </form>
                             </div>
                             <div class="pl-1 col-auto like_count" style="font-size: 1.5rem; line-height: 1.4rem; font-weight: 400;">
@@ -123,8 +123,8 @@
                                     {{ csrf_field() }}
                                     <input type="hidden" id="bid" value="">
                                     <input type="hidden" id="bu_id" value="">
-                                    <img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="cursor: pointer;opacity:0; position:absolute; ">
                                     <img src="/img/logo/korzina1.png" id="buy" width="50" height="50" alt="" style="cursor: pointer;">
+                                    {{--<img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="cursor: pointer;opacity:0; position:absolute; ">--}}
                                 </form>
                             </div>
                             <div class="text-light col d-flex flex-row align-items-center justify-content-center" style="margin-right: -19px; border-bottom-left-radius: 30px; border-top-left-radius: 30px; background-color: #E19075;">

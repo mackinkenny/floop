@@ -121,8 +121,8 @@
                 <a class="navbar-brand mx-4" href="/">
                     <img src="/img/logo/home.png" width="30" height="30" alt="">
                 </a>
-                <a class="navbar-brand mx-4" href="/">
-                    <img src="/img/logo/buy.png" width="30" height="30" alt="">
+                <a class="navbar-brand mx-4" href="/sdiscounts">
+                    <img src="/img/logo/percent.png" width="30" height="30" alt="">
                 </a>
                 @if(Auth::user())
                     @if(Auth::user()->is_boutic)
