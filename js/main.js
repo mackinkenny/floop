@@ -79,6 +79,13 @@ $(document).ready(function () {
                 modal.find('.price-text').empty();
                 if(data.is_percent) {
                     modal.find('.price-text').append('<span style="text-decoration:line-through">' + data.product.price + '</span>'  + '  /  ' + (data.product.price - (data.product.price * data.discount / 100)))
+                    modal.find('div.circle-icon-seat').append('   <span class="circle-icon bg-success rounded-circle p-2 p-md-4">' +
+                        '<span class="fs-20 font-weight-bold">' + data.discount + '</span>%' +
+                        '</span>')
+                    var circle = $("div.circle-icon-seat");
+                    circle.append('<span class="circle-icon bg-success rounded-circle p-2 p-md-4">' +
+                        '<span class="fs-20 font-weight-bold">' + data.discount + '</span>%' +
+                        '</span>')
                 }
                 else
                 {

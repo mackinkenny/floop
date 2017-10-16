@@ -51,19 +51,39 @@ class UserController extends Controller
 
     public function profile() {
 
-        $is_products = false;
+//        $is_products = false;
         $is_products_liked = false;
         $is_products_buied = false;
         $products = Auth::user()->products;
         Session::put('catId', 0);
-        if (!$products->isEmpty()) {
-            $is_products = true;
+//        if (!$products->isEmpty()) {
+//            $is_products = true;
+//        }
+
+        $products_liked = $products->reject(function ($product) {
+            if ($product->pivot->likeOrBuy == 0) {
+                return $product;
+            }
+        });
+        $products_buied = $products->reject(function ($product) {
+            if ($product->pivot->likeOrBuy == 1) {
+                return $product;
+            }
+        });
+
+        if(!$products_liked->isEmpty()) {
+            $is_products_liked = true;
+        }
+        if(!$products_buied->isEmpty()) {
+            $is_products_buied = true;
         }
 
         return view('profile', [
             'user' => Auth::user(),
-            'products' => $products,
-            'is_products' => $is_products,
+            'products_liked' => $products_liked,
+            'products_buied' => $products_buied,
+            'is_products_liked' => $is_products_liked,
+            'is_products_buied' => $is_products_buied,
             ]);
     }
 

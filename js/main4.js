@@ -35,7 +35,7 @@ $(document).ready(function() {
                     $('#myTab').empty();
                     $('#myTabContent').empty();
                     for (var i = 0; i < data.center.max_stages; i++) {
-                        for (var boutic in data.boutics) {
+                        for (var boutic of data.boutics) {
                             if(l === 0 && i + 1 === boutic.stage) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
@@ -68,7 +68,7 @@ $(document).ready(function() {
                                     '</div>' +
                                 '</div>'
                             );
-                            for (var boutic in data.boutics) {
+                            for (var boutic of data.boutics) {
                                 console.log(boutic.stage === j + 1);
                                 console.log(boutic.stage);
 // console.log(j + 1)
@@ -100,7 +100,7 @@ $(document).ready(function() {
                                     '</div>' +
                                 '</div>'
                             );
-                            for (var boutic in data.boutics) {
+                            for (var boutic of data.boutics) {
                                 // console.log(j + 1)
                                 console.log(boutic.stage == j + 1);
                                 if (boutic.stage == (j + 1)) {
@@ -173,7 +173,7 @@ $(document).ready(function() {
                     $('#myTab').empty();
                     $('#myTabContent').empty();
                     for (var i = 0; i < data.center.max_stages; i++) {
-                        for (var boutic in data.boutics) {
+                        for (var boutic of data.boutics) {
                             if(l === 0 && i + 1 === boutic.stage) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
@@ -204,7 +204,7 @@ $(document).ready(function() {
                                 '</div>' +
                                 '</div>'
                             );
-                            for (var boutic in data.boutics) {
+                            for (var boutic of data.boutics) {
                                 if (boutic.stage == j + 1) {
                                     $('#myTabContent .tab-pane.active .row').append(
                                         '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +
@@ -223,7 +223,7 @@ $(document).ready(function() {
                                 '</div>' +
                                 '</div>'
                             );
-                            for (var boutic in data.boutics) {
+                            for (var boutic of data.boutics) {
                                 if (boutic.stage == j + 1) {
                                     $('#myTabContent .tab-pane.non-active .row').append(
                                         '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +

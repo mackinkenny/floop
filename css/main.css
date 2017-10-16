@@ -226,6 +226,16 @@ nav {
     background-position: center center;
 }
 
+.circle-icon {
+    position: absolute;
+    transform: rotate(25deg);
+    right: -20px;
+    top: -20px;
+    line-height: 34px;
+    z-index:555;
+    border: 2px solid #fefefe;
+}
+
 .backdrop {
     display: none;
     background-color: #000;
@@ -288,6 +298,12 @@ nav {
     .logo-cat {
         width: 30px;
         height: 30px;
+    }
+
+    .circle-icon {
+        right: -10px;
+        top: -10px;
+        line-height: 20px;
     }
 
     .fs-20 {
