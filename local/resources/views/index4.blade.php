@@ -101,14 +101,25 @@
                                 {{--<a href="">--}}
                                 {{--<img src="/img/straights/likes.png" width="30" height="30" alt="">--}}
                                 {{--</a>--}}
-                                <form action="/like" method="POST">
-                                    {{ csrf_field() }}
+                                @if(Auth::guest())
 
-                                    <input type="hidden" id="lid" value="">
-                                    <input type="hidden" id="lu_id" value="">
-                                    <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer;" id="like" alt="">
-                                    {{--<img src="/img/logo/like3.png" width="30" height="30" style="cursor: pointer; opacity:0; position:absolute;" id="like-0" alt="">--}}
-                                </form>
+                                    <a href="/login">
+                                        <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer;" alt="">
+                                        {{--<img src="/img/logo/like3.png" width="30" height="30" style="cursor: pointer; opacity:0; position:absolute;" id="like-0" alt="">--}}
+                                    </a>
+
+                                @else
+
+                                    <form action="/like" method="POST">
+                                        {{ csrf_field() }}
+
+                                        <input type="hidden" id="lid" value="">
+                                        <input type="hidden" id="lu_id" value="">
+                                        <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer;" id="like" alt="">
+                                        {{--<img src="/img/logo/like3.png" width="30" height="30" style="cursor: pointer; opacity:0; position:absolute;" id="like-0" alt="">--}}
+                                    </form>
+
+                                @endif
                             </div>
                             <div class="pl-1 col-auto like_count" style="font-size: 1.5rem; line-height: 1.4rem; font-weight: 400;">
                             </div>

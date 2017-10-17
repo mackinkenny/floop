@@ -24,7 +24,16 @@
                         @endif
                     </div>
 
-                    <a href="#modal" id="a-products" data-toggle="modal" class="" data-id = "{{ $product->id }}">
+                    <a href="#modal" id="a-products" data-toggle="modal" class="d-none d-md-block" data-id = "{{ $product->id }}">
+                        <div class="card bg-dark text-dark" id="products" style=" border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover;">
+                            <img style="opacity: 0;" class="d-none card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image">
+                            {{--<div class="card-img-overlay text-center">--}}
+                            {{--<h4 class="card-title">{{ $product->name }}</h4>--}}
+                            {{--</div>--}}
+                        </div>
+                    </a>
+
+                    <a href="/product/{{ $product->id }}" class="d-md-none d-block">
                         <div class="card bg-dark text-dark" id="products" style=" border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover;">
                             <img style="opacity: 0;" class="d-none card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image">
                             {{--<div class="card-img-overlay text-center">--}}
