@@ -27,6 +27,7 @@ Route::get('/center/{id}','CenterController@show');
 Route::get('/api/center/{id}','CenterController@showajax');
 
 Route::get('/products/{id}', 'ProductController@show')->name('showProduct');
+Route::get('/product/{id}', 'ProductController@showproduct')->name('showProduct');
 Route::get('/product/del/{id}', 'ProductController@destroy');
 
 Route::group(['middleware' => ['admin']],function() {
