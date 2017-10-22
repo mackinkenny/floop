@@ -8,7 +8,7 @@
 box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);">
             <div class="row align-items-center px-3">
                 <img src="/uploads/boutic/avatars/{{ $product->boutic->img_path }}" class="rounded-circle col-3 h-100" alt="">
-                <h2 class="fs-xs-20 col">{{ $product->boutic->name }}</h2>
+                <a href="/profile/{{$product->boutic->user_id}}" style="color:#d9dad9;"><h2 class="fs-xs-20 ml-5 col">{{ $product->boutic->name }}</h2></a>
             </div>
         </div>
         <div class="col-12 p-0">
