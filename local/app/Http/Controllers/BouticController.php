@@ -174,7 +174,6 @@ class BouticController extends Controller
 
             return response()->json(['boutics' => $allboutics,  'center' => $center]);
         }
-        return response()->json(['slider' => view('slider')]);
 
 
 
