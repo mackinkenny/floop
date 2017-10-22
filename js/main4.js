@@ -35,8 +35,8 @@ $(document).ready(function() {
                     $('#myTab').empty();
                     $('#myTabContent').empty();
                     for (var i = 0; i < data.center.max_stages; i++) {
-                        for (var boutic of data.boutics) {
-                            if(l === 0 && i + 1 === boutic.stage) {
+                        for (var z = 0; z < data.boutics.length; z++) {
+                            if(l === 0 && i + 1 === data.boutics[z].stage) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
                                         '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
@@ -48,7 +48,7 @@ $(document).ready(function() {
                                 break;
 
                             }
-                            else if (i + 1 === boutic.stage && l === 1) {
+                            else if (i + 1 === data.boutics[z].stage && l === 1) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
                                         '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
@@ -153,8 +153,8 @@ $(document).ready(function() {
                     $('#myTab').empty();
                     $('#myTabContent').empty();
                     for (var i = 0; i < data.center.max_stages; i++) {
-                        for (var boutic of data.boutics) {
-                            if(l === 0 && i + 1 === boutic.stage) {
+                        for (var x = 0; x < data.boutics.length; x++) {
+                            if(l === 0 && i + 1 === data.boutics[x].stage) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
                                     '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
@@ -165,7 +165,7 @@ $(document).ready(function() {
                                 break;
 
                             }
-                            else if (i + 1 === boutic.stage && l === 1) {
+                            else if (i + 1 === data.boutics[x].stage && l === 1) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
                                     '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
