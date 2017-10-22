@@ -12,21 +12,6 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="main4.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/main4.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="310">
-              <caret line="61" column="57" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="57" />
-              <folding>
-                <marker date="1508664177670" expanded="true" signature="3153:3179" ph="..." />
-                <marker date="1508664177670" expanded="true" signature="4586:4612" ph="..." />
-                <marker date="1508664177670" expanded="true" signature="8118:8144" ph="..." />
-                <marker date="1508664177670" expanded="true" signature="9380:9406" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -37,10 +22,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BouticController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BouticController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/local/app/Http/Controllers/BouticController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
+            <state relative-caret-position="735">
               <caret line="175" column="9" lean-forward="false" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
               <folding />
             </state>
@@ -53,6 +38,21 @@
             <state relative-caret-position="42">
               <caret line="2" column="9" lean-forward="false" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="91" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main4.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/main4.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="219" column="26" lean-forward="false" selection-start-line="219" selection-start-column="26" selection-end-line="219" selection-end-column="26" />
+              <folding>
+                <marker date="1508670376354" expanded="true" signature="3153:3179" ph="..." />
+                <marker date="1508670376354" expanded="true" signature="4586:4612" ph="..." />
+                <marker date="1508670376354" expanded="true" signature="8158:8184" ph="..." />
+                <marker date="1508670376354" expanded="true" signature="9420:9446" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -163,13 +163,13 @@
         <option value="$PROJECT_DIR$/local/routes/web.php" />
         <option value="$PROJECT_DIR$/local/app/Http/Controllers/ProductController.php" />
         <option value="$PROJECT_DIR$/local/resources/views/index3.blade.php" />
-        <option value="$PROJECT_DIR$/js/main4.js" />
         <option value="$PROJECT_DIR$/local/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/local/resources/views/show/product.blade.php" />
         <option value="$PROJECT_DIR$/local/resources/views/profile.blade.php" />
         <option value="$PROJECT_DIR$/local/resources/views/index4.blade.php" />
         <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/local/app/Http/Controllers/BouticController.php" />
+        <option value="$PROJECT_DIR$/js/main4.js" />
       </list>
     </option>
   </component>
@@ -671,12 +671,12 @@
       <workItem from="1508348274511" duration="1706000" />
       <workItem from="1508402843255" duration="3695000" />
       <workItem from="1508417116864" duration="2681000" />
-      <workItem from="1508663009417" duration="2332000" />
+      <workItem from="1508663009417" duration="2974000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208714000" />
+    <option name="totallyTimeSpent" value="209356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1133,24 +1133,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main4.js">
+    <entry file="file://$PROJECT_DIR$/local/app/Http/Controllers/BouticController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="61" column="57" lean-forward="false" selection-start-line="61" selection-start-column="56" selection-end-line="61" selection-end-column="57" />
-          <folding>
-            <marker date="1508664177670" expanded="true" signature="3153:3179" ph="..." />
-            <marker date="1508664177670" expanded="true" signature="4586:4612" ph="..." />
-            <marker date="1508664177670" expanded="true" signature="8118:8144" ph="..." />
-            <marker date="1508664177670" expanded="true" signature="9380:9406" ph="..." />
-          </folding>
+        <state relative-caret-position="735">
+          <caret line="175" column="9" lean-forward="false" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/local/app/Http/Controllers/BouticController.php">
+    <entry file="file://$PROJECT_DIR$/js/main4.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="175" column="9" lean-forward="false" selection-start-line="175" selection-start-column="9" selection-end-line="175" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="391">
+          <caret line="219" column="26" lean-forward="false" selection-start-line="219" selection-start-column="26" selection-end-line="219" selection-end-column="26" />
+          <folding>
+            <marker date="1508670376354" expanded="true" signature="3153:3179" ph="..." />
+            <marker date="1508670376354" expanded="true" signature="4586:4612" ph="..." />
+            <marker date="1508670376354" expanded="true" signature="8158:8184" ph="..." />
+            <marker date="1508670376354" expanded="true" signature="9420:9446" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
