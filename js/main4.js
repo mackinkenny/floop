@@ -34,30 +34,30 @@ $(document).ready(function() {
                     var active = 0;
                     $('#myTab').empty();
                     $('#myTabContent').empty();
-                    // for (var i = 0; i < data.center.max_stages; i++) {
-                    //     for (var boutic of data.boutics) {
-                    //         if(l === 0 && i + 1 === boutic.stage) {
-                    //             $('#myTab').append(
-                    //                 '<li class="nav-item">' +
-                    //                     '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
-                    //                 '</li>'
-                    //             );
-                    //             l = 1;
-                    //             active = i;
-                    //
-                    //             break;
-                    //
-                    //         }
-                    //         else if (i + 1 === boutic.stage && l === 1) {
-                    //             $('#myTab').append(
-                    //                 '<li class="nav-item">' +
-                    //                     '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
-                    //                 '</li>'
-                    //             );
-                    //             break;
-                    //         }
-                    //     }
-                    // }
+                    for (var i = 0; i < data.center.max_stages; i++) {
+                        for (var boutic of data.boutics) {
+                            if(l === 0 && i + 1 === boutic.stage) {
+                                $('#myTab').append(
+                                    '<li class="nav-item">' +
+                                        '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
+                                    '</li>'
+                                );
+                                l = 1;
+                                active = i;
+
+                                break;
+
+                            }
+                            else if (i + 1 === boutic.stage && l === 1) {
+                                $('#myTab').append(
+                                    '<li class="nav-item">' +
+                                        '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
+                                    '</li>'
+                                );
+                                break;
+                            }
+                        }
+                    }
 
                     // for (var j = 0; j < data.center.max_stages; j++) {
                     //
@@ -152,29 +152,29 @@ $(document).ready(function() {
                     var active = 0;
                     $('#myTab').empty();
                     $('#myTabContent').empty();
-                    // for (var i = 0; i < data.center.max_stages; i++) {
-                    //     for (var boutic of data.boutics) {
-                    //         if(l === 0 && i + 1 === boutic.stage) {
-                    //             $('#myTab').append(
-                    //                 '<li class="nav-item">' +
-                    //                 '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
-                    //                 '</li>'
-                    //             );
-                    //             l = 1;
-                    //             active = i;
-                    //             break;
-                    //
-                    //         }
-                    //         else if (i + 1 === boutic.stage && l === 1) {
-                    //             $('#myTab').append(
-                    //                 '<li class="nav-item">' +
-                    //                 '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
-                    //                 '</li>'
-                    //             );
-                    //             break;
-                    //         }
-                    //     }
-                    // }
+                    for (var i = 0; i < data.center.max_stages; i++) {
+                        for (var boutic of data.boutics) {
+                            if(l === 0 && i + 1 === boutic.stage) {
+                                $('#myTab').append(
+                                    '<li class="nav-item">' +
+                                    '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
+                                    '</li>'
+                                );
+                                l = 1;
+                                active = i;
+                                break;
+
+                            }
+                            else if (i + 1 === boutic.stage && l === 1) {
+                                $('#myTab').append(
+                                    '<li class="nav-item">' +
+                                    '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
+                                    '</li>'
+                                );
+                                break;
+                            }
+                        }
+                    }
                     //
                     // for (var j = 0; j < data.center.max_stages; j++) {
                     //     if(j == active) {
