@@ -119,7 +119,7 @@ $(document).ready(function() {
 
 
 
-                    $('footer').append('Hello')
+
 
 
 
@@ -219,7 +219,6 @@ $(document).ready(function() {
 
                     console.log('Access out');
                     alert('Access out');
-                    $('footer').append('Bye')
                 },
                 error: function () {
                     alert('ERROR');
