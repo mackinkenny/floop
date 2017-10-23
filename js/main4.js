@@ -125,7 +125,6 @@ $(document).ready(function() {
 
 
                     console.log('Access in');
-                    alert('Access in');
                 },
 
             });
@@ -218,7 +217,6 @@ $(document).ready(function() {
 
 
                     console.log('Access out');
-                    alert('Access out');
                 },
                 error: function () {
                     alert('ERROR');
