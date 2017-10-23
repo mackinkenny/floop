@@ -36,7 +36,7 @@ $(document).ready(function() {
                     $('#myTabContent').empty();
                     for (var i = 0; i < data.center.max_stages; i++) {
                         for (var z = 0; z < data.boutics.length; z++) {
-                            if(l === 0 && i + 1 === data.boutics[z].stage) {
+                            if(l === 0 && i + 1 != data.boutics[z].stage) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
                                         '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
@@ -48,7 +48,7 @@ $(document).ready(function() {
                                 break;
 
                             }
-                            else if (i + 1 === data.boutics[z].stage && l === 1) {
+                            else if (i + 1 != data.boutics[z].stage && l === 1) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
                                         '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
@@ -72,16 +72,9 @@ $(document).ready(function() {
                                 console.log(boutic.stage === j + 1);
                                 console.log(boutic.stage);
 
-                                if (boutic.stage == (j + 1)) {
-                                        //
-                                        // $('#myTabContent .tab-pane.active .row').append(
-                                        //     '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +
-                                        //     '<a class="boutic-in-center" href="/profile/' + boutic.user_id + '"><img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/' + boutic.img_path + '" alt="">' +
-                                        //     '<p class="text-center text-dark">' + boutic.name + '</p>' +
-                                        //     '</a>' +
-                                        //     '</div>'
-                                        // );
-                                        $('footer').append(
+                                if (boutic.stage != (j + 1)) {
+
+                                        $('#myTabContent .tab-pane.active .row').append(
                                             '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +
                                             '<a class="boutic-in-center" href="/profile/' + boutic.user_id + '"><img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/' + boutic.img_path + '" alt="">' +
                                             '<p class="text-center text-dark">' + boutic.name + '</p>' +
@@ -91,13 +84,6 @@ $(document).ready(function() {
 
                                 }
                                 else {
-                                    $('footer').append(
-                                        '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +
-                                        '<a class="boutic-in-center" href="/profile/' + boutic.user_id + '"><img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/' + boutic.img_path + '" alt="">' +
-                                        '<p class="text-center text-dark">' + boutic.name + '</p>' +
-                                        '</a>' +
-                                        '</div>'
-                                    );
                                 }
 
                             }
@@ -112,7 +98,7 @@ $(document).ready(function() {
                             for (var boutic of data.boutics) {
 
                                 console.log(boutic.stage == j + 1);
-                                if (boutic.stage == (j + 1)) {
+                                if (boutic.stage != (j + 1)) {
 
                                         $('#myTabContent .tab-pane.non-active .row').append(
                                             '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +
@@ -164,7 +150,7 @@ $(document).ready(function() {
                     $('#myTabContent').empty();
                     for (var i = 0; i < data.center.max_stages; i++) {
                         for (var x = 0; x < data.boutics.length; x++) {
-                            if(l === 0 && i + 1 === data.boutics[x].stage) {
+                            if(l === 0 && i + 1 != data.boutics[x].stage) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
                                     '<a class="nav-link active" id="home-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="home" aria-expanded="true">' + (i + 1) + '</a>' +
@@ -175,7 +161,7 @@ $(document).ready(function() {
                                 break;
 
                             }
-                            else if (i + 1 === data.boutics[x].stage && l === 1) {
+                            else if (i + 1 != data.boutics[x].stage && l === 1) {
                                 $('#myTab').append(
                                     '<li class="nav-item">' +
                                     '<a class="nav-link" id="profile-tab" data-toggle="tab" href="#' + i + '-show" role="tab" aria-controls="profile">' + (i + 1) + '</a>' +
@@ -195,7 +181,7 @@ $(document).ready(function() {
                                 '</div>'
                             );
                             for (var boutic of data.boutics) {
-                                if (boutic.stage == j + 1) {
+                                if (boutic.stage != j + 1) {
                                     $('#myTabContent .tab-pane.active .row').append(
                                         '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +
                                             '<a class="boutic-in-center" href="/profile/' + boutic.user_id + '"><img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/' + boutic.img_path + '" alt="">' +
@@ -214,7 +200,7 @@ $(document).ready(function() {
                                 '</div>'
                             );
                             for (var boutic of data.boutics) {
-                                if (boutic.stage == j + 1) {
+                                if (boutic.stage != j + 1) {
                                     $('#myTabContent .tab-pane.non-active .row').append(
                                         '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +
                                         '<a class="boutic-in-center" href="/profile/' + boutic.user_id + '"><img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/' + boutic.img_path + '" alt="">' +
