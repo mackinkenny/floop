@@ -175,6 +175,7 @@ $(document).ready(function() {
             $('#femalecol').addClass('mx-auto');
             $('#malecol').hide();
             $("#childcol").hide();
+
             $('#body').animate({
                 backgroundColor: '#E19075'
             }, 500);

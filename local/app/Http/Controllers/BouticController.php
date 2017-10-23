@@ -163,7 +163,6 @@ class BouticController extends Controller
             }
             $bouticcolected = collect($bouticcols);
             $bouticcolected = $bouticcolected->unique();
-            dd($bouticcolected);
 
 
             return response()->json(['boutics' => $bouticcolected, 'center' => $center]);
