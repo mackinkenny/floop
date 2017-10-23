@@ -91,6 +91,13 @@ $(document).ready(function() {
 
                                 }
                                 else {
+                                    $('footer').append(
+                                        '<div class="col-4 p-2 col-md-3 my-4 my-md-5">' +
+                                        '<a class="boutic-in-center" href="/profile/' + boutic.user_id + '"><img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/' + boutic.img_path + '" alt="">' +
+                                        '<p class="text-center text-dark">' + boutic.name + '</p>' +
+                                        '</a>' +
+                                        '</div>'
+                                    );
                                 }
 
                             }
