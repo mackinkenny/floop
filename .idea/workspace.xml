@@ -93,8 +93,8 @@
       <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/local/resources/views/layouts/app.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="433">
-              <caret line="218" column="40" lean-forward="true" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
+            <state relative-caret-position="349">
+              <caret line="214" column="74" lean-forward="false" selection-start-line="214" selection-start-column="74" selection-end-line="214" selection-end-column="74" />
               <folding />
             </state>
           </provider>
@@ -605,12 +605,12 @@
       <workItem from="1508402843255" duration="3695000" />
       <workItem from="1508417116864" duration="2681000" />
       <workItem from="1508663009417" duration="5016000" />
-      <workItem from="1508747844923" duration="6694000" />
+      <workItem from="1508747844923" duration="6865000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="218092000" />
+    <option name="totallyTimeSpent" value="218263000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
@@ -1099,8 +1099,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/local/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="433">
-          <caret line="218" column="40" lean-forward="true" selection-start-line="218" selection-start-column="40" selection-end-line="218" selection-end-column="40" />
+        <state relative-caret-position="349">
+          <caret line="214" column="74" lean-forward="false" selection-start-line="214" selection-start-column="74" selection-end-line="214" selection-end-column="74" />
           <folding />
         </state>
       </provider>
