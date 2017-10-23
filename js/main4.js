@@ -119,9 +119,12 @@ $(document).ready(function() {
 
 
 
-                    $('footer').append('Hello')
+                    $('footer').append(data.boutics[0].name)
                     console.log('Access in');
                 },
+                error: function () {
+                    alert('ERROR');
+                }
 
             });
         }
