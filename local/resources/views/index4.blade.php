@@ -30,7 +30,9 @@
 
                         <div class="row text-light bg-success" id="main-modal-text" style="margin-right: -33px;">
                             <div class="col-auto mx-auto pl-5">
-                                <h1 class="text-center h4-text"></h1>
+                                <h1 class="text-center">
+                                    <a href="" class="h4-text"></a>
+                                </h1>
                             </div>
                             <div class="col-auto">
                                 <button id="close" type="button" class="close text-light" data-dismiss="modal" aria-label="Close" style="cursor: pointer">

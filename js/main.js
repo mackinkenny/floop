@@ -62,6 +62,7 @@ $(document).ready(function () {
 
                 }
                 modal.find('.h4-text').text(data.boutic.name)
+                modal.find('.h4-text').attr('href', '/profile/' + data.user_boutic)
                 modal.find('.size-text').text(' ' + data.size)
                 modal.find('.brand-text').text(' ' + data.brand)
                 modal.find('.color-text').text(' ' + data.color)

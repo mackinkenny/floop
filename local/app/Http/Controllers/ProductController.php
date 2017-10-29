@@ -172,6 +172,7 @@ class ProductController extends Controller
         $photos = $product->photos;
         $percent = 1;
         $count_likes = $product->count_likes;
+        $user_boutic = $boutic->user->id;
 
         $comments = $product->comments;
 
@@ -221,6 +222,7 @@ class ProductController extends Controller
                 'like_count' => $count_likes,
                 'like_flag' => $like_flag,
                 'buy_flag' => $buy_flag,
+                'user_boutic' => $user_boutic,
             ]);
         }
         else {
@@ -236,6 +238,7 @@ class ProductController extends Controller
                 'comments' => $comments,
                 'is_percent' => $is_percent,
                 'like_count' => $count_likes,
+                'user_boutic' => $user_boutic,
             ]);
         }
     }
