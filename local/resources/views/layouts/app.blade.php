@@ -217,7 +217,7 @@
 
 
     <script src="/js/main2.js"></script>
-    <script src="/js/main3.min.js"></script>
+    <script src="/js/main3.js"></script>
     <script src="/js/main4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
     <script type="text/javascript">

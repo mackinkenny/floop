@@ -8,7 +8,7 @@
                         <div class="circle-icon-seat">
 
                         </div>
-                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
                             <ol class="carousel-indicators">
 
                             </ol>
@@ -115,8 +115,8 @@
 
                                         <input type="hidden" id="lid" value="">
                                         <input type="hidden" id="lu_id" value="">
-                                        <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer;" id="like" alt="">
-                                        {{--<img src="/img/logo/like3.png" width="30" height="30" style="cursor: pointer; opacity:0; position:absolute;" id="like-0" alt="">--}}
+                                        <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer; position:relative; z-index:999;" id="like" alt="">
+                                        <img src="/img/logo/like3.png" width="30" height="30" style="top: 0px; opacity:0; position:absolute;" id="like-0" alt="">
                                     </form>
 
                                 @endif
@@ -134,8 +134,8 @@
                                     {{ csrf_field() }}
                                     <input type="hidden" id="bid" value="">
                                     <input type="hidden" id="bu_id" value="">
-                                    <img src="/img/logo/korzina1.png" id="buy" width="50" height="50" alt="" style="cursor: pointer;">
-                                    {{--<img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="cursor: pointer;opacity:0; position:absolute; ">--}}
+                                    <img src="/img/logo/korzina1.png" id="buy" width="50" height="50" alt="" style="position:relative; z-index:999; cursor: pointer;">
+                                    <img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="opacity:0; top: 0px; position:absolute; ">
                                 </form>
                             </div>
                             <div class="text-light col d-flex flex-row align-items-center justify-content-center" style="margin-right: -19px; border-bottom-left-radius: 30px; border-top-left-radius: 30px; background-color: #E19075;">

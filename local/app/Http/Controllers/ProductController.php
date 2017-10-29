@@ -9,6 +9,7 @@ use App\Center;
 use App\Photo;
 use App\Product;
 use App\Color;
+use App\ProductUser;
 use App\Season;
 use App\Size;
 use App\Type;
@@ -118,7 +119,44 @@ class ProductController extends Controller
 
     public function showproduct($id) {
         $product = Product::find($id);
-        return view('show.product', ['product' => $product]);
+
+        if (Auth::user()) {
+            $user = Auth::user()->id;
+            $like_flag = false;
+            $buy_flag = false;
+
+            $likeDB = DB::table('product_user')
+                ->where('user_id', '=', Auth::user()->id)
+                ->where('product_id', '=', $id)
+                ->where('likeOrBuy', '=', 0)
+                ->first();
+
+            $buyDB = DB::table('product_user')
+                ->where('user_id', '=', Auth::user()->id)
+                ->where('product_id', '=', $id)
+                ->where('likeOrBuy', '=', 1)
+                ->first();
+
+            if ($likeDB) {
+                $like_flag = true;
+            }
+            if ($buyDB) {
+                $buy_flag = true;
+            }
+
+            return view('show.product', [
+                'product' => $product,
+                'like_flag' => $like_flag,
+                'buy_flag' => $buy_flag,
+
+            ]);
+        }
+        else {
+            return view('show.product', ['product' => $product]);
+        }
+
+
+
     }
 
     public function show($id)
@@ -145,6 +183,30 @@ class ProductController extends Controller
 
         if (Auth::user()) {
             $user = Auth::user()->id;
+            $like_flag = false;
+            $buy_flag = false;
+
+            $likeDB = DB::table('product_user')
+                ->where('user_id', '=', Auth::user()->id)
+                ->where('product_id', '=', $id)
+                ->where('likeOrBuy', '=', 0)
+                ->first();
+
+            $buyDB = DB::table('product_user')
+                ->where('user_id', '=', Auth::user()->id)
+                ->where('product_id', '=', $id)
+                ->where('likeOrBuy', '=', 1)
+                ->first();
+
+            if($likeDB)
+            {
+                $like_flag = true;
+            }
+            if($buyDB)
+            {
+                $buy_flag = true;
+            }
+
             return response()->json([
                 'product' => $product,
                 'boutic' => $boutic,
@@ -157,6 +219,8 @@ class ProductController extends Controller
                 'comments' => $comments,
                 'is_percent' => $is_percent,
                 'like_count' => $count_likes,
+                'like_flag' => $like_flag,
+                'buy_flag' => $buy_flag,
             ]);
         }
         else {

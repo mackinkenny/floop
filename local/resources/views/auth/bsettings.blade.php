@@ -2,35 +2,48 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Settings</div>
-                    <div class="panel-body">
-                        <form class="form-horizontal" method="POST" action="{{ route('bid', Auth::user()->id) }}" enctype="multipart/form-data">
-                            {{ csrf_field() }}
-                            <label for="name">Название</label>
-                            <input type="text" name="name">
-                            <br>
-                            <label for="phone_number">Телефон</label>
-                            <input type="text" name="phone_number">
-                            <br>
-                            <label for="info">Информация о бутике</label>
-                            <input type="text" size="256" name="info" style="width:500px;">
-                            <br>
-                            <label for="delivery">Доставка</label>
-                            <input type="text" name="delivery">
-                            <br>
-                            <label for="img_path">Аватар профиля</label>
-                            <input type="file" name="img_path">
+        <div class="row justify-content-center">
 
+            <form class="col-12 col-md-5 text-light p-5" id="form-login"  method="POST" action="{{ route('bid', Auth::user()->id) }}" enctype="multipart/form-data">
+                {{ csrf_field() }}
 
-
-                            <button type="submit">Подтвердить</button>
-                        </form>
+                <div class="row align-items-center mb-4">
+                    <div class="col-3">
+                        <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle w-100 h-100" alt="">
+                    </div>
+                    <div class="col">
+                        <h3>{{ Auth::user()->name }}</h3>
                     </div>
                 </div>
-            </div>
+
+                <div>
+                    <label for="exampleInputPassword2">Аватар</label>
+                    <input type="file" class="form-control" id="exampleInputPassword2" placeholder=""  name="img_path">
+                </div>
+                <div>
+                    <label for="exampleInputEmail1">Название</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" name="name" placeholder="" autofocus>
+
+                </div>
+                <div>
+                    <label for="exampleInputPassword1">Информация о бутике</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder=""  name="info">
+                </div>
+                <div>
+                    <label for="exampleInputPasswor">Доставка</label>
+                    <input type="text" class="form-control" id="exampleInputPasswor" placeholder=""  name="delivery">
+                </div>
+                <div>
+                    <label for="exampleInputPassword2">Номер телефона</label>
+                    <input type="text" class="form-control" id="exampleInputPassword2" placeholder=""  name="phone_number">
+                </div>
+                <div class="row pt-4 justify-content-around">
+                    <button type="submit" class="col-auto btn btn-primary">Подтвердить</button>
+                </div>
+            </form>
+
         </div>
+
+    </div>
 
 @endsection

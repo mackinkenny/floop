@@ -26,9 +26,11 @@ class SubscribeController extends Controller
         if ($bouticDB) {
             $user->boutics()->detach($boutic->id);
             $boutic->subs--;
+            $user->count_subs--;
         }
         else {
             $user->boutics()->attach($boutic->id, ['status' => 1]);
+            $user->count_subs++;
             $boutic->subs++;
 
             $notice = new Notice();
@@ -55,6 +57,7 @@ class SubscribeController extends Controller
             ->where('boutic_id', '=', $boutic->id)
             ->first();
         $subs_flag = false;
+
 
         if ($bouticDB) {
             $subs_flag = true;

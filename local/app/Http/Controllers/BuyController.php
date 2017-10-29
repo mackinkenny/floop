@@ -23,7 +23,7 @@ class BuyController extends Controller
             ->first();
 
         if ($productDB) {
-            $user->products()->detach($request->id);
+            $user->products()->wherePivot('likeOrBuy','=',1)->detach($request->id);
             $user->count_buys--;
             $product->count_buys--;
         }
@@ -40,13 +40,17 @@ class BuyController extends Controller
             $notice->status = 1;
 
             $notice->save();
-
         }
+        $buy_flag = false;
+        if ($productDB) {
+            $buy_flag = true;
+        }
+
         $user->save();
 
         $product->save();
 
 
-        return response()->json(['Successz' => 'WTF']);
+        return response()->json(['Successz' => 'WTF','buy_flag' => $buy_flag]);
     }
 }

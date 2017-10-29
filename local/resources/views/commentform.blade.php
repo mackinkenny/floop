@@ -1,7 +1,5 @@
 <div class="container comment-bar px-4 py-3 h-100 mx-3 my-3">
     <div id="style-1">
-        <p class="col-12">Comment</p>
-
 
     </div>
     @if(Auth::guest())
@@ -28,4 +26,3 @@
         </form>
     @endif
 </div>
-

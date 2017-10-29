@@ -6,14 +6,14 @@
         <div class="col-12 py-3 bg-gray mb-2 text-light" style="-webkit-box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);
 -moz-box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);
 box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);">
-            <div class="row align-items-center px-3">
+            <div class="row align-items-center justify-content-center">
                 <img src="/uploads/boutic/avatars/{{ $product->boutic->img_path }}" class="rounded-circle col-3 h-100" alt="">
-                <a href="/profile/{{$product->boutic->user_id}}" style="color:#d9dad9;"><h2 class="fs-xs-20 ml-5 col">{{ $product->boutic->name }}</h2></a>
+                <a href="/profile/{{$product->boutic->user_id}}" style="color:#d9dad9;"><h2 class="fs-xs-20 col">{{ $product->boutic->name }}</h2></a>
             </div>
         </div>
         <div class="col-12 p-0">
             <input type="hidden" value="{{ $i = 0 }}">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
                 <ol class="carousel-indicators">
 
                     @foreach($product->photos as $img)
@@ -82,8 +82,13 @@ box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);">
 
                             <input type="hidden" id="lid" value="{{ $product->id }}">
                             <input type="hidden" id="lu_id" value="{{ Auth::user()->id }}">
-                            <img src="/img/logo/like.png" width="40" height="40" style="cursor: pointer;" id="like" alt="">
-                            {{--<img src="/img/logo/like3.png" width="30" height="30" style="cursor: pointer; opacity:0; position:absolute;" id="like-0" alt="">--}}
+                            @if($like_flag)
+                                <img src="/img/logo/like.png" width="40" height="40" style="cursor: pointer; position:relative;opacity:0; z-index:999;" id="like" alt="">
+                                <img src="/img/logo/like3.png" width="40" height="40" style="top: 0px; opacity:1; position:absolute;" id="like-0" alt="">
+                            @else
+                                <img src="/img/logo/like.png" width="40" height="40" style="cursor: pointer; position:relative;opacity:1; z-index:999;" id="like" alt="">
+                                <img src="/img/logo/like3.png" width="40" height="40" style="top: 0px; opacity:0; position:absolute;" id="like-0" alt="">
+                            @endif
                         </form>
 
 
@@ -94,6 +99,7 @@ box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);">
                     @if(Auth::guest())
 
                         <a href="/login">
+                            <input type="hidden" id="bid" value="{{ $product->id }}">
 
                             <img src="/img/logo/korzina1.png"  width="40" height="40" alt="" style="cursor: pointer;">
                             {{--<img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="cursor: pointer;opacity:0; position:absolute; ">--}}
@@ -103,10 +109,15 @@ box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);">
 
                         <form action="/buy" method="POST">
                             {{ csrf_field() }}
-                            <input type="hidden" id="bid" value="">
-                            <input type="hidden" id="bu_id" value="">
-                            <img src="/img/logo/korzina1.png" id="buy" width="40" height="40" alt="" style="cursor: pointer;">
-                            {{--<img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="cursor: pointer;opacity:0; position:absolute; ">--}}
+                            <input type="hidden" id="bid" value="{{ $product->id }}">
+                            <input type="hidden" id="bu_id" value="{{ Auth::user()->id }}">
+                            @if($buy_flag)
+                                <img src="/img/logo/korzina1.png" id="buy" width="40" height="40" alt="" style="position:relative; z-index: 999;opacity:0; cursor: pointer;">
+                                <img src="/img/logo/korzina2.png" id="buy-0" width="40" height="40" alt="" style="top: 0px; opacity:1; position:absolute; ">
+                            @else
+                                <img src="/img/logo/korzina1.png" id="buy" width="40" height="40" alt="" style="position:relative; z-index: 999;opacity:1; cursor: pointer;">
+                                <img src="/img/logo/korzina2.png" id="buy-0" width="40" height="40" alt="" style="top: 0px; opacity:0; position:absolute; ">
+                            @endif
                         </form>
 
                     @endif

@@ -49,6 +49,17 @@
                                     </div>
                                 </div>
                             </div>
+                            {{--<div class="col-auto">--}}
+                                {{--<div class="row">--}}
+                                    {{--<div class="col-auto py-1 rounded-circle-our br-r-0 px-3 bg-gray text-light d-flex flex-row align-items-center">--}}
+                                        {{--<span class="">{{ $user->count_subs }}</span>--}}
+                                    {{--</div>--}}
+                                    {{--<div class="col-auto px-3 py-1 bg-light bl-r-0 rounded-circle-our d-flex flex-row align-items-center">--}}
+                                        {{--<a href="/subcount/{{ $user->id }}"><span class="">Подписки</span></a>--}}
+                                    {{--</div>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            
                         </div>
                     </div>
                 </div>

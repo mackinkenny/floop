@@ -17,11 +17,7 @@ class LikeController extends Controller
     public function index(Request $request)
     {
         $user = User::find($request->u_id);
-
-
         $product = Product::find($request->id);
-
-
 
         $productDB = DB::table('product_user')
             ->where('user_id', '=', $request->u_id)
@@ -30,7 +26,7 @@ class LikeController extends Controller
             ->first();
 
         if ($productDB) {
-            $user->products()->detach($request->id);
+            $user->products()->wherePivot('likeOrBuy','=',0)->detach($request->id);
             $user->count_likes--;
             $product->count_likes--;
         }
@@ -48,13 +44,15 @@ class LikeController extends Controller
 
             $notice->save();
         }
-
-
+        $like_flag = false;
+        if ($productDB) {
+            $like_flag = true;
+        }
 
         $user->save();
         $product->save();
 
 
-        return response()->json(['Success' => 'Success!', 'like_count' => $product->count_likes]);
+        return response()->json(['Success' => 'Success!', 'like_count' => $product->count_likes, 'like_flag' => $like_flag]);
     }
 }

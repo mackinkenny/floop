@@ -176,6 +176,17 @@ $(document).ready(function() {
             $('#malecol').hide();
             $("#childcol").hide();
 
+            if($(document).width() < 800) {
+                $('.female-slide').show();
+            }
+            else  {
+                $('.second-slide').show();
+            }
+            $('.static-slider').removeClass('d-block');
+            $('.static-slider').addClass('d-none');
+            $('div#carouselExampleIndicators.carousel.slide').removeClass('d-md-block');
+
+
             $('#body').animate({
                 backgroundColor: '#E19075'
             }, 500);
@@ -238,6 +249,12 @@ $(document).ready(function() {
             $('#body3').animate({
                 backgroundColor: '#C3C4C4'
             }, 500);
+
+            $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
+            $('.static-slider').removeClass('d-none');
+            $('.static-slider').addClass('d-block');
+            $('.second-slide').hide();
+            $('.female-slide').hide();
             catId = 0;
             appendItems();
 
@@ -254,6 +271,17 @@ $(document).ready(function() {
             $('#childcol').addClass('mx-auto');
             $('#femalecol').hide();
             $("#malecol").hide();
+            $('div#carouselExampleIndicators.carousel.slide').removeClass('d-md-block');
+
+            $('.static-slider').removeClass('d-block');
+            $('.static-slider').addClass('d-none');
+            if($(document).width() < 800) {
+                $('.child-slide').show();
+            }
+            else {
+                $('.third-slide').show();
+            }
+
             $('#body').animate({
                 backgroundColor: '#C46FA8'
             }, 1000);
@@ -314,6 +342,12 @@ $(document).ready(function() {
             $('#body3').animate({
                 backgroundColor: '#C3C4C4'
             }, 1000);
+
+            $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
+            $('.static-slider').removeClass('d-none');
+            $('.static-slider').addClass('d-block');
+            $('.third-slide').hide();
+            $('.child-slide').hide();
             catId = 0;
 
             appendItems();
@@ -330,6 +364,19 @@ $(document).ready(function() {
             $('#malecol').addClass('mx-auto');
             $('#femalecol').hide();
             $("#childcol").hide();
+            $('div#carouselExampleIndicators.carousel.slide').removeClass('d-md-block');
+
+            $('.static-slider').removeClass('d-block');
+            $('.static-slider').addClass('d-none');
+            if($(document).width() < 800) {
+                console.log($(document).width())
+                $('.male-slide').show();
+            }
+            else {
+                console.log($(document).width())
+                $('.first-slide').show();
+            }
+
             $('#body').animate({
                 backgroundColor: '#86C4DF'
             }, 1000);
@@ -381,6 +428,11 @@ $(document).ready(function() {
             $('#malecol').removeClass('mx-auto');
             $('#femalecol').show();
             $("#childcol").show();
+            $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
+            $('.static-slider').removeClass('d-none');
+            $('.static-slider').addClass('d-block');
+            $('.first-slide').hide();
+            $('.male-slide').hide();
             $('#body').animate({
                 backgroundColor: '#D8D9D9'
             }, 1000);

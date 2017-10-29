@@ -79,6 +79,7 @@ Route::get('/centers', 'CenterController@index');
 
 Route::get('/cat/{id}', 'CatController@sort');
 Route::get('/sorttype/{id}', 'BouticController@sort');
+Route::get('/subcount/{id}', 'UserController@subcount');
 
 Route::get('/admin','AdminController@index')->name('admin');
 Route::get('/sdiscounts', 'DiscountController@discounts')->name('sdiscounts');
