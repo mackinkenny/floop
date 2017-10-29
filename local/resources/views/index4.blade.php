@@ -130,13 +130,19 @@
 
                         <div class="row  my-2">
                             <div class="col-auto" id="buy-form">
-                                <form action="/buy" method="POST">
-                                    {{ csrf_field() }}
-                                    <input type="hidden" id="bid" value="">
-                                    <input type="hidden" id="bu_id" value="">
-                                    <img src="/img/logo/korzina1.png" id="buy" width="50" height="50" alt="" style="position:relative; z-index:999; cursor: pointer;">
-                                    <img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="opacity:0; top: 0px; position:absolute; ">
-                                </form>
+                                @if(Auth::guest())
+                                    <a href="/login">
+                                        <img src="/img/logo/korzina1.png" width="50" height="50" alt="" style="position:relative; z-index:999; cursor: pointer;">
+                                    </a>
+                                @else
+                                    <form action="/buy" method="POST">
+                                        {{ csrf_field() }}
+                                        <input type="hidden" id="bid" value="">
+                                        <input type="hidden" id="bu_id" value="">
+                                        <img src="/img/logo/korzina1.png" id="buy" width="50" height="50" alt="" style="position:relative; z-index:999; cursor: pointer;">
+                                        <img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="opacity:0; top: 0px; position:absolute; ">
+                                    </form>
+                                @endif
                             </div>
                             <div class="text-light col d-flex flex-row align-items-center justify-content-center" style="margin-right: -19px; border-bottom-left-radius: 30px; border-top-left-radius: 30px; background-color: #E19075;">
                                 <p class="m-0" style="font-size: 1rem;"><span class="price-text"></span> KGS</p>
