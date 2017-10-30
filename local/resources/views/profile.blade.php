@@ -81,7 +81,7 @@
                     <a class="row nav-link bg-dark" id="buy-tab" data-toggle="tab" href="#buy-show-show" role="tab" aria-controls="buy"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
                 </li>
                 <li class="col text-center nav-item">
-                    <a class="row nav-link bg-dark" id="subs-tab" data-toggle="tab" href="#subs-show-show" role="tab" aria-controls="subs"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
+                    <a class="row nav-link bg-dark" id="subs-tab" data-toggle="tab" href="#subs-show-show" role="tab" aria-controls="subs"><img class="logo-control" src="/img/straights/sub2.png" width="30" height="30" alt=""></a>
                 </li>
             </ul>
             <div class="tab-content" id="myTabContent">
@@ -101,20 +101,22 @@
                 <div class="tab-pane fade" id="subs-show-show" role="tabpanel" aria-labelledby="subs-tab">
 
 
-                    <div class="container">
-                        <div class="row">
-                            @foreach($boutics as $boutic)
+                    <section>
+                        <div class="container container-spec py-3">
+                            <div class="row" style="margin-bottom: 54px;">
+                                @foreach($boutics as $boutic)
 
-                                <div class="col-4 p-2 col-md-3 my-4 my-md-4">
-                                    <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
-                                        <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
-                                        <p class="text-center text-dark">{{ $boutic->name }}</p>
-                                    </a>
-                                </div>
+                                    <div class="col-4 p-2 col-md-3 my-4 my-md-4">
+                                        <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
+                                            <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
+                                            <p class="text-center text-dark">{{ $boutic->name }}</p>
+                                        </a>
+                                    </div>
 
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    </section>
 
 
                 </div>

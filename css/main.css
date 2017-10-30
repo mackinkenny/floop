@@ -200,6 +200,10 @@ footer a:hover {
     height: 250px;
 }
 
+ul.row.nav.nav-tabs>li {
+    border: 1px solid #fff;
+}
+
 nav {
     background-color: #FEFEFE;
 }

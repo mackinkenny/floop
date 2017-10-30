@@ -111,7 +111,42 @@ class UserController extends Controller
             }
             return view('profileboutic', ['boutic' => $boutic, 'products' => $products, 'is_products' => $is_products]);
         } else {
-            return view('profile', ['user' => $user]);
+            $is_products_liked = false;
+            $is_products_buied = false;
+            $products = $user->products;
+            Session::put('catId', 0);
+//        if (!$products->isEmpty()) {
+//            $is_products = true;
+//        }
+
+            $products_liked = $products->reject(function ($product) {
+                if ($product->pivot->likeOrBuy == 0) {
+                    return $product;
+                }
+            });
+            $products_buied = $products->reject(function ($product) {
+                if ($product->pivot->likeOrBuy == 1) {
+                    return $product;
+                }
+            });
+
+            if(!$products_liked->isEmpty()) {
+                $is_products_liked = true;
+            }
+            if(!$products_buied->isEmpty()) {
+                $is_products_buied = true;
+            }
+
+            $boutics = $user->boutics;
+
+            return view('profile', [
+                'user' => $user,
+                'products_liked' => $products_liked,
+                'products_buied' => $products_buied,
+                'is_products_liked' => $is_products_liked,
+                'is_products_buied' => $is_products_buied,
+                'boutics' => $boutics,
+            ]);
         }
     }
 
