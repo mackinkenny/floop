@@ -80,6 +80,9 @@
                 <li class="col text-center nav-item">
                     <a class="row nav-link bg-dark" id="buy-tab" data-toggle="tab" href="#buy-show-show" role="tab" aria-controls="buy"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
                 </li>
+                <li class="col text-center nav-item">
+                    <a class="row nav-link bg-dark" id="subs-tab" data-toggle="tab" href="#subs-show-show" role="tab" aria-controls="subs"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
+                </li>
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="like-show-show" role="tabpanel" aria-labelledby="like-tab">
@@ -92,6 +95,26 @@
 
 
                     @include('index5', ['products' => $products_liked, 'is_products' => $is_products_liked])
+
+
+                </div>
+                <div class="tab-pane fade" id="subs-show-show" role="tabpanel" aria-labelledby="subs-tab">
+
+
+                    <div class="container">
+                        <div class="row">
+                            @foreach($boutics as $boutic)
+
+                                <div class="col-4 p-2 col-md-3 my-4 my-md-4">
+                                    <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
+                                        <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
+                                        <p class="text-center text-dark">{{ $boutic->name }}</p>
+                                    </a>
+                                </div>
+
+                            @endforeach
+                        </div>
+                    </div>
 
 
                 </div>

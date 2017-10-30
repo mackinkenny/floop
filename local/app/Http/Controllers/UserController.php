@@ -78,12 +78,15 @@ class UserController extends Controller
             $is_products_buied = true;
         }
 
+        $boutics = Auth::user()->boutics;
+
         return view('profile', [
             'user' => Auth::user(),
             'products_liked' => $products_liked,
             'products_buied' => $products_buied,
             'is_products_liked' => $is_products_liked,
             'is_products_buied' => $is_products_buied,
+            'boutics' => $boutics,
             ]);
     }
 
