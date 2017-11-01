@@ -72,11 +72,9 @@ $(document).ready(function () {
                 modal.find('#bid').val(data.product.id)
                 modal.find('#style-1').text('')
                 if(data.like_flag) {
-                    modal.find('#like-0').css('opacity', '1');
                     modal.find('#like').css('opacity', '0');
                 }
                 if(data.buy_flag) {
-                    modal.find('#buy-0').css('opacity', '1');
                     modal.find('#buy').css('opacity', '0');
                 }
                 modal.find('.like_count').text('| ' + data.like_count)
@@ -162,12 +160,9 @@ $(document).ready(function () {
             success: function (data) {
                $('.like_count').text('| ' + data.like_count)
                 if (data.like_flag) {
-                    $('#like-0').css('opacity','0');
                     $('#like').css('opacity','1');
                 }
                 else {
-
-                    $('#like-0').css('opacity','1');
                     $('#like').css('opacity','0');
                 }
                 console.log('like');
@@ -190,11 +185,9 @@ $(document).ready(function () {
             dataType: 'json',
             success: function (data) {
                 if(data.buy_flag == true) {
-                    $('#buy-0').css('opacity','0');
                     $('#buy').css('opacity','1');
                 }
                 else {
-                    $('#buy-0').css('opacity','1');
                     $('#buy').css('opacity','0');
                 }
                 console.log('buy');

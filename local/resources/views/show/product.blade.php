@@ -83,11 +83,13 @@ box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);">
                             <input type="hidden" id="lid" value="{{ $product->id }}">
                             <input type="hidden" id="lu_id" value="{{ Auth::user()->id }}">
                             @if($like_flag)
+                                <div style="background-image: url('/img/logo/like3.png'); background-position:center; background-size:cover;">
                                 <img src="/img/logo/like.png" width="40" height="40" style="cursor: pointer; position:relative;opacity:0; z-index:999;" id="like" alt="">
-                                <img src="/img/logo/like3.png" class="mx-auto" width="40" height="40" style="top: 0px; opacity:1; position:absolute;" id="like-0" alt="">
+                                </div>
                             @else
+                                <div style="background-image: url('/img/logo/like3.png'); background-position:center; background-size:cover;">
                                 <img src="/img/logo/like.png" width="40" height="40" style="cursor: pointer; position:relative;opacity:1; z-index:999;" id="like" alt="">
-                                <img src="/img/logo/like3.png" width="40" height="40" style="top: 0px; opacity:0; position:absolute;" id="like-0" alt="">
+                                </div>
                             @endif
                         </form>
 
@@ -112,11 +114,14 @@ box-shadow: 0px 4px 17px 0px rgba(0,0,0,0.75);">
                             <input type="hidden" id="bid" value="{{ $product->id }}">
                             <input type="hidden" id="bu_id" value="{{ Auth::user()->id }}">
                             @if($buy_flag)
+                                <div style="background-image: url('/img/logo/korzina2.png'); background-position:center; background-size:cover;">
                                 <img src="/img/logo/korzina1.png" id="buy" width="40" height="40" alt="" style="position:relative; z-index: 999;opacity:0; cursor: pointer;">
-                                <img src="/img/logo/korzina2.png" class="mx-auto" id="buy-0" width="40" height="40" alt="" style="top: 0px; opacity:1; position:absolute; ">
+                                </div>
                             @else
+                                <div style="background-image: url('/img/logo/korzina2.png'); background-position:center; background-size:cover;">
                                 <img src="/img/logo/korzina1.png" id="buy" width="40" height="40" alt="" style="position:relative; z-index: 999;opacity:1; cursor: pointer;">
-                                <img src="/img/logo/korzina2.png" id="buy-0" width="40" height="40" alt="" style="top: 0px; opacity:0; position:absolute; ">
+                                </div>
+
                             @endif
                         </form>
 

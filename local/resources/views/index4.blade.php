@@ -117,8 +117,10 @@
 
                                         <input type="hidden" id="lid" value="">
                                         <input type="hidden" id="lu_id" value="">
-                                        <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer; position:relative; z-index:999;" id="like" alt="">
-                                        <img src="/img/logo/like3.png" width="30" height="30" style="top: 0px; opacity:0; position:absolute;" id="like-0" alt="">
+                                        <div style="background-image: url('/img/logo/like3.png'); background-position:center; background-size:cover;">
+                                            <img src="/img/logo/like.png" width="30" height="30" style="cursor: pointer; position:relative; z-index:999; " id="like" alt="">
+                                        </div>
+                                        {{--<img src="/img/logo/like3.png" width="30" height="30" style="top: 0px; opacity:0; position:absolute;" id="like-0" alt="">--}}
                                     </form>
 
                                 @endif
@@ -141,8 +143,9 @@
                                         {{ csrf_field() }}
                                         <input type="hidden" id="bid" value="">
                                         <input type="hidden" id="bu_id" value="">
-                                        <img src="/img/logo/korzina1.png" id="buy" width="50" height="50" alt="" style="position:relative; z-index:999; cursor: pointer;">
-                                        <img src="/img/logo/korzina2.png" id="buy-0" width="50" height="50" alt="" style="opacity:0; top: 0px; position:absolute; ">
+                                        <div style="background-image: url('/img/logo/korzina2.png'); background-position:center; background-size:cover;">
+                                            <img src="/img/logo/korzina1.png" width="40" height="40" style="cursor: pointer; position:relative; z-index:999; " id="buy" alt="">
+                                        </div>
                                     </form>
                                 @endif
                             </div>
