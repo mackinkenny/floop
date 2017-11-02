@@ -7,6 +7,10 @@
     <meta name="csrf-token" content="{!! csrf_token() !!}">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="apple-touch-icon" href="/img/logo/logo.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/img/logo/logo.png"/>
+    <meta name="msapplication-square70x70logo" content="/img/logo/logo.png"/>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/css/app.css">
