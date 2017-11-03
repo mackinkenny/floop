@@ -46,7 +46,7 @@
         <div class="container" id="sectionRightAndLeft">
             <div class="row py-3 justify-content-between">
                 <div class="col-5">
-                    <div id="ajax-home" class="row">
+                    <div class="row">
                         <div class="col-12 py-2"  id="body2" style="border-top-right-radius: 30px; border-bottom-right-radius: 30px; background-color: #C3C4C4;">
                             <a href="" id="centers"><h3>Торговые центры</h3></a>
                         </div>
@@ -56,7 +56,7 @@
                     </div>
                 </div>
                 <div class="col-5 text-right">
-                    <div class="row" id="ajax-home2">
+                    <div class="row">
                         <div class="col-12 py-2" id="body3" style="border-top-left-radius: 30px; border-bottom-left-radius: 30px; background-color: #C3C4C4;">
                             <a href="" id="boutics"><h3>Магазины</h3></a>
                         </div>
@@ -65,6 +65,8 @@
 
                     </div>
                 </div>
+                <img src="/img/main.png" class="w-100 d-none d-md-block">
+                <img src="/img/sttraights.png" class="w-100 d-md-none d-block">
             </div>
         </div>
     </section>
