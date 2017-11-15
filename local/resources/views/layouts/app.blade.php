@@ -83,6 +83,8 @@
 
                                         <a class="dropdown-item" href="/bset/{{ Auth::user()->id }}">Настройки</a>
 
+                                        <a class="dropdown-item" href="/bset/{{ Auth::user()->id }}">Панель управления</a>
+
 
                                     @else
 
