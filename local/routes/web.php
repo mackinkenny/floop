@@ -83,5 +83,7 @@ Route::get('/subcount/{id}', 'UserController@subcount');
 
 Route::get('/admin','AdminController@index')->name('admin');
 Route::get('/sdiscounts', 'DiscountController@discounts')->name('sdiscounts');
+Route::get('/panel/{id}', 'BouticController@panel')->name('panel');
+Route::get('/sell/{id}', 'BuyController@sell')->name('sell');
 
 

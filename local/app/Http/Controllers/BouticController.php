@@ -213,4 +213,10 @@ class BouticController extends Controller
         return back();
 
     }
+    public function panel($id)
+    {
+        $boutic = Boutic::all()->where('user_id','=',$id)->first();
+        return view('show.panel',['boutic' => $boutic]);
+    }
+
 }
