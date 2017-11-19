@@ -13,18 +13,17 @@
         </div>
         <div class="row pt-5">
             <div class="col">
-                <div class="pt-2"><img src="/img/logo/info.png" alt=""> Информация о бутике</div>
-                <div class="pt-2"><img src="/img/logo/contract.png" alt=""> Срок контракта</div>
-                <div class="pt-2"><img src="/img/logo/clothes.png" alt=""> Количество товаров</div>
-                <div class="pt-2"><a href="/sell/{{$boutic->id}}"><img src="/img/logo/report.png" alt=""> Оформление продаж</a></div>
+               <a href="#exampleModalLong" data-toggle="modal" data-target="#exampleModalLong"><div class="pt-2 panelt"><img src="/img/logo/info.png" style="margin-left:5px; margin-bottom:5px;" alt=""> Информация о бутике</div></a>
+                <div class="pt-2 panelt"><img src="/img/logo/clothes.png" style="margin-left:5px; margin-bottom:5px;" alt=""> Количество товаров со скидкой</div>
+                <a href="/sell/{{$boutic->id}}"><div class="pt-2 panelt"><img src="/img/logo/report.png" style="margin-left:5px; margin-bottom:5px;" alt=""> Оформление продаж</div></a>
             </div>
             <div class="col">
-                <div class="pt-2"><img src="/img/logo/status.png" alt=""> Статус / Тариф</div>
-                <div class="pt-2"><img src="/img/logo/contract.png" alt=""> Дата заключения</div>
-                <div class="pt-2"><img src="/img/logo/sell.png" alt=""> Количество проданных</div>
-                <div class="pt-2"><img src="/img/logo/person.png" alt=""> Частые покупатели</div>
+                <div class="pt-2 panelt"><img src="/img/logo/status.png" style="margin-left:5px; margin-bottom:5px;" alt=""> Статус / Тариф</div>
+                <div class="pt-2 panelt"><img src="/img/logo/sell.png" style="margin-left:5px; margin-bottom:5px;" alt=""> Количество проданных</div>
+                <div class="pt-2 panelt"><img src="/img/logo/person.png" style="margin-left:5px; margin-bottom:5px;" alt=""> Частые покупатели</div>
             </div>
         </div>
     </div>
 
+    <@include('modal.info')
 @endsection
