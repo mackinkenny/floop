@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Boutic;
 use App\Center;
+use App\Maintype;
+use App\Type;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -180,7 +182,19 @@ class BouticController extends Controller
 
 //        return response()->json(['success' => 'success']);
     }
+    public function msort( $id) {
 
+        $types = Type::all()->where('maintype_id','=' , $id);
+
+            return response()->json(['types' => $types]);
+
+
+
+
+
+
+//        return response()->json(['success' => 'success']);
+    }
     public function edit($id, Request $request)
     {
         $boutic = Boutic::all()->where('user_id', '=', $id)->first();

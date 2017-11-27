@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<framework xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/frameworkDescriptionVersion1.1.4.xsd" frameworkId="com.symfony.component" name="Tool_based_on_Symfony_Console_02.10.17 23:13_art" invoke="D:\OpenServer\modules\php\PHP-7-x64\php.exe D:\OpenServer\domains\floop\local\artisan" alias="art" enabled="true" version="2">
+<framework xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="schemas/frameworkDescriptionVersion1.1.4.xsd" frameworkId="com.symfony.component" name="Tool_based_on_Symfony_Console_26.11.17 5:35_art" invoke="D:\OSPanel\modules\php\PHP-7.1-x64\php.exe D:\OSPanel\domains\floop\local\artisan" alias="art" enabled="true" version="2">
   <extraData><![CDATA[version:3]]></extraData>
   <command>
     <name>clear-compiled</name>
@@ -99,7 +99,7 @@
   </command>
   <command>
     <name>help</name>
-    <help><![CDATA[The <b>help</b> command displays help for a given command:<br> <br> <b>php D:\OpenServer\domains\floop\local\artisan help list</b><br> <br> You can also output the help in other formats by using the <comment>--format</comment> option:<br> <br> <b>php D:\OpenServer\domains\floop\local\artisan help --format=xml list</b><br> <br> To display the list of available commands, please use the <b>list</b> command.<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--format</td><td></td><td>The output format (txt, xml, json, or md)</td></tr> <tr><td>--raw</td><td></td><td>To output raw command help</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[The <b>help</b> command displays help for a given command:<br> <br> <b>php D:\OSPanel\domains\floop\local\artisan help list</b><br> <br> You can also output the help in other formats by using the <comment>--format</comment> option:<br> <br> <b>php D:\OSPanel\domains\floop\local\artisan help --format=xml list</b><br> <br> To display the list of available commands, please use the <b>list</b> command.<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--format</td><td></td><td>The output format (txt, xml, json, or md)</td></tr> <tr><td>--raw</td><td></td><td>To output raw command help</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>command_name[=null]</params>
     <optionsBefore>
       <option name="--format" shortcut="" pattern="equals">
@@ -166,7 +166,7 @@
   </command>
   <command>
     <name>list</name>
-    <help><![CDATA[The <b>list</b> command lists all commands:<br> <br> <b>php D:\OpenServer\domains\floop\local\artisan list</b><br> <br> You can also display the commands for a specific namespace:<br> <br> <b>php D:\OpenServer\domains\floop\local\artisan list test</b><br> <br> You can also output the information in other formats by using the <comment>--format</comment> option:<br> <br> <b>php D:\OpenServer\domains\floop\local\artisan list --format=xml</b><br> <br> It's also possible to get raw list of commands (useful for embedding command runner):<br> <br> <b>php D:\OpenServer\domains\floop\local\artisan list --raw</b><br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--raw</td><td></td><td>To output raw command list</td></tr> <tr><td>--format</td><td></td><td>The output format (txt, xml, json, or md)</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[The <b>list</b> command lists all commands:<br> <br> <b>php D:\OSPanel\domains\floop\local\artisan list</b><br> <br> You can also display the commands for a specific namespace:<br> <br> <b>php D:\OSPanel\domains\floop\local\artisan list test</b><br> <br> You can also output the information in other formats by using the <comment>--format</comment> option:<br> <br> <b>php D:\OSPanel\domains\floop\local\artisan list --format=xml</b><br> <br> It's also possible to get raw list of commands (useful for embedding command runner):<br> <br> <b>php D:\OSPanel\domains\floop\local\artisan list --raw</b><br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--raw</td><td></td><td>To output raw command list</td></tr> <tr><td>--format</td><td></td><td>The output format (txt, xml, json, or md)</td></tr> </table> <br/>]]></help>
     <params>namespace[=null]</params>
     <optionsBefore>
       <option name="--raw" shortcut="">
@@ -1049,9 +1049,12 @@
   </command>
   <command>
     <name>make:mail</name>
-    <help><![CDATA[Create a new email class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--markdown</td><td>(-m)</td><td>Create a new Markdown template for the mailable.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new email class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td>(-f)</td><td>Create the class even if the mailable already exists.</td></tr> <tr><td>--markdown</td><td>(-m)</td><td>Create a new Markdown template for the mailable.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
+      <option name="--force" shortcut="-f">
+        <help><![CDATA[Create the class even if the mailable already exists.]]></help>
+      </option>
       <option name="--markdown" shortcut="-m" pattern="equals">
         <help><![CDATA[Create a new Markdown template for the mailable.]]></help>
       </option>
@@ -1154,9 +1157,12 @@
   </command>
   <command>
     <name>make:model</name>
-    <help><![CDATA[Create a new Eloquent model class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--migration</td><td>(-m)</td><td>Create a new migration file for the model.</td></tr> <tr><td>--controller</td><td>(-c)</td><td>Create a new controller for the model.</td></tr> <tr><td>--resource</td><td>(-r)</td><td>Indicates if the generated controller should be a resource controller</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new Eloquent model class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td>(-f)</td><td>Create the class even if the model already exists.</td></tr> <tr><td>--migration</td><td>(-m)</td><td>Create a new migration file for the model.</td></tr> <tr><td>--controller</td><td>(-c)</td><td>Create a new controller for the model.</td></tr> <tr><td>--resource</td><td>(-r)</td><td>Indicates if the generated controller should be a resource controller.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
+      <option name="--force" shortcut="-f">
+        <help><![CDATA[Create the class even if the model already exists.]]></help>
+      </option>
       <option name="--migration" shortcut="-m">
         <help><![CDATA[Create a new migration file for the model.]]></help>
       </option>
@@ -1164,7 +1170,7 @@
         <help><![CDATA[Create a new controller for the model.]]></help>
       </option>
       <option name="--resource" shortcut="-r">
-        <help><![CDATA[Indicates if the generated controller should be a resource controller]]></help>
+        <help><![CDATA[Indicates if the generated controller should be a resource controller.]]></help>
       </option>
       <option name="--help" shortcut="-h">
         <help><![CDATA[Display this help message]]></help>
@@ -1194,9 +1200,12 @@
   </command>
   <command>
     <name>make:notification</name>
-    <help><![CDATA[Create a new notification class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--markdown</td><td>(-m)</td><td>Create a new Markdown template for the notification.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Create a new notification class<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--force</td><td>(-f)</td><td>Create the class even if the notification already exists.</td></tr> <tr><td>--markdown</td><td>(-m)</td><td>Create a new Markdown template for the notification.</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>name</params>
     <optionsBefore>
+      <option name="--force" shortcut="-f">
+        <help><![CDATA[Create the class even if the notification already exists.]]></help>
+      </option>
       <option name="--markdown" shortcut="-m" pattern="equals">
         <help><![CDATA[Create a new Markdown template for the notification.]]></help>
       </option>
@@ -1744,11 +1753,11 @@
   </command>
   <command>
     <name>queue:listen</name>
-    <help><![CDATA[Listen to a given queue<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--delay</td><td></td><td>Amount of time to delay failed jobs</td></tr> <tr><td>--force</td><td></td><td>Force the worker to run even in maintenance mode</td></tr> <tr><td>--memory</td><td></td><td>The memory limit in megabytes</td></tr> <tr><td>--queue</td><td></td><td>The queue to listen on</td></tr> <tr><td>--sleep</td><td></td><td>Number of seconds to sleep when no job is available</td></tr> <tr><td>--timeout</td><td></td><td>The number of seconds a child process can run</td></tr> <tr><td>--tries</td><td></td><td>Number of times to attempt a job before logging it failed</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Listen to a given queue<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--delay</td><td></td><td>The number of seconds to delay failed jobs</td></tr> <tr><td>--force</td><td></td><td>Force the worker to run even in maintenance mode</td></tr> <tr><td>--memory</td><td></td><td>The memory limit in megabytes</td></tr> <tr><td>--queue</td><td></td><td>The queue to listen on</td></tr> <tr><td>--sleep</td><td></td><td>Number of seconds to sleep when no job is available</td></tr> <tr><td>--timeout</td><td></td><td>The number of seconds a child process can run</td></tr> <tr><td>--tries</td><td></td><td>Number of times to attempt a job before logging it failed</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>connection[=null]</params>
     <optionsBefore>
       <option name="--delay" shortcut="" pattern="equals">
-        <help><![CDATA[Amount of time to delay failed jobs]]></help>
+        <help><![CDATA[The number of seconds to delay failed jobs]]></help>
       </option>
       <option name="--force" shortcut="">
         <help><![CDATA[Force the worker to run even in maintenance mode]]></help>
@@ -1887,7 +1896,7 @@
   </command>
   <command>
     <name>queue:work</name>
-    <help><![CDATA[Start processing jobs on the queue as a daemon<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--queue</td><td></td><td>The names of the queues to work</td></tr> <tr><td>--daemon</td><td></td><td>Run the worker in daemon mode (Deprecated)</td></tr> <tr><td>--once</td><td></td><td>Only process the next job on the queue</td></tr> <tr><td>--delay</td><td></td><td>Amount of time to delay failed jobs</td></tr> <tr><td>--force</td><td></td><td>Force the worker to run even in maintenance mode</td></tr> <tr><td>--memory</td><td></td><td>The memory limit in megabytes</td></tr> <tr><td>--sleep</td><td></td><td>Number of seconds to sleep when no job is available</td></tr> <tr><td>--timeout</td><td></td><td>The number of seconds a child process can run</td></tr> <tr><td>--tries</td><td></td><td>Number of times to attempt a job before logging it failed</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
+    <help><![CDATA[Start processing jobs on the queue as a daemon<br/><br/><table> <tr><td><strong>Options:</strong></td></tr> <tr><td>--queue</td><td></td><td>The names of the queues to work</td></tr> <tr><td>--daemon</td><td></td><td>Run the worker in daemon mode (Deprecated)</td></tr> <tr><td>--once</td><td></td><td>Only process the next job on the queue</td></tr> <tr><td>--delay</td><td></td><td>The number of seconds to delay failed jobs</td></tr> <tr><td>--force</td><td></td><td>Force the worker to run even in maintenance mode</td></tr> <tr><td>--memory</td><td></td><td>The memory limit in megabytes</td></tr> <tr><td>--sleep</td><td></td><td>Number of seconds to sleep when no job is available</td></tr> <tr><td>--timeout</td><td></td><td>The number of seconds a child process can run</td></tr> <tr><td>--tries</td><td></td><td>Number of times to attempt a job before logging it failed</td></tr> <tr><td>--help</td><td>(-h)</td><td>Display this help message</td></tr> <tr><td>--quiet</td><td>(-q)</td><td>Do not output any message</td></tr> <tr><td>--verbose</td><td>(-v)</td><td>Increase the verbosity of messages: 1 for normal output, 2 for more verbose output and 3 for debug</td></tr> <tr><td>--version</td><td>(-V)</td><td>Display this application version</td></tr> <tr><td>--ansi</td><td></td><td>Force ANSI output</td></tr> <tr><td>--no-ansi</td><td></td><td>Disable ANSI output</td></tr> <tr><td>--no-interaction</td><td>(-n)</td><td>Do not ask any interactive question</td></tr> <tr><td>--env</td><td></td><td>The environment the command should run under</td></tr> </table> <br/>]]></help>
     <params>connection[=null]</params>
     <optionsBefore>
       <option name="--queue" shortcut="" pattern="equals">
@@ -1900,7 +1909,7 @@
         <help><![CDATA[Only process the next job on the queue]]></help>
       </option>
       <option name="--delay" shortcut="" pattern="equals">
-        <help><![CDATA[Amount of time to delay failed jobs]]></help>
+        <help><![CDATA[The number of seconds to delay failed jobs]]></help>
       </option>
       <option name="--force" shortcut="">
         <help><![CDATA[Force the worker to run even in maintenance mode]]></help>

@@ -56,25 +56,25 @@
                         {{--<button class="btn btn-outline-success my-2 my-sm-0" type="submit"></button>--}}
                         <div class="input-group">
 
-                            <input type="text" style="border-right: 0px;" class="form-control text-center bg-gray rounded-circle-our" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
-                            <span style="border-left: 0px;" class="input-group-addon rounded-circle-our" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            <input type="text" style="border-right: 0px; border-color:#155066;" class="form-control text-center bg-white rounded-circle-our" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
+                            <span style="border-left: 0px; border-color:#155066;" class="input-group-addon rounded-circle-our" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
                         </div>
 
                     </form>
                     <ul class="navbar-nav ">
                         @if (Auth::guest())
-                            <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our bg-gray text-light" href="{{ route('login') }}">Вход</a></li>
-                            <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our bg-gray text-light" href="{{ route('register') }}">Регистрация</a></li>
+                            <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light" style="background-color: #a8d0e5" href="{{ route('login') }}">Вход</a></li>
+                            <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light" style="background-color: #a8d0e5" href="{{ route('register') }}">Регистрация</a></li>
                         @else
                             <li class="nav-item d-flex flex-row align-items-center"><a href="{{ route('sdiscounts') }}"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></li>
                             <li class="nav-item dropdown row align-items-center ml-3">
-                                <a style="margin-right: -15px; letter-spacing: 1px;" class="text-light nav-link dropdown-toggle p-1 px-4 bl-r bg-gray" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <a style="margin-right: -15px; letter-spacing: 1px; background-color:#a8d0e5" class="text-light nav-link dropdown-toggle p-1 px-4 bl-r" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
                                     {{ Auth::user()->name }}
 
                                 </a>
 
-                                <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 3px solid #fefefe;" width="40" height="40" alt="">
+                                <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 1.5px solid #154f66;" width="40" height="40" alt="">
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     @if(Auth::user()->is_boutic)

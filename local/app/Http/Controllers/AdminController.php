@@ -7,6 +7,7 @@ use App\Brand;
 use App\Cat;
 use App\Center;
 use App\Discount;
+use App\Maintype;
 use App\Product;
 use App\Season;
 use App\Seo;
@@ -36,6 +37,7 @@ class AdminController extends Controller
             'users' => User::all(),
             'colors' => Color::all(),
             'words' => Word::all(),
+            'maintypes' => Maintype::all(),
         ]);
     }
 }

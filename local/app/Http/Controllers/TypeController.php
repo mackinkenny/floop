@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cat;
+use App\Maintype;
 use App\Type;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
@@ -14,15 +15,15 @@ class TypeController extends Controller
     public function create()
     {
         //
-        $cats = Cat::all();
-        return view('create.type', ['cats' => $cats]);
+        $maintypes = Maintype::all();
+        return view('create.type', ['maintypes' => $maintypes]);
     }
 
     public function store(Request $request)
     {
         //
         $type = new Type();
-        $type->cat_id = $request->cat_id;
+        $type->maintype_id = $request->maintype_id;
         $type->name = $request->name;
         if ($request->hasFile('img_path')) {
             $avatar = $request->file('img_path');

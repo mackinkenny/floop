@@ -83,7 +83,7 @@
                         <div class="row justify-content-around">
                             <div class="col-auto">
                                 <div class="row">
-                                    <div class="col-auto d-flex flex-row align-items-center py-1 rounded-circle-our br-r-0 px-3 bg-gray text-light">
+                                    <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 bg-gray px-3 text-light">
                                         <span class="">
                                             {{ $boutic->products->count() }}
                                             @if($boutic->products->count() >= 10000)
@@ -91,7 +91,7 @@
                                             @endif
                                         </span>
                                     </div>
-                                    <div class="col-auto d-flex flex-row align-items-center py-1 px-3 bg-light bl-r-0 rounded-circle-our">
+                                    <div class="col-auto d-flex flex-row align-items-center py-1 bg-light px-3 bl-r-0 rounded-circle-our">
                                         <span class="">Публикаций</span>
                                     </div>
                                 </div>
@@ -99,7 +99,7 @@
                             <div class="col-auto">
                                 <a href="/subscribescount/{{ $boutic->id }}">
                                     <div class="row">
-                                        <div class="col-auto d-flex flex-row align-items-center py-1 rounded-circle-our br-r-0 px-3 bg-gray text-light">
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 px-3 bg-gray text-light">
                                             <span class="sub-badge"></span>
                                         </div>
                                         <div class="col-auto d-flex flex-row align-items-center py-1 px-3 bg-light bl-r-0 rounded-circle-our">

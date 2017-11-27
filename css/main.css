@@ -18,10 +18,7 @@ input:focus {
     border-top-left-radius: 0px!important;
 }
 
-.br-r-0 {
-    border-bottom-right-radius: 0px!important;
-    border-top-right-radius: 0px!important;
-}
+
 
 .bl-r {
     border-bottom-left-radius: 50px!important;
@@ -33,6 +30,7 @@ input:focus {
 }
 
 .br-r {
+
     border-bottom-right-radius: 50px!important;
     border-top-right-radius: 50px!important;
 }
@@ -64,15 +62,18 @@ body {
 }
 
 .input-group-addon {
-    background: #9D9F9E;
+    background: #a8d0e5;
     color: #fff;
 }
 
 .rounded-circle-our {
-    border-radius: 35px;
+   border-radius:35px;
     padding: 5px 10px 5px 10px;
 }
-
+.counter{
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
 img {
     -webkit-user-drag: none;
     user-drag: none;
@@ -180,13 +181,16 @@ footer a:hover {
 }
 
 #navbar-top {
-    background-color: #D8D9D9;
+    background-color: #fff;
 }
 
 .container-spec {
     background-color: #EBEBEB;
 }
-
+.icon{
+    width: 60px;
+    height: 60px;
+}
 .icon-toggle {
     width: 60px;
     height: 60px;
@@ -196,6 +200,20 @@ footer a:hover {
     font-size: 24px;
 }
 
+.slider2{
+    margin-top:-70px;
+}
+#subtypes{
+    position:relative;
+    background-color:#f1c7b7;
+    height:70px;
+    width: fit-content;
+    border-bottom-left-radius:35px;
+    border-bottom-right-radius:35px;
+    margin-right: auto;
+    padding-top: 6px;
+    margin-left: auto;
+}
 .panelt {
     -webkit-transition: all 0.3s ease;;
     -moz-transition: all 0.3s ease;;

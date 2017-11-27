@@ -53,6 +53,10 @@ Route::group(['middleware' => ['admin']],function() {
     Route::get('/createtype', 'TypeController@create');
     Route::post('/storetype', 'TypeController@store')->name('storetype');
 
+    Route::get('/createmaintype', 'MaintypeController@create');
+    Route::post('/storemaintype', 'MaintypeController@store')->name('storemaintype');
+
+
 });
 
 Route::get('/creatediscount', 'DiscountController@create');
@@ -79,6 +83,7 @@ Route::get('/centers', 'CenterController@index');
 
 Route::get('/cat/{id}', 'CatController@sort');
 Route::get('/sorttype/{id}', 'BouticController@sort');
+Route::get('/sortmaintype/{id}', 'BouticController@msort');
 Route::get('/subcount/{id}', 'UserController@subcount');
 
 Route::get('/admin','AdminController@index')->name('admin');

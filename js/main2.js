@@ -173,8 +173,8 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#femalecol').addClass('mx-auto');
-            $('#malecol').hide();
-            $("#childcol").hide();
+            $('#malecol').fadeOut(300);
+            $("#childcol").fadeOut(300);
 
             if($(document).width() < 800) {
                 $('.female-slide').show();
@@ -238,8 +238,8 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#femalecol').removeClass('mx-auto');
-            $('#malecol').show();
-            $("#childcol").show();
+            $('#malecol').fadeIn(500);
+            $("#childcol").fadeIn(500);
             $('#body').animate({
                 backgroundColor: '#D8D9D9'
             }, 500);
@@ -269,8 +269,8 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#childcol').addClass('mx-auto');
-            $('#femalecol').hide();
-            $("#malecol").hide();
+            $('#femalecol').fadeOut(300);
+            $("#malecol").fadeOut(300);
             $('div#carouselExampleIndicators.carousel.slide').removeClass('d-md-block');
 
             $('.static-slider').removeClass('d-block');
@@ -331,8 +331,8 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#childcol').removeClass('mx-auto');
-            $('#femalecol').show();
-            $("#malecol").show();
+            $('#femalecol').fadeIn(500);
+            $("#malecol").fadeIn(500);
             $('#body').animate({
                 backgroundColor: '#D8D9D9'
             }, 1000);
@@ -362,8 +362,8 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#malecol').addClass('mx-auto');
-            $('#femalecol').hide();
-            $("#childcol").hide();
+            $('#femalecol').fadeOut(300);
+            $("#childcol").fadeOut(300);
             $('div#carouselExampleIndicators.carousel.slide').removeClass('d-md-block');
 
             $('.static-slider').removeClass('d-block');
@@ -426,8 +426,8 @@ $(document).ready(function() {
             $('#ajax-home').find('a.col-12').remove();
             $('#ajax-home2').find('a.col-12').remove();
             $('#malecol').removeClass('mx-auto');
-            $('#femalecol').show();
-            $("#childcol").show();
+            $('#femalecol').fadeIn(500);
+            $("#childcol").fadeIn(500);
             $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
             $('.static-slider').removeClass('d-none');
             $('.static-slider').addClass('d-block');

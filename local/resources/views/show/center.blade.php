@@ -8,22 +8,48 @@
             <div class="row">
 
 
-                <div id="sort" class="col-5 p-3">
+                <div id="sort" class="col-5 p-5 text-right">
                     <input type="hidden" value="{{ $i = 0 }}">
-                    @foreach($types->where('cat_id','=', $catId) as $index => $type)
-                        @if($i < 10)
-                            @if($i == 5)
-                                <br>
-                                <br>
+                    @if($count%2 == 0)
+                        @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
+                            @if($i < $count/2)
+                                <a class="link link2-type mx-md-2" href="" id="{{ $maintype->id }}">
+                                    <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="50" height="50" alt="">
+                                </a>
                             @endif
+                                <input type="hidden" value="{{ $i++ }}">
+                        @endforeach
+                    @else
+                        @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
+                            @if($i < ($count + 1)/2)
+                                <a class="link link2-type mx-md-2" href="" id="{{ $maintype->id }}">
+                                    <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="50" height="50" alt="">
+                                </a>
+                            @endif
+                                <input type="hidden" value="{{ $i++ }}">
+                        @endforeach
+                    @endif
 
-                            <a class="link link-type mx-md-2" href="" id="{{ $type->id }}">
-                                <img class="logo-type" title="{{ $type->name }}" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">
-                            </a>
-                        @endif
 
-                            <input type="hidden" {{ $i++ }}>
-                    @endforeach
+
+
+
+
+                    {{--<input type="hidden" value="{{ $i = 0 }}">--}}
+                    {{--@foreach($types->where('cat_id','=', $catId) as $index => $type)--}}
+                        {{--@if($i < 10)--}}
+                            {{--@if($i == 5)--}}
+                                {{--<br>--}}
+                                {{--<br>--}}
+                            {{--@endif--}}
+
+                            {{--<a class="link link-type mx-md-2" href="" id="{{ $type->id }}">--}}
+                                {{--<img class="logo-type" title="{{ $type->name }}" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">--}}
+                            {{--</a>--}}
+                        {{--@endif--}}
+
+                            {{--<input type="hidden" {{ $i++ }}>--}}
+                    {{--@endforeach--}}
                 </div>
 
                 @if($catId == 0)
@@ -58,24 +84,52 @@
                 </div>
                 @endif
 
-                    <div id="sort2" class="col-5 p-3 text-right">
-                        <input type="hidden" value="{{ $i = 0 }}">
-                        @foreach($types->where('cat_id','=', $catId) as $index => $type)
-                            @if($i > 9)
-                                @if($i == 15)
-                                    <br>
-                                    <br>
-                                @endif
+                    <div id="sort2" class="col-5 p-5 text-left">
 
-                                <a class="link link-type mx-md-2" href="" id="{{ $type->id }}">
-                                    <img title="{{ $type->name }}" class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">
-                                </a>
-                            @endif
+                        @if($count%2 == 0)
+                            <input type="hidden" value="{{ $i = $count/2  }}">
+                            @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
+                                @if($index > $count/2-1)
+                                    <a class="link link2-type mx-md-2" href="" id="{{ $maintype->id }}">
+                                        <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="50" height="50" alt="">
+                                    </a>
+                                @endif
                                 <input type="hidden" value="{{ $i++ }}">
-                            @if($i > 19)
-                                @break
-                            @endif
-                        @endforeach
+                            @endforeach
+                        @else
+                            <input type="hidden" value="{{ $i = ($count + 1)/2  }}">
+                            @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
+                                @if($index > ($count -1)/2)
+                                    <a class="link link2-type mx-md-2" href="" id="{{ $maintype->id }}">
+                                        <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="50" height="50" alt="">
+                                    </a>
+                                @endif
+                                <input type="hidden" value="{{ $i++ }}">
+                            @endforeach
+                        @endif
+
+
+
+
+
+
+                        {{--<input type="hidden" value="{{ $i = 0 }}">--}}
+                        {{--@foreach($types->where('cat_id','=', $catId) as $index => $type)--}}
+                            {{--@if($i > 9)--}}
+                                {{--@if($i == 15)--}}
+                                    {{--<br>--}}
+                                    {{--<br>--}}
+                                {{--@endif--}}
+
+                                {{--<a class="link link-type mx-md-2" href="" id="{{ $type->id }}">--}}
+                                    {{--<img title="{{ $type->name }}" class="logo-type" src="/uploads/types/{{ $type->img_path }}" width="50" height="50" alt="">--}}
+                                {{--</a>--}}
+                            {{--@endif--}}
+                                {{--<input type="hidden" value="{{ $i++ }}">--}}
+                            {{--@if($i > 19)--}}
+                                {{--@break--}}
+                            {{--@endif--}}
+                        {{--@endforeach--}}
 
                     </div>
 
@@ -84,8 +138,13 @@
 
             </div>
         </div>
+        <div id="subtypes" class="d-none w-auto">
+        </div>
     </section>
+<div id="slider" class="">
     @include('slider')
+</div>
+
     
 
 <div id="show">

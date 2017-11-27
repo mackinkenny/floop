@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Boutic;
 use App\Center;
+use App\Maintype;
 use App\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\Facades\Image;
 
@@ -72,6 +74,8 @@ class CenterController extends Controller
         $catId = Session::get('catId');
 //        $catId = 1;
         $center = Center::find($id);
+        $maintypes = Maintype::all();
+        $count = DB::table('maintypes')->count();
         $types = Type::all();
         $boutics = $center->boutics;
 //        $boutics = $center->boutics->where('if_male', '=', 1);
@@ -117,7 +121,7 @@ class CenterController extends Controller
 
 
 //        dd($boutics);
-        return view('show.center', ['center' => $center, 'boutics' => $boutics, 'is_boutics' => $is_boutics, 'catId' => $catId, 'types' => $types]);
+        return view('show.center', ['center' => $center, 'boutics' => $boutics, 'is_boutics' => $is_boutics, 'catId' => $catId, 'types' => $types,'maintypes' => $maintypes, 'count' => $count]);
     }
 
     /**
