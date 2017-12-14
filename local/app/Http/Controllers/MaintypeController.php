@@ -27,7 +27,7 @@ class MaintypeController extends Controller
         if ($request->hasFile('img_path')) {
             $avatar = $request->file('img_path');
             $filename = time() . '.' . $avatar->getClientOriginalExtension();
-            Image::make($avatar)->resize(50, 50)->save('uploads/maintypes/' . $filename);
+            Image::make($avatar)->save('uploads/maintypes/' . $filename);
             $type->img_path = $filename;
 
         }

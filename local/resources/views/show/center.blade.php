@@ -3,7 +3,16 @@
 @section('content')
 
 
-    <section class="cats d-none d-md-block">
+    <section class="cats d-none d-md-block"
+             @if(Session::get('catId') == 0)
+                style="background-color: #fefefe;"
+             @elseif(Session::get('catId') == 1)
+                 style="background-color: #27a8e1;"
+             @elseif(Session::get('catId') == 2)
+                style="background-color: #E19075;"
+             @elseif(Session::get('catId') == 3)
+                 style="background-color: #c46fa8;"
+            @endif>
         <div class="container">
             <div class="row">
 
@@ -14,7 +23,7 @@
                         @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
                             @if($i < $count/2)
                                 <a class="link link2-type mx-md-2" href="" id="{{ $maintype->id }}">
-                                    <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="50" height="50" alt="">
+                                    <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="55" height="55" alt="" style="opacity: 0">
                                 </a>
                             @endif
                                 <input type="hidden" value="{{ $i++ }}">
@@ -23,7 +32,7 @@
                         @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
                             @if($i < ($count + 1)/2)
                                 <a class="link link2-type mx-md-2" href="" id="{{ $maintype->id }}">
-                                    <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="50" height="50" alt="">
+                                    <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="55" height="55" alt="">
                                 </a>
                             @endif
                                 <input type="hidden" value="{{ $i++ }}">
@@ -53,7 +62,7 @@
                 </div>
 
                 @if($catId == 0)
-                    <div id="main" class="col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: #D8D9D9;">
+                    <div id="main" class="col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: #fefefe;">
                         <span>
                             <img class="logo-cat" src="/img/logo/logo.png" width="80" height="80" alt="">
                         </span>
@@ -68,7 +77,7 @@
                 </div>
                 @endif
                 @if($catId == 3)
-                <div id="childcol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #C46FA8;">
+                <div id="childcol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #c46fa8;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/child.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Детская одежда</h2>--}}
@@ -76,7 +85,7 @@
                 </div>
                 @endif
                 @if($catId == 1)
-                <div id="malecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #86C4DF;">
+                <div id="malecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #27a8e1;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/male.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Мужская одежда</h2>--}}
@@ -91,7 +100,7 @@
                             @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
                                 @if($index > $count/2-1)
                                     <a class="link link2-type mx-md-2" href="" id="{{ $maintype->id }}">
-                                        <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="50" height="50" alt="">
+                                        <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="55" height="55" alt="">
                                     </a>
                                 @endif
                                 <input type="hidden" value="{{ $i++ }}">
@@ -101,7 +110,7 @@
                             @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
                                 @if($index > ($count -1)/2)
                                     <a class="link link2-type mx-md-2" href="" id="{{ $maintype->id }}">
-                                        <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="50" height="50" alt="">
+                                        <img class="logo-type" title="{{ $maintype->name }}" src="/uploads/maintypes/{{ $maintype->img_path }}" width="55" height="55" alt="">
                                     </a>
                                 @endif
                                 <input type="hidden" value="{{ $i++ }}">
@@ -158,7 +167,7 @@
 
             @if($is_boutics)
             <div class="row">
-                <div class="col-2 bg-light br-r py-md-3 py-1 d-flex flex-row justify-content-center align-items-center"><p class="m-0 fs-20 text-uppercase">Этажи</p></div>
+                <div class="col-2 br-r py-md-3 py-1 d-flex flex-row justify-content-center align-items-center"><p class="m-0 fs-20 text-uppercase">Этажи</p></div>
                 <div class="col-auto px-5"><ul class="row nav nav-tabs" id="myTab" role="tablist">
                         {{--@foreach($center->boutics as $index => $boutic)--}}
                         {{--{{ dd($boutic->where('stage', '=', 2)->first()) }}--}}
@@ -189,7 +198,7 @@
 
                         @endfor
                     </ul></div>
-                <div class="col bl-r bg-light px-3 px-md-5 py-md-3 py-1 d-flex flex-row align-items-center" id="rekt"><p class="text-center fs-20 text-uppercase m-0 font-weight-bold">{{ $center->name }}</p></div>
+                <div class="col bl-r px-3 px-md-5 py-md-3 py-1 d-flex flex-row align-items-center" id="rekt"><p class="text-center fs-20 text-uppercase m-0 font-weight-bold">{{ $center->name }}</p></div>
             </div>
 
 
@@ -229,12 +238,16 @@
 
                                 @foreach ($boutics as $boutic)
                                     @if($boutic->stage == $i + 1)
-                                    <div class="col-4 p-2 col-md-3 my-4 my-md-4">
+                                    <div class=" col-4 p-2 col-md-3 my-4 my-md-4">
                                         <a class="boutic-in-center" href="/profile/{{ $boutic->user_id }}">
                                             <img style="width: 100%; height: auto;" class=""  src="/uploads/boutic/avatars/{{ $boutic->img_path }}" alt="">
                                             <p class="text-center text-dark">{{ $boutic->name }}</p>
                                         </a>
+
                                     </div>
+                                            @foreach($boutic->products as $product)
+                                                <img style="width: 100%; height: auto;" class=""  src="uploads/images/products/{{ $product->img_path }}" alt="">
+                                            @endforeach
                                     @endif
 
                                 @endforeach
@@ -252,6 +265,9 @@
                                                 <p class="text-center text-dark">{{ $boutic->name }}</p>
                                             </a>
                                         </div>
+                                            @foreach($boutic->products as $product)
+                                                <img style="width: 100%; height: auto;" class=""  src="uploads/images/products/{{ $product->img_path }}" alt="">
+                                            @endforeach
                                     @endif
 
                                 @endforeach

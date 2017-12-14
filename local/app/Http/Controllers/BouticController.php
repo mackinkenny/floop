@@ -182,18 +182,12 @@ class BouticController extends Controller
 
 //        return response()->json(['success' => 'success']);
     }
-    public function msort( $id) {
+    public function msort( $id)
+    {
 
-        $types = Type::all()->where('maintype_id','=' , $id);
+        $types = Type::where('maintype_id', '=', $id)->get();
+        return response()->json(['types' => $types]);
 
-            return response()->json(['types' => $types]);
-
-
-
-
-
-
-//        return response()->json(['success' => 'success']);
     }
     public function edit($id, Request $request)
     {

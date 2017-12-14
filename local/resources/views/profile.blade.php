@@ -31,22 +31,69 @@
                         <div class="row justify-content-around">
                             <div class="col-auto">
                                 <div class="row">
-                                    <div class="col-auto d-flex flex-row align-items-center py-1 px-3 rounded-circle-our br-r-0 bg-gray text-light">
-                                        <span class="">{{ $user->count_likes }}</span>
-                                    </div>
-                                    <div class="col-auto py-1 px-3 bg-light bl-r-0 d-flex flex-row align-items-center rounded-circle-our">
-                                        <span class="">Понравившихся</span>
-                                    </div>
+                                    @if(Session::get('catId') == 0)
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 bg-gray px-3 text-light">
+                                            <span class="">{{ $user->count_likes }}</span>
+                                        </div>
+                                        <div class="col-auto py-1 px-3 bg-light bl-r-0 d-flex flex-row align-items-center rounded-circle-our">
+                                            <span class="">Понравившихся</span>
+                                        </div>
+                                    @elseif(Session::get('catId') == 1)
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 male3 px-3 text-light">
+                                            <span class="">{{ $user->count_likes }}</span>
+                                        </div>
+                                        <div class="col-auto py-1 px-3 male1 bl-r-0 d-flex flex-row align-items-center rounded-circle-our">
+                                            <span class="">Понравившихся</span>
+                                        </div>
+                                    @elseif(Session::get('catId') == 2)
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 female3 px-3 text-light">
+                                            <span class="">{{ $user->count_likes }}</span>
+                                        </div>
+                                        <div class="col-auto py-1 px-3 female1 bl-r-0 d-flex flex-row align-items-center rounded-circle-our">
+                                            <span class="">Понравившихся</span>
+                                        </div>
+                                    @elseif(Session::get('catId') == 3)
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 child3 px-3 text-light">
+                                            <span class="">{{ $user->count_likes }}</span>
+                                        </div>
+                                        <div class="col-auto py-1 px-3 child1 bl-r-0 d-flex flex-row align-items-center rounded-circle-our">
+                                            <span class="">Понравившихся</span>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                             <div class="col-auto">
                                 <div class="row">
-                                    <div class="col-auto py-1 rounded-circle-our br-r-0 px-3 bg-gray text-light d-flex flex-row align-items-center">
-                                        <span class="">{{ $user->count_buys }}</span>
-                                    </div>
-                                    <div class="col-auto px-3 py-1 bg-light bl-r-0 rounded-circle-our d-flex flex-row align-items-center">
-                                        <span class="">Покупок</span>
-                                    </div>
+                                    @if(Session::get('catId') == 0)
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 px-3 bg-gray text-light">
+                                            <span class="">{{ $user->count_buys }}</span>
+                                        </div>
+                                        <div class="col-auto px-3 py-1 bg-light bl-r-0 rounded-circle-our d-flex flex-row align-items-center">
+                                            <span class="">Покупок</span>
+                                        </div>
+                                    @elseif(Session::get('catId') == 1)
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 px-3 male3 text-light">
+                                            <span class="">{{ $user->count_buys }}</span>
+                                        </div>
+                                        <div class="col-auto px-3 py-1 male1 bl-r-0 rounded-circle-our d-flex flex-row align-items-center">
+                                            <span class="">Покупок</span>
+                                        </div>
+                                    @elseif(Session::get('catId') == 2)
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 px-3 female3 text-light">
+                                            <span class="">{{ $user->count_buys }}</span>
+                                        </div>
+                                        <div class="col-auto px-3 py-1 female1 bl-r-0 rounded-circle-our d-flex flex-row align-items-center">
+                                            <span class="">Покупок</span>
+                                        </div>
+                                    @elseif(Session::get('catId') == 3)
+                                        <div class="col-auto d-flex flex-row align-items-center py-1 counter rounded-circle-our br-r-0 px-3 child3 text-light">
+                                            <span class="">{{ $user->count_buys }}</span>
+                                        </div>
+                                        <div class="col-auto px-3 py-1 child1 bl-r-0 rounded-circle-our d-flex flex-row align-items-center">
+                                            <span class="">Покупок</span>
+                                        </div>
+                                    @endif
+
                                 </div>
                             </div>
                             {{--<div class="col-auto">--}}
@@ -72,17 +119,49 @@
 
 
     <section>
-        <div class="container bg-light">
+        <div class="container">
             <ul class="row nav nav-tabs" id="myTab" role="tablist">
-                <li class="col text-center nav-item">
-                    <a class="row nav-link active bg-dark" id="like-tab" data-toggle="tab" href="#like-show-show" role="tab" aria-controls="like" aria-expanded="true"><img class="logo-control" src="/img/straights/like.png" width="30" height="30" alt=""></a>
-                </li>
-                <li class="col text-center nav-item">
-                    <a class="row nav-link bg-dark" id="buy-tab" data-toggle="tab" href="#buy-show-show" role="tab" aria-controls="buy"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
-                </li>
-                <li class="col text-center nav-item">
-                    <a class="row nav-link bg-dark" id="subs-tab" data-toggle="tab" href="#subs-show-show" role="tab" aria-controls="subs"><img class="logo-control" src="/img/straights/sub2.png" width="30" height="30" alt=""></a>
-                </li>
+                @if(Session::get('catId') == 0)
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link active bg-dark" id="like-tab" data-toggle="tab" href="#like-show-show" role="tab" aria-controls="like" aria-expanded="true"><img class="logo-control" src="/img/straights/like.png" width="30" height="30" alt=""></a>
+                    </li>
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link bg-dark" id="buy-tab" data-toggle="tab" href="#buy-show-show" role="tab" aria-controls="buy"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
+                    </li>
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link bg-dark" id="subs-tab" data-toggle="tab" href="#subs-show-show" role="tab" aria-controls="subs"><img class="logo-control" src="/img/straights/sub2.png" width="30" height="30" alt=""></a>
+                    </li>
+                @elseif(Session::get('catId') == 1)
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link active male3" id="like-tab" data-toggle="tab" href="#like-show-show" role="tab" aria-controls="like" aria-expanded="true"><img class="logo-control" src="/img/straights/like.png" width="30" height="30" alt=""></a>
+                    </li>
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link male3" id="buy-tab" data-toggle="tab" href="#buy-show-show" role="tab" aria-controls="buy"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
+                    </li>
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link male3" id="subs-tab" data-toggle="tab" href="#subs-show-show" role="tab" aria-controls="subs"><img class="logo-control" src="/img/straights/sub2.png" width="30" height="30" alt=""></a>
+                    </li>
+                @elseif(Session::get('catId') == 2)
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link active female3" id="like-tab" data-toggle="tab" href="#like-show-show" role="tab" aria-controls="like" aria-expanded="true"><img class="logo-control" src="/img/straights/like.png" width="30" height="30" alt=""></a>
+                    </li>
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link female3" id="buy-tab" data-toggle="tab" href="#buy-show-show" role="tab" aria-controls="buy"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
+                    </li>
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link female3" id="subs-tab" data-toggle="tab" href="#subs-show-show" role="tab" aria-controls="subs"><img class="logo-control" src="/img/straights/sub2.png" width="30" height="30" alt=""></a>
+                    </li>
+                @elseif(Session::get('catId') == 3)
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link active child3" id="like-tab" data-toggle="tab" href="#like-show-show" role="tab" aria-controls="like" aria-expanded="true"><img class="logo-control" src="/img/straights/like.png" width="30" height="30" alt=""></a>
+                    </li>
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link child3" id="buy-tab" data-toggle="tab" href="#buy-show-show" role="tab" aria-controls="buy"><img class="logo-control" src="/img/straights/save.png" width="30" height="30" alt=""></a>
+                    </li>
+                    <li class="col text-center nav-item">
+                        <a class="row nav-link child3" id="subs-tab" data-toggle="tab" href="#subs-show-show" role="tab" aria-controls="subs"><img class="logo-control" src="/img/straights/sub2.png" width="30" height="30" alt=""></a>
+                    </li>
+                @endif
             </ul>
             <div class="tab-content" id="myTabContent">
                 <div class="tab-pane fade show active" id="like-show-show" role="tabpanel" aria-labelledby="like-tab">
