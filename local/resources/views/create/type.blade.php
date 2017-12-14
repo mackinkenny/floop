@@ -4,10 +4,10 @@
             <br><br><br><br>
             <input type="text" name="name">
             <input type="file" name="img_path">
-            <select name="cat_id">
-                @foreach($cats as $cat)
+            <select name="maintype_id">
+                @foreach($maintypes as $maintype)
 
-                    <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                    <option value="{{ $maintype->id }}">{{ $maintype->name }}</option>
 
                 @endforeach
             </select>

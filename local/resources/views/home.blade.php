@@ -1,16 +1,12 @@
 @extends('layouts.app')
-
 @section('content')
-
     <section class="cats">
         <div class="container" >
             <div class="row justify-content-center">
-
-
                     <a href="/cat/2" class="link" id="female">
                         <div id="femalecol" class="col-auto p-3 p-md-5 text-center" style="background: #E19075;">
                         <img class="logo-cat mb-2" src="img/cats/female.png" width="60" height="60" alt="">
-                        <h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Женская одежда</h2>
+                        {{--<h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Женская одежда</h2>--}}
                         </div>
                     </a>
 
@@ -18,15 +14,15 @@
                     <a href="cat/3" class="link" id="child">
                         <div id="childcol" class="col-auto p-3 p-md-5 text-center" style="background: #C46FA8;">
                         <img class="logo-cat mb-2" src="img/cats/child.png" width="60" height="60" alt="">
-                        <h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Детская одежда</h2>
+                        {{--<h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Детская одежда</h2>--}}
                         </div>
                     </a>
 
 
                     <a href="cat/1" class="link" id="male">
-                        <div id="malecol" class="col-auto p-3 p-md-5 text-center" style="background: #86C4DF;">
+                        <div id="malecol" class="col-auto p-3 p-md-5 text-center" style="background: #27a8e1;">
                         <img class="logo-cat mb-2" src="img/cats/male.png" width="60" height="60" alt="">
-                        <h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Мужская одежда</h2>
+                        {{--<h2 class="d-none d-md-block text-uppercase" style="font-size: 1rem;">Мужская одежда</h2>--}}
                         </div>
                     </a>
 
@@ -40,13 +36,14 @@
 
     @include('slider')
 
+
     <section id="sectionOfCentersAndBoutics" style="margin-bottom: 54px;">
 
         <div class="container" id="sectionRightAndLeft">
             <div class="row py-3">
                 <div class="col-12">
                     <div class="row justify-content-center">
-                        <div class="col-auto py-2 px-5"  id="body2" style="border-radius: 35px; background-color: #C3C4C4;">
+                        <div class="col-auto py-2 px-5"  id="body2" style="border-radius: 35px; background-color: #ECECE9;">
                             <span id="centers"><h3>Торговые центры</h3></span>
                         </div>
                     </div>
@@ -64,8 +61,6 @@
                     </div>
                 </div>
 
-                <img src="/img/main.png" class="w-100 d-none d-md-block">
-                <img src="/img/sttraights.png" class="w-100 d-md-none d-block">
             </div>
         </div>
     </section>

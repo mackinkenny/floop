@@ -28,7 +28,7 @@ class BuyController extends Controller
             $product->count_buys--;
         }
         else {
-            $user->products()->attach($request->id, ['likeOrBuy' => 1, 'status' => 1]);
+            $user->products()->attach($request->id, ['likeOrBuy' => 1, 'status' => 1, 'promo' => ('P'.$request->id.'U'.$request->u_id)]);
             $user->count_buys++;
             $product->count_buys++;
 
@@ -40,6 +40,7 @@ class BuyController extends Controller
             $notice->status = 1;
 
             $notice->save();
+
         }
         $buy_flag = false;
         if ($productDB) {

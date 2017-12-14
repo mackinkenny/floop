@@ -20,32 +20,51 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
 
 </head>
-<body id="body" @if(Session::get('catId') == 0)
-                    style="background-color: #D8D9D9;"
-                @elseif(Session::get('catId') == 1)
-                    style="background-color: #86C4DF;"
-                @elseif(Session::get('catId') == 2)
-                    style="background-color: #E19075;"
-                @elseif(Session::get('catId') == 3)
-                    style="background-color: #C69DB9;"
-                @endif>
-    <div id="preloader" class="d-md-none w-100 h-100 fixed-top bg-dark container">
+<body id="body">
+    {{--<div id="preloader" class="d-md-none w-100 h-100 fixed-top bg-dark container">--}}
         {{--<img class="logo" src="/img/logo/logo2.png" width="288" height="80" alt="" style="width: 144px; height: 40px; -webkit-transform: translate(95px, 150px);-moz-transform: translate(95px, 150px);-ms-transform: translate(95px, 150px);-o-transform: translate(95px, 150px);transform: translate(95px, 150px);">--}}
 
-        <div id="circleG" style="-webkit-transform: translateY(520px);-moz-transform: translateY(520px);-ms-transform: translateY(520px);-o-transform: translateY(520px);transform: translateY(520px);">
-            <div id="circleG_1" class="circleG"></div>
-            <div id="circleG_2" class="circleG"></div>
-            <div id="circleG_3" class="circleG"></div>
-        </div>
-    </div>
+        {{--<div id="circleG" style="-webkit-transform: translateY(520px);-moz-transform: translateY(520px);-ms-transform: translateY(520px);-o-transform: translateY(520px);transform: translateY(520px);">--}}
+            {{--<div id="circleG_1" class="circleG"></div>--}}
+            {{--<div id="circleG_2" class="circleG"></div>--}}
+            {{--<div id="circleG_3" class="circleG"></div>--}}
+        {{--</div>--}}
+    {{--</div>--}}
 
     <header>
         <img class="fixed-shadow fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px">
         <nav class="navbar fixed-top navbar-expand-md" id="navbar-top">
             <div class="container">
-                <a id="menu-mobile" class=" d-md-none"><img src="/img/logo/menu.png" width="30" height="30" alt=""></a>
-                <a class="navbar-brand mx-auto mx-md-0" href="/">
-                    <img class="logo" src="/img/logo/logo2.png" width="108" height="30" alt=""><h1 style="display: none;">Floop</h1>
+                @if(Session::get('catId') == 0)
+                    <a id="menu-mobile" class=" d-md-none">
+                        <img src="/img/logo/menu1.png" width="30" height="30" alt=""></a>
+                    <a class="navbar-brand mx-auto mx-md-0" href="/">
+                @elseif(Session::get('catId') == 1)
+                            <a id="menu-mobile" class=" d-md-none">
+                                <img src="/img/logo/menu.png" width="30" height="30" alt=""></a>
+                            <a class="navbar-brand mx-auto mx-md-0" href="/">
+                @elseif(Session::get('catId') == 2)
+                                    <a id="menu-mobile" class=" d-md-none">
+                                        <img src="/img/logo/menu2.png" width="30" height="30" alt=""></a>
+                                    <a class="navbar-brand mx-auto mx-md-0" href="/">
+                @elseif(Session::get('catId') == 3)
+                                            <a id="menu-mobile" class=" d-md-none">
+                                                <img src="/img/logo/menu3.png" width="30" height="30" alt=""></a>
+                                            <a class="navbar-brand mx-auto mx-md-0" href="/">
+                @endif
+
+                    @if(Session::get('catId') == 0)
+                        <img class="logo" src="/img/logo/logo5.png" width="108" height="30" alt="">
+                    @elseif(Session::get('catId') == 1)
+                        <img class="logom" src="/img/logo/logo2.png" width="108" height="30" alt="">
+                    @elseif(Session::get('catId') == 2)
+                        <img class="logof" src="/img/logo/logo3.png" width="108" height="30" alt="">
+                    @elseif(Session::get('catId') == 3)
+                        <img class="logoc" src="/img/logo/logo4.png" width="108" height="30" alt="">
+                    @endif
+                    <img class="logom d-none" src="/img/logo/logo2.png" width="108" height="30" alt="">
+                    <img class="logof d-none" src="/img/logo/logo3.png" width="108" height="30" alt="">
+                    <img class="logoc d-none" src="/img/logo/logo4.png" width="108" height="30" alt="">
                 </a>
                 <a href="" class="d-md-none"><img src="/img/logo/search.png" width="30" height="30" alt=""></a>
 
@@ -55,26 +74,78 @@
                         {{--<input class="form-control mr-sm-2 text-center" type="text" placeholder="Поиск" aria-label="Search" style="border-radius: 50px;">--}}
                         {{--<button class="btn btn-outline-success my-2 my-sm-0" type="submit"></button>--}}
                         <div class="input-group">
+                            @if(Session::get('catId') == 0)
+                                <input type="text" style=" border-right: 0px; border-color:#888888;" class="form-control menu-change ml-5 text-center bg-white rounded-circle-our  input-group-addon" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
+                                <span style="border-left: 0px; border-color:#888888;" class="input-group-addon rounded-circle-our" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            @elseif(Session::get('catId') == 1)
+                                <input type="text" style="border-right: 0px;" class="form-control menu-change  ml-5 text-center bg-white rounded-circle-our  input-group-addon male2" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
+                                <span style="border-left: 0px; " class="input-group-addon rounded-circle-our male1 male2" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            @elseif(Session::get('catId') == 2)
+                                <input type="text" style="border-right: 0px;" class="form-control menu-change ml-5 text-center bg-white rounded-circle-our  input-group-addon female2" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
+                                <span style="border-left: 0px;" class="input-group-addon rounded-circle-our female1 female2" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                            @elseif(Session::get('catId') == 3)
+                                <input type="text" style="border-right: 0px;" class="form-control menu-change ml-5 text-center bg-white rounded-circle-our  input-group-addon child2" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
+                                <span style="border-left: 0px;" class="input-group-addon rounded-circle-our child1 child2" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
 
-                            <input type="text" style="border-right: 0px;" class="form-control text-center bg-gray rounded-circle-our" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
-                            <span style="border-left: 0px;" class="input-group-addon rounded-circle-our" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
-                        </div>
+                            @endif
+                                    </div>
 
                     </form>
                     <ul class="navbar-nav ">
                         @if (Auth::guest())
-                            <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our bg-gray text-light" href="{{ route('login') }}">Вход</a></li>
-                            <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our bg-gray text-light" href="{{ route('register') }}">Регистрация</a></li>
-                        @else
-                            <li class="nav-item d-flex flex-row align-items-center"><a href="{{ route('sdiscounts') }}"><img src="/img/logo/percent.png" style="width:30px;" alt=""></a></li>
+                            @if(Session::get('catId') == 0)
+                                <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light main1"  href="{{ route('login') }}">Вход</a></li>
+                                <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light main1" href="{{ route('register') }}">Регистрация</a></li>
+                            @elseif(Session::get('catId') == 1)
+                                <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light male1" href="{{ route('login') }}">Вход</a></li>
+                                <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light male1"href="{{ route('register') }}">Регистрация</a></li>
+                            @elseif(Session::get('catId') == 2)
+                                <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light female1" href="{{ route('login') }}">Вход</a></li>
+                                <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light female1" href="{{ route('register') }}">Регистрация</a></li>
+                            @elseif(Session::get('catId') == 3)
+                                <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light child1"  href="{{ route('login') }}">Вход</a></li>
+                                <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light child1"  href="{{ route('register') }}">Регистрация</a></li>
+                            @endif
+                           @else
+                            <li class="nav-item d-flex flex-row align-items-center">
+                            @if(Session::get('catId') == 0)
+                                <a href="{{ route('sdiscounts') }}"><img class="logo" src="/img/logo/percent1.png" style="width:30px;" alt=""></a>
+                            @elseif(Session::get('catId') == 1)
+                                <a href="{{ route('sdiscounts') }}"><img class="logom" src="/img/logo/percent.png" style="width:30px;" alt=""></a>
+                            @elseif(Session::get('catId') == 2)
+                               <a href="{{ route('sdiscounts') }}"><img class="logof" src="/img/logo/percent3.png" style="width:30px;" alt=""></a>
+                            @elseif(Session::get('catId') == 3)
+                              <a href="{{ route('sdiscounts') }}"><img class="logoc" src="/img/logo/percent4.png" style="width:30px;" alt=""></a>
+                            @endif
+                                <a href="{{ route('sdiscounts') }}"><img class="logom d-none" src="/img/logo/percent.png" style="width:30px;" alt=""></a>
+                                <a href="{{ route('sdiscounts') }}"><img class="logof d-none" src="/img/logo/percent3.png" style="width:30px;" alt=""></a>
+                                <a href="{{ route('sdiscounts') }}"><img class="logoc d-none" src="/img/logo/percent4.png" style="width:30px;" alt=""></a>
+                             </li>
                             <li class="nav-item dropdown row align-items-center ml-3">
-                                <a style="margin-right: -15px; letter-spacing: 1px;" class="text-light nav-link dropdown-toggle p-1 px-4 bl-r bg-gray" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @if(Session::get('catId') == 0)
+                                    <a style="margin-right: -15px; letter-spacing: 1px;" class="text-standard nav-link dropdown-toggle p-1 px-4 user-drop" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" width="40" height="40" alt="">
+                                @elseif(Session::get('catId') == 1)
+                                    <a style="margin-right: -15px; letter-spacing: 1px; border-top-left-radius: 35px;border-bottom-left-radius: 35px;" class="text-male nav-link dropdown-toggle p-1 px-4 male1 male2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 1.5px solid #27a8e1;" width="40" height="40" alt="">
+                                @elseif(Session::get('catId') == 2)
+                                    <a style="margin-right: -15px; letter-spacing: 1px; border-top-left-radius: 35px;border-bottom-left-radius: 35px;" class="text-female nav-link dropdown-toggle p-1 px-4 female1 female2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 1.5px solid #c16445;" width="40" height="40" alt="">
+                                @elseif(Session::get('catId') == 3)
+                                    <a style="margin-right: -15px; letter-spacing: 1px; border-top-left-radius: 35px;border-bottom-left-radius: 35px;" class="text-child nav-link dropdown-toggle p-1 px-4 child1 child2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        {{ Auth::user()->name }}
+                                    </a>
+                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 1.5px solid #c46fa8;" width="40" height="40" alt="">
+                                @endif
 
-                                    {{ Auth::user()->name }}
 
-                                </a>
 
-                                <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 3px solid #fefefe;" width="40" height="40" alt="">
 
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                     @if(Auth::user()->is_boutic)
@@ -82,6 +153,8 @@
                                         <a class="dropdown-item" href="/profile/{{ Auth::user()->id }}">Профиль</a>
 
                                         <a class="dropdown-item" href="/bset/{{ Auth::user()->id }}">Настройки</a>
+
+                                        <a class="dropdown-item" href="/panel/{{ Auth::user()->id }}">Панель управления</a>
 
 
                                     @else
@@ -113,7 +186,6 @@
                     </ul>
                 </div>
             </div>
-
         </nav>
 
 
@@ -147,7 +219,7 @@
 
         <div id="backdrop" class="backdrop fixed-top w-100 h-100">/</div>
 
-        <nav class="d-md-none fixed-top w-50 h-100 text-light" id="nav-mobile">
+        <nav class="d-md-none d-none fixed-top w-50 h-100 text-light" id="nav-mobile">
             <ul class="nav flex-column my-5 px-3">
                 <span style="text-align: right; margin-top: -35px;" class="mb-4"><i class="fa fa-times" aria-hidden="true"></i></span>
                 <li class="nav-item">
@@ -211,17 +283,15 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    {{--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>--}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="/js/app.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="/js/main.js"></script>
-
-
     <script src="/js/main2.js"></script>
     <script src="/js/main3.js"></script>
     <script src="/js/main4.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
+    {{--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>--}}
     <script type="text/javascript">
         $(document).ready(function() {
             $(".js-example-basic-single").select2();

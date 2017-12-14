@@ -44,7 +44,7 @@ $(document).ready(function() {
                             "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                             "</span>" +
                             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                            "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
+                            "<h4 class='px-4 py-1 w-100' style='background-color: #ECECE9; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
                             "</span>" +
                             "</span>" +
                             "</a>");
@@ -56,7 +56,7 @@ $(document).ready(function() {
                             "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                             "</div>" +
                             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                            "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
+                            "<h4 class='px-4 py-1 w-100' style='background-color: #ECECE9; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
                             "</span>" +
                             "</span>" +
                             "</a>");
@@ -101,38 +101,38 @@ $(document).ready(function() {
         //     }
         // });
 
-    // }
+    }
 
-    // function appendItemsBoutics(bouts) {
-    //     for (var i = 0; i <= bouts.length - 1; i++) {
-    //         if ((i + 1) % 2 != 0) {
-    //             $('#ajax-boutics').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4'>" +
-    //                 "<span class='row'>" +
-    //                 "<span class='col-auto pr-0'>" +
-    //                 "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
-    //                 "</span>" +
-    //                 "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-    //                 "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + bouts[i].name + "</h4>" +
-    //                 "</span>" +
-    //                 "</span>" +
-    //                 "</a>");
-    //         }
-    //         else {
-    //             $('#ajax-boutics2').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4 pr-0'>" +
-    //                 "<span class='d-flex flex-row-reverse'>" +
-    //                 "<div class='col-auto pl-0'>" +
-    //                 "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
-    //                 "</div>" +
-    //                 "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-    //                 "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + bouts[i].name + "</h4>" +
-    //                 "</span>" +
-    //                 "</span>" +
-    //                 "</a>");
-    //         }
-    //
-    //
-    //     };
-     }
+    function appendItemsBoutics(bouts) {
+        for (var i = 0; i <= bouts.length - 1; i++) {
+            if ((i + 1) % 2 != 0) {
+                $('#ajax-boutics').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4'>" +
+                    "<span class='row'>" +
+                    "<span class='col-auto pr-0'>" +
+                    "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
+                    "</span>" +
+                    "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #ECECE9; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + bouts[i].name + "</h4>" +
+                    "</span>" +
+                    "</span>" +
+                    "</a>");
+            }
+            else {
+                $('#ajax-boutics2').append("<a href='/profile/" + bouts[i].user_id + "' class='col-12 my-4 pr-0'>" +
+                    "<span class='d-flex flex-row-reverse'>" +
+                    "<div class='col-auto pl-0'>" +
+                    "<img src='/uploads/boutic/avatars/" + bouts[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
+                    "</div>" +
+                    "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #ECECE9; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + bouts[i].name + "</h4>" +
+                    "</span>" +
+                    "</span>" +
+                    "</a>");
+            }
+
+
+        };
+    }
 
     function appendItemsCenters(cents) {
         for (var i = 0; i <= cents.length - 1; i++) {
@@ -143,7 +143,7 @@ $(document).ready(function() {
                     "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                     "</span>" +
                     "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                    "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #ECECE9; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
                     "</span>" +
                     "</span>" +
                     "</a>");
@@ -155,7 +155,7 @@ $(document).ready(function() {
                     "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                     "</div>" +
                     "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                    "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #ECECE9; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
                     "</span>" +
                     "</span>" +
                     "</a>");
@@ -174,7 +174,7 @@ $(document).ready(function() {
                     "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                     "</span>" +
                     "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-                    "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #ECECE9; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + cents[i].name + "</h4>" +
                     "</span>" +
                     "</span>" +
                     "</a>");
@@ -186,38 +186,13 @@ $(document).ready(function() {
                     "<img src='/uploads/centers/" + cents[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
                     "</div>" +
                     "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-                    "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
+                    "<h4 class='px-4 py-1 w-100' style='background-color: #ECECE9; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + cents[i].name + "</h4>" +
                     "</span>" +
                     "</span>" +
                     "</a>");
             }
 
         };
-    //     for (var i = 0; i <= allcenters.length - 1; i++) {
-    //         $('#ajax-home').append( "<a href='/center/" + allcenters[i].id + "' class='col-12 my-4'>" +
-    //             "<span class='row'>" +
-    //             "<span class='col-auto pr-0'>" +
-    //             "<img src='/uploads/centers/" + allcenters[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
-    //             "</span>" +
-    //             "<span class='col pl-0 d-flex align-items-center' style='border-top-right-radius: 30px; border-bottom-right-radius: 30px; margin-left: -10px;'>" +
-    //             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-right-radius: 30px; border-bottom-right-radius: 30px;'>" + allcenters[i].name + "</h4>" +
-    //             "</span>" +
-    //             "</span>" +
-    //             "</a>");
-    //     };
-    //
-    //     for (var i = 0; i <= allboutics.length - 1; i++) {
-    //         $('#ajax-home2').append( "<a href='/profile/" + allboutics[i].user_id + "' class='col-12 my-4 pr-0'>" +
-    //             "<span class='d-flex flex-row-reverse'>" +
-    //             "<div class='col-auto pl-0'>" +
-    //             "<img src='/uploads/boutic/avatars/" + allboutics[i].img_path + "' width='100' height='100' class='rounded-circle' style='position:relative; z-index: 100; border: 3px solid #5B5B5B;'>" +
-    //             "</div>" +
-    //             "<span class='col px-0 d-flex align-items-center' style='margin-right: -10px;'>" +
-    //             "<h4 class='px-4 py-1 w-100' style='background-color: #D9DBDA; border-top-left-radius: 30px; border-bottom-left-radius: 30px;'>" + allboutics[i].name + "</h4>" +
-    //             "</span>" +
-    //             "</span>" +
-    //             "</a>" );
-    //     };
     }
 
 
@@ -227,9 +202,11 @@ $(document).ready(function() {
         if (flag === false) {
             $('#ajax-centers').empty();
             $('#ajax-centers2').empty();
-            $('#femalecol').addClass('mx-auto');
-            $('#malecol').hide();
-            $("#childcol").hide();
+            $('#femalecol').fadeOut(400, function () {
+                $(this).fadeIn(500)
+            });
+            $('#malecol').fadeOut(400);
+            $("#childcol").fadeOut(400);
 
             if($(document).width() < 800) {
                 $('.female-slide').show();
@@ -241,16 +218,26 @@ $(document).ready(function() {
             $('.static-slider').addClass('d-none');
             $('div#carouselExampleIndicators.carousel.slide').removeClass('d-md-block');
 
-
-            $('#body').animate({
-                backgroundColor: '#E19075'
-            }, 500);
-            $('#body2').animate({
-                backgroundColor: '#E19075'
-            }, 500);
-            $('#body3').animate({
-                backgroundColor: '#E19075'
-            }, 500);
+            $('.cats').animate({
+                backgroundColor: '#e19075'
+            }, 300);
+            $('.rounded-circle').animate({
+                borderColor: '#e19075'
+            },300);
+            $('.input-group-addon').animate({
+                borderColor: '#e19075'
+            },300);
+            $('.rounded-circle-our').animate({
+                backgroundColor: '#f6b9a4'
+            },300);
+            $('.user-drop').animate({
+                borderColor: '#e19075',
+                backgroundColor: '#f6b9a4'
+            },300);
+            $('.user-drop').removeClass('text-standard');
+            $('.user-drop').addClass('text-female');
+            $('.logo').addClass('d-none');
+            $('.logof').removeClass('d-none');
             catId = 2;
             $.ajax({
                 type: 'GET',
@@ -259,7 +246,6 @@ $(document).ready(function() {
                 success: function (data) {
                     var centers = data.centers;
                     appendItemsCenters(centers)
-                    // centerfemale = data.centers;
                     // bouticfemale = data.boutics;
                     // for (var val of data.centers) {
                     //     $('#ajax-home').append( "<a href='/center/" + val.id + "' class='col-12 my-4'>" +
@@ -294,18 +280,32 @@ $(document).ready(function() {
             ajax0();
             $('#ajax-centers').empty();
             $('#ajax-centers2').empty();
-            $('#femalecol').removeClass('mx-auto');
-            $('#malecol').show();
-            $("#childcol").show();
-            $('#body').animate({
-                backgroundColor: '#D8D9D9'
+            $('#femalecol').fadeOut(100,function () {
+                $('#femalecol').fadeIn(500),
+                $('#malecol').fadeIn(500),
+                $("#childcol").fadeIn(500)
+            });
+
+            $('.cats').animate({
+                backgroundColor: '#fefefe'
             }, 500);
-            $('#body2').animate({
-                backgroundColor: '#C3C4C4'
-            }, 500);
-            $('#body3').animate({
-                backgroundColor: '#C3C4C4'
-            }, 500);
+            $('.rounded-circle').animate({
+                borderColor: '#888888'
+            },300);
+            $('.input-group-addon').animate({
+                borderColor: '#888888'
+            },300);
+            $('.rounded-circle-our').animate({
+                backgroundColor: '#d9dad9'
+            },300);
+            $('.user-drop').animate({
+                borderColor: '#888888',
+                backgroundColor: '#d9dad9'
+            },300);
+            $('.user-drop').addClass('text-standard');
+            $('.user-drop').removeClass('text-female');
+            $('.logof').addClass('d-none');
+            $('.logo').removeClass('d-none');
 
             $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
             $('.static-slider').removeClass('d-none');
@@ -325,9 +325,11 @@ $(document).ready(function() {
         if (!flag) {
             $('#ajax-centers').empty();
             $('#ajax-centers2').empty();
-            $('#childcol').addClass('mx-auto');
-            $('#femalecol').hide();
-            $("#malecol").hide();
+            $('#childcol').fadeOut(400, function () {
+                $(this).fadeIn(500)
+            });
+            $('#malecol').fadeOut(400);
+            $("#femalecol").fadeOut(400);
             $('div#carouselExampleIndicators.carousel.slide').removeClass('d-md-block');
 
             $('.static-slider').removeClass('d-block');
@@ -339,25 +341,34 @@ $(document).ready(function() {
                 $('.third-slide').show();
             }
 
-            $('#body').animate({
-                backgroundColor: '#C46FA8'
-            }, 1000);
-            $('#body2').animate({
-                backgroundColor: '#C46FA8'
-            }, 1000);
-            $('#body3').animate({
-                backgroundColor: '#C46FA8'
-            }, 1000);
+            $('.cats').animate({
+                backgroundColor: '#c46fa8'
+            }, 300);
+            $('.rounded-circle').animate({
+                borderColor: '#c46fa8'
+            },300);
+            $('.input-group-addon').animate({
+                borderColor: '#c46fa8'
+            },300);
+            $('.rounded-circle-our').animate({
+                backgroundColor: '#e0b9d8'
+            },300);
+            $('.user-drop').animate({
+                borderColor: '#c46fa8',
+                backgroundColor: '#e0b9d8'
+            },300);
+            $('.user-drop').removeClass('text-standard');
+            $('.user-drop').addClass('text-child');
+            $('.logo').addClass('d-none');
+            $('.logoc').removeClass('d-none');
             catId = 3;
             $.ajax({
                 type: 'GET',
                 url: '/cat/3',
                 dataType: 'json',
                 success: function (data) {
-                    var centers = data.centers;
+                    var centers  = data.centers;
                     appendItemsCenters(centers)
-                    // centerchild = data.centers;
-                    // bouticchild = data.boutics;
                     // for (var val of data.centers) {
                     //     $('#ajax-home').append( "<a href='/center/" + val.id + "' class='col-12 my-4'>" +
                     //         "<span class='row'>" +
@@ -389,18 +400,31 @@ $(document).ready(function() {
             ajax0();
             $('#ajax-centers').empty();
             $('#ajax-centers2').empty();
-            $('#childcol').removeClass('mx-auto');
-            $('#femalecol').show();
-            $("#malecol").show();
-            $('#body').animate({
-                backgroundColor: '#D8D9D9'
-            }, 1000);
-            $('#body2').animate({
-                backgroundColor: '#C3C4C4'
-            }, 1000);
-            $('#body3').animate({
-                backgroundColor: '#C3C4C4'
-            }, 1000);
+            $('#childcol').fadeOut(100,function () {
+                $('#femalecol').fadeIn(500),
+                $('#malecol').fadeIn(500),
+                $("#childcol").fadeIn(500)
+            });
+            $('.cats').animate({
+                backgroundColor: '#fefefe'
+            }, 300);
+            $('.rounded-circle').animate({
+                borderColor: '#888888'
+            },300);
+            $('.input-group-addon').animate({
+                borderColor: '#888888'
+            },300);
+            $('.rounded-circle-our').animate({
+                backgroundColor: '#d9dad9'
+            },300);
+            $('.user-drop').animate({
+                borderColor: '#888888',
+                backgroundColor: '#d9dad9'
+            },300);
+            $('.user-drop').addClass('text-standard');
+            $('.user-drop').removeClass('text-child');
+            $('.logoc').addClass('d-none');
+            $('.logo').removeClass('d-none');
 
             $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
             $('.static-slider').removeClass('d-none');
@@ -420,9 +444,11 @@ $(document).ready(function() {
 
             $('#ajax-centers').empty();
             $('#ajax-centers2').empty();
-            $('#malecol').addClass('mx-auto');
-            $('#femalecol').hide();
-            $("#childcol").hide();
+            $('#malecol').fadeOut(400, function () {
+                $(this).fadeIn(500)
+            });
+            $('#femalecol').fadeOut(400);
+            $("#childcol").fadeOut(400);
             $('div#carouselExampleIndicators.carousel.slide').removeClass('d-md-block');
 
             $('.static-slider').removeClass('d-block');
@@ -436,15 +462,28 @@ $(document).ready(function() {
                 $('.first-slide').show();
             }
 
-            $('#body').animate({
-                backgroundColor: '#86C4DF'
-            }, 1000);
-            $('#body2').animate({
-                backgroundColor: '#86C4DF'
-            }, 1000);
-            $('#body3').animate({
-                backgroundColor: '#86C4DF'
-            }, 1000);
+            $('.cats').animate({
+                backgroundColor: '#27a8e1'
+            }, 300);
+            // $('.logo').hide();
+            $('.rounded-circle').animate({
+                borderColor: '#27a8e1'
+            },300);
+            $('.input-group-addon').animate({
+                borderColor: '#27a8e1'
+            },300);
+            $('.rounded-circle-our').animate({
+                backgroundColor: '#c0e4fa'
+            },300);
+            $('.user-drop').animate({
+                borderColor: '#27a8e1',
+                backgroundColor: '#c0e4fa',
+            },300);
+            $('.user-drop').removeClass('text-standard');
+            $('.user-drop').addClass('text-male');
+            $('.logo').addClass('d-none');
+            $('.logom').removeClass('d-none');
+
             catId = 1;
             $.ajax({
                 type: 'GET',
@@ -486,23 +525,36 @@ $(document).ready(function() {
             ajax0();
             $('#ajax-centers').empty();
             $('#ajax-centers2').empty();
-            $('#malecol').removeClass('mx-auto');
-            $('#femalecol').show();
-            $("#childcol").show();
+            $('#malecol').fadeOut(100,function () {
+                $('#femalecol').fadeIn(500),
+                    $('#malecol').fadeIn(500),
+                    $("#childcol").fadeIn(500)
+            });
             $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
             $('.static-slider').removeClass('d-none');
             $('.static-slider').addClass('d-block');
             $('.first-slide').hide();
             $('.male-slide').hide();
-            $('#body').animate({
-                backgroundColor: '#D8D9D9'
-            }, 1000);
-            $('#body2').animate({
-                backgroundColor: '#C3C4C4'
-            }, 1000);
-            $('#body3').animate({
-                backgroundColor: '#C3C4C4'
-            }, 1000);
+            $('.cats').animate({
+                backgroundColor: '#fefefe'
+            }, 300);
+            $('.rounded-circle').animate({
+                borderColor: '#888888'
+            },300);
+            $('.input-group-addon').animate({
+                borderColor: '#888888'
+            },300);
+            $('.rounded-circle-our').animate({
+                backgroundColor: '#d9dad9'
+            },300);
+            $('.user-drop').animate({
+                borderColor: '#888888',
+                backgroundColor: '#d9dad9'
+            },300);
+            $('.user-drop').addClass('text-standard');
+            $('.user-drop').removeClass('text-male');
+            $('.logom').addClass('d-none');
+            $('.logo').removeClass('d-none');
             catId = 0;
 
             appendItems();
@@ -510,7 +562,7 @@ $(document).ready(function() {
         flag = !flag;
     });
 
-
+    //
     // $('#centers').click(function (e) {
     //    e.preventDefault(e);
     //        $('#sectionRightAndLeft').hide(500);

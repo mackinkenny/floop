@@ -18,7 +18,7 @@ class CreateTypeTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('img_path');
-            $table->integer('cat_id');
+            $table->integer('maintype_id');
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ class CreateProductUserTable extends Migration
             $table->integer('product_id');
             $table->boolean('likeOrBuy')->default(false);
             $table->boolean('status')->default(false);
+            $table->string('promo')->nullable();
             $table->timestamps();
         });
     }

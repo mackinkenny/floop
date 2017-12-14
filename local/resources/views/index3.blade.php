@@ -1,6 +1,6 @@
 <section>
     <div class="container container-spec py-3">
-        <div class="row" style="margin-bottom: 54px;">
+        <div class="row" style="margin-bottom: 100px;">
             @if($is_products == false)
 
                 <div class="col d-flex flex-row p-5 justify-content-center">
@@ -11,7 +11,7 @@
             @foreach($products as $product)
                 <p style="display: none;">{{ $i = $product->photos->count() }}</p>
 
-                <div class="col-md-3 col-4 my-md-1 p-1">
+                <div class="col-md-3 col-5 p-1">
                     <div class="circle-icon-seat">
                         @if($product->discount_id)
 
@@ -25,7 +25,7 @@
                     </div>
 
                     <a href="#modal" id="a-products" data-toggle="modal" class="d-none d-md-block" data-id = "{{ $product->id }}">
-                        <div class="card bg-dark text-dark" id="products" style=" border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover;">
+                        <div class="bg-dark text-dark" id="products" style=" border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover;">
                             <img style="opacity: 0;" class="d-none card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image">
                             {{--<div class="card-img-overlay text-center">--}}
                             {{--<h4 class="card-title">{{ $product->name }}</h4>--}}
@@ -34,7 +34,7 @@
                     </a>
 
                     <a href="/product/{{ $product->id }}" class="d-md-none d-block">
-                        <div class="card bg-dark text-dark" id="products" style=" border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover;">
+                        <div class="bg-dark text-dark" id="products" style=" border-radius: 0px; background-image: url('/uploads/images/products/{{ $product->img_path }}'); background-position: center top; background-size: cover;">
                             <img style="opacity: 0;" class="d-none card-img img-card" src="/uploads/images/products/{{ $product->img_path }}" alt="Card image">
                             {{--<div class="card-img-overlay text-center">--}}
                             {{--<h4 class="card-title">{{ $product->name }}</h4>--}}

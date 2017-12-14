@@ -10,10 +10,11 @@ $(document).ready(function() {
     $('#menu-mobile').click(function () {
 
 
-
+        $('#nav-mobile').removeClass('d-none');
         $('#nav-mobile').animate({
             marginLeft: 0,
         }, 400)
+
         $('#backdrop').show()
     })
 
@@ -29,7 +30,9 @@ $(document).ready(function() {
 
         $('#nav-mobile').animate({
             marginLeft: - $('#nav-mobile').width() - 50,
-        }, 400)
+        }, 400,function () {
+            $('#nav-mobile').addClass('d-none');
+        })
 
     })
 

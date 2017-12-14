@@ -10,7 +10,7 @@ class Cat extends Model
     public function products() {
         return $this->hasMany('App\Product');
     }
-    public function type() {
-        return $this->belongsTo('App\Type');
+    public function maintype() {
+        return $this->belongsTo('App\Maintype');
     }
 }

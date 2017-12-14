@@ -1,6 +1,6 @@
 <section>
     <div class="container container-spec py-3">
-        <div class="row" style="margin-bottom: 54px;">
+        <div class="row" style="margin-bottom: 100px;">
             @if($is_products == false)
 
                 <div class="col d-flex flex-row p-5 justify-content-center">
@@ -11,7 +11,7 @@
                 @foreach($products as $product)
                     <p style="display: none;">{{ $i = $product->photos->count() }}</p>
 
-                    <div class="col-md-3 col-4 my-md-1 p-1">
+                    <div class="col-md-4 col-4 my-md-1 p-1">
                         <div class="circle-icon-seat">
                             @if($product->discount_id)
 
