@@ -11,10 +11,9 @@
                 <div class="col-md col-12 d-flex align-content-between flex-wrap">
                     <div class="col-12">
                         <div class="row justify-content-center p-3">
-                            <div class="col-md-auto col-12 text-center">
-                                <p class="nick">{{ $boutic->name }}'s Page</p>
+                            <div class="col-md-auto bname col-12 text-center">
+                                <span class="nick">{{ $boutic->name }}</span>
                             </div>
-
 
                             @if(Auth::guest())
                                 <form  class="mt-4 mt-md-0 col-auto ml-md-auto d-flex align-items-center justify-content-center">
@@ -68,8 +67,10 @@
 
                                 @endif
                             @endif
+
                         </div>
 
+                        @if(Auth::guest())
                         <div id="info2" class="col-12 mt-3 align-items-left  justify-content-center">
                             <p class="">Информация: {{$boutic->info}} </p>
 
@@ -77,7 +78,35 @@
 
                             <p>Номер:  {{$boutic->phone_number}}</p>
                         </div>
-                        </div>
+                        @elseif(Auth::user() && Auth::user()->is_boutic == 0)
+                            <div id="info2" class="col-12 mt-3 align-items-left  justify-content-center">
+                                <p class="">Информация: {{$boutic->info}} </p>
+
+                                <p>Доставка: {{$boutic->delivery}} </p>
+
+                                <p>Номер:  {{$boutic->phone_number}}</p>
+                            </div>
+                        @elseif(Auth::user()->is_boutic == 1)
+                            @if($boutic->user_id == Auth::user()->id)
+                                <div id="info2" class="col-12 mt-3 align-items-left  justify-content-center">
+                                    <p class="">Информация: {{$boutic->info}} </p>
+
+                                    <p>Доставка: {{$boutic->delivery}} </p>
+
+                                    <p>Номер:  {{$boutic->phone_number}}</p>
+                                </div>
+                                @else
+                                <div id="info3" class="col-12 mt-3 align-items-left  justify-content-center">
+                                    <p class="">Информация: {{$boutic->info}} </p>
+
+                                    <p>Доставка: {{$boutic->delivery}} </p>
+
+                                    <p>Номер:  {{$boutic->phone_number}}</p>
+                                </div>
+                            @endif
+                            @endif
+
+                    </div>
                     </div>
                     <div class="col-12  f-18 mt-4">
                         <div class="row justify-content-around">

@@ -114,7 +114,7 @@ class UserController extends Controller
             $is_products_liked = false;
             $is_products_buied = false;
             $products = $user->products;
-            Session::put('catId', 0);
+//            Session::put('catId', 0);
 //        if (!$products->isEmpty()) {
 //            $is_products = true;
 //        }

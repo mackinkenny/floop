@@ -380,25 +380,47 @@ nav {
     height: 50px;
 }
 @media (max-width: 878px) {
-.icons{
-    width:20px!important;
-    height:20px!important;
-}
-.logs{
-    margin-right: 0px!important;
-    margin-left: 0px!important;
-    margin:auto!important;
-}
-#sort{
-    margin-left:0px!important;
-    margin-right:0px!important;
-}
-    #sort2{
-        margin-left:0px!important;
-        margin-right:0px!important;
+    .icons {
+        width: 20px !important;
+        height: 20px !important;
     }
 
+    .logs {
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+        margin: auto !important;
+    }
 
+    #sort {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    #sort2 {
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+
+    .logo-ava {
+        width: 150px;
+        height: 150px;
+    }
+
+    .ml-md-auto {
+        margin-left: 0px !important;
+    }
+
+    .mt-md-0 {
+        margin-top: 10px !important;
+    }
+
+    .counter {
+        margin-left: -80px;
+    }
+
+    .col-md-auto {
+        width:100%;
+    }
 }
 @media (min-width: 576px) {
     a.boutic-in-center p {
