@@ -17,7 +17,7 @@
             <div class="row">
 
 
-                <div id="sort" class="col-5 p-5 text-right">
+                <div id="sort" class="col-4 pt-5 text-right">
                     <input type="hidden" value="{{ $i = 0 }}">
                     @if($count%2 == 0)
                         @foreach($maintypes->where('cat_id','=', $catId) as $index => $maintype)
@@ -62,14 +62,14 @@
                 </div>
 
                 @if($catId == 0)
-                    <div id="main" class="col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: #fefefe;">
+                    <div id="main" class="logs col-auto p-1 p-md-5 mx-auto text-center d-flex flex-row align-items-center" style="background: #fefefe;">
                         <span>
                             <img class="logo-cat" src="/img/logo/logo.png" width="80" height="80" alt="">
                         </span>
                     </div>
                 @endif
                 @if($catId == 2)
-                <div id="femalecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #E19075;">
+                <div id="femalecol" class="logs col-auto p-1 p-md-5 mx-auto text-center" style="background: #E19075;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/female.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Женская одежда</h2>--}}
@@ -77,7 +77,7 @@
                 </div>
                 @endif
                 @if($catId == 3)
-                <div id="childcol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #c46fa8;">
+                <div id="childcol" class="logs col-auto p-1 p-md-5 mx-auto text-center" style="background: #c46fa8;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/child.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Детская одежда</h2>--}}
@@ -85,7 +85,7 @@
                 </div>
                 @endif
                 @if($catId == 1)
-                <div id="malecol" class="col-auto p-1 p-md-5 mx-auto text-center" style="background: #27a8e1;">
+                <div id="malecol" class="logs col-auto p-1 p-md-5 mx-auto text-center" style="background: #27a8e1;">
                     <span style="color:white">
                         <img class="logo-cat" src="/img/cats/male.png" width="60" height="60" alt="">
                         {{--<h2 style="font-size: 1rem;">Мужская одежда</h2>--}}
@@ -93,7 +93,7 @@
                 </div>
                 @endif
 
-                    <div id="sort2" class="col-5 p-5 text-left">
+                    <div id="sort2" class="col-4 pt-5 text-left">
 
                         @if($count%2 == 0)
                             <input type="hidden" value="{{ $i = $count/2  }}">
@@ -245,9 +245,7 @@
                                         </a>
 
                                     </div>
-                                            @foreach($boutic->products as $product)
-                                                <img style="width: 100%; height: auto;" class=""  src="uploads/images/products/{{ $product->img_path }}" alt="">
-                                            @endforeach
+
                                     @endif
 
                                 @endforeach
@@ -265,9 +263,7 @@
                                                 <p class="text-center text-dark">{{ $boutic->name }}</p>
                                             </a>
                                         </div>
-                                            @foreach($boutic->products as $product)
-                                                <img style="width: 100%; height: auto;" class=""  src="uploads/images/products/{{ $product->img_path }}" alt="">
-                                            @endforeach
+
                                     @endif
 
                                 @endforeach
