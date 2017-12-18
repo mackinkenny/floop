@@ -11,7 +11,7 @@
             @foreach($products as $product)
                 <p style="display: none;">{{ $i = $product->photos->count() }}</p>
 
-                <div class="col-md-4 col-4 p-1">
+                <div class="col-md-3 col-4 p-1">
                     <div class="circle-icon-seat">
                         @if($product->discount_id)
 
