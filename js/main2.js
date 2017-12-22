@@ -222,22 +222,32 @@ $(document).ready(function() {
                 backgroundColor: '#e19075'
             }, 300);
             $('.rounded-circle').animate({
-                borderColor: '#e19075'
+                borderColor: '#c26343'
             },300);
             $('.input-group-addon').animate({
-                borderColor: '#e19075'
+                borderColor: '#c26343'
             },300);
             $('.rounded-circle-our').animate({
                 backgroundColor: '#f6b9a4'
             },300);
             $('.user-drop').animate({
-                borderColor: '#e19075',
+                borderColor: '#c26343',
                 backgroundColor: '#f6b9a4'
             },300);
             $('.user-drop').removeClass('text-standard');
             $('.user-drop').addClass('text-female');
             $('.logo').addClass('d-none');
             $('.logof').removeClass('d-none');
+            $('.menu').addClass('d-none');
+            $('.menuf').removeClass('d-none');
+            $('.search').addClass('d-none');
+            $('.searchf').removeClass('d-none');
+            $('.home').addClass('d-none');
+            $('.homef').removeClass('d-none');
+            $('.percent').addClass('d-none');
+            $('.percentf').removeClass('d-none');
+            $('.profile').addClass('d-none');
+            $('.profilef').removeClass('d-none');
             catId = 2;
             $.ajax({
                 type: 'GET',
@@ -290,23 +300,32 @@ $(document).ready(function() {
                 backgroundColor: '#fefefe'
             }, 500);
             $('.rounded-circle').animate({
-                borderColor: '#888888'
+                borderColor: '#5b5b5b'
             },300);
             $('.input-group-addon').animate({
-                borderColor: '#888888'
+                borderColor: '#5b5b5b'
             },300);
             $('.rounded-circle-our').animate({
-                backgroundColor: '#d9dad9'
+                backgroundColor: '#ebedec'
             },300);
             $('.user-drop').animate({
-                borderColor: '#888888',
-                backgroundColor: '#d9dad9'
+                borderColor: '#5b5b5b',
+                backgroundColor: '#ebedec'
             },300);
             $('.user-drop').addClass('text-standard');
             $('.user-drop').removeClass('text-female');
             $('.logof').addClass('d-none');
             $('.logo').removeClass('d-none');
-
+            $('.menuf').addClass('d-none');
+            $('.menu').removeClass('d-none');
+            $('.searchf').addClass('d-none');
+            $('.search').removeClass('d-none');
+            $('.homef').addClass('d-none');
+            $('.home').removeClass('d-none');
+            $('.percentf').addClass('d-none');
+            $('.percent').removeClass('d-none');
+            $('.profilef').addClass('d-none');
+            $('.profile').removeClass('d-none');
             $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
             $('.static-slider').removeClass('d-none');
             $('.static-slider').addClass('d-block');
@@ -345,22 +364,32 @@ $(document).ready(function() {
                 backgroundColor: '#c46fa8'
             }, 300);
             $('.rounded-circle').animate({
-                borderColor: '#c46fa8'
+                borderColor: '#6e2b57'
             },300);
             $('.input-group-addon').animate({
-                borderColor: '#c46fa8'
+                borderColor: '#6e2b57'
             },300);
             $('.rounded-circle-our').animate({
                 backgroundColor: '#e0b9d8'
             },300);
             $('.user-drop').animate({
-                borderColor: '#c46fa8',
+                borderColor: '#6e2b57',
                 backgroundColor: '#e0b9d8'
             },300);
             $('.user-drop').removeClass('text-standard');
             $('.user-drop').addClass('text-child');
             $('.logo').addClass('d-none');
             $('.logoc').removeClass('d-none');
+            $('.menu').addClass('d-none');
+            $('.menuc').removeClass('d-none');
+            $('.search').addClass('d-none');
+            $('.searchc').removeClass('d-none');
+            $('.home').addClass('d-none');
+            $('.homec').removeClass('d-none');
+            $('.percent').addClass('d-none');
+            $('.percentc').removeClass('d-none');
+            $('.profile').addClass('d-none');
+            $('.profilec').removeClass('d-none');
             catId = 3;
             $.ajax({
                 type: 'GET',
@@ -407,24 +436,34 @@ $(document).ready(function() {
             });
             $('.cats').animate({
                 backgroundColor: '#fefefe'
-            }, 300);
+            }, 500);
             $('.rounded-circle').animate({
-                borderColor: '#888888'
+                borderColor: '#5b5b5b'
             },300);
             $('.input-group-addon').animate({
-                borderColor: '#888888'
+                borderColor: '#5b5b5b'
             },300);
             $('.rounded-circle-our').animate({
-                backgroundColor: '#d9dad9'
+                backgroundColor: '#ebedec'
             },300);
             $('.user-drop').animate({
-                borderColor: '#888888',
-                backgroundColor: '#d9dad9'
+                borderColor: '#5b5b5b',
+                backgroundColor: '#ebedec'
             },300);
             $('.user-drop').addClass('text-standard');
             $('.user-drop').removeClass('text-child');
             $('.logoc').addClass('d-none');
             $('.logo').removeClass('d-none');
+            $('.menuc').addClass('d-none');
+            $('.menu').removeClass('d-none');
+            $('.searchc').addClass('d-none');
+            $('.search').removeClass('d-none');
+            $('.homec').addClass('d-none');
+            $('.home').removeClass('d-none');
+            $('.percentc').addClass('d-none');
+            $('.percent').removeClass('d-none');
+            $('.profilec').addClass('d-none');
+            $('.profile').removeClass('d-none');
 
             $('div#carouselExampleIndicators.carousel.slide').addClass('d-md-block');
             $('.static-slider').removeClass('d-none');
@@ -467,22 +506,32 @@ $(document).ready(function() {
             }, 300);
             // $('.logo').hide();
             $('.rounded-circle').animate({
-                borderColor: '#27a8e1'
+                borderColor: '#135168'
             },300);
             $('.input-group-addon').animate({
-                borderColor: '#27a8e1'
+                borderColor: '#135168'
             },300);
             $('.rounded-circle-our').animate({
                 backgroundColor: '#c0e4fa'
             },300);
             $('.user-drop').animate({
-                borderColor: '#27a8e1',
+                borderColor: '#135168',
                 backgroundColor: '#c0e4fa',
             },300);
             $('.user-drop').removeClass('text-standard');
             $('.user-drop').addClass('text-male');
             $('.logo').addClass('d-none');
             $('.logom').removeClass('d-none');
+            $('.menu').addClass('d-none');
+            $('.menum').removeClass('d-none');
+            $('.search').addClass('d-none');
+            $('.searchm').removeClass('d-none');
+            $('.home').addClass('d-none');
+            $('.homem').removeClass('d-none');
+            $('.percent').addClass('d-none');
+            $('.percentm').removeClass('d-none');
+            $('.profile').addClass('d-none');
+            $('.profilem').removeClass('d-none');
 
             catId = 1;
             $.ajax({
@@ -537,24 +586,34 @@ $(document).ready(function() {
             $('.male-slide').hide();
             $('.cats').animate({
                 backgroundColor: '#fefefe'
-            }, 300);
+            }, 500);
             $('.rounded-circle').animate({
-                borderColor: '#888888'
+                borderColor: '#5b5b5b'
             },300);
             $('.input-group-addon').animate({
-                borderColor: '#888888'
+                borderColor: '#5b5b5b'
             },300);
             $('.rounded-circle-our').animate({
-                backgroundColor: '#d9dad9'
+                backgroundColor: '#ebedec'
             },300);
             $('.user-drop').animate({
-                borderColor: '#888888',
-                backgroundColor: '#d9dad9'
+                borderColor: '#5b5b5b',
+                backgroundColor: '#ebedec'
             },300);
             $('.user-drop').addClass('text-standard');
             $('.user-drop').removeClass('text-male');
             $('.logom').addClass('d-none');
             $('.logo').removeClass('d-none');
+            $('.menum').addClass('d-none');
+            $('.menu').removeClass('d-none');
+            $('.searchm').addClass('d-none');
+            $('.search').removeClass('d-none');
+            $('.homem').addClass('d-none');
+            $('.home').removeClass('d-none');
+            $('.percentm').addClass('d-none');
+            $('.percent').removeClass('d-none');
+            $('.profilem').addClass('d-none');
+            $('.profile').removeClass('d-none');
             catId = 0;
 
             appendItems();

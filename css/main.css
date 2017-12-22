@@ -59,48 +59,48 @@ body {
     font-size: 20px!important;
 }
 .main1{
-    background-color: #d9dad9;
+    background-color: #ebedec;
 }
 .main2{
-    border: 1.5px solid #888888;
+    border: 1px solid #5b5b5b;
 }
 .text-male{
-    color:#27a8e1!important;
+    color:#135168!important;
 }
 .male1{
     background-color:#c0e4fa!important;
 }
 .male2
 {
-    border:1px solid #27a8e1!important;
+    border:1px solid #135168!important;
 }
 .male3
 {
     background-color:#27a8e1!important;
 }
 .text-female{
-    color:#c16445!important;
+    color:#c26343!important;
 }
 .female1{
     background-color:#f6b9a4!important;
 }
 .female2
 {
-    border:1px solid #e19075!important;
+    border:1px solid #c26343!important;
 }
 .female3
 {
-    background-color:#c16445!important;
+    background-color:#e19075!important;
 }
 .text-child{
-    color:#c46fa8!important;
+    color:#6e2b57!important;
 }
 .child1{
     background-color:#e0b9d8!important;
 }
 .child2
 {
-    border:1px solid #c46fa8!important;
+    border:1px solid #6e2b57!important;
 }
 .child3
 {
@@ -173,8 +173,7 @@ footer {
 }
 .user-drop
 {
-    border:1px solid #888888;
-    background-color: #d9dad9;
+    background-color: #ebedec;
     border-top-left-radius: 35px;
     border-bottom-left-radius: 35px;
 }

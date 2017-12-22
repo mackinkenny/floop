@@ -35,24 +35,20 @@
         <img class="fixed-shadow fixed-top" src="/img/menu/menu.png" alt="" width="100%" height="10px">
         <nav class="navbar fixed-top navbar-expand-md" id="navbar-top">
             <div class="container">
+                <a id="menu-mobile" class=" d-md-none">
                 @if(Session::get('catId') == 0)
-                    <a id="menu-mobile" class=" d-md-none">
-                        <img src="/img/logo/menu1.png" width="30" height="30" alt=""></a>
-                    <a class="navbar-brand mx-auto mx-md-0" href="/">
+                        <img class="menu d-md-none" src="/img/logo/menu1.png" width="30" height="30" alt=""></a>
                 @elseif(Session::get('catId') == 1)
-                            <a id="menu-mobile" class=" d-md-none">
-                                <img src="/img/logo/menu.png" width="30" height="30" alt=""></a>
-                            <a class="navbar-brand mx-auto mx-md-0" href="/">
+                    <img class="d-md-none" src="/img/logo/menu.png" width="30" height="30" alt=""></a>
                 @elseif(Session::get('catId') == 2)
-                                    <a id="menu-mobile" class=" d-md-none">
-                                        <img src="/img/logo/menu2.png" width="30" height="30" alt=""></a>
-                                    <a class="navbar-brand mx-auto mx-md-0" href="/">
+                    <img class="d-md-none" src="/img/logo/menu2.png" width="30" height="30" alt=""></a>
                 @elseif(Session::get('catId') == 3)
-                                            <a id="menu-mobile" class=" d-md-none">
-                                                <img src="/img/logo/menu3.png" width="30" height="30" alt=""></a>
-                                            <a class="navbar-brand mx-auto mx-md-0" href="/">
+                    <img class="d-md-none" src="/img/logo/menu3.png" width="30" height="30" alt=""></a>
                 @endif
-
+                <img class="menum d-none d-md-none" src="/img/logo/menu.png"  width="30" height="30" alt=""></a>
+                <img class="menuf d-none d-md-none" src="/img/logo/menu2.png" width="30" height="30" alt=""></a>
+                <img class="menuc d-none d-md-none" src="/img/logo/menu3.png" width="30" height="30" alt=""></a>
+                <a class="navbar-brand mx-auto mx-md-0" href="/">
                     @if(Session::get('catId') == 0)
                         <img class="logo" src="/img/logo/logo5.png" width="108" height="30" alt="">
                     @elseif(Session::get('catId') == 1)
@@ -66,7 +62,18 @@
                     <img class="logof d-none" src="/img/logo/logo3.png" width="108" height="30" alt="">
                     <img class="logoc d-none" src="/img/logo/logo4.png" width="108" height="30" alt="">
                 </a>
-                <a href="" class="d-md-none"><img src="/img/logo/search.png" width="30" height="30" alt=""></a>
+                @if(Session::get('catId') == 0)
+                    <a href="" class="search d-md-none"><img src="/img/logo/search.png" width="30" height="30" alt=""></a>
+                @elseif(Session::get('catId') == 1)
+                    <a href="" class="searchm d-md-none"><img src="/img/logo/search1.png" width="30" height="30" alt=""></a>
+                @elseif(Session::get('catId') == 2)
+                    <a href="" class="searchf d-md-none"><img src="/img/logo/search2.png" width="30" height="30" alt=""></a>
+                @elseif(Session::get('catId') == 3)
+                    <a href="" class="searchc d-md-none"><img src="/img/logo/search3.png" width="30" height="30" alt=""></a>
+                @endif
+                <a href="" class="searchm d-none d-md-none"><img src="/img/logo/search1.png" width="30" height="30" alt=""></a>
+                <a href="" class="searchf d-none d-md-none"><img src="/img/logo/search2.png" width="30" height="30" alt=""></a>
+                <a href="" class="searchc d-none d-md-none"><img src="/img/logo/search3.png" width="30" height="30" alt=""></a>
 
 
                 <div class="collapse navbar-collapse"  id="navbarNavDropdown">
@@ -109,7 +116,7 @@
                            @else
                             <li class="nav-item d-flex flex-row align-items-center">
                             @if(Session::get('catId') == 0)
-                                <a href="{{ route('sdiscounts') }}"><img class="logo" src="/img/logo/percent1.png" style="width:30px;" alt=""></a>
+                                <a href="{{ route('sdiscounts') }}"><img class="logo" src="/img/logo/percent.png" style="width:30px;" alt=""></a>
                             @elseif(Session::get('catId') == 1)
                                 <a href="{{ route('sdiscounts') }}"><img class="logom" src="/img/logo/percent.png" style="width:30px;" alt=""></a>
                             @elseif(Session::get('catId') == 2)
@@ -117,31 +124,31 @@
                             @elseif(Session::get('catId') == 3)
                               <a href="{{ route('sdiscounts') }}"><img class="logoc" src="/img/logo/percent4.png" style="width:30px;" alt=""></a>
                             @endif
-                                <a href="{{ route('sdiscounts') }}"><img class="logom d-none" src="/img/logo/percent.png" style="width:30px;" alt=""></a>
+                                <a href="{{ route('sdiscounts') }}"><img class="logom d-none" src="/img/logo/percent1.png" style="width:30px;" alt=""></a>
                                 <a href="{{ route('sdiscounts') }}"><img class="logof d-none" src="/img/logo/percent3.png" style="width:30px;" alt=""></a>
                                 <a href="{{ route('sdiscounts') }}"><img class="logoc d-none" src="/img/logo/percent4.png" style="width:30px;" alt=""></a>
                              </li>
                             <li class="nav-item dropdown row align-items-center ml-3">
                                 @if(Session::get('catId') == 0)
-                                    <a style="margin-right: -15px; letter-spacing: 1px;" class="text-standard nav-link dropdown-toggle p-1 px-4 user-drop" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <a style="margin-right: -15px; letter-spacing: 1px;" class="text-standard nav-link dropdown-toggle p-1 px-4 user-drop main2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ Auth::user()->name }}
                                     </a>
-                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" width="40" height="40" alt="">
+                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle main2" width="40" height="40" alt="">
                                 @elseif(Session::get('catId') == 1)
                                     <a style="margin-right: -15px; letter-spacing: 1px; border-top-left-radius: 35px;border-bottom-left-radius: 35px;" class="text-male nav-link dropdown-toggle p-1 px-4 male1 male2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ Auth::user()->name }}
                                     </a>
-                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 1.5px solid #27a8e1;" width="40" height="40" alt="">
+                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle male2" width="40" height="40" alt="">
                                 @elseif(Session::get('catId') == 2)
                                     <a style="margin-right: -15px; letter-spacing: 1px; border-top-left-radius: 35px;border-bottom-left-radius: 35px;" class="text-female nav-link dropdown-toggle p-1 px-4 female1 female2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ Auth::user()->name }}
                                     </a>
-                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 1.5px solid #c16445;" width="40" height="40" alt="">
+                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle female2"  width="40" height="40" alt="">
                                 @elseif(Session::get('catId') == 3)
                                     <a style="margin-right: -15px; letter-spacing: 1px; border-top-left-radius: 35px;border-bottom-left-radius: 35px;" class="text-child nav-link dropdown-toggle p-1 px-4 child1 child2" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         {{ Auth::user()->name }}
                                     </a>
-                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle" style="border: 1.5px solid #c46fa8;" width="40" height="40" alt="">
+                                    <img src="/uploads/avatars/{{ Auth::user()->img_path }}" class="rounded-circle child2"  width="40" height="40" alt="">
                                 @endif
 
 
@@ -193,24 +200,79 @@
             <img class="fixed-bottom" src="/img/menu/menu2.png" alt="" width="100%" height="10px" style="margin-bottom: 56px;">
             <div class="container d-flex flex-row justify-content-center">
                 <a class="navbar-brand mx-4" href="/">
-                    <img src="/img/logo/home.png" width="30" height="30" alt="">
+                    @if(Session::get('catId') == 0)
+                        <img class="home" src="/img/logo/home.png" width="30" height="30" alt="">
+                    @elseif(Session::get('catId') == 1)
+                        <img src="/img/logo/home1.png" width="30" height="30" alt="">
+                    @elseif(Session::get('catId') == 2)
+                        <img src="/img/logo/home2.png" width="30" height="30" alt="">
+                    @elseif(Session::get('catId') == 3)
+                        <img src="/img/logo/home3.png" width="30" height="30" alt="">
+                    @endif
+                    <img class="homem d-none" src="/img/logo/home1.png" width="30" height="30" alt="">
+                    <img class="homef d-none" src="/img/logo/home2.png" width="30" height="30" alt="">
+                    <img class="homec d-none" src="/img/logo/home3.png" width="30" height="30" alt="">
                 </a>
                 <a class="navbar-brand mx-4" href="/sdiscounts">
-                    <img src="/img/logo/percent.png" width="30" height="30" alt="">
+                    @if(Session::get('catId') == 0)
+                        <img class="percent" src="/img/logo/percent.png" width="30" height="30" alt="">
+                    @elseif(Session::get('catId') == 1)
+                        <img src="/img/logo/percent1.png" width="30" height="30" alt="">
+                    @elseif(Session::get('catId') == 2)
+                        <img src="/img/logo/percent3.png" width="30" height="30" alt="">
+                    @elseif(Session::get('catId') == 3)
+                        <img src="/img/logo/percent4.png" width="30" height="30" alt="">
+                    @endif
+                    <img class="percentm d-none" src="/img/logo/percent1.png" width="30" height="30" alt="">
+                    <img class="percentf d-none" src="/img/logo/percent3.png" width="30" height="30" alt="">
+                    <img class="percentc d-none" src="/img/logo/percent4.png" width="30" height="30" alt="">
                 </a>
                 @if(Auth::user())
                     @if(Auth::user()->is_boutic)
                         <a class="navbar-brand mx-4" href="/profile/{{Auth::user()->id}}">
-                            <img src="/img/logo/profile.png" width="30" height="30" alt="">
+                            @if(Session::get('catId') == 0)
+                                <img class="profile" src="/img/logo/profile.png" width="30" height="30" alt="">
+                            @elseif(Session::get('catId') == 1)
+                                <img src="/img/logo/profile1.png" width="30" height="30" alt="">
+                            @elseif(Session::get('catId') == 2)
+                                <img src="/img/logo/profile3.png" width="30" height="30" alt="">
+                            @elseif(Session::get('catId') == 3)
+                                <img src="/img/logo/profile2.png" width="30" height="30" alt="">
+                            @endif
+                            <img class="profilem d-none" src="/img/logo/profile1.png" width="30" height="30" alt="">
+                            <img class="profilec d-none" src="/img/logo/profile2.png" width="30" height="30" alt="">
+                            <img class="profilef d-none" src="/img/logo/profile3.png" width="30" height="30" alt="">
                         </a>
                     @else
-                    <a class="navbar-brand mx-4" href="{{  route('profile') }}">
-                        <img src="/img/logo/profile.png" width="30" height="30" alt="">
-                    </a>
+                        <a class="navbar-brand mx-4" href="{{  route('profile') }}">
+                            @if(Session::get('catId') == 0)
+                                <img class="profile" src="/img/logo/profile.png" width="30" height="30" alt="">
+                            @elseif(Session::get('catId') == 1)
+                                <img src="/img/logo/profile1.png" width="30" height="30" alt="">
+                            @elseif(Session::get('catId') == 2)
+                                <img src="/img/logo/profile3.png" width="30" height="30" alt="">
+                            @elseif(Session::get('catId') == 3)
+                                <img src="/img/logo/profile2.png" width="30" height="30" alt="">
+                            @endif
+                            <img class="profilem d-none" src="/img/logo/profile1.png" width="30" height="30" alt="">
+                            <img class="profilec d-none" src="/img/logo/profile2.png" width="30" height="30" alt="">
+                            <img class="profilef d-none" src="/img/logo/profile3.png" width="30" height="30" alt="">
+                        </a>
                     @endif
                     @else
-                    <a class="navbar-brand mx-4" href="{{ url('/login') }}">
-                        <img src="/img/logo/profile.png" width="30" height="30" alt="">
+                    <a class="navbar-brand mx-4" href="{{  url('/login') }}">
+                        @if(Session::get('catId') == 0)
+                            <img class="profile" src="/img/logo/profile.png" width="30" height="30" alt="">
+                        @elseif(Session::get('catId') == 1)
+                            <img src="/img/logo/profile1.png" width="30" height="30" alt="">
+                        @elseif(Session::get('catId') == 2)
+                            <img src="/img/logo/profile3.png" width="30" height="30" alt="">
+                        @elseif(Session::get('catId') == 3)
+                            <img src="/img/logo/profile2.png" width="30" height="30" alt="">
+                        @endif
+                        <img class="profilem d-none" src="/img/logo/profile1.png" width="30" height="30" alt="">
+                        <img class="profilec d-none" src="/img/logo/profile2.png" width="30" height="30" alt="">
+                        <img class="profilef d-none" src="/img/logo/profile3.png" width="30" height="30" alt="">
                     </a>
                     @endif
             </div>
