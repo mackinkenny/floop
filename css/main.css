@@ -368,11 +368,11 @@ nav {
 }
 
 #a-products {
-    height: 390px;
+    height: 400px;
 }
 
 #products {
-    height: 390px;
+    height: 400px;
 }
 
 .right-some {
@@ -417,6 +417,13 @@ nav {
 
     .col-md-auto {
         width:100%;
+    }
+    #products {
+        height: 240px;
+    }
+
+    #a-products {
+        height: 240px;
     }
 }
 @media (min-width: 576px) {
