@@ -5,4 +5,5 @@
 /uploads/boutic/avatars/*
 /uploads/images/products/*
 
-/.idea
+.idea
+.idea/workspace.xml
