@@ -210,15 +210,14 @@ footer a:hover {
 }
 
 #login-page {
-    background-image: url('../img/3.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
-#form-login {
-    background-color: rgba(20, 20, 20, 0.8)!important;
+.form-group{
+    width:60%;
 }
+/*#form-login {*/
+    /*background-color: rgba(20, 20, 20, 0.8)!important;*/
+/*}*/
 
 #form-login input {
     opacity: 0.6;

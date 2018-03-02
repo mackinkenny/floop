@@ -67,10 +67,10 @@
 {{--</div>--}}
 
 <div id="login-page">
-    <div class="container" id="content">
-        <div class="row justify-content-center align-items-center" id="body-content">
-
-            <form class="col-12 col-md-5 text-light p-5" id="form-login"  method="POST" action="{{ route('login') }}">
+    {{--<div class="container" id="content">--}}
+        <div class="row" id="body-content">
+<div class="col-7"></div>
+            <form class="col-5 col-md-5 p-5" id="form-login"  method="POST" action="{{ route('login') }}">
                 {{ csrf_field() }}
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                     <label for="exampleInputEmail1">E-mail</label>
@@ -102,6 +102,6 @@
             </form>
 
         </div>
-    </div>
+    {{--</div>--}}
 </div>
 @endsection

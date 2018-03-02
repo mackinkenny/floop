@@ -82,8 +82,8 @@
                         {{--<button class="btn btn-outline-success my-2 my-sm-0" type="submit"></button>--}}
                         <div class="input-group">
                             @if(Session::get('catId') == 0)
-                                <input type="text" style=" border-right: 0px; border-color:#888888;" class="form-control menu-change ml-5 text-center bg-white rounded-circle-our  input-group-addon" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
-                                <span style="border-left: 0px; border-color:#888888;" class="input-group-addon rounded-circle-our" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
+                                <input type="text" style=" border-right: 0px;" class="form-control menu-change ml-5 text-center bg-white rounded-circle-our  input-group-addon main2 main1" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
+                                <span style="border-left: 0px;" class="input-group-addon rounded-circle-our main2 main1" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
                             @elseif(Session::get('catId') == 1)
                                 <input type="text" style="border-right: 0px;" class="form-control menu-change  ml-5 text-center bg-white rounded-circle-our  input-group-addon male2" placeholder="Поиск" aria-label="Username" aria-describedby="basic-addon1">
                                 <span style="border-left: 0px; " class="input-group-addon rounded-circle-our male1 male2" id="basic-addon1"><i class="fa fa-search" aria-hidden="true"></i></span>
@@ -101,8 +101,8 @@
                     <ul class="navbar-nav ">
                         @if (Auth::guest())
                             @if(Session::get('catId') == 0)
-                                <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light main1"  href="{{ route('login') }}">Вход</a></li>
-                                <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light main1" href="{{ route('register') }}">Регистрация</a></li>
+                                <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our  text-standard main1 main2"  href="{{ route('login') }}">Вход</a></li>
+                                <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our  text-standard main1 main2" href="{{ route('register') }}">Регистрация</a></li>
                             @elseif(Session::get('catId') == 1)
                                 <li class="nav-item mr-2"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light male1" href="{{ route('login') }}">Вход</a></li>
                                 <li class="nav-item"><a class="nav-link text-uppercase fs-15 rounded-circle-our text-light male1"href="{{ route('register') }}">Регистрация</a></li>
