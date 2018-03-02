@@ -4,3 +4,6 @@
 /uploads/types/*
 /uploads/boutic/avatars/*
 /uploads/images/products/*
+
+.idea
+.idea/workspace.xml

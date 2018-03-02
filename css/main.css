@@ -270,18 +270,18 @@ footer a:hover {
     margin-left: auto;
 }
 .panelt {
-    -webkit-transition: all 0.3s ease;;
-    -moz-transition: all 0.3s ease;;
-    -o-transition: all 0.3s ease;;
-    transition: all 0.3s ease;;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 .panelt:hover {
     -webkit-transform: scale(1.05);
     -ms-transform: scale(1.05);
     transform: scale(1.05);
     border-radius:5px;
-    background:#d9dad9;
-    opacity: 0.6;
+    background: #dddddd;
+    opacity: 1;
 }
 
 .logo-ava {
